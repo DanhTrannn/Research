@@ -1,76 +1,81 @@
 # Canada Scholarships
 
-Thu thập và chuẩn hóa dữ liệu của 13 trường Canada. **Một trường = một file Python để chỉnh logic + một file JSON kết quả.**
+**Một trường = một file Python xử lý đầy đủ + một file JSON kết quả gọn.**
 
 ```text
-schools/
-  humber_polytechnic.py          URL và quy tắc của Humber
-  lakehead_university.py         URL và cách nối footnote của Lakehead
-  ibu_university.py              URL và quy tắc xử lý nội dung IBU
-  ...                           các trường còn lại
-outputs/
-  humber_polytechnic.json        dữ liệu chuẩn hóa, bằng chứng và trạng thái crawl
-  lakehead_university.json
-  ibu_university.json
-  ...
-pipeline.py                     xử lý HTTP, DOM, tiền/ngày/điểm và format dùng chung
-run_all.py                      lệnh chạy duy nhất
-schema/scholarships.sql          schema CSDL tham chiếu
-bao_cao_nghien_cuu_scholarship_canada.md
+schools/humber_polytechnic.py     crawl() → extract() → export()
+outputs/humber_polytechnic.json   kết quả cần sử dụng của Humber
+pipeline.py                      tiện ích HTTP, đọc bảng/section, tiền/ngày và ghi JSON
+run_all.py                       chạy một hoặc tất cả trường
 ```
 
 ## Chạy
 
 ```bash
 python3 -m pip install -r requirements.txt
-python3 run_all.py --list
-python3 run_all.py --school humber
-python3 run_all.py --school lakehead_university
-python3 run_all.py
-```
-
-Có thể chạy trực tiếp file trường:
-
-```bash
 python3 schools/humber_polytechnic.py
+python3 run_all.py --school lakehead
+python3 run_all.py
+python3 run_all.py --list
 ```
 
-Tùy chọn: `--workers 4`, `--timeout 12`, `--output-dir /tmp/scholarships`. Tên trường có thể là slug đầy đủ hoặc chuỗi khớp duy nhất. Exit code: 0 khi các trường được chọn đều thành công, 1 nếu có lỗi, 2 nếu tham số không hợp lệ.
+Tùy chọn: `--workers 4`, `--timeout 12`, `--output-dir /tmp/scholarships`. Tên trường có thể là slug hoặc chuỗi khớp duy nhất. Chạy một trường chỉ cập nhật file trường đó. Không cần script export riêng.
 
-Một lệnh lấy HTML và xuất thẳng JSON; không cần chạy script export sau đó. Chạy một trường chỉ cập nhật file của trường đó. Không có summary, thư mục final lồng nhau, generator hoặc dữ liệu trung gian được xuất riêng. File lỗi vẫn ghi trạng thái thất bại và không chứa học bổng giả.
+## Sửa logic của một trường
 
-## Sửa một trường
+Mở `schools/<slug>.py`. Mỗi file có ba bước rõ ràng:
 
-Mở `schools/<slug>.py`. Mỗi file chứa `name`, `slug`, `url` và các phương thức riêng nếu trường cần xử lý khác:
+1. `crawl(timeout)`: lấy HTML từ URL của trường, kiểm tra HTTP và challenge.
+2. `extract(soup)`: chọn đúng bảng/section của trường, trích xuất thông tin học bổng cần dùng.
+3. `export(metadata, data, output_dir)`: ghi JSON đã lọc.
 
-- `parse_html(soup)`: override khi DOM riêng cần cách trích xuất khác.
-- `renewal_footnotes(data, value_text, file)`: nối bằng chứng footnote vào tier, như Lakehead.
-- `keep_section(candidate)`: giữ nhóm nội dung phù hợp, như nhóm domestic của IBU.
-- `candidate_issue(candidate)`: ghi nhận vùng chưa đủ bằng chứng để coi là award riêng.
+`run()` nối ba bước này trong chính file trường. Bộ xử lý chung không chọn thay trường toàn bộ nội dung trang. Ví dụ:
 
-Các hàm HTTP/chuẩn hóa phổ biến dùng lại trong `pipeline.py`; không sao chép toàn bộ bộ xử lý vào 13 file. Thêm trường mới bằng cách tạo một file tương tự có `class Crawler(SchoolCrawler)`; runner tự tìm module, không cần cập nhật registry ở nơi khác.
+- Humber chọn bảng `Average/Amount`, hai nhóm bursary có tên và lịch hồ sơ; bỏ FAQ/bảng chi phí.
+- Lakehead chọn bảng đầu vào, nối footnote đúng số với tier và giữ giá trị theo năm/toàn khóa riêng.
+- IBU đọc panel đúng `aria-controls` của từng tab; chỉ lấy các dòng giảm trừ Scholarship, không lấy học phí hoặc deposit làm quyền lợi.
+- Algonquin giữ tên award, tiêu chí, campus, đối tượng quốc tế, học kỳ và cách nộp; không xuất lại toàn bộ DOM.
+- Regina lấy lịch hồ sơ vì URL là trang tổng quan, không dựng một gói tiền chung cho cả trường.
 
-## Đọc JSON
+Thêm trường bằng một file có `class Crawler` và các phương thức tương tự. Runner tự nhận diện file, không có generator hoặc registry riêng.
 
-Mỗi `outputs/<slug>.json` có `schema_version: 3` và các nhóm:
+## JSON gọn — phiên bản 4
 
-| Trường | Nội dung |
-|---|---|
-| `school`, `crawl`, `source` | Trường, trạng thái HTTP/các lần thử, URL và thời gian lấy nguồn. |
-| `scholarships` | Mục award có tên và bằng chứng riêng, chưa được duyệt. |
-| `scholarship_groups[].tiers` | Nhóm và các bậc điểm/giá trị/gia hạn. |
-| `application_windows` | Lịch mở/đóng hồ sơ theo nhóm hoặc học kỳ. |
-| `cost_breakdowns` | Học phí/chi phí/giảm trừ, tách riêng khỏi giá trị học bổng. |
-| `unresolved_sections` | Phần chưa đủ điều kiện chuẩn hóa; kèm văn bản để đọc ngay. |
-| `evidence.tables`, `evidence.renewal` | Bảng và điều kiện gốc, đủ để đối chiếu ngay trong cùng file. |
-| `summary` | Số mục có tên, nhóm, tier và lịch hồ sơ của riêng trường. |
+```json
+{
+  "schema_version": 4,
+  "school": {"name": "Tên trường", "slug": "ten_truong"},
+  "source_url": "https://example.org/scholarships",
+  "fetched_at": "thời điểm crawl",
+  "status": "ok",
+  "http_status": 200,
+  "data_status": "needs_review",
+  "scholarships": [
+    {
+      "name": "Tên học bổng",
+      "tiers": [
+        {
+          "grade_text": "95%+",
+          "value_text": "$4,000 renewable",
+          "values": [{"min_amount": 4000, "max_amount": 4000, "payment_basis": "unknown"}],
+          "renewable": true
+        }
+      ]
+    }
+  ]
+}
+```
 
-Mọi `json_pointer` trỏ vào chính file trường đó. Không cần file raw hoặc HTML khác để đọc bằng chứng. Hash HTML vẫn được giữ nếu có, nhưng HTML không được xuất thành file thứ hai.
+Đây là ví dụ hình dạng dữ liệu, không phải một học bổng đã xác minh. Các trường không có thông tin được bỏ thay vì xuất nhiều null/mảng rỗng. `false` và số 0 vẫn được giữ. Thiếu trường có nghĩa chưa xác định, không phải false hoặc không áp dụng.
 
-Các mục vẫn có trạng thái `needs_review`, không tự công bố. Currency chỉ được gắn khi có bằng chứng rõ; chưa biết giữ null/unknown. Không dùng min/max tiền của cả trang làm giá trị award. Giá trị theo kỳ, năm và toàn khóa được giữ riêng; deadline thiếu năm không bị tự bổ sung năm. `total_scholarships = null` cho đến khi có bước xác nhận các gói độc lập.
+Dữ liệu chỉ gồm phần đã chọn: tên, loại/đối tượng, ngành, điều kiện, mức tiền, bậc điểm, gia hạn, kỳ/hạn nộp và nguồn. Một số trang có thêm `application_periods` hoặc `notes` khi cần diễn giải. Không còn hash, ID kỹ thuật, JSON pointer, bảng/cell/grid thô, danh sách candidate, raw evidence, source_tables hoặc thống kê lặp trong output. Các câu điều kiện cần thiết vẫn giữ nguyên nghĩa để không mất các ngoại lệ quan trọng.
 
-## Dữ liệu đã chuyển sang cấu trúc mới
+Currency chỉ được gắn khi có bằng chứng rõ. Các giá trị theo kỳ, năm và toàn khóa giữ riêng, không tự cộng. Deadline không nêu năm thì giữ ngày/tháng gốc. Không gán `renewable: true` cho mọi tier chỉ vì một phần của trang đề cập gia hạn. IBU giữ thông tin hiệu lực/expired theo nội dung tab, không coi grant cũ là còn áp dụng.
 
-13 file hiện tại được chuyển từ dữ liệu crawl trước khi tinh gọn, giữ nguyên thời gian lấy nguồn và trạng thái 10 trường thành công / 3 trường bị chặn. `source.input_kind = legacy_json_import` phân biệt việc chuyển đổi với crawl mới; hash JSON đầu vào cũ được giữ để truy vết. Sau khi chạy lại một trường, file mới ghi `input_kind = live_http`.
+`data_status = needs_review` áp dụng cho toàn bộ kết quả: schema gọn không đồng nghĩa mọi điều khoản đã được xác minh. Khi bị chặn hoặc lỗi, file vẫn được ghi với status tương ứng và `scholarships: []`. Không có fallback dữ liệu giả. Exit code 0 khi tất cả trường được chọn có dữ liệu; 1 nếu có trường lỗi/không trích xuất được; 2 nếu tham số không hợp lệ.
 
-Bản sao đầy đủ của repo trước khi dọn nằm **ngoài repo**, cùng thư mục cha, tên `Scholarship-backup-20261106-101222.tar.gz`. Báo cáo nghiên cứu được giữ như ghi nhận của đợt khảo sát trước; không tự viết lại khi crawl.
+## Tài liệu và bản cũ
+
+Giữ [báo cáo nghiên cứu](bao_cao_nghien_cuu_scholarship_canada.md) và [schema PostgreSQL](schema/scholarships.sql) để tham khảo. Báo cáo mô tả đợt nghiên cứu trước, không tự viết lại sau mỗi lần crawl. Output schema v4 thay thế schema v3 nên code đọc JSON cần dùng cấu trúc mới.
+
+Phiên bản output/script trước có thể đối chiếu trong lịch sử Git. Không có thư mục tests hoặc công cụ export trung gian được thêm lại.

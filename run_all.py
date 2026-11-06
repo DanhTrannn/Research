@@ -41,13 +41,13 @@ def main(argv=None):
         path = args.output_dir / f'{name}.json'
         if path.exists():
             import json
-            if json.loads(path.read_text()).get('schema_version') != 3:
+            if json.loads(path.read_text()).get('schema_version') not in (3, 4):
                 parser.error(f'{path}: contains legacy or unrelated data; choose another output directory')
     def run(name):
         try:
             result = load_school(name).run(args.output_dir, args.timeout)
-            success = result['crawl']['success']
-            print(f"[{'OK' if success else 'FAILED'}] {name}: {result['crawl']['status']}")
+            success = result['status'] == 'ok'
+            print(f"[{'OK' if success else 'FAILED'}] {name}: {result['status']}")
             return success
         except Exception as exc:
             print(f'[FAILED] {name}: {type(exc).__name__}: {exc}')

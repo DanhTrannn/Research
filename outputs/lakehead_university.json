@@ -1,366 +1,94 @@
 {
-  "schema_version": 3,
-  "generated_at": "2026-11-06T03:14:35.365939+00:00",
+  "schema_version": 4,
   "school": {
-    "slug": "lakehead_university",
-    "name": "Lakehead University"
+    "name": "Lakehead University",
+    "slug": "lakehead_university"
   },
-  "crawl": {
-    "success": true,
-    "status": "ok",
-    "http_status": 200,
-    "error": null,
-    "attempts": [
-      {
-        "client": "requests",
-        "http_status": 200,
-        "final_url": "https://www.lakeheadu.ca/international/future/scholarships-awards",
-        "error": null
-      }
-    ]
-  },
-  "source": {
-    "page_url": "https://www.lakeheadu.ca/international/future/scholarships-awards",
-    "final_url": "https://www.lakeheadu.ca/international/future/scholarships-awards",
-    "captured_at": "2026-11-06T01:25:08.940633+00:00",
-    "attempted_at": "2026-11-06T01:25:08.119815+00:00",
-    "html_sha256": "2bdb8c55ae7c96e0f5384f961eaf707f86e23871aa33e86704c9b96a60987668",
-    "output_file": "outputs/lakehead_university.json",
-    "input_kind": "legacy_json_import",
-    "input_json_sha256": "7d729cf47d2c757e3379986c9e0145813238891f2dc7f763140ca6ba616e5a75"
-  },
-  "scholarships": [],
-  "scholarship_groups": [
+  "source_url": "https://www.lakeheadu.ca/international/future/scholarships-awards",
+  "fetched_at": "2026-11-06T03:40:53.327575+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "data_status": "needs_review",
+  "scholarships": [
     {
-      "id": "group_f43ee84a4eeb559e0721",
-      "name": "International Undergraduate Entrance Scholarships 2027-2028 Automatically considered. No scholarship application is required.",
-      "kind": "tiered_award",
-      "context_headings": [
-        "International Scholarships & Awards",
-        "International Undergraduate Entrance Scholarships 2027-2028 Automatically considered. No scholarship application is required."
-      ],
+      "name": "International Undergraduate Entrance Scholarships 2027-2028",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "application": {
+        "method": "automatic"
+      },
       "tiers": [
         {
-          "id": "tier_8b1f2740c3352da885c9",
-          "criteria": [
-            {
-              "system": "academic_average_percent",
-              "min": 90.0,
-              "max": null,
-              "minimum_inclusive": true,
-              "raw": "90.0%+"
-            },
-            {
-              "system": "international_baccalaureate",
-              "min": 35.0,
-              "max": null,
-              "minimum_inclusive": true,
-              "raw": "35+"
-            }
-          ],
+          "grade_text": "90.0%+",
+          "min_average": 90.0,
           "value_text": "$40,000 ($10,000 x 4 years) 1",
           "values": [
             {
-              "kind": "money",
               "currency": "CAD",
               "min_amount": 10000.0,
               "max_amount": 10000.0,
               "payment_basis": "per_year",
-              "max_payments": 4,
-              "evidence_text": "$10,000 x 4 years"
+              "max_payments": 4
             },
             {
-              "kind": "money",
               "currency": "CAD",
               "min_amount": 40000.0,
               "max_amount": 40000.0,
-              "payment_basis": "total_degree",
-              "max_payments": null,
-              "evidence_text": "$40,000 ($10,000 x 4 years) 1"
+              "payment_basis": "total_degree"
             }
           ],
-          "renewal": {
-            "is_renewable": true,
-            "conditions_text": [
-              "1 Renewable provided a 90% average is achieved in each academic year. If a student's university academic average falls between 80.0% - 89.9%, the student will receive an amended scholarship valued at $7,500 CAD/year for each subsequent academic year for the remaining term of the scholarship."
-            ]
-          },
-          "availability_text": "Unlimited",
-          "evidence_refs": [
-            {
-              "file": "outputs/lakehead_university.json",
-              "json_pointer": "/evidence/tables/0/rows/0"
-            },
-            {
-              "file": "outputs/lakehead_university.json",
-              "json_pointer": "/evidence/renewal/positive/0"
-            }
-          ]
+          "renewable": true,
+          "renewal_conditions": [
+            "1 Renewable provided a 90% average is achieved in each academic year. If a student's university academic average falls between 80.0% - 89.9%, the student will receive an amended scholarship valued at $7,500 CAD/year for each subsequent academic year for the remaining term of the scholarship."
+          ],
+          "ib_average": "35+"
         },
         {
-          "id": "tier_b1450ed892dc66fb1f0a",
-          "criteria": [
-            {
-              "system": "academic_average_percent",
-              "min": 80.0,
-              "max": 89.9,
-              "minimum_inclusive": true,
-              "raw": "80.0% - 89.9%"
-            },
-            {
-              "system": "international_baccalaureate",
-              "min": 30.0,
-              "max": 34.0,
-              "minimum_inclusive": true,
-              "raw": "30-34"
-            }
-          ],
+          "grade_text": "80.0% - 89.9%",
+          "min_average": 80.0,
+          "max_average": 89.9,
           "value_text": "$30,000 ($7,500 x 4 years) 2",
           "values": [
             {
-              "kind": "money",
               "currency": "CAD",
               "min_amount": 7500.0,
               "max_amount": 7500.0,
               "payment_basis": "per_year",
-              "max_payments": 4,
-              "evidence_text": "$7,500 x 4 years"
+              "max_payments": 4
             },
             {
-              "kind": "money",
               "currency": "CAD",
               "min_amount": 30000.0,
               "max_amount": 30000.0,
-              "payment_basis": "total_degree",
-              "max_payments": null,
-              "evidence_text": "$30,000 ($7,500 x 4 years) 2"
+              "payment_basis": "total_degree"
             }
           ],
-          "renewal": {
-            "is_renewable": true,
-            "conditions_text": [
-              "2 Renewable provided an 80% average is achieved in each academic year."
-            ]
-          },
-          "availability_text": "Unlimited",
-          "evidence_refs": [
-            {
-              "file": "outputs/lakehead_university.json",
-              "json_pointer": "/evidence/tables/0/rows/1"
-            },
-            {
-              "file": "outputs/lakehead_university.json",
-              "json_pointer": "/evidence/renewal/positive/1"
-            }
-          ]
+          "renewable": true,
+          "renewal_conditions": [
+            "2 Renewable provided an 80% average is achieved in each academic year."
+          ],
+          "ib_average": "30-34"
         },
         {
-          "id": "tier_ed926de5344acc8f8032",
-          "criteria": [
-            {
-              "system": "academic_average_percent",
-              "min": 75.0,
-              "max": 79.9,
-              "minimum_inclusive": true,
-              "raw": "75.0% - 79.9%"
-            },
-            {
-              "system": "international_baccalaureate",
-              "min": 28.0,
-              "max": 29.0,
-              "minimum_inclusive": true,
-              "raw": "28-29"
-            }
-          ],
+          "grade_text": "75.0% - 79.9%",
+          "min_average": 75.0,
+          "max_average": 79.9,
           "value_text": "$6,000 ($6,000 in Year 1 only) 3",
           "values": [
             {
-              "kind": "money",
               "currency": "CAD",
               "min_amount": 6000.0,
               "max_amount": 6000.0,
-              "payment_basis": "total_degree",
-              "max_payments": null,
-              "evidence_text": "$6,000 ($6,000 in Year 1 only) 3"
-            },
-            {
-              "kind": "money",
-              "currency": "CAD",
-              "min_amount": 6000.0,
-              "max_amount": 6000.0,
-              "payment_basis": "one_time",
-              "max_payments": null,
-              "evidence_text": "$6,000 ($6,000 in Year 1 only) 3"
+              "payment_basis": "one_time"
             }
           ],
-          "renewal": {
-            "is_renewable": false,
-            "conditions_text": [
-              "75.0% - 79.9% | 28-29 | $6,000 ($6,000 in Year 1 only) 3 | Unlimited",
-              "3 Non-renewable, one-time only scholarship awarded in Year 1. 4 Maximum length of scholarship term is 4 academic years or until the first degree is awarded, whichever occurs first. To be considered eligible for scholarship consideration, recipients must be entering Years 1, 2, or 3 of a minimum 4-year undergraduate degree program. Recipients whose status changes and may be charged domestic fees will have their scholarship value reassessed to equate to the domestic entrance scholarship grid and regulations available at that time."
-            ]
-          },
-          "availability_text": "Unlimited",
-          "evidence_refs": [
-            {
-              "file": "outputs/lakehead_university.json",
-              "json_pointer": "/evidence/tables/0/rows/2"
-            },
-            {
-              "file": "outputs/lakehead_university.json",
-              "json_pointer": "/evidence/renewal/negative/1"
-            }
-          ]
-        }
-      ],
-      "verification": {
-        "status": "needs_review",
-        "publishable": false
-      },
-      "evidence_refs": [
-        {
-          "file": "outputs/lakehead_university.json",
-          "json_pointer": "/evidence/tables/0"
+          "renewable": false,
+          "renewal_conditions": [
+            "3 Non-renewable, one-time only scholarship awarded in Year 1. 4 Maximum length of scholarship term is 4 academic years or until the first degree is awarded, whichever occurs first. To be considered eligible for scholarship consideration, recipients must be entering Years 1, 2, or 3 of a minimum 4-year undergraduate degree program. Recipients whose status changes and may be charged domestic fees will have their scholarship value reassessed to equate to the domestic entrance scholarship grid and regulations available at that time."
+          ],
+          "ib_average": "28-29"
         }
       ]
     }
-  ],
-  "application_windows": [],
-  "unresolved_sections": [
-    {
-      "name": "International Scholarships & Awards",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/lakehead_university.json",
-        "json_pointer": "/unresolved_sections/0/texts"
-      },
-      "texts": [
-        "Take advantage of one of Canada's most generous university scholarship programs. We make paying for your university degree easier so you can focus on your education.",
-        "Cost Estimator Join Our Mailing List",
-        "International Undergraduate Entrance Scholarships",
-        "Academic Average (Canadian Equivalent)",
-        "IB Average",
-        "Scholarship Total 4 (in Canadian dollars)",
-        "Scholarships Available",
-        "90.0%+",
-        "35+",
-        "$40,000 ($10,000 x 4 years) 1",
-        "Unlimited",
-        "80.0% - 89.9%",
-        "30-34",
-        "$30,000 ($7,500 x 4 years) 2",
-        "Unlimited",
-        "75.0% - 79.9%",
-        "28-29",
-        "$6,000 ($6,000 in Year 1 only) 3",
-        "Unlimited",
-        "1 Renewable provided a 90% average is achieved in each academic year. If a student's university academic average falls between 80.0% - 89.9%, the student will receive an amended scholarship valued at $7,500 CAD/year for each subsequent academic year for the remaining term of the scholarship.",
-        "2 Renewable provided an 80% average is achieved in each academic year.",
-        "3 Non-renewable, one-time only scholarship awarded in Year 1. 4 Maximum length of scholarship term is 4 academic years or until the first degree is awarded, whichever occurs first. To be considered eligible for scholarship consideration, recipients must be entering Years 1, 2, or 3 of a minimum 4-year undergraduate degree program. Recipients whose status changes and may be charged domestic fees will have their scholarship value reassessed to equate to the domestic entrance scholarship grid and regulations available at that time.",
-        "No. Your Entrance Scholarship will be applied to your first-year tuition to an undergraduate degree program once you have successfully completed Lakehead University's Academic English Program.",
-        "*Please note that all of the above scholarship values, eligibility requirements, and criteria are subject to change without notice.",
-        "International Graduate Scholarships",
-        "Graduate Assistant appointments may be offered to some full-time graduate students (including Visa students) at a rate of $11,314.28 at the Master's level; and $12,338.50 at the Doctoral level. A regular appointment constitutes a maximum of 270 hrs of work over the Fall and Winter terms, averaging not more than 10 hours of work per week. Representative duties, include but are not limited to: preparing classes, teaching, demonstrating, leading seminars, supervising laboratories, marking, consulting with students, holding assigned office hours, setting tests, examination and lab sets, conducting field trips, and providing other academic support assistance. A graduate student is eligible to hold a maximum of two full-time appointments at the Master's level or four full-time appointments at the Doctoral level.",
-        "Some graduate students may also receive a Faculty Research Award. This stipend may be paid to a full–time degree candidate for research or academic activities relevant and related to the student's field(s) of study within the academic program. Faculty Research Awards are awarded by the student's supervisor. Learn more about Graduate Scholarships & Awards",
-        "\"I was won over by the Business program, but the entrance scholarship did play a role in my decision to choose Lakehead. I felt proud of my grades and of the hard work I had put in to achieve them. My scholarship is renewable every year and it works as a great motivator for me to excel in my academics year after year.\" - Vishwa Shah, Honours Bachelor of Commerce Student from India"
-      ]
-    },
-    {
-      "name": "International Undergraduate Entrance Scholarships 2027-2028 Automatically considered. No scholarship application is required.",
-      "reason": "represented_by_tier_group",
-      "evidence_ref": {
-        "file": "outputs/lakehead_university.json",
-        "json_pointer": "/unresolved_sections/1/texts"
-      },
-      "texts": [
-        "Academic Average (Canadian Equivalent)",
-        "IB Average",
-        "Scholarship Total 4 (in Canadian dollars)",
-        "Scholarships Available",
-        "90.0%+",
-        "35+",
-        "$40,000 ($10,000 x 4 years) 1",
-        "Unlimited",
-        "80.0% - 89.9%",
-        "30-34",
-        "$30,000 ($7,500 x 4 years) 2",
-        "Unlimited",
-        "75.0% - 79.9%",
-        "28-29",
-        "$6,000 ($6,000 in Year 1 only) 3",
-        "Unlimited",
-        "1 Renewable provided a 90% average is achieved in each academic year. If a student's university academic average falls between 80.0% - 89.9%, the student will receive an amended scholarship valued at $7,500 CAD/year for each subsequent academic year for the remaining term of the scholarship.",
-        "2 Renewable provided an 80% average is achieved in each academic year.",
-        "3 Non-renewable, one-time only scholarship awarded in Year 1. 4 Maximum length of scholarship term is 4 academic years or until the first degree is awarded, whichever occurs first. To be considered eligible for scholarship consideration, recipients must be entering Years 1, 2, or 3 of a minimum 4-year undergraduate degree program. Recipients whose status changes and may be charged domestic fees will have their scholarship value reassessed to equate to the domestic entrance scholarship grid and regulations available at that time."
-      ]
-    },
-    {
-      "name": "Faculty Research Awards for Graduate Students",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/lakehead_university.json",
-        "json_pointer": "/unresolved_sections/2/texts"
-      },
-      "texts": [
-        "Some graduate students may also receive a Faculty Research Award. This stipend may be paid to a full–time degree candidate for research or academic activities relevant and related to the student's field(s) of study within the academic program. Faculty Research Awards are awarded by the student's supervisor. Learn more about Graduate Scholarships & Awards",
-        "\"I was won over by the Business program, but the entrance scholarship did play a role in my decision to choose Lakehead. I felt proud of my grades and of the hard work I had put in to achieve them. My scholarship is renewable every year and it works as a great motivator for me to excel in my academics year after year.\" - Vishwa Shah, Honours Bachelor of Commerce Student from India"
-      ]
-    }
-  ],
-  "source_tables": [],
-  "cost_breakdowns": [],
-  "evidence": {
-    "tables": [
-      {
-        "heading": "International Undergraduate Entrance Scholarships 2027-2028 Automatically considered. No scholarship application is required.",
-        "headers": [
-          "Academic Average (Canadian Equivalent)",
-          "IB Average",
-          "Scholarship Total 4 (in Canadian dollars)",
-          "Scholarships Available"
-        ],
-        "rows": [
-          [
-            "90.0%+",
-            "35+",
-            "$40,000 ($10,000 x 4 years) 1",
-            "Unlimited"
-          ],
-          [
-            "80.0% - 89.9%",
-            "30-34",
-            "$30,000 ($7,500 x 4 years) 2",
-            "Unlimited"
-          ],
-          [
-            "75.0% - 79.9%",
-            "28-29",
-            "$6,000 ($6,000 in Year 1 only) 3",
-            "Unlimited"
-          ]
-        ],
-        "rows_count": 3
-      }
-    ],
-    "renewal": {
-      "positive": [
-        "1 Renewable provided a 90% average is achieved in each academic year. If a student's university academic average falls between 80.0% - 89.9%, the student will receive an amended scholarship valued at $7,500 CAD/year for each subsequent academic year for the remaining term of the scholarship.",
-        "2 Renewable provided an 80% average is achieved in each academic year."
-      ],
-      "negative": [
-        "$6,000 ($6,000 in Year 1 only) 3",
-        "3 Non-renewable, one-time only scholarship awarded in Year 1. 4 Maximum length of scholarship term is 4 academic years or until the first degree is awarded, whichever occurs first. To be considered eligible for scholarship consideration, recipients must be entering Years 1, 2, or 3 of a minimum 4-year undergraduate degree program. Recipients whose status changes and may be charged domestic fees will have their scholarship value reassessed to equate to the domestic entrance scholarship grid and regulations available at that time."
-      ],
-      "page_status": "mixed"
-    }
-  },
-  "summary": {
-    "named_award_entries": 0,
-    "award_groups": 1,
-    "tiers": 3,
-    "application_windows": 0,
-    "unresolved_sections": 3,
-    "verified_scholarships": 0,
-    "total_scholarships": null
-  }
+  ]
 }

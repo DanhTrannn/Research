@@ -1,174 +1,25 @@
 {
-  "schema_version": 3,
-  "generated_at": "2026-11-06T03:14:35.372203+00:00",
+  "schema_version": 4,
   "school": {
-    "slug": "queens_university",
-    "name": "Queen's University"
+    "name": "Queen's University",
+    "slug": "queens_university"
   },
-  "crawl": {
-    "success": true,
-    "status": "ok",
-    "http_status": 200,
-    "error": null,
-    "attempts": [
-      {
-        "client": "requests",
-        "http_status": 200,
-        "final_url": "https://www.queensu.ca/registrar/financial-aid",
-        "error": null
-      }
-    ]
-  },
-  "source": {
-    "page_url": "https://www.queensu.ca/registrar/financial-aid",
-    "final_url": "https://www.queensu.ca/registrar/financial-aid",
-    "captured_at": "2026-11-06T01:25:10.674840+00:00",
-    "attempted_at": "2026-11-06T01:25:10.375551+00:00",
-    "html_sha256": "557fd2fc882968aa9e8b45c42ceb5b9c122f222bf2c311f6833ec3c763cfbec4",
-    "output_file": "outputs/queens_university.json",
-    "input_kind": "legacy_json_import",
-    "input_json_sha256": "981da6030004f9053ac63627931183beb3c4cfcc2c62a5625feba31c9434fbd6"
-  },
+  "source_url": "https://www.queensu.ca/registrar/financial-aid",
+  "fetched_at": "2026-11-06T03:39:33.583812+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "data_status": "needs_review",
   "scholarships": [
     {
-      "id": "award_69cd5946838b6a2f2551",
       "name": "Queen’s General Bursary",
-      "support_type": "bursary",
-      "context": {
-        "headings": [
-          "How Queen's Financial Aid is Paid"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": null,
-        "criteria_texts": [
-          "If eligible for Queen’s General Bursary, your award will first apply to any balance on your SOLUS Student Account.",
-          "Should you be eligible for a refund for all, or a portion of your General Bursary, your refund will automatically transfer to your bank account in early February, Financial Aid and Awards has verified that your course load has not changed after open enrolment. Please do not submit a refund request."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [],
-        "values": [],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "award_value_not_structured"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Queen’s General Bursary, including named awards granted under the General Bursary program, will be applied to your Queen’s SOLUS Student Account in late December in one disbursement. This payment will include your need-based aid for all terms of study, if you are enrolled, for the current academic year.",
-          "If eligible for Queen’s General Bursary, your award will first apply to any balance on your SOLUS Student Account.",
-          "Should you be eligible for a refund for all, or a portion of your General Bursary, your refund will automatically transfer to your bank account in early February, Financial Aid and Awards has verified that your course load has not changed after open enrolment. Please do not submit a refund request.",
-          "Queen’s Bader College Upper-Year Bursaries"
-        ],
-        "refs": [
-          {
-            "file": "outputs/queens_university.json",
-            "json_pointer": "/scholarships/0/evidence/texts"
-          }
-        ]
-      }
-    }
-  ],
-  "scholarship_groups": [],
-  "application_windows": [],
-  "unresolved_sections": [
-    {
-      "name": "Queen’s Admission, Renewable, Upper-Year, and Exchange Awards",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/queens_university.json",
-        "json_pointer": "/unresolved_sections/0/texts"
-      },
-      "texts": [
-        "To align with Queen’s term-based tuition due dates, we pay all Queen’s undergraduate aid granted at the start of each academic year in two equal disbursements. This includes all first-year undergraduate, renewable, upper-year, and exchange awards.",
-        "The first disbursement of your aid will be applied to your SOLUS student account in August prior to the September fall term tuition deadline",
-        "The second disbursement will be applied to your SOLUS student account in December prior to the January winter term tuition payment deadline",
-        "Queen’s General Bursary"
-      ]
-    },
-    {
-      "name": "Queen’s Bader College Upper-Year Bursaries",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/queens_university.json",
-        "json_pointer": "/unresolved_sections/1/texts"
-      },
-      "texts": [
-        "Bader College upper-year bursaries will be applied to your Queen’s SOLUS Student Account for the term in which you are studying at the Bader College.",
-        "Queen’s Convocation Awards"
-      ]
-    },
-    {
-      "name": "Queen’s Convocation Awards",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/queens_university.json",
-        "json_pointer": "/unresolved_sections/2/texts"
-      },
-      "texts": [
-        "Convocation awards will be applied to your Queen’s SOLUS Student Account at the time they are awarded in one instalment. These awards will automatically refund, a refund request is not required.",
-        "Viewing Your Queen's Financial Aid on SOLUS"
-      ]
-    },
-    {
-      "name": "Award Recipient Information: Posting on Websites, University Publications, or Media Releases",
-      "reason": "administrative_or_application_content",
-      "evidence_ref": {
-        "file": "outputs/queens_university.json",
-        "json_pointer": "/unresolved_sections/3/texts"
-      },
-      "texts": [
-        "The Office of Advancement Donor Experience team may invite you to share a message of gratitude with your donor by completing an online form. You will be given the opportunity to consider this level of consent, or",
-        "You will be contacted by the Office of The University Registrar (Financial Aid and Awards) explaining the request and will be given the opportunity to consider this level of consent",
-        "The only exceptions to this are convocation awards presented on stage, which are considered public information and are published in the appropriate convocation booklet/program.",
-        "Thank Your Donor"
+      "type": "bursary",
+      "payment_notes": [
+        "Queen’s General Bursary, including named awards granted under the General Bursary program, will be applied to your Queen’s SOLUS Student Account in late December in one disbursement. This payment will include your need-based aid for all terms of study, if you are enrolled, for the current academic year.",
+        "Should you be eligible for a refund for all, or a portion of your General Bursary, your refund will automatically transfer to your bank account in early February, Financial Aid and Awards has verified that your course load has not changed after open enrolment. Please do not submit a refund request."
       ]
     }
   ],
-  "source_tables": [],
-  "cost_breakdowns": [],
-  "evidence": {
-    "tables": [],
-    "renewal": {
-      "positive": [
-        "Queen’s Admission, Renewable, Upper-Year, and Exchange Awards",
-        "To align with Queen’s term-based tuition due dates, we pay all Queen’s undergraduate aid granted at the start of each academic year in two equal disbursements. This includes all first-year undergraduate, renewable, upper-year, and exchange awards.",
-        "If a renewable award, the donor will be informed that the award has been renewed"
-      ],
-      "negative": [],
-      "page_status": "positive_mentions"
-    }
-  },
-  "summary": {
-    "named_award_entries": 1,
-    "award_groups": 0,
-    "tiers": 0,
-    "application_windows": 0,
-    "unresolved_sections": 4,
-    "verified_scholarships": 0,
-    "total_scholarships": null
-  }
+  "notes": [
+    "Financial aid overview: payment dates are not scholarship application deadlines. No award amount was established on this page."
+  ]
 }

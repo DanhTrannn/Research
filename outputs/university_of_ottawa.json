@@ -1,377 +1,91 @@
 {
-  "schema_version": 3,
-  "generated_at": "2026-11-06T03:14:35.389072+00:00",
+  "schema_version": 4,
   "school": {
-    "slug": "university_of_ottawa",
-    "name": "University of Ottawa"
+    "name": "University of Ottawa",
+    "slug": "university_of_ottawa"
   },
-  "crawl": {
-    "success": true,
-    "status": "ok",
-    "http_status": 200,
-    "error": null,
-    "attempts": [
-      {
-        "client": "requests",
-        "http_status": 200,
-        "final_url": "https://www.uottawa.ca/study/fees-financial-support/international-english-scholarship",
-        "error": null
-      }
-    ]
-  },
-  "source": {
-    "page_url": "https://www.uottawa.ca/study/fees-financial-support/international-english-scholarship",
-    "final_url": "https://www.uottawa.ca/study/fees-financial-support/international-english-scholarship",
-    "captured_at": "2026-11-06T01:25:22.213231+00:00",
-    "attempted_at": "2026-11-06T01:25:10.778073+00:00",
-    "html_sha256": "58289338da7456118d5b200221a81c7682a963020f202eb67e32bf45ee93da22",
-    "output_file": "outputs/university_of_ottawa.json",
-    "input_kind": "legacy_json_import",
-    "input_json_sha256": "891aaa4cccc0f8fefcd6de87bff6f1cad59636e7939fd3acfdc23f14fcbd39ac"
-  },
+  "source_url": "https://www.uottawa.ca/study/fees-financial-support/international-english-scholarship",
+  "fetched_at": "2026-11-06T03:39:37.155978+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "data_status": "needs_review",
   "scholarships": [
     {
-      "id": "award_b2e7f362d6399f46f942",
       "name": "International English Admission Scholarship",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "International English Scholarships",
-          "Scholarships for students starting in the Winter 2026 term or after"
-        ],
-        "applicant_category": "international",
-        "study_level": "Undergraduate",
-        "intake_texts": [
-          "Scholarships for students starting in the Winter 2026 term or after",
-          "Be newly admitted for the Winter 2026 term or later in an approved English-language undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management."
-        ]
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": null,
-        "criteria_texts": [
-          "Number of awards: Unlimited. This is an automatic scholarship. All eligible students are considered for this award and will be notified at the time of their admission.",
-          "To be eligible, you must:",
-          "Be an international student with a valid study permit.",
-          "Have a minimum admission average of 80%.",
-          "Canadian citizens with dual citizenship (Canada and another country) are not eligible since they already qualify for Canadian tuition rates.",
-          "This scholarship is only available to international students who pay international tuition fees. Students paying domestic fees are not eligible."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "Value of award: $7,500 per term ($60,000 over the course of a four-year degree)"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 7500.0,
-            "max_amount": 7500.0,
-            "payment_basis": "per_term",
-            "max_payments": null,
-            "evidence_text": "Value of award: $7,500 per term ($60,000 over the course of a four-year degree)"
-          },
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 60000.0,
-            "max_amount": 60000.0,
-            "payment_basis": "total_degree",
-            "max_payments": null,
-            "evidence_text": "Value of award: $7,500 per term ($60,000 over the course of a four-year degree)"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": true
-      },
-      "renewal": {
-        "is_renewable": true,
-        "conditions_text": [
-          "Frequency of the award: Renewable (maximum 12 instalments)",
-          "This scholarship can be renewed for up to 12 instalments if the student meets the renewal criterion:"
-        ]
-      },
-      "application": {
-        "method": "automatic",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_schedule_requires_terms_review"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Number of awards: Unlimited. This is an automatic scholarship. All eligible students are considered for this award and will be notified at the time of their admission.",
-          "Value of award: $7,500 per term ($60,000 over the course of a four-year degree)",
-          "Frequency of the award: Renewable (maximum 12 instalments)",
-          "Level or program of study: Undergraduate",
-          "To be eligible, you must:",
-          "Be an international student with a valid study permit.",
-          "Be newly admitted for the Winter 2026 term or later in an approved English-language undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management.",
-          "Have a minimum admission average of 80%.",
-          "Not enrol in the French immersion stream.",
-          "Be enrolled full-time.",
-          "Notes:",
-          "Canadian citizens with dual citizenship (Canada and another country) are not eligible since they already qualify for Canadian tuition rates.",
-          "This scholarship is only available to international students who pay international tuition fees. Students paying domestic fees are not eligible.",
-          "This scholarship can be renewed for up to 12 instalments if the student meets the renewal criterion:",
-          "Remain enrolled full-time in an undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management.",
-          "View full details in the terms of reference ."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_ottawa.json",
-            "json_pointer": "/scholarships/0/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_3f3dac1dac80fd65a8e8",
-      "name": "International English Academic Excellence Scholarship",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "International English Scholarships",
-          "Scholarships for students starting in the Winter 2026 term or after"
-        ],
-        "applicant_category": "international",
-        "study_level": "Undergraduate",
-        "intake_texts": [
-          "Scholarships for students starting in the Winter 2026 term or after",
-          "Be newly admitted in the Winter 2026 term or later in an approved English-language undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management."
-        ]
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": null,
-        "criteria_texts": [
-          "To be eligible, you must:",
-          "Be an international student with a valid study permit.",
-          "Have a minimum admission average of 95%;",
-          "Note: This scholarship is only available to international students who pay international tuition fees. Students paying domestic fees are not eligible."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "Value of award: $10,000 ($5,000 per term)"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 10000.0,
-            "max_amount": 10000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Value of award: $10,000 ($5,000 per term)"
-          },
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 5000.0,
-            "max_amount": 5000.0,
-            "payment_basis": "per_term",
-            "max_payments": null,
-            "evidence_text": "Value of award: $10,000 ($5,000 per term)"
-          }
-        ],
-        "award_count": 100,
-        "unlimited_awards": false
-      },
-      "renewal": {
-        "is_renewable": false,
-        "conditions_text": [
-          "This scholarship is not renewable; however, it can be combined with the International English Admission Scholarship."
-        ]
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Number of awards: 100",
-          "Value of award: $10,000 ($5,000 per term)",
-          "Level or program of study: Undergraduate",
-          "This scholarship is not renewable; however, it can be combined with the International English Admission Scholarship.",
-          "To be eligible, you must:",
-          "Be an international student with a valid study permit.",
-          "Be newly admitted in the Winter 2026 term or later in an approved English-language undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management.",
-          "Have a minimum admission average of 95%;",
-          "Not enrol in the French immersion stream; and",
-          "Be enrolled full-time.",
-          "Note: This scholarship is only available to international students who pay international tuition fees. Students paying domestic fees are not eligible.",
-          "View full details in the terms of reference ."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_ottawa.json",
-            "json_pointer": "/scholarships/1/evidence/texts"
-          }
-        ]
-      }
-    }
-  ],
-  "scholarship_groups": [],
-  "application_windows": [],
-  "unresolved_sections": [
-    {
-      "name": "International English Scholarships",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_ottawa.json",
-        "json_pointer": "/unresolved_sections/0/texts"
-      },
-      "texts": [
-        "Current scholarships",
-        "Scholarships from previous years",
-        "Number of awards: Unlimited. This is an automatic scholarship. All eligible students are considered for this award and will be notified at the time of their admission.",
-        "Value of award: $7,500 per term ($60,000 over the course of a four-year degree)",
-        "Frequency of the award: Renewable (maximum 12 instalments)",
-        "Level or program of study: Undergraduate",
-        "To be eligible, you must:",
+      "description": "Conditions for keeping the scholarship",
+      "value_texts": [
+        "Value of award: $7,500 per term ($60,000 over the course of a four-year degree)"
+      ],
+      "values": [
+        {
+          "min_amount": 7500.0,
+          "max_amount": 7500.0,
+          "payment_basis": "per_term"
+        },
+        {
+          "min_amount": 60000.0,
+          "max_amount": 60000.0,
+          "payment_basis": "total_degree"
+        }
+      ],
+      "eligibility": [
+        "Eligibility criteria",
         "Be an international student with a valid study permit.",
-        "Be newly admitted for the Winter 2026 term or later in an approved English-language undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management.",
         "Have a minimum admission average of 80%.",
-        "Not enrol in the French immersion stream.",
         "Be enrolled full-time.",
-        "Notes:",
         "Canadian citizens with dual citizenship (Canada and another country) are not eligible since they already qualify for Canadian tuition rates.",
         "This scholarship is only available to international students who pay international tuition fees. Students paying domestic fees are not eligible.",
-        "This scholarship can be renewed for up to 12 instalments if the student meets the renewal criterion:",
-        "Remain enrolled full-time in an undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management.",
-        "View full details in the terms of reference .",
-        "Number of awards: 100",
-        "Value of award: $10,000 ($5,000 per term)",
-        "Level or program of study: Undergraduate",
-        "This scholarship is not renewable; however, it can be combined with the International English Admission Scholarship.",
-        "To be eligible, you must:",
-        "Be an international student with a valid study permit.",
-        "Be newly admitted in the Winter 2026 term or later in an approved English-language undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management.",
-        "Have a minimum admission average of 95%;",
-        "Not enrol in the French immersion stream; and",
-        "Be enrolled full-time.",
-        "Note: This scholarship is only available to international students who pay international tuition fees. Students paying domestic fees are not eligible.",
-        "View full details in the terms of reference .",
-        "International English Entrance Scholarship",
-        "International English Excellence Scholarship",
-        "International English Entrance Scholarship - Faculty of Engineering",
-        "International English Excellence Scholarship - Faculty of Engineering",
-        "International English Entrance Scholarship - Faculty of Science and Faculty of Social Sciences",
-        "International English Excellence Scholarship - Faculty of Science and Faculty of Social Sciences"
-      ]
-    },
-    {
-      "name": "Scholarships for students starting in the Winter 2026 term or after",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_ottawa.json",
-        "json_pointer": "/unresolved_sections/1/texts"
-      },
-      "texts": [
-        "Number of awards: Unlimited. This is an automatic scholarship. All eligible students are considered for this award and will be notified at the time of their admission.",
-        "Value of award: $7,500 per term ($60,000 over the course of a four-year degree)",
-        "Frequency of the award: Renewable (maximum 12 instalments)",
-        "Level or program of study: Undergraduate",
-        "To be eligible, you must:",
-        "Be an international student with a valid study permit.",
-        "Be newly admitted for the Winter 2026 term or later in an approved English-language undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management.",
-        "Have a minimum admission average of 80%.",
-        "Not enrol in the French immersion stream.",
-        "Be enrolled full-time.",
-        "Notes:",
-        "Canadian citizens with dual citizenship (Canada and another country) are not eligible since they already qualify for Canadian tuition rates.",
-        "This scholarship is only available to international students who pay international tuition fees. Students paying domestic fees are not eligible.",
-        "This scholarship can be renewed for up to 12 instalments if the student meets the renewal criterion:",
-        "Remain enrolled full-time in an undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management.",
-        "View full details in the terms of reference .",
-        "Number of awards: 100",
-        "Value of award: $10,000 ($5,000 per term)",
-        "Level or program of study: Undergraduate",
-        "This scholarship is not renewable; however, it can be combined with the International English Admission Scholarship.",
-        "To be eligible, you must:",
-        "Be an international student with a valid study permit.",
-        "Be newly admitted in the Winter 2026 term or later in an approved English-language undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management.",
-        "Have a minimum admission average of 95%;",
-        "Not enrol in the French immersion stream; and",
-        "Be enrolled full-time.",
-        "Note: This scholarship is only available to international students who pay international tuition fees. Students paying domestic fees are not eligible.",
-        "View full details in the terms of reference ."
-      ]
-    },
-    {
-      "name": "Scholarships for students starting between the Fall 2024 term and the Fall 2025 term arrow_drop_down",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_ottawa.json",
-        "json_pointer": "/unresolved_sections/2/texts"
-      },
-      "texts": [
-        "International English Entrance Scholarship",
-        "International English Excellence Scholarship"
-      ]
-    },
-    {
-      "name": "Scholarships for students starting between the Fall 2022 term and the Winter 2024 term arrow_drop_down",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_ottawa.json",
-        "json_pointer": "/unresolved_sections/3/texts"
-      },
-      "texts": [
-        "International English Entrance Scholarship - Faculty of Engineering",
-        "International English Excellence Scholarship - Faculty of Engineering",
-        "International English Entrance Scholarship - Faculty of Science and Faculty of Social Sciences",
-        "International English Excellence Scholarship - Faculty of Science and Faculty of Social Sciences"
-      ]
-    }
-  ],
-  "source_tables": [],
-  "cost_breakdowns": [],
-  "evidence": {
-    "tables": [],
-    "renewal": {
-      "positive": [
+        "Remain enrolled full-time in an undergraduate program in one of the following faculties: Arts, Engineering, Health Sciences, Science, Social Sciences or the Telfer School of Management."
+      ],
+      "renewable": true,
+      "renewal_conditions": [
         "Frequency of the award: Renewable (maximum 12 instalments)",
         "This scholarship can be renewed for up to 12 instalments if the student meets the renewal criterion:"
       ],
-      "negative": [
+      "unlimited_awards": true,
+      "application": {
+        "method": "automatic"
+      },
+      "type": "scholarship",
+      "applicant_category": "international",
+      "study_level": "undergraduate",
+      "notes": [
+        "The published per-term amount, degree total and maximum instalments must be checked against the full terms; do not multiply them automatically."
+      ]
+    },
+    {
+      "name": "International English Academic Excellence Scholarship",
+      "description": "This scholarship is not renewable; however, it can be combined with the International English Admission Scholarship.",
+      "value_texts": [
+        "Value of award: $10,000 ($5,000 per term)"
+      ],
+      "values": [
+        {
+          "min_amount": 10000.0,
+          "max_amount": 10000.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 5000.0,
+          "max_amount": 5000.0,
+          "payment_basis": "per_term"
+        }
+      ],
+      "eligibility": [
+        "Eligibility criteria",
+        "Be an international student with a valid study permit.",
+        "Have a minimum admission average of 95%;",
+        "Be enrolled full-time.",
+        "Note: This scholarship is only available to international students who pay international tuition fees. Students paying domestic fees are not eligible."
+      ],
+      "renewable": false,
+      "renewal_conditions": [
         "This scholarship is not renewable; however, it can be combined with the International English Admission Scholarship."
       ],
-      "page_status": "mixed"
+      "number_of_awards": 100,
+      "type": "scholarship",
+      "applicant_category": "international",
+      "study_level": "undergraduate"
     }
-  },
-  "summary": {
-    "named_award_entries": 2,
-    "award_groups": 0,
-    "tiers": 0,
-    "application_windows": 0,
-    "unresolved_sections": 4,
-    "verified_scholarships": 0,
-    "total_scholarships": null
-  }
+  ]
 }

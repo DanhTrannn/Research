@@ -1,211 +1,46 @@
 {
-  "schema_version": 3,
-  "generated_at": "2026-11-06T03:14:35.362532+00:00",
+  "schema_version": 4,
   "school": {
-    "slug": "ibu_university",
-    "name": "International Business University (IBU)"
+    "name": "International Business University (IBU)",
+    "slug": "ibu_university"
   },
-  "crawl": {
-    "success": true,
-    "status": "ok",
-    "http_status": 200,
-    "error": null,
-    "attempts": [
-      {
-        "client": "requests",
-        "http_status": 200,
-        "final_url": "https://ibu.ca/admission/undergraduate-admissions/undergraduate-tuition-fees/entrance-scholarships/",
-        "error": null
-      }
-    ]
-  },
-  "source": {
-    "page_url": "https://ibu.ca/admission/undergraduate-admissions/undergraduate-tuition-fees/entrance-scholarships/",
-    "final_url": "https://ibu.ca/admission/undergraduate-admissions/undergraduate-tuition-fees/entrance-scholarships/",
-    "captured_at": "2026-11-06T01:25:10.152076+00:00",
-    "attempted_at": "2026-11-06T01:25:08.119164+00:00",
-    "html_sha256": "f69d47b0fa02d5622ff9bdcda0399bf06dc78101cff50f37d175235a20caa696",
-    "output_file": "outputs/ibu_university.json",
-    "input_kind": "legacy_json_import",
-    "input_json_sha256": "6697f7de1dc8347d779eabe364bae301216d07cca1e093eeb416854c5274b1e4"
-  },
-  "scholarships": [],
-  "scholarship_groups": [
+  "source_url": "https://ibu.ca/admission/undergraduate-admissions/undergraduate-tuition-fees/entrance-scholarships/",
+  "fetched_at": "2026-11-06T03:39:35.742469+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "data_status": "needs_review",
+  "scholarships": [
     {
-      "id": "award_8cce083ebcb66cc322ee",
       "name": "Entrance Scholarships for Academic Achievement",
-      "kind": "section_group",
-      "tiers": [],
-      "details": {
-        "id": "award_8cce083ebcb66cc322ee",
-        "name": "Entrance Scholarships for Academic Achievement",
-        "support_type": "scholarship",
-        "context": {
-          "headings": [
-            "Domestic"
-          ],
-          "applicant_category": "domestic",
-          "study_level": null,
-          "intake_texts": []
-        },
-        "eligibility": {
-          "international_eligible": null,
-          "programs_text": null,
-          "criteria_texts": [
-            "you are a Canadian citizen or hold permanent resident status."
-          ],
-          "campus_text": null,
-          "term_text": null
-        },
-        "benefit": {
-          "display_texts": [],
-          "values": [],
-          "award_count": null,
-          "unlimited_awards": null
-        },
-        "renewal": {
-          "is_renewable": null,
-          "conditions_text": []
-        },
-        "application": {
-          "method": "unknown",
-          "application_required_flag": null,
-          "instructions_text": null,
-          "deadlines": []
-        },
-        "verification": {
-          "status": "needs_review",
-          "publishable": false,
-          "issues": [
-            "requires_human_review",
-            "award_value_not_structured"
-          ]
-        },
-        "evidence": {
-          "texts": [
-            "you are a Canadian citizen or hold permanent resident status.",
-            "you are currently a full-time secondary school student (with continuous full-time secondary school attendance for the past 4 years) or",
-            "you completed your full-time secondary school studies no more than one academic year prior to your semester of admission (with continuous full-time secondary school attendance for 4 years)",
-            "you are beginning post-secondary studies for the first time.",
-            "you will be registered full-time* in your IBU degree program.",
-            "Entrance scholarships are granted for each of your first two IBU semesters and are awarded based on the average of your top six Ontario Grade 12 U or M final full credit course grades, including the specific required courses for your program (or equivalent Grade 12 final credit course grades from secondary schools outside of Ontario). **",
-            "Entrance scholarships for academic excellence are allocated as follows:",
-            "* Full-time status at IBU required for entrance scholarships is defined as a minimum 80% course load (12 credit hours). Entrance scholarships will be cancelled if you drop courses and reduce your course load to below 12 credit hours at any time for that semester. ** The determination of the credits to be used in the calculation of your Grade 12 average lies solely at the discretion of IBU; as well, changes to final secondary school grades received after August 1 will not result in recalculation of the average. *** If you earn a grade point average of at least 4.0 for your second semester you will also receive this scholarship in your third semester, and you will continue to receive the scholarship as long as you continue to take a full-time (80%) course load and earn a minimum 4.0 grade point semester average, up to a maximum of 8 semesters. If you register full-time and earn a 4.0 grade point average in each semester, you will receive the maximum 8 entrance scholarship awards.",
-            "General Entrance Scholarships"
-          ],
-          "refs": [
-            {
-              "file": "outputs/ibu_university.json",
-              "json_pointer": "/scholarship_groups/0/details/evidence/texts"
-            }
-          ]
-        }
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false
-      }
+      "eligibility": [
+        "you are a Canadian citizen or hold permanent resident status.",
+        "you are currently a full-time secondary school student (with continuous full-time secondary school attendance for the past 4 years) or",
+        "you completed your full-time secondary school studies no more than one academic year prior to your semester of admission (with continuous full-time secondary school attendance for 4 years)",
+        "you will be registered full-time* in your IBU degree program.",
+        "* Full-time status at IBU required for entrance scholarships is defined as a minimum 80% course load (12 credit hours). Entrance scholarships will be cancelled if you drop courses and reduce your course load to below 12 credit hours at any time for that semester. ** The determination of the credits to be used in the calculation of your Grade 12 average lies solely at the discretion of IBU; as well, changes to final secondary school grades received after August 1 will not result in recalculation of the average. *** If you earn a grade point average of at least 4.0 for your second semester you will also receive this scholarship in your third semester, and you will continue to receive the scholarship as long as you continue to take a full-time (80%) course load and earn a minimum 4.0 grade point semester average, up to a maximum of 8 semesters. If you register full-time and earn a 4.0 grade point average in each semester, you will receive the maximum 8 entrance scholarship awards."
+      ],
+      "applicant_category": "domestic",
+      "type": "scholarship_group"
     },
     {
-      "id": "award_fe3bdbc36f6926ef62d4",
       "name": "General Entrance Scholarships",
-      "kind": "section_group",
-      "tiers": [],
-      "details": {
-        "id": "award_fe3bdbc36f6926ef62d4",
-        "name": "General Entrance Scholarships",
-        "support_type": "scholarship",
-        "context": {
-          "headings": [
-            "Domestic"
-          ],
-          "applicant_category": "domestic",
-          "study_level": null,
-          "intake_texts": []
-        },
-        "eligibility": {
-          "international_eligible": null,
-          "programs_text": null,
-          "criteria_texts": [
-            "you are a Canadian citizen or hold permanent resident status.",
-            "Currently, IBU students are not eligible to receive funding through the Ontario Student Assistance Program (OSAP). However, there are several other options that can be explored.",
-            "Crown Wards: If you are or were a crown ward and spent at least one full year in foster care, you may be eligible for a full waiver of your tuition and ancillary fees. Contact the Enrolment Services office for details."
-          ],
-          "campus_text": null,
-          "term_text": null
-        },
-        "benefit": {
-          "display_texts": [],
-          "values": [],
-          "award_count": null,
-          "unlimited_awards": null
-        },
-        "renewal": {
-          "is_renewable": null,
-          "conditions_text": []
-        },
-        "application": {
-          "method": "unknown",
-          "application_required_flag": null,
-          "instructions_text": null,
-          "deadlines": []
-        },
-        "verification": {
-          "status": "needs_review",
-          "publishable": false,
-          "issues": [
-            "requires_human_review",
-            "award_value_not_structured"
-          ]
-        },
-        "evidence": {
-          "texts": [
-            "you did not receive a merit-based entrance scholarship.",
-            "you are a Canadian citizen or hold permanent resident status.",
-            "you will be registered full-time* in your IBU degree program.",
-            "* Full-time status at IBU required for entrance scholarships is defined as a minimum 80% course load (12 credit hours). Entrance scholarships will be cancelled if you drop courses and reduce your course load to below 12 credit hours at any time during the semester.",
-            "Currently, IBU students are not eligible to receive funding through the Ontario Student Assistance Program (OSAP). However, there are several other options that can be explored.",
-            "These include:",
-            "Bank Loans: Most financial institutions offer line of credit loans to students at favourable rates. Speak to a representative at your bank or credit union to discuss their terms and then research the terms at one or two other financial institutions before making your decision.",
-            "Education Savings Plans: You and/or your family may have been putting aside funds for your education through an education savings plan. Once you have been admitted and registered for your courses, contact your plan to find out what you need to do to have your funds released.",
-            "Sponsorships: Some students are supported by third party organizations, by their Indigenous bands or by foreign governments. These organizations can transfer the funds directly to IBU. If sponsored students are not able to pay their fees by the deadline, or their sponsor will pay directly to IBU, they must submit their sponsorship letter or confirmation to the Enrolment Services office.",
-            "Crown Wards: If you are or were a crown ward and spent at least one full year in foster care, you may be eligible for a full waiver of your tuition and ancillary fees. Contact the Enrolment Services office for details.",
-            "HigherEdPoints: You (and your friends and family!) can convert Aeroplan, American Express, CIBC or TD points, or a HigherEdPoints gift certificate, into funds applied directly to your tuition fees. For details, see HigherEdPoints.com.",
-            "Entrance Scholarships: If you have received an entrance scholarship it will be applied directly to your account.",
-            "Other Scholarships: There are many organizations that offer scholarships to students, some with specific and unique criteria. Review the scholarship opportunities and applications listed on ScholarshipsCanada.com, some of which may fit your situation. Submit as many applications as you can. Another site to explore is yconic.com.",
-            "Payment Plan: If you are experiencing difficulties meeting the payment deadline and can demonstrate the ability to make regular payments, please go to Enrolment Services to discuss a payment plan option (not to exceed one semester).",
-            "International"
-          ],
-          "refs": [
-            {
-              "file": "outputs/ibu_university.json",
-              "json_pointer": "/scholarship_groups/1/details/evidence/texts"
-            }
-          ]
-        }
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false
-      }
-    }
-  ],
-  "application_windows": [],
-  "unresolved_sections": [
+      "description": "you did not receive a merit-based entrance scholarship.",
+      "eligibility": [
+        "you are a Canadian citizen or hold permanent resident status.",
+        "you will be registered full-time* in your IBU degree program.",
+        "* Full-time status at IBU required for entrance scholarships is defined as a minimum 80% course load (12 credit hours). Entrance scholarships will be cancelled if you drop courses and reduce your course load to below 12 credit hours at any time during the semester.",
+        "Currently, IBU students are not eligible to receive funding through the Ontario Student Assistance Program (OSAP). However, there are several other options that can be explored.",
+        "Crown Wards: If you are or were a crown ward and spent at least one full year in foster care, you may be eligible for a full waiver of your tuition and ancillary fees. Contact the Enrolment Services office for details."
+      ],
+      "applicant_category": "domestic",
+      "type": "scholarship_group"
+    },
     {
-      "name": "International Undergraduate Awards",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/unresolved_sections/0/texts"
-      },
-      "texts": [
-        "The following awards are bestowed automatically. You don’t need to apply for an award, as these awards will be granted at the point of admission (if eligibility is met).",
-        "Americas Bursary",
-        "European Bursary",
-        "South East Asia Regional Bursary",
-        "Special Regional Bursary",
-        "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
+      "name": "Americas Bursary",
+      "type": "bursary",
+      "applicant_category": "international",
+      "programs": "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
+      "eligible_countries": [
         "Anguilla",
         "Antigua & Barbuda",
         "Argentina",
@@ -252,234 +87,50 @@
         "Trinidad & Tobago",
         "United States of America",
         "Uruguay",
-        "Venezuela",
-        "Program: Bachelor of Commerce (All Amounts in CAD)",
-        "$69,000",
-        "Less: International Scholarship",
-        "$9,000",
-        "Less: Regional Scholarship",
-        "$9,000",
-        "Total Tuition Fee",
-        "$51,000*",
-        "$5,625 minimum deposit requirement except for LATAM and Direct Stream Countries. *Course textbooks and International Student Health Insurance are not included.",
-        "Condition(s):",
+        "Venezuela"
+      ],
+      "benefits": [
+        {
+          "label": "International Scholarship",
+          "value_text": "$9,000",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 9000.0,
+              "max_amount": 9000.0,
+              "payment_basis": "unknown"
+            }
+          ]
+        },
+        {
+          "label": "Regional Scholarship",
+          "value_text": "$9,000",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 9000.0,
+              "max_amount": 9000.0,
+              "payment_basis": "unknown"
+            }
+          ]
+        }
+      ],
+      "validity_text": "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines.",
+      "expired": true,
+      "conditions": [
         "The student must commence their program before their offer for admission expires.",
         "The student must keep programs.",
         "The student must pay all fees (that are not covered by the award) by their respective due dates.",
         "The student must maintain good academic standing.",
-        "The student must maintain a full-time enrolment status.",
-        "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines.",
-        "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
-        "Albania",
-        "Andorra",
-        "Austria",
-        "Belgium",
-        "Bosnia and Herzegovina",
-        "Bulgaria",
-        "Croatia",
-        "Cyprus",
-        "Czechia",
-        "Denmark",
-        "Estonia",
-        "Finland",
-        "France",
-        "Germany",
-        "Greece",
-        "Hungary",
-        "Iceland",
-        "Ireland",
-        "Italy",
-        "Kosovo",
-        "Latvia",
-        "Liechtenstein",
-        "Lithuania",
-        "Luxembourg",
-        "Malta",
-        "Monaco",
-        "Montenegro",
-        "North Macedonia",
-        "Norway",
-        "Poland",
-        "Portugal",
-        "Romania",
-        "San Marino",
-        "Serbia",
-        "Slovakia",
-        "Slovenia",
-        "Spain",
-        "Sweden",
-        "Switzerland",
-        "Turkey",
-        "United Kingdom",
-        "Program: Bachelor of Commerce (All Amounts in CAD)",
-        "$69,000",
-        "Less: International Scholarship",
-        "$9,000",
-        "Less: Regional Scholarship",
-        "$9,000",
-        "Total Tuition Fee",
-        "$51,000*",
-        "$5,625 minimum deposit requirement except for LATAM and Direct Stream Countries. *Course textbooks and International Student Health Insurance are not included.",
-        "Condition(s):",
-        "The student must commence their program before their offer for admission expires.",
-        "The student must keep programs.",
-        "The student must pay all fees (that are not covered by the award) by their respective due dates.",
-        "The student must maintain good academic standing.",
-        "The student must maintain a full-time enrolment status.",
-        "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines.",
-        "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
-        "Brunei",
-        "Cambodia",
-        "China",
-        "Indonesia",
-        "Japan",
-        "Laos",
-        "Malaysia",
-        "Myanmar",
-        "Singapore",
-        "South Korea",
-        "Taiwan",
-        "Thailand",
-        "Timor Leste",
-        "Vietnam",
-        "$5,625 minimum deposit requirement except for LATAM and Direct Stream Countries. *Course textbooks and International Student Health Insurance are not included.",
-        "Condition(s):",
-        "The student must commence their program before their offer for admission expires.",
-        "The student must keep programs.",
-        "The student must pay all fees (that are not covered by the award) by their respective due dates.",
-        "The student must maintain good academic standing.",
-        "The student must maintain a full-time enrolment status.",
-        "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines.",
-        "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
-        "Mauritius",
-        "Morocco",
-        "Mongolia",
-        "South Korea",
-        "Turkey",
-        "Program: Bachelor of Commerce (All Amounts in CAD)",
-        "$69,000",
-        "Less: International Scholarship",
-        "$9,000",
-        "Less: Regional Scholarship",
-        "$9,000",
-        "Total Tuition Fee",
-        "$51,000*",
-        "$5,625 minimum deposit requirement except for LATAM and Direct Stream Countries. *Course textbooks and International Student Health Insurance are not included.",
-        "Condition(s):",
-        "The student must commence their program before their offer for admission expires.",
-        "The student must keep programs.",
-        "The student must pay all fees (that are not covered by the award) by their respective due dates.",
-        "The student must maintain good academic standing.",
-        "The student must maintain a full-time enrolment status.",
-        "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines."
-      ]
-    },
-    {
-      "name": "Americas Bursary",
-      "reason": "regional_tab_boundaries_not_reliable",
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/unresolved_sections/1/texts"
-      },
-      "texts": [
-        "European Bursary"
+        "The student must maintain a full-time enrolment status."
       ]
     },
     {
       "name": "European Bursary",
-      "reason": "regional_tab_boundaries_not_reliable",
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/unresolved_sections/2/texts"
-      },
-      "texts": [
-        "South East Asia Regional Bursary"
-      ]
-    },
-    {
-      "name": "South East Asia Regional Bursary",
-      "reason": "regional_tab_boundaries_not_reliable",
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/unresolved_sections/3/texts"
-      },
-      "texts": [
-        "Special Regional Bursary"
-      ]
-    },
-    {
-      "name": "Special Regional Bursary",
-      "reason": "regional_tab_boundaries_not_reliable",
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/unresolved_sections/4/texts"
-      },
-      "texts": [
-        "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
-        "Anguilla",
-        "Antigua & Barbuda",
-        "Argentina",
-        "Aruba",
-        "Bahamas",
-        "Barbados",
-        "Belize",
-        "Bolivia",
-        "Brazil",
-        "British Virgin Islands",
-        "Cayman Islands",
-        "Chile",
-        "Colombia",
-        "Costa Rica",
-        "Cuba",
-        "Curaçao",
-        "Dominica",
-        "Dominican Republic",
-        "Ecuador",
-        "El Salvador",
-        "Falkland Islands",
-        "French Guiana",
-        "Grenada",
-        "Guadeloupe",
-        "Guatemala",
-        "Guyana",
-        "Haiti",
-        "Honduras",
-        "Jamaica",
-        "Martinique",
-        "Mexico",
-        "Montserrat",
-        "Nicaragua",
-        "Panama",
-        "Paraguay",
-        "Peru",
-        "Puerto Rico",
-        "Saint Barthélemy",
-        "Saint Kitts & Nevis",
-        "Saint Lucia",
-        "Saint Martin",
-        "Saint Vincent & Grenadines",
-        "Suriname",
-        "Trinidad & Tobago",
-        "United States of America",
-        "Uruguay",
-        "Venezuela",
-        "Program: Bachelor of Commerce (All Amounts in CAD)",
-        "$69,000",
-        "Less: International Scholarship",
-        "$9,000",
-        "Less: Regional Scholarship",
-        "$9,000",
-        "Total Tuition Fee",
-        "$51,000*",
-        "$5,625 minimum deposit requirement except for LATAM and Direct Stream Countries. *Course textbooks and International Student Health Insurance are not included.",
-        "Condition(s):",
-        "The student must commence their program before their offer for admission expires.",
-        "The student must keep programs.",
-        "The student must pay all fees (that are not covered by the award) by their respective due dates.",
-        "The student must maintain good academic standing.",
-        "The student must maintain a full-time enrolment status.",
-        "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines.",
-        "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
+      "type": "bursary",
+      "applicant_category": "international",
+      "programs": "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
+      "eligible_countries": [
         "Albania",
         "Andorra",
         "Austria",
@@ -520,24 +171,50 @@
         "Sweden",
         "Switzerland",
         "Turkey",
-        "United Kingdom",
-        "Program: Bachelor of Commerce (All Amounts in CAD)",
-        "$69,000",
-        "Less: International Scholarship",
-        "$9,000",
-        "Less: Regional Scholarship",
-        "$9,000",
-        "Total Tuition Fee",
-        "$51,000*",
-        "$5,625 minimum deposit requirement except for LATAM and Direct Stream Countries. *Course textbooks and International Student Health Insurance are not included.",
-        "Condition(s):",
+        "United Kingdom"
+      ],
+      "benefits": [
+        {
+          "label": "International Scholarship",
+          "value_text": "$9,000",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 9000.0,
+              "max_amount": 9000.0,
+              "payment_basis": "unknown"
+            }
+          ]
+        },
+        {
+          "label": "Regional Scholarship",
+          "value_text": "$9,000",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 9000.0,
+              "max_amount": 9000.0,
+              "payment_basis": "unknown"
+            }
+          ]
+        }
+      ],
+      "validity_text": "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines.",
+      "expired": true,
+      "conditions": [
         "The student must commence their program before their offer for admission expires.",
         "The student must keep programs.",
         "The student must pay all fees (that are not covered by the award) by their respective due dates.",
         "The student must maintain good academic standing.",
-        "The student must maintain a full-time enrolment status.",
-        "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines.",
-        "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
+        "The student must maintain a full-time enrolment status."
+      ]
+    },
+    {
+      "name": "South East Asia Regional Bursary",
+      "type": "bursary",
+      "applicant_category": "international",
+      "programs": "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
+      "eligible_countries": [
         "Brunei",
         "Cambodia",
         "China",
@@ -551,548 +228,65 @@
         "Taiwan",
         "Thailand",
         "Timor Leste",
-        "Vietnam",
-        "$5,625 minimum deposit requirement except for LATAM and Direct Stream Countries. *Course textbooks and International Student Health Insurance are not included.",
-        "Condition(s):",
+        "Vietnam"
+      ],
+      "validity_text": "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines.",
+      "expired": true,
+      "conditions": [
         "The student must commence their program before their offer for admission expires.",
         "The student must keep programs.",
         "The student must pay all fees (that are not covered by the award) by their respective due dates.",
         "The student must maintain good academic standing.",
-        "The student must maintain a full-time enrolment status.",
-        "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines.",
-        "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
+        "The student must maintain a full-time enrolment status."
+      ]
+    },
+    {
+      "name": "Special Regional Bursary",
+      "type": "bursary",
+      "applicant_category": "international",
+      "programs": "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
+      "eligible_countries": [
         "Mauritius",
         "Morocco",
         "Mongolia",
         "South Korea",
-        "Turkey",
-        "Program: Bachelor of Commerce (All Amounts in CAD)",
-        "$69,000",
-        "Less: International Scholarship",
-        "$9,000",
-        "Less: Regional Scholarship",
-        "$9,000",
-        "Total Tuition Fee",
-        "$51,000*",
-        "$5,625 minimum deposit requirement except for LATAM and Direct Stream Countries. *Course textbooks and International Student Health Insurance are not included.",
-        "Condition(s):",
+        "Turkey"
+      ],
+      "benefits": [
+        {
+          "label": "International Scholarship",
+          "value_text": "$9,000",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 9000.0,
+              "max_amount": 9000.0,
+              "payment_basis": "unknown"
+            }
+          ]
+        },
+        {
+          "label": "Regional Scholarship",
+          "value_text": "$9,000",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 9000.0,
+              "max_amount": 9000.0,
+              "payment_basis": "unknown"
+            }
+          ]
+        }
+      ],
+      "validity_text": "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines.",
+      "expired": true,
+      "conditions": [
         "The student must commence their program before their offer for admission expires.",
         "The student must keep programs.",
         "The student must pay all fees (that are not covered by the award) by their respective due dates.",
         "The student must maintain good academic standing.",
-        "The student must maintain a full-time enrolment status.",
-        "Award End Date: This grant is valid until the end of 2025, with Fall 2025 being the last intake available for eligibility. Eligible applicants will need to submit their applications by the admission deadlines."
+        "The student must maintain a full-time enrolment status."
       ]
     }
-  ],
-  "source_tables": [
-    {
-      "heading": "Special Regional Bursary",
-      "classification": "unclassified",
-      "row_count": 10,
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/evidence/tables/0"
-      }
-    },
-    {
-      "heading": "Special Regional Bursary",
-      "classification": "cost_breakdown",
-      "row_count": 4,
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/evidence/tables/1"
-      }
-    },
-    {
-      "heading": "Special Regional Bursary",
-      "classification": "unclassified",
-      "row_count": 11,
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/evidence/tables/2"
-      }
-    },
-    {
-      "heading": "Special Regional Bursary",
-      "classification": "cost_breakdown",
-      "row_count": 4,
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/evidence/tables/3"
-      }
-    },
-    {
-      "heading": "Special Regional Bursary",
-      "classification": "unclassified",
-      "row_count": 3,
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/evidence/tables/4"
-      }
-    },
-    {
-      "heading": "Special Regional Bursary",
-      "classification": "unclassified",
-      "row_count": 1,
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/evidence/tables/5"
-      }
-    },
-    {
-      "heading": "Special Regional Bursary",
-      "classification": "cost_breakdown",
-      "row_count": 4,
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/evidence/tables/6"
-      }
-    }
-  ],
-  "cost_breakdowns": [
-    {
-      "components": [
-        {
-          "label": null,
-          "kind": "unclassified_cost",
-          "dollar_tokens": [
-            69000.0
-          ],
-          "raw": [
-            "",
-            "$69,000"
-          ]
-        },
-        {
-          "label": "Less: International Scholarship",
-          "kind": "discount",
-          "dollar_tokens": [
-            9000.0
-          ],
-          "raw": [
-            "Less: International Scholarship",
-            "$9,000"
-          ]
-        },
-        {
-          "label": "Less: Regional Scholarship",
-          "kind": "discount",
-          "dollar_tokens": [
-            9000.0
-          ],
-          "raw": [
-            "Less: Regional Scholarship",
-            "$9,000"
-          ]
-        },
-        {
-          "label": "Total Tuition Fee",
-          "kind": "tuition_total",
-          "dollar_tokens": [
-            51000.0
-          ],
-          "raw": [
-            "Total Tuition Fee",
-            "$51,000*"
-          ]
-        }
-      ],
-      "currency": null,
-      "award_association": "unresolved",
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/evidence/tables/1"
-      }
-    },
-    {
-      "components": [
-        {
-          "label": null,
-          "kind": "unclassified_cost",
-          "dollar_tokens": [
-            69000.0
-          ],
-          "raw": [
-            "",
-            "$69,000"
-          ]
-        },
-        {
-          "label": "Less: International Scholarship",
-          "kind": "discount",
-          "dollar_tokens": [
-            9000.0
-          ],
-          "raw": [
-            "Less: International Scholarship",
-            "$9,000"
-          ]
-        },
-        {
-          "label": "Less: Regional Scholarship",
-          "kind": "discount",
-          "dollar_tokens": [
-            9000.0
-          ],
-          "raw": [
-            "Less: Regional Scholarship",
-            "$9,000"
-          ]
-        },
-        {
-          "label": "Total Tuition Fee",
-          "kind": "tuition_total",
-          "dollar_tokens": [
-            51000.0
-          ],
-          "raw": [
-            "Total Tuition Fee",
-            "$51,000*"
-          ]
-        }
-      ],
-      "currency": null,
-      "award_association": "unresolved",
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/evidence/tables/3"
-      }
-    },
-    {
-      "components": [
-        {
-          "label": null,
-          "kind": "unclassified_cost",
-          "dollar_tokens": [
-            69000.0
-          ],
-          "raw": [
-            "",
-            "$69,000"
-          ]
-        },
-        {
-          "label": "Less: International Scholarship",
-          "kind": "discount",
-          "dollar_tokens": [
-            9000.0
-          ],
-          "raw": [
-            "Less: International Scholarship",
-            "$9,000"
-          ]
-        },
-        {
-          "label": "Less: Regional Scholarship",
-          "kind": "discount",
-          "dollar_tokens": [
-            9000.0
-          ],
-          "raw": [
-            "Less: Regional Scholarship",
-            "$9,000"
-          ]
-        },
-        {
-          "label": "Total Tuition Fee",
-          "kind": "tuition_total",
-          "dollar_tokens": [
-            51000.0
-          ],
-          "raw": [
-            "Total Tuition Fee",
-            "$51,000*"
-          ]
-        }
-      ],
-      "currency": null,
-      "award_association": "unresolved",
-      "evidence_ref": {
-        "file": "outputs/ibu_university.json",
-        "json_pointer": "/evidence/tables/6"
-      }
-    }
-  ],
-  "evidence": {
-    "tables": [
-      {
-        "heading": "Special Regional Bursary",
-        "headers": [],
-        "rows": [
-          [
-            "Anguilla",
-            "Antigua & Barbuda",
-            "Argentina",
-            "Aruba",
-            "Bahamas"
-          ],
-          [
-            "Barbados",
-            "Belize",
-            "Bolivia",
-            "Brazil",
-            "British Virgin Islands"
-          ],
-          [
-            "Cayman Islands",
-            "Chile",
-            "Colombia",
-            "Costa Rica",
-            "Cuba"
-          ],
-          [
-            "Curaçao",
-            "Dominica",
-            "Dominican Republic",
-            "Ecuador",
-            "El Salvador"
-          ],
-          [
-            "Falkland Islands",
-            "French Guiana",
-            "Grenada",
-            "Guadeloupe",
-            "Guatemala"
-          ],
-          [
-            "Guyana",
-            "Haiti",
-            "Honduras",
-            "Jamaica",
-            "Martinique"
-          ],
-          [
-            "Mexico",
-            "Montserrat",
-            "Nicaragua",
-            "Panama",
-            "Paraguay"
-          ],
-          [
-            "Peru",
-            "Puerto Rico",
-            "Saint Barthélemy",
-            "Saint Kitts & Nevis",
-            "Saint Lucia"
-          ],
-          [
-            "Saint Martin",
-            "Saint Vincent & Grenadines",
-            "Suriname",
-            "Trinidad & Tobago",
-            "United States of America"
-          ],
-          [
-            "Uruguay",
-            "Venezuela",
-            "",
-            "",
-            ""
-          ]
-        ],
-        "rows_count": 10
-      },
-      {
-        "heading": "Special Regional Bursary",
-        "headers": [],
-        "rows": [
-          [
-            "",
-            "$69,000"
-          ],
-          [
-            "Less: International Scholarship",
-            "$9,000"
-          ],
-          [
-            "Less: Regional Scholarship",
-            "$9,000"
-          ],
-          [
-            "Total Tuition Fee",
-            "$51,000*"
-          ]
-        ],
-        "rows_count": 4
-      },
-      {
-        "heading": "Special Regional Bursary",
-        "headers": [],
-        "rows": [
-          [
-            "Albania",
-            "Andorra",
-            "Austria",
-            "Belgium"
-          ],
-          [
-            "Bosnia and Herzegovina",
-            "Bulgaria",
-            "Croatia",
-            "Cyprus"
-          ],
-          [
-            "Czechia",
-            "Denmark",
-            "Estonia",
-            "Finland"
-          ],
-          [
-            "France",
-            "Germany",
-            "Greece",
-            "Hungary"
-          ],
-          [
-            "Iceland",
-            "Ireland",
-            "Italy",
-            "Kosovo"
-          ],
-          [
-            "Latvia",
-            "Liechtenstein",
-            "Lithuania",
-            "Luxembourg"
-          ],
-          [
-            "Malta",
-            "Monaco",
-            "Montenegro",
-            "North Macedonia"
-          ],
-          [
-            "Norway",
-            "Poland",
-            "Portugal",
-            "Romania"
-          ],
-          [
-            "San Marino",
-            "Serbia",
-            "Slovakia",
-            "Slovenia"
-          ],
-          [
-            "Spain",
-            "Sweden",
-            "Switzerland",
-            "Turkey"
-          ],
-          [
-            "United Kingdom",
-            "",
-            "",
-            ""
-          ]
-        ],
-        "rows_count": 11
-      },
-      {
-        "heading": "Special Regional Bursary",
-        "headers": [],
-        "rows": [
-          [
-            "",
-            "$69,000"
-          ],
-          [
-            "Less: International Scholarship",
-            "$9,000"
-          ],
-          [
-            "Less: Regional Scholarship",
-            "$9,000"
-          ],
-          [
-            "Total Tuition Fee",
-            "$51,000*"
-          ]
-        ],
-        "rows_count": 4
-      },
-      {
-        "heading": "Special Regional Bursary",
-        "headers": [],
-        "rows": [
-          [
-            "Brunei",
-            "Cambodia",
-            "China",
-            "Indonesia",
-            "Japan"
-          ],
-          [
-            "Laos",
-            "Malaysia",
-            "Myanmar",
-            "Singapore",
-            "South Korea"
-          ],
-          [
-            "Taiwan",
-            "Thailand",
-            "Timor Leste",
-            "Vietnam",
-            ""
-          ]
-        ],
-        "rows_count": 3
-      },
-      {
-        "heading": "Special Regional Bursary",
-        "headers": [],
-        "rows": [
-          [
-            "Mauritius",
-            "Morocco",
-            "Mongolia",
-            "South Korea",
-            "Turkey"
-          ]
-        ],
-        "rows_count": 1
-      },
-      {
-        "heading": "Special Regional Bursary",
-        "headers": [],
-        "rows": [
-          [
-            "",
-            "$69,000"
-          ],
-          [
-            "Less: International Scholarship",
-            "$9,000"
-          ],
-          [
-            "Less: Regional Scholarship",
-            "$9,000"
-          ],
-          [
-            "Total Tuition Fee",
-            "$51,000*"
-          ]
-        ],
-        "rows_count": 4
-      }
-    ],
-    "renewal": {
-      "positive": [
-        "* Full-time status at IBU required for entrance scholarships is defined as a minimum 80% course load (12 credit hours). Entrance scholarships will be cancelled if you drop courses and reduce your course load to below 12 credit hours at any time for that semester. ** The determination of the credits to be used in the calculation of your Grade 12 average lies solely at the discretion of IBU; as well, changes to final secondary school grades received after August 1 will not result in recalculation of the average. *** If you earn a grade point average of at least 4.0 for your second semester you will also receive this scholarship in your third semester, and you will continue to receive the scholarship as long as you continue to take a full-time (80%) course load and earn a minimum 4.0 grade point semester average, up to a maximum of 8 semesters. If you register full-time and earn a 4.0 grade point average in each semester, you will receive the maximum 8 entrance scholarship awards."
-      ],
-      "negative": [],
-      "page_status": "positive_mentions"
-    }
-  },
-  "summary": {
-    "named_award_entries": 0,
-    "award_groups": 2,
-    "tiers": 0,
-    "application_windows": 0,
-    "unresolved_sections": 5,
-    "verified_scholarships": 0,
-    "total_scholarships": null
-  }
+  ]
 }

@@ -1,368 +1,111 @@
 {
-  "schema_version": 3,
-  "generated_at": "2026-11-06T03:14:35.386401+00:00",
+  "schema_version": 4,
   "school": {
-    "slug": "university_of_lethbridge",
-    "name": "University of Lethbridge"
+    "name": "University of Lethbridge",
+    "slug": "university_of_lethbridge"
   },
-  "crawl": {
-    "success": true,
-    "status": "ok",
-    "http_status": 200,
-    "error": null,
-    "attempts": [
-      {
-        "client": "requests",
-        "http_status": 200,
-        "final_url": "https://www.ulethbridge.ca/ross/student-finance/awards",
-        "error": null
-      }
-    ]
-  },
-  "source": {
-    "page_url": "https://www.ulethbridge.ca/ross/student-finance/awards",
-    "final_url": "https://www.ulethbridge.ca/ross/student-finance/awards",
-    "captured_at": "2026-11-06T01:25:12.309319+00:00",
-    "attempted_at": "2026-11-06T01:25:10.605773+00:00",
-    "html_sha256": "1b38a3c9dfbd59371b3e26ae7ff6d306d186cd2ea29307ab2c0643d5ae379004",
-    "output_file": "outputs/university_of_lethbridge.json",
-    "input_kind": "legacy_json_import",
-    "input_json_sha256": "3be78a1e339a7a4e9f1bccab9d7393dc0334b03041cd076619db562811363709"
-  },
-  "scholarships": [],
-  "scholarship_groups": [],
-  "application_windows": [
+  "source_url": "https://www.ulethbridge.ca/ross/student-finance/awards",
+  "fetched_at": "2026-11-06T03:39:40.790557+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "data_status": "needs_review",
+  "scholarships": [
     {
-      "group": "You are eligible for awards if you are:",
-      "label": "Grade 11 Merit - Calculated using Grade 11 Average: 80% and higher - $800 75-79.9% - $500",
-      "opens": {
-        "raw": "September of grade 11 year",
-        "date": null
+      "name": "Grade 11 Merit",
+      "type": "award_group",
+      "eligibility": "Grade 11 Merit - Calculated using Grade 11 Average: 80% and higher - $800 75-79.9% - $500",
+      "application": {
+        "opens": {
+          "raw": "September of grade 11 year"
+        },
+        "deadline": {
+          "raw": "June 30 of grade 11 year"
+        }
       },
-      "deadline": {
-        "raw": "June 30 of grade 11 year",
-        "date": null
-      },
-      "results_text": "November",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/evidence/tables/0/rows/1"
-      }
-    },
-    {
-      "group": "You are eligible for awards if you are:",
-      "label": "Board of Governors’ Admission Applied for admission to uLethbridge Obtain final admission average of 80% or higher",
-      "opens": {
-        "raw": "September. Automatic consideration upon submission of Fall admission application. No separate application required.",
-        "date": null
-      },
-      "deadline": {
-        "raw": "December 15",
-        "date": null
-      },
-      "results_text": "May",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/evidence/tables/0/rows/2"
-      }
-    },
-    {
-      "group": "You are eligible for awards if you are:",
-      "label": "High School Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
-      "opens": {
-        "raw": "Mid-January",
-        "date": null
-      },
-      "deadline": {
-        "raw": "March 15",
-        "date": null
-      },
-      "results_text": "August",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/evidence/tables/0/rows/3"
-      }
-    },
-    {
-      "group": "You are eligible for awards if you are:",
-      "label": "Transfer Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
-      "opens": {
-        "raw": "Mid-January",
-        "date": null
-      },
-      "deadline": {
-        "raw": "June 15",
-        "date": null
-      },
-      "results_text": "August",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/evidence/tables/0/rows/4"
-      }
-    },
-    {
-      "group": "You are eligible for awards if you are:",
-      "label": "Undergraduate Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
-      "opens": {
-        "raw": "Mid-January",
-        "date": null
-      },
-      "deadline": {
-        "raw": "May 1",
-        "date": null
-      },
-      "results_text": "August",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/evidence/tables/0/rows/5"
-      }
-    }
-  ],
-  "unresolved_sections": [
-    {
-      "name": "A wide range of scholarships, awards & bursaries are available to students who pursue their education at the University of Lethbridge.",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/unresolved_sections/0/texts"
-      },
-      "texts": [
-        "We understand that the process of applying for awards, bursaries, and scholarships can be overwhelming, but we’re here to support you every step of the way. Some awards are granted based primarily on academic proficiency, however other criteria (e.g. financial need, leadership potential, community involvement, artistic ability, athletic skill, etc.) are also considered.",
-        "Many of our awards are granted through our general awards cycle, which requires only two applications. Some additional awards require separate, direct applications."
+      "results": "November",
+      "tiers": [
+        {
+          "grade_text": "80%+",
+          "min_average": 80.0,
+          "value_text": "$800",
+          "values": [
+            {
+              "min_amount": 800.0,
+              "max_amount": 800.0,
+              "payment_basis": "unknown"
+            }
+          ]
+        },
+        {
+          "grade_text": "75-79.9%",
+          "min_average": 75.0,
+          "max_average": 79.9,
+          "value_text": "$500",
+          "values": [
+            {
+              "min_amount": 500.0,
+              "max_amount": 500.0,
+              "payment_basis": "unknown"
+            }
+          ]
+        }
       ]
     },
     {
-      "name": "Awards Cycle",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/unresolved_sections/1/texts"
+      "name": "Board of Governors’ Admission",
+      "type": "award_group",
+      "eligibility": "Board of Governors’ Admission Applied for admission to uLethbridge Obtain final admission average of 80% or higher",
+      "application": {
+        "opens": {
+          "raw": "September. Automatic consideration upon submission of Fall admission application. No separate application required."
+        },
+        "deadline": {
+          "raw": "December 15"
+        }
       },
-      "texts": [
-        "COMPLETE THE GENERAL APPLICATION EVERY YEAR!!",
-        "Our General Awards cycle opens each year in January. Many of our scholarships, awards & bursaries are granted through this process. To be considered for these awards, students must submit their applications by the deadlines below. Entering and current, continuing undergraduate students complete the General Award Application followed by the Undergraduate Application. Graduate Students complete the General Award Application followed by the G raduate Application. Log in here to complete the applications.",
-        "After you have completed the applications, review the additional Recommended Opportunities and apply as directed.",
-        "March 15 for High School Students entering the University of Lethbridge in the upcoming Fall May 1 for Current, Continuing University of Lethbridge Undergraduate Students May 15 for Incoming & Current Graduate Students - click here for further info on the School of Graduate Studies June 15 for Transfer Students - students entering from another post-secondary institution in the upcoming Fall",
-        "In many cases, applications close in the spring (see dates above). We begin assessing the applications throughout the summer, with many awards being applied to student accounts during the following Fall and Winter semesters. Your completed general and undergraduate applications will be used to assess your eligibility for award opportunities throughout the award cycle."
-      ]
-    },
-    {
-      "name": "Additional Awards",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/unresolved_sections/2/texts"
-      },
-      "texts": [
-        "In addition to applying through the general awards cycle, we have many awards that require separate, direct applications. After you have completed the General & Undergraduate applications, we recommend students sign in regularly to review additional Recommended Opportunities that may be presented to you and apply as directed.",
-        "View available awards, scholarships and bursaries"
-      ]
-    },
-    {
-      "name": "You are eligible for awards if you are:",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/unresolved_sections/3/texts"
-      },
-      "texts": [
-        "a student entering the University from high school; or",
-        "a student entering the University from another post-secondary institution; or",
-        "a student continuing studies at the UofL",
-        "students must have a University of Lethbridge ID number to access the online application forms through The Bridge . For questions relating to ID numbers please contact inquiries@uleth.ca , or call 403.329.2762",
-        "For IT Help call 403.329.2490 or email: help@uleth.ca",
-        "Type of Award",
-        "Application Opens",
-        "Application Closes",
-        "Notified of award",
-        "Calculated using Grade 11 Average:",
-        "80% and higher - $800",
-        "75-79.9% - $500",
-        "September",
-        "of grade 11 year",
-        "June 30",
-        "of grade 11 year",
-        "November",
-        "Applied for admission to uLethbridge",
-        "Obtain final admission average of 80% or higher",
-        "September. Automatic consideration upon submission of Fall admission application. No separate application required.",
-        "December 15",
-        "May",
-        "Requirements vary by award, may include:",
-        "Academic achievement",
-        "Financial need",
-        "Leadership ability",
-        "Volunteer Experience",
-        "Artistic ability",
-        "Reference letters",
-        "Mid-January",
-        "March 15",
-        "August",
-        "Requirements vary by award, may include:",
-        "Academic achievement",
-        "Financial need",
-        "Leadership ability",
-        "Volunteer Experience",
-        "Artistic ability",
-        "Reference letters",
-        "Mid-January",
-        "June 15",
-        "August",
-        "Requirements vary by award, may include:",
-        "Academic achievement",
-        "Financial need",
-        "Leadership ability",
-        "Volunteer Experience",
-        "Artistic ability",
-        "Reference letters",
-        "Mid-January",
-        "May 1",
-        "August"
-      ]
-    },
-    {
-      "name": "Type of Award",
-      "reason": "administrative_or_application_content",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/unresolved_sections/4/texts"
-      },
-      "texts": [
-        "Application Opens"
-      ]
+      "results": "May"
     },
     {
       "name": "High School Awards",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/unresolved_sections/5/texts"
+      "type": "award_group",
+      "eligibility": "High School Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
+      "application": {
+        "opens": {
+          "raw": "Mid-January"
+        },
+        "deadline": {
+          "raw": "March 15"
+        }
       },
-      "texts": [
-        "Requirements vary by award, may include:",
-        "Academic achievement",
-        "Financial need",
-        "Leadership ability",
-        "Volunteer Experience",
-        "Artistic ability",
-        "Reference letters",
-        "Mid-January",
-        "March 15",
-        "August"
-      ]
+      "results": "August"
     },
     {
       "name": "Transfer Awards",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/unresolved_sections/6/texts"
+      "type": "award_group",
+      "eligibility": "Transfer Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
+      "application": {
+        "opens": {
+          "raw": "Mid-January"
+        },
+        "deadline": {
+          "raw": "June 15"
+        }
       },
-      "texts": [
-        "Requirements vary by award, may include:",
-        "Academic achievement",
-        "Financial need",
-        "Leadership ability",
-        "Volunteer Experience",
-        "Artistic ability",
-        "Reference letters",
-        "Mid-January",
-        "June 15",
-        "August"
-      ]
+      "results": "August"
     },
     {
       "name": "Undergraduate Awards",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/unresolved_sections/7/texts"
+      "type": "award_group",
+      "eligibility": "Undergraduate Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
+      "application": {
+        "opens": {
+          "raw": "Mid-January"
+        },
+        "deadline": {
+          "raw": "May 1"
+        }
       },
-      "texts": [
-        "Requirements vary by award, may include:",
-        "Academic achievement",
-        "Financial need",
-        "Leadership ability",
-        "Volunteer Experience",
-        "Artistic ability",
-        "Reference letters",
-        "Mid-January",
-        "May 1",
-        "August"
-      ]
+      "results": "August"
     }
-  ],
-  "source_tables": [
-    {
-      "heading": "You are eligible for awards if you are:",
-      "classification": "application_schedule",
-      "row_count": 6,
-      "evidence_ref": {
-        "file": "outputs/university_of_lethbridge.json",
-        "json_pointer": "/evidence/tables/0"
-      }
-    }
-  ],
-  "cost_breakdowns": [],
-  "evidence": {
-    "tables": [
-      {
-        "heading": "You are eligible for awards if you are:",
-        "headers": [],
-        "rows": [
-          [
-            "Type of Award",
-            "Application Opens",
-            "Application Closes",
-            "Notified of award"
-          ],
-          [
-            "Grade 11 Merit - Calculated using Grade 11 Average: 80% and higher - $800 75-79.9% - $500",
-            "September of grade 11 year",
-            "June 30 of grade 11 year",
-            "November"
-          ],
-          [
-            "Board of Governors’ Admission Applied for admission to uLethbridge Obtain final admission average of 80% or higher",
-            "September. Automatic consideration upon submission of Fall admission application. No separate application required.",
-            "December 15",
-            "May"
-          ],
-          [
-            "High School Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
-            "Mid-January",
-            "March 15",
-            "August"
-          ],
-          [
-            "Transfer Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
-            "Mid-January",
-            "June 15",
-            "August"
-          ],
-          [
-            "Undergraduate Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
-            "Mid-January",
-            "May 1",
-            "August"
-          ]
-        ],
-        "rows_count": 6
-      }
-    ],
-    "renewal": {
-      "positive": [],
-      "negative": [],
-      "page_status": "unknown"
-    }
-  },
-  "summary": {
-    "named_award_entries": 0,
-    "award_groups": 0,
-    "tiers": 0,
-    "application_windows": 5,
-    "unresolved_sections": 8,
-    "verified_scholarships": 0,
-    "total_scholarships": null
-  }
+  ]
 }

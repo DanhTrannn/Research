@@ -1,60 +1,13 @@
 {
-  "schema_version": 3,
-  "generated_at": "2026-11-06T03:14:35.384765+00:00",
+  "schema_version": 4,
   "school": {
-    "slug": "university_of_alberta",
-    "name": "University of Alberta"
+    "name": "University of Alberta",
+    "slug": "university_of_alberta"
   },
-  "crawl": {
-    "success": false,
-    "status": "blocked",
-    "http_status": 202,
-    "error": "No validated HTML available",
-    "attempts": [
-      {
-        "client": "requests",
-        "http_status": 202,
-        "final_url": "https://www.ualberta.ca/en/admissions/tuition-and-scholarships/international-entrance-scholarships/index.html",
-        "error": "blocked"
-      },
-      {
-        "client": "curl",
-        "http_status": 202,
-        "final_url": "https://www.ualberta.ca/en/admissions/tuition-and-scholarships/international-entrance-scholarships/index.html",
-        "error": "blocked"
-      }
-    ]
-  },
-  "source": {
-    "page_url": "https://www.ualberta.ca/en/admissions/tuition-and-scholarships/international-entrance-scholarships/index.html",
-    "final_url": null,
-    "captured_at": null,
-    "attempted_at": "2026-11-06T01:25:10.529513+00:00",
-    "html_sha256": null,
-    "output_file": "outputs/university_of_alberta.json",
-    "input_kind": "legacy_json_import",
-    "input_json_sha256": "598e1e4330eb3b6cfba48e5f939597d64980aa516990ecf73725292895c0a82d"
-  },
-  "scholarships": [],
-  "scholarship_groups": [],
-  "application_windows": [],
-  "unresolved_sections": [],
-  "source_tables": [],
-  "cost_breakdowns": [],
-  "evidence": {
-    "tables": [],
-    "renewal": {
-      "positive": [],
-      "negative": []
-    }
-  },
-  "summary": {
-    "named_award_entries": 0,
-    "award_groups": 0,
-    "tiers": 0,
-    "application_windows": 0,
-    "unresolved_sections": 0,
-    "verified_scholarships": 0,
-    "total_scholarships": null
-  }
+  "source_url": "https://www.ualberta.ca/en/admissions/tuition-and-scholarships/international-entrance-scholarships/index.html",
+  "fetched_at": "2026-11-06T03:39:33.668966+00:00",
+  "status": "blocked",
+  "http_status": 202,
+  "data_status": "unavailable",
+  "scholarships": []
 }

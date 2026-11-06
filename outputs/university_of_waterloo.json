@@ -1,2978 +1,529 @@
 {
-  "schema_version": 3,
-  "generated_at": "2026-11-06T03:14:35.403262+00:00",
+  "schema_version": 4,
   "school": {
-    "slug": "university_of_waterloo",
-    "name": "University of Waterloo"
+    "name": "University of Waterloo",
+    "slug": "university_of_waterloo"
   },
-  "crawl": {
-    "success": true,
-    "status": "ok",
-    "http_status": 200,
-    "error": null,
-    "attempts": [
-      {
-        "client": "requests",
-        "http_status": 200,
-        "final_url": "https://uwaterloo.ca/future-students/financing/scholarships",
-        "error": null
-      }
-    ]
-  },
-  "source": {
-    "page_url": "https://uwaterloo.ca/future-students/financing/scholarships",
-    "final_url": "https://uwaterloo.ca/future-students/financing/scholarships",
-    "captured_at": "2026-11-06T01:25:20.959784+00:00",
-    "attempted_at": "2026-11-06T01:25:14.854546+00:00",
-    "html_sha256": "1c8df1986ab020434b16f5c49ba6e770206a8747a195b24e3ed6c94b4893add3",
-    "output_file": "outputs/university_of_waterloo.json",
-    "input_kind": "legacy_json_import",
-    "input_json_sha256": "675d5691073719f66f5210e0bf41d833a6ef4146f60c2062f9adcdbb81aa1803"
-  },
+  "source_url": "https://uwaterloo.ca/future-students/financing/scholarships",
+  "fetched_at": "2026-11-06T03:39:38.143487+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "data_status": "needs_review",
   "scholarships": [
     {
-      "id": "award_c40b29b3f774fa8f662c",
+      "name": "President's Scholarship of Distinction (admission average of 95% or higher)",
+      "description": "The $1,500 International Experience Award will be awarded to Distinction Scholars who participate in an international study or work experience.",
+      "value_texts": [
+        "$2,000 entrance scholarship",
+        "$1,500 International Experience Award* and/or",
+        "$1,500 Research Award*"
+      ],
+      "values": [
+        {
+          "min_amount": 2000.0,
+          "max_amount": 2000.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 1500.0,
+          "max_amount": 1500.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 1500.0,
+          "max_amount": 1500.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": [
+        "Your early May admission average, including required courses, must be 95% or higher for the program for which you’ve received and accepted an offer of admission.",
+        "You must be enrolled at Waterloo in full-time degree studies for the entire September to December term.",
+        "If you receive a scholarship before May, you must meet all the conditions specified above. Once we’ve reviewed your grades available in early May, we’ll confirm your University of Waterloo President’s or Merit Scholarship. You will be able to view the scholarship information in the applicant portal."
+      ],
+      "type": "scholarship"
+    },
+    {
+      "name": "President's Scholarship (admission average of 90 - 94.9%)",
+      "description": "If you receive your scholarship offer in May, we will already have reviewed your grades available in early May. You must still meet all other conditions specified above.",
+      "value_texts": [
+        "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo President’s Scholarship valued at $2,000 ."
+      ],
+      "values": [
+        {
+          "min_amount": 2000.0,
+          "max_amount": 2000.0,
+          "payment_basis": "one_time"
+        }
+      ],
+      "eligibility": [
+        "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo President’s Scholarship valued at $2,000 .",
+        "Your early May admission average, including required courses, must be 90 – 94.9% for the program for which you’ve received and accepted an Offer of Admission.",
+        "You must be enrolled at Waterloo in full-time degree studies for the entire September to December term.",
+        "If you receive a scholarship before May, you must meet all the conditions specified above. Once we’ve reviewed your grades available in early May, we’ll confirm your University of Waterloo President’s or Merit Scholarship. You will be able to view the scholarship information in the applicant portal."
+      ],
+      "renewable": false,
+      "renewal_conditions": [
+        "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo President’s Scholarship valued at $2,000 ."
+      ],
+      "type": "scholarship"
+    },
+    {
+      "name": "Merit Scholarship (admission average of 85 - 89.9%)",
+      "value_texts": [
+        "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo Merit Scholarship valued at $1,000 ."
+      ],
+      "values": [
+        {
+          "min_amount": 1000.0,
+          "max_amount": 1000.0,
+          "payment_basis": "one_time"
+        }
+      ],
+      "eligibility": [
+        "Your early May admission average, including required courses, must be 85 – 89.9% for the program for which you’ve received and accepted an Offer of Admission.",
+        "You must be enrolled at Waterloo in full-time degree studies for the entire September to December term."
+      ],
+      "renewable": false,
+      "renewal_conditions": [
+        "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo Merit Scholarship valued at $1,000 ."
+      ],
+      "type": "scholarship"
+    },
+    {
       "name": "Jean Andrey Environment Leadership Scholarship",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Environment",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All programs (including Sustainability and Financial Management)",
-        "criteria_texts": [
-          "Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for all environmental issues. An application is required by April 1, 2027."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "One valued at up to $7,500 for one year"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": null,
-            "max_amount": 7500.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "One valued at up to $7,500 for one year"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
+      "type": "scholarship",
+      "programs": "All programs (including Sustainability and Financial Management)",
+      "value_text": "One valued at up to $7,500 for one year",
+      "values": [
+        {
+          "max_amount": 7500.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for all environmental issues. An application is required by April 1, 2027.",
       "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
         "deadlines": [
           {
             "raw": "April 1, 2027",
-            "date": "2027-04-01",
-            "evidence_text": "Jean Andrey Environment Leadership Scholarship | All programs (including Sustainability and Financial Management) | One valued at up to $7,500 for one year | Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for all environmental issues. An application is required by April 1, 2027."
-          }
-        ]
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Jean Andrey Environment Leadership Scholarship | All programs (including Sustainability and Financial Management) | One valued at up to $7,500 for one year | Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for all environmental issues. An application is required by April 1, 2027."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/0/evidence/texts"
+            "date": "2027-04-01"
           }
         ]
       }
     },
     {
-      "id": "award_473176d72a691d099000",
       "name": "Dean of Environment’s Scholarship for Excellence",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Environment",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All programs (excluding Sustainability and Financial Management)",
-        "criteria_texts": [
-          "Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for environmental issues. An application is required by April 1, 2027."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "Several at $7,500 for one year"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 7500.0,
-            "max_amount": 7500.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Several at $7,500 for one year"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
+      "type": "scholarship",
+      "programs": "All programs (excluding Sustainability and Financial Management)",
+      "value_text": "Several at $7,500 for one year",
+      "values": [
+        {
+          "min_amount": 7500.0,
+          "max_amount": 7500.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for environmental issues. An application is required by April 1, 2027.",
       "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
         "deadlines": [
           {
             "raw": "April 1, 2027",
-            "date": "2027-04-01",
-            "evidence_text": "Dean of Environment’s Scholarship for Excellence | All programs (excluding Sustainability and Financial Management) | Several at $7,500 for one year | Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for environmental issues. An application is required by April 1, 2027."
-          }
-        ]
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Dean of Environment’s Scholarship for Excellence | All programs (excluding Sustainability and Financial Management) | Several at $7,500 for one year | Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for environmental issues. An application is required by April 1, 2027."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/1/evidence/texts"
+            "date": "2027-04-01"
           }
         ]
       }
     },
     {
-      "id": "award_828f6b4dbb649e25e11b",
       "name": "Faculty of Environment Entrance Scholarships",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Environment",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All programs (excluding Sustainability and Financial Management)",
-        "criteria_texts": [
-          "Early May admission average of 95.0% or above An application is not required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$4,000 for one year (including a President’s Scholarship of Distinction valued at $2,000)"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 4000.0,
-            "max_amount": 4000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$4,000 for one year (including a President’s Scholarship of Distinction valued at $2,000)"
-          },
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 2000.0,
-            "max_amount": 2000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$4,000 for one year (including a President’s Scholarship of Distinction valued at $2,000)"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Faculty of Environment Entrance Scholarships | All programs (excluding Sustainability and Financial Management) | $4,000 for one year (including a President’s Scholarship of Distinction valued at $2,000) | Early May admission average of 95.0% or above An application is not required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/2/evidence/texts"
-          }
-        ]
-      }
+      "type": "scholarship",
+      "programs": "All programs (excluding Sustainability and Financial Management)",
+      "value_text": "$4,000 for one year (including a President’s Scholarship of Distinction valued at $2,000)",
+      "values": [
+        {
+          "min_amount": 4000.0,
+          "max_amount": 4000.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 2000.0,
+          "max_amount": 2000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Early May admission average of 95.0% or above An application is not required."
     },
     {
-      "id": "award_5234bfddd0348d8fdc70",
       "name": "Faculty of Environment Entrance Scholarships",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Environment",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All programs (excluding Sustainability and Financial Management)",
-        "criteria_texts": [
-          "Early May admission average of 90.0% to 94.9% An application is not required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$3,000 for one year (including a President’s Scholarship valued at $2,000)"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 3000.0,
-            "max_amount": 3000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$3,000 for one year (including a President’s Scholarship valued at $2,000)"
-          },
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 2000.0,
-            "max_amount": 2000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$3,000 for one year (including a President’s Scholarship valued at $2,000)"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Faculty of Environment Entrance Scholarships | All programs (excluding Sustainability and Financial Management) | $3,000 for one year (including a President’s Scholarship valued at $2,000) | Early May admission average of 90.0% to 94.9% An application is not required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/3/evidence/texts"
-          }
-        ]
-      }
+      "type": "scholarship",
+      "programs": "All programs (excluding Sustainability and Financial Management)",
+      "value_text": "$3,000 for one year (including a President’s Scholarship valued at $2,000)",
+      "values": [
+        {
+          "min_amount": 3000.0,
+          "max_amount": 3000.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 2000.0,
+          "max_amount": 2000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Early May admission average of 90.0% to 94.9% An application is not required."
     },
     {
-      "id": "award_5297d8e9ab920eaa49e2",
       "name": "Faculty of Environment Student Engagement Award",
-      "support_type": "award",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Environment",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All programs (excluding Sustainability and Financial Management)",
-        "criteria_texts": [
-          "Academic performance (minimum 85% admission average) Demonstrated interest in sustainability-related activities in your community. An application is required by April 1, 2027."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "Up to 10 awards valued at $4,000 each for one year"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 4000.0,
-            "max_amount": 4000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Up to 10 awards valued at $4,000 each for one year"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
+      "type": "scholarship",
+      "programs": "All programs (excluding Sustainability and Financial Management)",
+      "value_text": "Up to 10 awards valued at $4,000 each for one year",
+      "values": [
+        {
+          "min_amount": 4000.0,
+          "max_amount": 4000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Academic performance (minimum 85% admission average) Demonstrated interest in sustainability-related activities in your community. An application is required by April 1, 2027.",
       "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
         "deadlines": [
           {
             "raw": "April 1, 2027",
-            "date": "2027-04-01",
-            "evidence_text": "Faculty of Environment Student Engagement Award | All programs (excluding Sustainability and Financial Management) | Up to 10 awards valued at $4,000 each for one year | Academic performance (minimum 85% admission average) Demonstrated interest in sustainability-related activities in your community. An application is required by April 1, 2027."
-          }
-        ]
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Faculty of Environment Student Engagement Award | All programs (excluding Sustainability and Financial Management) | Up to 10 awards valued at $4,000 each for one year | Academic performance (minimum 85% admission average) Demonstrated interest in sustainability-related activities in your community. An application is required by April 1, 2027."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/4/evidence/texts"
+            "date": "2027-04-01"
           }
         ]
       }
     },
     {
-      "id": "award_a44b573858b831c650fd",
       "name": "Other entrance scholarships",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Environment",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All programs (excluding Sustainability and Financial Management)",
-        "criteria_texts": [
-          "Academic performance An application is required by April 1, 2027."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "Several from $1,000 to $4,000"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 1000.0,
-            "max_amount": null,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Several from $1,000 to $4,000"
-          },
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 4000.0,
-            "max_amount": 4000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Several from $1,000 to $4,000"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
+      "type": "scholarship",
+      "programs": "All programs (excluding Sustainability and Financial Management)",
+      "value_text": "Several from $1,000 to $4,000",
+      "values": [
+        {
+          "min_amount": 1000.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 4000.0,
+          "max_amount": 4000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Academic performance An application is required by April 1, 2027.",
       "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
         "deadlines": [
           {
             "raw": "April 1, 2027",
-            "date": "2027-04-01",
-            "evidence_text": "Other entrance scholarships | All programs (excluding Sustainability and Financial Management) | Several from $1,000 to $4,000 | Academic performance An application is required by April 1, 2027."
-          }
-        ]
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Other entrance scholarships | All programs (excluding Sustainability and Financial Management) | Several from $1,000 to $4,000 | Academic performance An application is required by April 1, 2027."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/5/evidence/texts"
+            "date": "2027-04-01"
           }
         ]
       }
     },
     {
-      "id": "award_bd01154242409ac33c96",
       "name": "Lyle S. Hallman Entrance Scholarship",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Health",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All Health programs",
-        "criteria_texts": [
-          "Academic performance Recreation-based community involvement and leadership Application deadline: April 15"
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "Three scholarships, valued at up to $2,500 each"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": null,
-            "max_amount": 2500.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Three scholarships, valued at up to $2,500 each"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
+      "type": "scholarship",
+      "programs": "All Health programs",
+      "value_text": "Three scholarships, valued at up to $2,500 each",
+      "values": [
+        {
+          "max_amount": 2500.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Academic performance Recreation-based community involvement and leadership Application deadline: April 15",
       "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
         "deadlines": [
           {
-            "raw": "April 15",
-            "date": null,
-            "evidence_text": "Lyle S. Hallman Entrance Scholarship | All Health programs | Three scholarships, valued at up to $2,500 each | Academic performance Recreation-based community involvement and leadership Application deadline: April 15"
-          }
-        ]
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Lyle S. Hallman Entrance Scholarship | All Health programs | Three scholarships, valued at up to $2,500 each | Academic performance Recreation-based community involvement and leadership Application deadline: April 15"
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/6/evidence/texts"
+            "raw": "April 15"
           }
         ]
       }
     },
     {
-      "id": "award_c69eaeb057686c5834a0",
       "name": "Recreation and Leisure Studies Founders Entrance Scholarship",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Health",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "Recreation and Leisure Studies majors",
-        "criteria_texts": [
-          "Academic performance Recreation-based community involvement and leadership Application deadline: April 15"
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "One or more scholarships, valued at up to $1,000 each"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": null,
-            "max_amount": 1000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "One or more scholarships, valued at up to $1,000 each"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
+      "type": "scholarship",
+      "programs": "Recreation and Leisure Studies majors",
+      "value_text": "One or more scholarships, valued at up to $1,000 each",
+      "values": [
+        {
+          "max_amount": 1000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Academic performance Recreation-based community involvement and leadership Application deadline: April 15",
       "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
         "deadlines": [
           {
-            "raw": "April 15",
-            "date": null,
-            "evidence_text": "Recreation and Leisure Studies Founders Entrance Scholarship | Recreation and Leisure Studies majors | One or more scholarships, valued at up to $1,000 each | Academic performance Recreation-based community involvement and leadership Application deadline: April 15"
-          }
-        ]
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Recreation and Leisure Studies Founders Entrance Scholarship | Recreation and Leisure Studies majors | One or more scholarships, valued at up to $1,000 each | Academic performance Recreation-based community involvement and leadership Application deadline: April 15"
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/7/evidence/texts"
+            "raw": "April 15"
           }
         ]
       }
     },
     {
-      "id": "award_78a125ec6d832a4430d3",
       "name": "Ronald George, Florence Elizabeth and Ronald Thomas Bolce Scholarship",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Health",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All Health programs",
-        "criteria_texts": [
-          "Academic performance (minimum 85% admission average) Recreation-based community involvement and leadership Application deadline: April 15"
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "One scholarship, valued at up to $3,000"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": null,
-            "max_amount": 3000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "One scholarship, valued at up to $3,000"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
+      "type": "scholarship",
+      "programs": "All Health programs",
+      "value_text": "One scholarship, valued at up to $3,000",
+      "values": [
+        {
+          "max_amount": 3000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Academic performance (minimum 85% admission average) Recreation-based community involvement and leadership Application deadline: April 15",
       "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
         "deadlines": [
           {
-            "raw": "April 15",
-            "date": null,
-            "evidence_text": "Ronald George, Florence Elizabeth and Ronald Thomas Bolce Scholarship | All Health programs | One scholarship, valued at up to $3,000 | Academic performance (minimum 85% admission average) Recreation-based community involvement and leadership Application deadline: April 15"
-          }
-        ]
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Ronald George, Florence Elizabeth and Ronald Thomas Bolce Scholarship | All Health programs | One scholarship, valued at up to $3,000 | Academic performance (minimum 85% admission average) Recreation-based community involvement and leadership Application deadline: April 15"
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/8/evidence/texts"
+            "raw": "April 15"
           }
         ]
       }
     },
     {
-      "id": "award_cae197bda1bf3b24ba2a",
       "name": "Faculty of Mathematics Olympiad Scholarship",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Mathematics, including Computer Science",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All Math programs (including Computing and Financial Management )",
-        "criteria_texts": [
-          "Entering first year in the Faculty of Mathematics Medallist at any International Olympiad contest Strong Admission Information Form Waterloo Math contest scores An application is required by March 5, 2027."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "Up to $50,000 each ($6,250/term for up to 8 terms)"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": null,
-            "max_amount": 50000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Up to $50,000 each ($6,250/term for up to 8 terms)"
-          },
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 6250.0,
-            "max_amount": 6250.0,
-            "payment_basis": "per_term",
-            "max_payments": null,
-            "evidence_text": "Up to $50,000 each ($6,250/term for up to 8 terms)"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
+      "type": "scholarship",
+      "programs": "All Math programs (including Computing and Financial Management )",
+      "value_text": "Up to $50,000 each ($6,250/term for up to 8 terms)",
+      "values": [
+        {
+          "max_amount": 50000.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 6250.0,
+          "max_amount": 6250.0,
+          "payment_basis": "per_term"
+        }
+      ],
+      "eligibility": "Entering first year in the Faculty of Mathematics Medallist at any International Olympiad contest Strong Admission Information Form Waterloo Math contest scores An application is required by March 5, 2027.",
       "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
         "deadlines": [
           {
             "raw": "March 5, 2027",
-            "date": "2027-03-05",
-            "evidence_text": "Faculty of Mathematics Olympiad Scholarship | All Math programs (including Computing and Financial Management ) | Up to $50,000 each ($6,250/term for up to 8 terms) | Entering first year in the Faculty of Mathematics Medallist at any International Olympiad contest Strong Admission Information Form Waterloo Math contest scores An application is required by March 5, 2027."
-          }
-        ]
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Faculty of Mathematics Olympiad Scholarship | All Math programs (including Computing and Financial Management ) | Up to $50,000 each ($6,250/term for up to 8 terms) | Entering first year in the Faculty of Mathematics Medallist at any International Olympiad contest Strong Admission Information Form Waterloo Math contest scores An application is required by March 5, 2027."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/9/evidence/texts"
+            "date": "2027-03-05"
           }
         ]
       }
     },
     {
-      "id": "award_05d42626ca65d505f458",
       "name": "National and Global Scholarships",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Mathematics, including Computer Science",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All Math programs (excluding Computing and Financial Management and Software Engineering)",
-        "criteria_texts": [
-          "Distinguished academic performance Distinguished results from Mathematics or Computer Science competitions Participation in math or computer science beyond standard course requirements. Examples include math or computer science clubs, enriched mathematics studies, jobs, volunteer experience, or hobbies. An application is not required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "Up to 30 awards at $10,000 to $40,000 over eight academic terms (normally the length of your degree)"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 10000.0,
-            "max_amount": 10000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Up to 30 awards at $10,000 to $40,000 over eight academic terms (normally the length of your degree)"
-          },
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 40000.0,
-            "max_amount": 40000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Up to 30 awards at $10,000 to $40,000 over eight academic terms (normally the length of your degree)"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "National and Global Scholarships | All Math programs (excluding Computing and Financial Management and Software Engineering) | Up to 30 awards at $10,000 to $40,000 over eight academic terms (normally the length of your degree) | Distinguished academic performance Distinguished results from Mathematics or Computer Science competitions Participation in math or computer science beyond standard course requirements. Examples include math or computer science clubs, enriched mathematics studies, jobs, volunteer experience, or hobbies. An application is not required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/10/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_bec6f167883e7f1accf1",
-      "name": "CIBC National Scholarship",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Mathematics, including Computer Science",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "Computer Science Co-op, Mathematics/ Business Administration",
-        "criteria_texts": [
-          "Same criteria as for National and Global Scholarships Must be a Canadian citizen or Permanent Resident of Canada An application is not required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$25,000 over eight academic terms (normally the length of your degree)"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 25000.0,
-            "max_amount": 25000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$25,000 over eight academic terms (normally the length of your degree)"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "CIBC National Scholarship | Computer Science Co-op, Mathematics/ Business Administration | $25,000 over eight academic terms (normally the length of your degree) | Same criteria as for National and Global Scholarships Must be a Canadian citizen or Permanent Resident of Canada An application is not required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/11/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_c47deadef858c36430cf",
-      "name": "Various entrance scholarships",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Mathematics, including Computer Science",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All Math programs (excluding Computing and Financial Management and Software Engineering)",
-        "criteria_texts": [
-          "Academic performance Admission Information Form Performance in the Euclid Mathematics Contest and/or the Canadian Senior Mathematics Contest An application is not required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "Several at $10,000 over eight academic terms (normally the length of your degree) Several at $1,000 to $5,000 for one year"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 10000.0,
-            "max_amount": 10000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Several at $10,000 over eight academic terms (normally the length of your degree) Several at $1,000 to $5,000 for one year"
-          },
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 1000.0,
-            "max_amount": 1000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Several at $10,000 over eight academic terms (normally the length of your degree) Several at $1,000 to $5,000 for one year"
-          },
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 5000.0,
-            "max_amount": 5000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Several at $10,000 over eight academic terms (normally the length of your degree) Several at $1,000 to $5,000 for one year"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Various entrance scholarships | All Math programs (excluding Computing and Financial Management and Software Engineering) | Several at $10,000 over eight academic terms (normally the length of your degree) Several at $1,000 to $5,000 for one year | Academic performance Admission Information Form Performance in the Euclid Mathematics Contest and/or the Canadian Senior Mathematics Contest An application is not required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/12/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_2d5cafd32270066aae47",
-      "name": "Faculty of Science Entrance Scholarships",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Science",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All programs (excluding Aviation, Optometry, Pharmacy)",
-        "criteria_texts": [
-          "Early May admission average as follows. 95%+ = $1,000 90-94.9% = $1,000 85-89.9% = $1,000 80-84.9% = $500 These scholarships are in addition to the President’s Scholarship of Distinction, President’s Scholarship, or Merit Scholarship, as applicable based on admission average. An application is not required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$500 - $1,000 each for one year"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 500.0,
-            "max_amount": 1000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$500 - $1,000 each for one year"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Faculty of Science Entrance Scholarships | All programs (excluding Aviation, Optometry, Pharmacy) | $500 - $1,000 each for one year | Early May admission average as follows. 95%+ = $1,000 90-94.9% = $1,000 85-89.9% = $1,000 80-84.9% = $500 These scholarships are in addition to the President’s Scholarship of Distinction, President’s Scholarship, or Merit Scholarship, as applicable based on admission average. An application is not required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/13/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_7bc4dd37cef689ab78c8",
-      "name": "Faculty of Science Contest and Camp Award",
-      "support_type": "award",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Science",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All programs (excluding Aviation, Optometry, Pharmacy)",
-        "criteria_texts": [
-          "Available to high school students completing one of the following Waterloo contests: Sir Isaac Newton Contest , Chem 13 News Contest , or the Euclid math contest . Participation in these contests must be co-ordinated through your school. Students who participated in Waterloo's GeoX or ChemX Camps are also eligible. Eligible students may receive one $1,000 award only."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$1,000"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 1000.0,
-            "max_amount": 1000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$1,000"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Faculty of Science Contest and Camp Award | All programs (excluding Aviation, Optometry, Pharmacy) | $1,000 | Available to high school students completing one of the following Waterloo contests: Sir Isaac Newton Contest , Chem 13 News Contest , or the Euclid math contest . Participation in these contests must be co-ordinated through your school. Students who participated in Waterloo's GeoX or ChemX Camps are also eligible. Eligible students may receive one $1,000 award only."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/14/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_ce1b4ad177ecac69abd3",
-      "name": "Science SHSM Entrance Award",
-      "support_type": "award",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Science",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All programs (excluding Aviation, Optometry, Pharmacy)",
-        "criteria_texts": [
-          "Available to students completing any Specialist High Skills Major (SHSM) at an Ontario high school. No application is required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$1,000"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 1000.0,
-            "max_amount": 1000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$1,000"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Science SHSM Entrance Award | All programs (excluding Aviation, Optometry, Pharmacy) | $1,000 | Available to students completing any Specialist High Skills Major (SHSM) at an Ontario high school. No application is required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/15/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_e8195fa6353390aa5a09",
-      "name": "Faculty of Science International Student Scholarships",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Science",
-          "Programs"
-        ],
-        "applicant_category": "international",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All programs (excluding Medical Sciences, Optometry, Pharmacy)",
-        "criteria_texts": [
-          "An application is required . Available to international fee-paying students only."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "Up to 15 scholarships valued at $25,000 to $80,000"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 25000.0,
-            "max_amount": 25000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Up to 15 scholarships valued at $25,000 to $80,000"
-          },
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 80000.0,
-            "max_amount": 80000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Up to 15 scholarships valued at $25,000 to $80,000"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Faculty of Science International Student Scholarships | All programs (excluding Medical Sciences, Optometry, Pharmacy) | Up to 15 scholarships valued at $25,000 to $80,000 | An application is required . Available to international fee-paying students only."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/16/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_88bb244bed4600704acb",
-      "name": "Various",
-      "support_type": "award",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "Faculty of Science",
-          "Programs"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All programs (excluding Medical Sciences, Optometry, Pharmacy)",
-        "criteria_texts": [
-          "Academic performance An application is not required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "Several at $1,000 - $10,000 for one year"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 1000.0,
-            "max_amount": 10000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "Several at $1,000 - $10,000 for one year"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Various | All programs (excluding Medical Sciences, Optometry, Pharmacy) | Several at $1,000 - $10,000 for one year | Academic performance An application is not required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/17/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_d5a41766f5b8ca3eebb0",
-      "name": "Board of Governor's Scholarship",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "St. Jerome's University"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "Honours Arts Honours Arts and Business",
-        "criteria_texts": [
-          "Academic performance An application is not required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$5,000"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 5000.0,
-            "max_amount": 5000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$5,000"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Board of Governor's Scholarship | Honours Arts Honours Arts and Business | $5,000 | Academic performance An application is not required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/18/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_80e5b8693f11bd840e58",
-      "name": "President's Scholarship of Distinction",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "St. Jerome's University"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "Honours Arts Honours Arts and Business",
-        "criteria_texts": [
-          "Open to students admitted to full-time first-year degree studies at St. Jerome’s University, who are beginning post-secondary studies for the first time. Early May admission average of 95%+ View the President's Scholarship section for complete eligibility details. An application is not required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$2,000 Entrance Scholarship; $1,500 International Experience Award, and/or $1,500 Research Award"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 2000.0,
-            "max_amount": 2000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$2,000 Entrance Scholarship; $1,500 International Experience Award, and/or $1,500 Research Award"
-          },
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 1500.0,
-            "max_amount": 1500.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$2,000 Entrance Scholarship; $1,500 International Experience Award, and/or $1,500 Research Award"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "President's Scholarship of Distinction | Honours Arts Honours Arts and Business | $2,000 Entrance Scholarship; $1,500 International Experience Award, and/or $1,500 Research Award | Open to students admitted to full-time first-year degree studies at St. Jerome’s University, who are beginning post-secondary studies for the first time. Early May admission average of 95%+ View the President's Scholarship section for complete eligibility details. An application is not required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/19/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_60658865a8c078cca2b3",
-      "name": "President's Scholarship",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "St. Jerome's University"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "Honours Arts Honours Arts and Business",
-        "criteria_texts": [
-          "Open to students admitted to full-time first-year degree studies at St. Jerome’s University, who are beginning post-secondary studies for the first time. Early May admission average of 90%+"
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$2,000"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 2000.0,
-            "max_amount": 2000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$2,000"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "President's Scholarship | Honours Arts Honours Arts and Business | $2,000 | Open to students admitted to full-time first-year degree studies at St. Jerome’s University, who are beginning post-secondary studies for the first time. Early May admission average of 90%+"
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/20/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_51d6b9cf0c14f5041aeb",
-      "name": "Entrance scholarships",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "St. Jerome's University"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "Honours Arts Honours Arts and Business",
-        "criteria_texts": [
-          "For students with averages between 85% and 89.9%. An application is not required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$1,000"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 1000.0,
-            "max_amount": 1000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$1,000"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Entrance scholarships | Honours Arts Honours Arts and Business | $1,000 | For students with averages between 85% and 89.9%. An application is not required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/21/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_bfade408f9dd1c9d8327",
-      "name": "Founder's Scholarship",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "St. Jerome's University"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "Honours Arts Honours Arts and Business",
-        "criteria_texts": [
-          "Awarded to the highest achieving incoming Faculty of Arts student at St. Jerome’s University from each of our partnering Roman Catholic High Schools. Academic performance An application is not required."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$1,000"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 1000.0,
-            "max_amount": 1000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$1,000"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Founder's Scholarship | Honours Arts Honours Arts and Business | $1,000 | Awarded to the highest achieving incoming Faculty of Arts student at St. Jerome’s University from each of our partnering Roman Catholic High Schools. Academic performance An application is not required."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/22/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_343e74aa525224b22fb1",
-      "name": "Application-based awards",
-      "support_type": "award",
-      "context": {
-        "headings": [
-          "Entrance scholarships",
-          "Scholarships for your faculty or program",
-          "St. Jerome's University"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": "All Waterloo programs",
-        "criteria_texts": [
-          "Awarded to one or more students who demonstrate academic achievement and/or financial need and who are co-registered at St. Jerome's University (SJU), living in the SJU residence, or have another connection to the SJU community. Visit the SJU scholarship page to apply."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$1,000 - $2,500"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 1000.0,
-            "max_amount": 2500.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$1,000 - $2,500"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "Application-based awards | All Waterloo programs | $1,000 - $2,500 | Awarded to one or more students who demonstrate academic achievement and/or financial need and who are co-registered at St. Jerome's University (SJU), living in the SJU residence, or have another connection to the SJU community. Visit the SJU scholarship page to apply."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/23/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_cdde6ac5b8dfa79c96c8",
-      "name": "President's Scholarship of Distinction (admission average of 95% or higher)",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "President's and Merit Scholarships"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": null,
-        "criteria_texts": [
-          "Your early May admission average, including required courses, must be 95% or higher for the program for which you’ve received and accepted an offer of admission.",
-          "If you receive a scholarship before May, you must meet all the conditions specified above. Once we’ve reviewed your grades available in early May, we’ll confirm your University of Waterloo President’s or Merit Scholarship. You will be able to view the scholarship information in the applicant portal."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "$2,000 entrance scholarship"
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 2000.0,
-            "max_amount": 2000.0,
-            "payment_basis": "unknown",
-            "max_payments": null,
-            "evidence_text": "$2,000 entrance scholarship"
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": null,
-        "conditions_text": []
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit",
-          "payment_basis_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "$2,000 entrance scholarship",
-          "$1,500 International Experience Award* and/or",
-          "$1,500 Research Award*",
-          "Your early May admission average, including required courses, must be 95% or higher for the program for which you’ve received and accepted an offer of admission.",
-          "You must accept your Offer of Admission by the date specified on the offer.",
-          "You must be enrolled at Waterloo in full-time degree studies for the entire September to December term.",
-          "The $1,500 International Experience Award will be awarded to Distinction Scholars who participate in an international study or work experience.",
-          "The $1,500 Research Award will be awarded to Distinction Scholars for an on-campus research position with a Waterloo professor or for a research-based co-op position with the University. You will be invited to find a Waterloo professor to engage you as a full- or part-time research assistant for a term to carry out research under their supervision.",
-          "Both the International Experience Award and the Research Award are available in your upper years should you choose to claim them. They're subject to the following conditions.",
-          "You must complete your first year with an average of at least 80%.",
-          "You must be in your second year or higher at Waterloo.",
-          "You must claim the award before you complete your undergraduate program.",
-          "If you qualify, you’ll see your scholarship information in mid-May under the Scholarships and financial aid tab in the applicant portal .",
-          "If you receive a scholarship before May, you must meet all the conditions specified above. Once we’ve reviewed your grades available in early May, we’ll confirm your University of Waterloo President’s or Merit Scholarship. You will be able to view the scholarship information in the applicant portal.",
-          "If you receive your scholarship offer in May, we will already have reviewed your grades available in early May. You must still meet all other conditions specified above.",
-          "In late July, you’ll receive an email with information about how to use the award to help pay your tuition and fees."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/24/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_be4ff24d4553297fe051",
-      "name": "President's Scholarship (admission average of 90 - 94.9%)",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "President's and Merit Scholarships"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": null,
-        "criteria_texts": [
-          "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo President’s Scholarship valued at $2,000 .",
-          "Your early May admission average, including required courses, must be 90 – 94.9% for the program for which you’ve received and accepted an Offer of Admission.",
-          "If you receive a scholarship before May, you must meet all the conditions specified above. Once we’ve reviewed your grades available in early May, we’ll confirm your University of Waterloo President’s or Merit Scholarship. You will be able to view the scholarship information in the applicant portal."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo President’s Scholarship valued at $2,000 ."
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 2000.0,
-            "max_amount": 2000.0,
-            "payment_basis": "one_time",
-            "max_payments": null,
-            "evidence_text": "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo President’s Scholarship valued at $2,000 ."
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": false,
-        "conditions_text": [
-          "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo President’s Scholarship valued at $2,000 ."
-        ]
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo President’s Scholarship valued at $2,000 .",
-          "Your early May admission average, including required courses, must be 90 – 94.9% for the program for which you’ve received and accepted an Offer of Admission.",
-          "You must accept your Offer of Admission by the date specified on the offer.",
-          "You must be enrolled at Waterloo in full-time degree studies for the entire September to December term.",
-          "If you qualify, you’ll see your scholarship information in mid-May under the Scholarships and financial aid tab in the applicant portal .",
-          "If you receive a scholarship before May, you must meet all the conditions specified above. Once we’ve reviewed your grades available in early May, we’ll confirm your University of Waterloo President’s or Merit Scholarship. You will be able to view the scholarship information in the applicant portal.",
-          "If you receive your scholarship offer in May, we will already have reviewed your grades available in early May. You must still meet all other conditions specified above.",
-          "In late July, you’ll receive an email with information about how to use the award to help pay your tuition and fees."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/25/evidence/texts"
-          }
-        ]
-      }
-    },
-    {
-      "id": "award_f0c03cd61a691bceef6c",
-      "name": "Merit Scholarship (admission average of 85 - 89.9%)",
-      "support_type": "scholarship",
-      "context": {
-        "headings": [
-          "President's and Merit Scholarships"
-        ],
-        "applicant_category": "unknown",
-        "study_level": null,
-        "intake_texts": []
-      },
-      "eligibility": {
-        "international_eligible": null,
-        "programs_text": null,
-        "criteria_texts": [
-          "Your early May admission average, including required courses, must be 85 – 89.9% for the program for which you’ve received and accepted an Offer of Admission."
-        ],
-        "campus_text": null,
-        "term_text": null
-      },
-      "benefit": {
-        "display_texts": [
-          "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo Merit Scholarship valued at $1,000 ."
-        ],
-        "values": [
-          {
-            "kind": "money",
-            "currency": null,
-            "min_amount": 1000.0,
-            "max_amount": 1000.0,
-            "payment_basis": "one_time",
-            "max_payments": null,
-            "evidence_text": "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo Merit Scholarship valued at $1,000 ."
-          }
-        ],
-        "award_count": null,
-        "unlimited_awards": null
-      },
-      "renewal": {
-        "is_renewable": false,
-        "conditions_text": [
-          "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo Merit Scholarship valued at $1,000 ."
-        ]
-      },
-      "application": {
-        "method": "unknown",
-        "application_required_flag": null,
-        "instructions_text": null,
-        "deadlines": []
-      },
-      "verification": {
-        "status": "needs_review",
-        "publishable": false,
-        "issues": [
-          "requires_human_review",
-          "currency_not_explicit"
-        ]
-      },
-      "evidence": {
-        "texts": [
-          "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo Merit Scholarship valued at $1,000 .",
-          "Your early May admission average, including required courses, must be 85 – 89.9% for the program for which you’ve received and accepted an Offer of Admission.",
-          "You must accept your Offer of Admission by the date specified on the offer.",
-          "You must be enrolled at Waterloo in full-time degree studies for the entire September to December term."
-        ],
-        "refs": [
-          {
-            "file": "outputs/university_of_waterloo.json",
-            "json_pointer": "/scholarships/26/evidence/texts"
-          }
-        ]
-      }
-    }
-  ],
-  "scholarship_groups": [],
-  "application_windows": [],
-  "unresolved_sections": [
-    {
-      "name": "President's and Merit Scholarships",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/unresolved_sections/0/texts"
-      },
-      "texts": [
-        "To recognize your outstanding academic achievement, you'll automatically be considered for the President's and Merit Scholarships if you're admitted to a full-time, first-year degree program and you're beginning university or college for the first time in September. No application is required.",
-        "These scholarships are awarded in early May based on your admission average . This is calculated using the grades in your top six Grade 12 courses or equivalents, including the required courses for the program(s) to which you’ve applied.",
-        "You can receive a President's or Merit Scholarship and scholarships offered by your faculty or University College, except for scholarships from St. Jerome’s which are equivalent to the President's or Merit Scholarship (you'll receive one or the other) .",
-        "Expand all Collapse all",
-        "$2,000 entrance scholarship",
-        "$1,500 International Experience Award* and/or",
-        "$1,500 Research Award*",
-        "Your early May admission average, including required courses, must be 95% or higher for the program for which you’ve received and accepted an offer of admission.",
-        "You must accept your Offer of Admission by the date specified on the offer.",
-        "You must be enrolled at Waterloo in full-time degree studies for the entire September to December term.",
-        "The $1,500 International Experience Award will be awarded to Distinction Scholars who participate in an international study or work experience.",
-        "The $1,500 Research Award will be awarded to Distinction Scholars for an on-campus research position with a Waterloo professor or for a research-based co-op position with the University. You will be invited to find a Waterloo professor to engage you as a full- or part-time research assistant for a term to carry out research under their supervision.",
-        "Both the International Experience Award and the Research Award are available in your upper years should you choose to claim them. They're subject to the following conditions.",
-        "You must complete your first year with an average of at least 80%.",
-        "You must be in your second year or higher at Waterloo.",
-        "You must claim the award before you complete your undergraduate program.",
-        "If you qualify, you’ll see your scholarship information in mid-May under the Scholarships and financial aid tab in the applicant portal .",
-        "If you receive a scholarship before May, you must meet all the conditions specified above. Once we’ve reviewed your grades available in early May, we’ll confirm your University of Waterloo President’s or Merit Scholarship. You will be able to view the scholarship information in the applicant portal.",
-        "If you receive your scholarship offer in May, we will already have reviewed your grades available in early May. You must still meet all other conditions specified above.",
-        "In late July, you’ll receive an email with information about how to use the award to help pay your tuition and fees.",
-        "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo President’s Scholarship valued at $2,000 .",
-        "Your early May admission average, including required courses, must be 90 – 94.9% for the program for which you’ve received and accepted an Offer of Admission.",
-        "You must accept your Offer of Admission by the date specified on the offer.",
-        "You must be enrolled at Waterloo in full-time degree studies for the entire September to December term.",
-        "If you qualify, you’ll see your scholarship information in mid-May under the Scholarships and financial aid tab in the applicant portal .",
-        "If you receive a scholarship before May, you must meet all the conditions specified above. Once we’ve reviewed your grades available in early May, we’ll confirm your University of Waterloo President’s or Merit Scholarship. You will be able to view the scholarship information in the applicant portal.",
-        "If you receive your scholarship offer in May, we will already have reviewed your grades available in early May. You must still meet all other conditions specified above.",
-        "In late July, you’ll receive an email with information about how to use the award to help pay your tuition and fees.",
-        "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo Merit Scholarship valued at $1,000 .",
-        "Your early May admission average, including required courses, must be 85 – 89.9% for the program for which you’ve received and accepted an Offer of Admission.",
-        "You must accept your Offer of Admission by the date specified on the offer.",
-        "You must be enrolled at Waterloo in full-time degree studies for the entire September to December term.",
-        "If you qualify, you’ll see your scholarship information in mid-May under the Scholarships and financial aid tab in the applicant portal .",
-        "If you receive a scholarship before May, you must meet all the conditions specified above. Once we’ve reviewed your grades available in early May, we’ll confirm your University of Waterloo President’s or Merit Scholarship. You will be able to view the scholarship information in the applicant portal.",
-        "If you receive your scholarship offer in May, we will already have reviewed your grades available in early May. You must still meet all other conditions specified above.",
-        "In late July, you’ll receive an email with information about how to use the award to help pay your tuition and fees.",
-        "You must receive an offer of admission to a full-time, first-year degree program and be starting university or college for the first time in September.",
-        "If you receive an offer of admission to more than one program , your admission average may qualify you for a President's or Merit Scholarship in one program but not another because your admission average must include required courses, which vary from program to program.",
-        "If your early May admission average is below 85% but your final admission average in June or July is 85% or higher, you will be awarded the appropriate President’s or Merit Scholarship. You'll be notified after we've received final grades in July.",
-        "To receive the full value of the entrance scholarship, you must remain enrolled in full-time degree studies at Waterloo for the full four-month fall term (September to December).",
-        "Note: These scholarships pertain to admission to the University of Waterloo main campus and are not applicable if you choose to register through St. Jerome’s University , one of Waterloo's on-campus University Colleges which offers its own scholarships."
-      ]
-    },
-    {
-      "name": "President's and Merit Scholarships – eligibility and conditions",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/unresolved_sections/1/texts"
-      },
-      "texts": [
-        "You must receive an offer of admission to a full-time, first-year degree program and be starting university or college for the first time in September.",
-        "If you receive an offer of admission to more than one program , your admission average may qualify you for a President's or Merit Scholarship in one program but not another because your admission average must include required courses, which vary from program to program.",
-        "If your early May admission average is below 85% but your final admission average in June or July is 85% or higher, you will be awarded the appropriate President’s or Merit Scholarship. You'll be notified after we've received final grades in July.",
-        "To receive the full value of the entrance scholarship, you must remain enrolled in full-time degree studies at Waterloo for the full four-month fall term (September to December).",
-        "Note: These scholarships pertain to admission to the University of Waterloo main campus and are not applicable if you choose to register through St. Jerome’s University , one of Waterloo's on-campus University Colleges which offers its own scholarships."
-      ]
-    },
-    {
-      "name": "Scholarships for your faculty or program",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/unresolved_sections/2/texts"
-      },
-      "texts": [
-        "You can receive a scholarship(s) from your faculty or program in addition to the President's and Merit Scholarships listed above.",
-        "Not sure which faculty offers your program of interest? View programs listed by faculty →",
-        "Expand all Collapse all",
-        "Honours Arts (includes the 28 majors within the Faculty of Arts , e.g., Psychology, English, Sociology, History, etc.)",
-        "Honours Arts and Business (includes the 28 majors within the Faculty of Arts , e.g., Psychology, English, Sociology, History, etc.)",
-        "Global Business and Digital Arts",
-        "Programs",
-        "Value",
-        "Criteria",
-        "Honours Arts",
-        "Honours Arts and Business",
-        "Global Business and Digital Arts",
-        "Three at $10,000 over eight academic terms",
-        "One at $5,000 over eight academic terms",
-        "Several ranging between $1,000 and $3,000",
-        "An application is not required",
-        "If you’re in Honours Arts or Honours Arts and Business, you can co-register with St. Jerome's University, which makes you eligible for scholarships exclusively for St. Jerome's students. Some scholarships are automatic and others require an application .",
-        "all Engineering programs, Software Engineering, and Architecture",
-        "Eligible programs",
-        "Value",
-        "Criteria",
-        "All Engineering programs excluding Architecture",
-        "Up to 30 Entrepreneurship Entrance Awards valued at $10,000 each.",
-        "Recipients may also be awarded an Enterprise Co-op Award for Engineering valued at $10,000 to support an entrepreneurial-focused work term through Enterprise Co-op and have access to mentorship, curricular, and extracurricular programming through the Conrad School of Entrepreneurship and Business.",
-        "Academic performance",
-        "Admission Information Form",
-        "Online video interview",
-        "A demonstrated interest and commitment to entrepreneurship as assessed through the Entrepreneurship Award Application.",
-        "Application deadline is February 1. Apply through your applicant portal .",
-        "Architecture",
-        "Several at $1,000 - $2,500",
-        "Academic performance, interview, portfolio review",
-        "An application is not required.",
-        "All Engineering programs",
-        "Several at $10,000 to $25,000 over eight academic terms (normally the length of your degree)",
-        "Several at $1,000 to $5,000 for one year",
-        "Academic performance",
-        "Admission Information Form",
-        "Online video interview",
-        "An application is not required.",
-        "All Engineering programs",
-        "Two at $20,000",
-        "Academic performance",
-        "Admission Information Form",
-        "Online video interview",
-        "Demonstrated interest in entrepreneurship",
-        "An application is not required.",
-        "Software Engineering",
-        "One at $20,000 over eight academic terms (normally the length of your degree)",
-        "Several at $4,000 for one year",
-        "Academic performance",
-        "Admission Information Form",
-        "Online video interview",
-        "An application is not required.",
-        "Black and Indigenous students in any Engineering program",
-        "Up to five awards, valued at $5,000 each",
-        "Academic performance",
-        "Admission Information Form",
-        "Online video interview",
-        "Black or Indigenous students",
-        "Application deadline is April 15. Apply through your applicant portal account .",
-        "Programs",
-        "Climate and Environmental Change",
-        "Environment and Business",
-        "Environment, Resources and Sustainability",
-        "Geography and Aviation",
-        "Geography and Environmental Management",
-        "Geospatial Data Science",
-        "Planning",
-        "Scholarship",
-        "Eligible programs",
-        "Value",
-        "Criteria",
-        "Jean Andrey Environment Leadership Scholarship",
-        "All programs (including Sustainability and Financial Management)",
-        "One valued at up to $7,500 for one year",
-        "Academic performance (minimum 85% admission average)",
-        "Demonstrated interest and/or passion for all environmental issues.",
-        "An application is required by April 1, 2027.",
-        "Dean of Environment’s Scholarship for Excellence",
-        "All programs (excluding Sustainability and Financial Management)",
-        "Several at $7,500 for one year",
-        "Academic performance (minimum 85% admission average)",
-        "Demonstrated interest and/or passion for environmental issues.",
-        "An application is required by April 1, 2027.",
-        "Faculty of Environment Entrance Scholarships",
-        "All programs (excluding Sustainability and Financial Management)",
-        "$4,000 for one year (including a President’s Scholarship of Distinction valued at $2,000)",
-        "Early May admission average of 95.0% or above",
-        "An application is not required.",
-        "Faculty of Environment Entrance Scholarships",
-        "All programs (excluding Sustainability and Financial Management)",
-        "$3,000 for one year (including a President’s Scholarship valued at $2,000)",
-        "Early May admission average of 90.0% to 94.9%",
-        "An application is not required.",
-        "Faculty of Environment Student Engagement Award",
-        "All programs (excluding Sustainability and Financial Management)",
-        "Up to 10 awards valued at $4,000 each for one year",
-        "Academic performance (minimum 85% admission average)",
-        "Demonstrated interest in sustainability-related activities in your community.",
-        "An application is required by April 1, 2027.",
-        "Other entrance scholarships",
-        "All programs (excluding Sustainability and Financial Management)",
-        "Several from $1,000 to $4,000",
-        "Academic performance",
-        "An application is required by April 1, 2027.",
-        "Health Sciences",
-        "Kinesiology",
-        "Public Health",
-        "Recreation and Leisure Studies majors: Recreation, Leadership and Health; Sport and Recreation Management; and Therapeutic Recreation",
-        "The following scholarships require an application . Once you've applied for admission and can access the Waterloo applicant portal , you can apply to these scholarships under the Awards and financial aid tab in the portal. Look for the Faculty of Health Entrance Scholarships form.",
-        "Scholarship",
-        "Eligible Programs",
-        "Value",
-        "Criteria",
-        "Lyle S. Hallman Entrance Scholarship",
-        "All Health programs",
-        "Three scholarships, valued at up to $2,500 each",
-        "Academic performance",
-        "Recreation-based community involvement and leadership",
-        "Application deadline: April 15",
-        "Recreation and Leisure Studies Founders Entrance Scholarship",
-        "Recreation and Leisure Studies majors",
-        "One or more scholarships, valued at up to $1,000 each",
-        "Academic performance",
-        "Recreation-based community involvement and leadership",
-        "Application deadline: April 15",
-        "Ronald George, Florence Elizabeth and Ronald Thomas Bolce Scholarship",
-        "All Health programs",
-        "One scholarship, valued at up to $3,000",
-        "Academic performance (minimum 85% admission average)",
-        "Recreation-based community involvement and leadership",
-        "Application deadline: April 15",
-        "Business Administration (Laurier) and Computer Science (Waterloo), Business Administration (Laurier) and Mathematics (Waterloo)",
-        "Computer Science",
-        "Mathematics (which includes 16 Math majors )",
-        "Mathematics/Business Administration",
-        "Mathematics/Chartered Professional Accountancy",
-        "Mathematics/Financial Analysis and Risk Management",
-        "Scholarship",
-        "Eligible programs",
-        "Value",
-        "Criteria",
-        "Faculty of Mathematics Olympiad Scholarship",
-        "All Math programs (including Computing and Financial Management )",
-        "Up to $50,000 each ($6,250/term for up to 8 terms)",
-        "Entering first year in the Faculty of Mathematics",
-        "Medallist at any International Olympiad contest",
-        "Strong Admission Information Form",
-        "Waterloo Math contest scores",
-        "An application is required by March 5, 2027.",
-        "National and Global Scholarships",
-        "All Math programs (excluding Computing and Financial Management and Software Engineering)",
-        "Up to 30 awards at $10,000 to $40,000 over eight academic terms (normally the length of your degree)",
-        "Distinguished academic performance",
-        "Distinguished results from Mathematics or Computer Science competitions",
-        "Participation in math or computer science beyond standard course requirements. Examples include math or computer science clubs, enriched mathematics studies, jobs, volunteer experience, or hobbies.",
-        "An application is not required.",
-        "CIBC National Scholarship",
-        "Computer Science Co-op, Mathematics/ Business Administration",
-        "$25,000 over eight academic terms (normally the length of your degree)",
-        "Same criteria as for National and Global Scholarships",
-        "Must be a Canadian citizen or Permanent Resident of Canada",
-        "An application is not required.",
-        "Various entrance scholarships",
-        "All Math programs (excluding Computing and Financial Management and Software Engineering)",
-        "Several at $10,000 over eight academic terms (normally the length of your degree)",
-        "Several at $1,000 to $5,000 for one year",
-        "Academic performance",
-        "Admission Information Form",
-        "Performance in the Euclid Mathematics Contest and/or the Canadian Senior Mathematics Contest",
-        "An application is not required.",
-        "The Faculty of Mathematics scholarships web page has more information for",
-        "international students,",
-        "Black students,",
-        "Indigenous students, and",
-        "students who have written contests such as the Euclid and the Canadian Senior Mathematics Contest.",
-        "Biomedical Sciences, Environmental Sciences, Honours Science, Medical Sciences, Science and Aviation, Science and Business, Science and Financial Management, and majors within Life Sciences (e.g., Biology, Biochemistry, etc) and Physical Sciences (e.g., Chemistry, Physics, etc) .",
-        "The scholarships are available to students entering first year of full-time undergraduate studies in the Faculty of Science.",
-        "Scholarship",
-        "Eligible programs",
-        "Value",
-        "Criteria",
-        "Faculty of Science Entrance Scholarships",
-        "All programs (excluding Aviation, Optometry, Pharmacy)",
-        "$500 - $1,000 each for one year",
-        "Early May admission average as follows.",
-        "95%+ = $1,000",
-        "90-94.9% = $1,000",
-        "85-89.9% = $1,000",
-        "80-84.9% = $500",
-        "These scholarships are in addition to the President’s Scholarship of Distinction, President’s Scholarship, or Merit Scholarship, as applicable based on admission average.",
-        "An application is not required.",
-        "Faculty of Science Contest and Camp Award",
-        "All programs (excluding Aviation, Optometry, Pharmacy)",
-        "$1,000",
-        "Available to high school students completing one of the following Waterloo contests: Sir Isaac Newton Contest , Chem 13 News Contest , or the Euclid math contest . Participation in these contests must be co-ordinated through your school.",
-        "Students who participated in Waterloo's GeoX or ChemX Camps are also eligible.",
-        "Eligible students may receive one $1,000 award only.",
-        "Science SHSM Entrance Award",
-        "All programs (excluding Aviation, Optometry, Pharmacy)",
-        "$1,000",
-        "Available to students completing any Specialist High Skills Major (SHSM) at an Ontario high school. No application is required.",
-        "Faculty of Science International Student Scholarships",
-        "All programs (excluding Medical Sciences, Optometry, Pharmacy)",
-        "Up to 15 scholarships valued at $25,000 to $80,000",
-        "An application is required . Available to international fee-paying students only.",
-        "Various",
-        "All programs (excluding Medical Sciences, Optometry, Pharmacy)",
-        "Several at $1,000 - $10,000 for one year",
-        "An application is not required.",
-        "Optometry, Pharmacy",
-        "Entrance scholarships are not available.",
-        "Value",
-        "Criteria",
-        "One at approximately $57,000 over eight academic terms (normally the length of your degree)",
-        "Several scholarships ranging between $1,000 and $7,500",
-        "Academic performance",
-        "An application is required for some . The application is available under the Awards and financial aid tab in the applicant portal .",
-        "Value",
-        "Criteria",
-        "Several at $3,000 - $4,000 for one year",
-        "Academic performance",
-        "An application is not required.",
-        "If you receive an offer of admission to Honours Arts or Honours Arts and Business, you can choose St. Jerome's University (SJU) as your academic home base by co-registering . If you qualify, you'll receive the President's or Merit Scholarship from St. Jerome's instead of the University of Waterloo. You won't receive scholarships from both SJU and Waterloo's main campus.",
-        "Scholarship",
-        "Eligible programs",
-        "Value",
-        "Criteria",
-        "Board of Governor's Scholarship",
-        "Honours Arts",
-        "Honours Arts and Business",
-        "$5,000",
-        "An application is not required.",
-        "President's Scholarship of Distinction",
-        "Honours Arts",
-        "Honours Arts and Business",
-        "$2,000 Entrance Scholarship;",
-        "$1,500 International Experience Award, and/or",
-        "$1,500 Research Award",
-        "Open to students admitted to full-time first-year degree studies at St. Jerome’s University, who are beginning post-secondary studies for the first time.",
-        "Early May admission average of 95%+",
-        "View the President's Scholarship section for complete eligibility details.",
-        "An application is not required.",
-        "President's Scholarship",
-        "Honours Arts",
-        "Honours Arts and Business",
-        "$2,000",
-        "Open to students admitted to full-time first-year degree studies at St. Jerome’s University, who are beginning post-secondary studies for the first time.",
-        "Early May admission average of 90%+",
-        "Entrance scholarships",
-        "Honours Arts",
-        "Honours Arts and Business",
-        "$1,000",
-        "An application is not required.",
-        "Founder's Scholarship",
-        "Honours Arts",
-        "Honours Arts and Business",
-        "$1,000",
-        "Awarded to the highest achieving incoming Faculty of Arts student at St. Jerome’s University from each of our partnering Roman Catholic High Schools.",
-        "Academic performance",
-        "An application is not required.",
-        "Application-based awards",
-        "All Waterloo programs",
-        "$1,000 - $2,500",
-        "Awarded to one or more students who demonstrate academic achievement and/or financial need and who are co-registered at St. Jerome's University (SJU), living in the SJU residence, or have another connection to the SJU community.",
-        "Visit the SJU scholarship page to apply.",
-        "For a complete list and additional information, visit the St. Jerome’s University scholarships website."
-      ]
-    },
-    {
-      "name": "St. Jerome's scholarships",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/unresolved_sections/3/texts"
-      },
-      "texts": [
-        "If you’re in Honours Arts or Honours Arts and Business, you can co-register with St. Jerome's University, which makes you eligible for scholarships exclusively for St. Jerome's students. Some scholarships are automatic and others require an application ."
-      ]
-    },
-    {
-      "name": "Scholarships which require an application",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/unresolved_sections/4/texts"
-      },
-      "texts": [
-        "Expand all Collapse all",
-        "There are scholarships specifically for international students , including new $10,000 scholarships for students applying to most Waterloo programs.",
-        "The faculties of Mathematics (which includes Computer Science) and Science offer scholarships of up to $80,000 for international students .",
-        "Applicants to programs in the Faculty of Science need to apply for some scholarships.",
-        "Hong Kong Alumni Association Entrance Award (for students from or previously from Hong Kong, based on academic performance and community involvement)",
-        "Waterloo – China Hong Kong Entrance Scholarship (for students who reside in or who previously resided in Hong Kong or mainland China. Based on academic performance and community involvement)",
-        "Once you've applied and can access the Waterloo applicant portal , you can apply to these scholarships under the Awards and financial aid tab in the portal.",
-        "If you're of African, African American, Afro-Latine, Black Canadian, Caribbean, or other African descent, you may be eligible for scholarships valued at up to $40,000.",
-        "Once you've applied and can access the Waterloo applicant portal , you can apply to these scholarships under the Awards and financial aid tab in the portal.",
-        "Application deadline: April 15",
-        "If you're a citizen or member of a First Nations community (Status/Non-Status), Inuit, and/or Métis, you may be eligible for scholarships valued at up to $40,000.",
-        "Once you've applied and can access the Waterloo applicant portal , you can apply to these scholarships under the Awards and financial aid tab in the portal.",
-        "Application deadline: April 15",
-        "Scholarships of up to $120,000 are awarded annually across 20 universities in Canada.",
-        "For high school students applying to science, technology, engineering, and math programs",
-        "Recipients must be Canadian citizens.",
-        "Must be entrepreneurial-minded (exhibiting leadership, charisma, and creativity).",
-        "Strong consideration is given for financial need.",
-        "You must be nominated by your high school or CÉGEP by January 27, 2027 . Visit the Schulich Leader Scholarships website for deadlines and details.",
-        "Deer Ridge Entrance Award (for students from Waterloo Region, based on academic performance, financial need, and community involvement)",
-        "Joyce Scholars Award (for students who face financial barriers and have demonstrated the ability overcome obstacles and adversity, preference to students from Waterloo Region)",
-        "Apply for these awards when you complete the Entrance Bursary form. The bursary application will be available to Ontario students on the Awards and financial aid tab in the Waterloo applicant portal .",
-        "You can view all entrance scholarships which require an application . There may be some you qualify for – and who doesn't appreciate free money!",
-        "Tip: Use Undergraduate, UG Entering Year 1, and Application required as the options in the dropdown menus."
-      ]
-    },
-    {
-      "name": "Schulich Leader Scholarships in science, technology, engineering, and math",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/unresolved_sections/5/texts"
-      },
-      "texts": [
-        "Scholarships of up to $120,000 are awarded annually across 20 universities in Canada."
-      ]
-    },
-    {
-      "name": "Search our scholarship database",
-      "reason": "administrative_or_application_content",
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/unresolved_sections/6/texts"
-      },
-      "texts": [
-        "You can view all entrance scholarships which require an application . There may be some you qualify for – and who doesn't appreciate free money!",
-        "Tip: Use Undergraduate, UG Entering Year 1, and Application required as the options in the dropdown menus."
-      ]
-    },
-    {
-      "name": "Bursaries",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/unresolved_sections/7/texts"
-      },
-      "texts": [
-        "A bursary is awarded based on financial need rather than on academic achievement.",
-        "We encourage you to apply for a Waterloo entrance bursary even if you think you won't qualify because a variety of factors are considered.",
-        "Bursary for Ontario students with disabilities",
-        "View bursaries available to all students . Tips: when searching, use \"Undergraduate\" as your career, \"UG Entering Year 1\" as the level, and \"Bursaries/Financial Need\" as the award type. You can use other filters to narrow your search or leave the award type blank to see more possibilities."
-      ]
-    }
-  ],
-  "source_tables": [
-    {
-      "heading": "Programs",
-      "classification": "unclassified",
-      "row_count": 1,
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/evidence/tables/0"
-      }
-    },
-    {
-      "heading": "Programs",
-      "classification": "unclassified",
-      "row_count": 6,
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/evidence/tables/1"
-      }
-    },
-    {
-      "heading": "Programs",
-      "classification": "award_catalogue",
-      "row_count": 6,
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/evidence/tables/2"
-      }
-    },
-    {
-      "heading": "Programs",
-      "classification": "award_catalogue",
-      "row_count": 3,
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/evidence/tables/3"
-      }
-    },
-    {
-      "heading": "Programs",
-      "classification": "award_catalogue",
-      "row_count": 4,
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/evidence/tables/4"
-      }
-    },
-    {
-      "heading": "Programs",
-      "classification": "award_catalogue",
-      "row_count": 6,
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/evidence/tables/5"
-      }
-    },
-    {
-      "heading": "Accounting and Financial Management, Sustainability and Financial Management",
-      "classification": "unclassified",
-      "row_count": 1,
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/evidence/tables/6"
-      }
-    },
-    {
-      "heading": "Computing and Financial Management",
-      "classification": "unclassified",
-      "row_count": 1,
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/evidence/tables/7"
-      }
-    },
-    {
-      "heading": "St. Jerome's University",
-      "classification": "award_catalogue",
-      "row_count": 6,
-      "evidence_ref": {
-        "file": "outputs/university_of_waterloo.json",
-        "json_pointer": "/evidence/tables/8"
-      }
-    }
-  ],
-  "cost_breakdowns": [],
-  "evidence": {
-    "tables": [
-      {
-        "heading": "Programs",
-        "headers": [
-          "Programs",
-          "Value",
-          "Criteria"
-        ],
-        "rows": [
-          [
-            "Honours Arts Honours Arts and Business Global Business and Digital Arts",
-            "Three at $10,000 over eight academic terms One at $5,000 over eight academic terms Several ranging between $1,000 and $3,000",
-            "Academic performance An application is not required"
-          ]
-        ],
-        "rows_count": 1
-      },
-      {
-        "heading": "Programs",
-        "headers": [
-          "Eligible programs",
-          "Value",
-          "Criteria"
-        ],
-        "rows": [
-          [
-            "All Engineering programs excluding Architecture",
-            "Up to 30 Entrepreneurship Entrance Awards valued at $10,000 each. Recipients may also be awarded an Enterprise Co-op Award for Engineering valued at $10,000 to support an entrepreneurial-focused work term through Enterprise Co-op and have access to mentorship, curricular, and extracurricular programming through the Conrad School of Entrepreneurship and Business.",
-            "Academic performance Admission Information Form Online video interview A demonstrated interest and commitment to entrepreneurship as assessed through the Entrepreneurship Award Application. Application deadline is February 1. Apply through your applicant portal ."
-          ],
-          [
-            "Architecture",
-            "Several at $1,000 - $2,500",
-            "Academic performance, interview, portfolio review An application is not required."
-          ],
-          [
-            "All Engineering programs",
-            "Several at $10,000 to $25,000 over eight academic terms (normally the length of your degree) Several at $1,000 to $5,000 for one year",
-            "Academic performance Admission Information Form Online video interview An application is not required."
-          ],
-          [
-            "All Engineering programs",
-            "Two at $20,000",
-            "Academic performance Admission Information Form Online video interview Demonstrated interest in entrepreneurship An application is not required."
-          ],
-          [
-            "Software Engineering",
-            "One at $20,000 over eight academic terms (normally the length of your degree) Several at $4,000 for one year",
-            "Academic performance Admission Information Form Online video interview An application is not required."
-          ],
-          [
-            "Black and Indigenous students in any Engineering program",
-            "Up to five awards, valued at $5,000 each",
-            "Academic performance Admission Information Form Online video interview Black or Indigenous students Application deadline is April 15. Apply through your applicant portal account ."
-          ]
-        ],
-        "rows_count": 6
-      },
-      {
-        "heading": "Programs",
-        "headers": [
-          "Scholarship",
-          "Eligible programs",
-          "Value",
-          "Criteria"
-        ],
-        "rows": [
-          [
-            "Jean Andrey Environment Leadership Scholarship",
-            "All programs (including Sustainability and Financial Management)",
-            "One valued at up to $7,500 for one year",
-            "Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for all environmental issues. An application is required by April 1, 2027."
-          ],
-          [
-            "Dean of Environment’s Scholarship for Excellence",
-            "All programs (excluding Sustainability and Financial Management)",
-            "Several at $7,500 for one year",
-            "Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for environmental issues. An application is required by April 1, 2027."
-          ],
-          [
-            "Faculty of Environment Entrance Scholarships",
-            "All programs (excluding Sustainability and Financial Management)",
-            "$4,000 for one year (including a President’s Scholarship of Distinction valued at $2,000)",
-            "Early May admission average of 95.0% or above An application is not required."
-          ],
-          [
-            "Faculty of Environment Entrance Scholarships",
-            "All programs (excluding Sustainability and Financial Management)",
-            "$3,000 for one year (including a President’s Scholarship valued at $2,000)",
-            "Early May admission average of 90.0% to 94.9% An application is not required."
-          ],
-          [
-            "Faculty of Environment Student Engagement Award",
-            "All programs (excluding Sustainability and Financial Management)",
-            "Up to 10 awards valued at $4,000 each for one year",
-            "Academic performance (minimum 85% admission average) Demonstrated interest in sustainability-related activities in your community. An application is required by April 1, 2027."
-          ],
-          [
-            "Other entrance scholarships",
-            "All programs (excluding Sustainability and Financial Management)",
-            "Several from $1,000 to $4,000",
-            "Academic performance An application is required by April 1, 2027."
-          ]
-        ],
-        "rows_count": 6
-      },
-      {
-        "heading": "Programs",
-        "headers": [
-          "Scholarship",
-          "Eligible Programs",
-          "Value",
-          "Criteria"
-        ],
-        "rows": [
-          [
-            "Lyle S. Hallman Entrance Scholarship",
-            "All Health programs",
-            "Three scholarships, valued at up to $2,500 each",
-            "Academic performance Recreation-based community involvement and leadership Application deadline: April 15"
-          ],
-          [
-            "Recreation and Leisure Studies Founders Entrance Scholarship",
-            "Recreation and Leisure Studies majors",
-            "One or more scholarships, valued at up to $1,000 each",
-            "Academic performance Recreation-based community involvement and leadership Application deadline: April 15"
-          ],
-          [
-            "Ronald George, Florence Elizabeth and Ronald Thomas Bolce Scholarship",
-            "All Health programs",
-            "One scholarship, valued at up to $3,000",
-            "Academic performance (minimum 85% admission average) Recreation-based community involvement and leadership Application deadline: April 15"
-          ]
-        ],
-        "rows_count": 3
-      },
-      {
-        "heading": "Programs",
-        "headers": [
-          "Scholarship",
-          "Eligible programs",
-          "Value",
-          "Criteria"
-        ],
-        "rows": [
-          [
-            "Faculty of Mathematics Olympiad Scholarship",
-            "All Math programs (including Computing and Financial Management )",
-            "Up to $50,000 each ($6,250/term for up to 8 terms)",
-            "Entering first year in the Faculty of Mathematics Medallist at any International Olympiad contest Strong Admission Information Form Waterloo Math contest scores An application is required by March 5, 2027."
-          ],
-          [
-            "National and Global Scholarships",
-            "All Math programs (excluding Computing and Financial Management and Software Engineering)",
-            "Up to 30 awards at $10,000 to $40,000 over eight academic terms (normally the length of your degree)",
-            "Distinguished academic performance Distinguished results from Mathematics or Computer Science competitions Participation in math or computer science beyond standard course requirements. Examples include math or computer science clubs, enriched mathematics studies, jobs, volunteer experience, or hobbies. An application is not required."
-          ],
-          [
-            "CIBC National Scholarship",
-            "Computer Science Co-op, Mathematics/ Business Administration",
-            "$25,000 over eight academic terms (normally the length of your degree)",
-            "Same criteria as for National and Global Scholarships Must be a Canadian citizen or Permanent Resident of Canada An application is not required."
-          ],
-          [
-            "Various entrance scholarships",
-            "All Math programs (excluding Computing and Financial Management and Software Engineering)",
-            "Several at $10,000 over eight academic terms (normally the length of your degree) Several at $1,000 to $5,000 for one year",
-            "Academic performance Admission Information Form Performance in the Euclid Mathematics Contest and/or the Canadian Senior Mathematics Contest An application is not required."
-          ]
-        ],
-        "rows_count": 4
-      },
-      {
-        "heading": "Programs",
-        "headers": [
-          "Scholarship",
-          "Eligible programs",
-          "Value",
-          "Criteria"
-        ],
-        "rows": [
-          [
-            "Faculty of Science Entrance Scholarships",
-            "All programs (excluding Aviation, Optometry, Pharmacy)",
-            "$500 - $1,000 each for one year",
-            "Early May admission average as follows. 95%+ = $1,000 90-94.9% = $1,000 85-89.9% = $1,000 80-84.9% = $500 These scholarships are in addition to the President’s Scholarship of Distinction, President’s Scholarship, or Merit Scholarship, as applicable based on admission average. An application is not required."
-          ],
-          [
-            "Faculty of Science Contest and Camp Award",
-            "All programs (excluding Aviation, Optometry, Pharmacy)",
-            "$1,000",
-            "Available to high school students completing one of the following Waterloo contests: Sir Isaac Newton Contest , Chem 13 News Contest , or the Euclid math contest . Participation in these contests must be co-ordinated through your school. Students who participated in Waterloo's GeoX or ChemX Camps are also eligible. Eligible students may receive one $1,000 award only."
-          ],
-          [
-            "Science SHSM Entrance Award",
-            "All programs (excluding Aviation, Optometry, Pharmacy)",
-            "$1,000",
-            "Available to students completing any Specialist High Skills Major (SHSM) at an Ontario high school. No application is required."
-          ],
-          [
-            "Faculty of Science International Student Scholarships",
-            "All programs (excluding Medical Sciences, Optometry, Pharmacy)",
-            "Up to 15 scholarships valued at $25,000 to $80,000",
-            "An application is required . Available to international fee-paying students only."
-          ],
-          [
-            "Various",
-            "All programs (excluding Medical Sciences, Optometry, Pharmacy)",
-            "Several at $1,000 - $10,000 for one year",
-            "Academic performance An application is not required."
-          ],
-          [
-            "",
-            "Optometry, Pharmacy",
-            "Entrance scholarships are not available."
-          ]
-        ],
-        "rows_count": 6
-      },
-      {
-        "heading": "Accounting and Financial Management, Sustainability and Financial Management",
-        "headers": [
-          "Value",
-          "Criteria"
-        ],
-        "rows": [
-          [
-            "One at approximately $57,000 over eight academic terms (normally the length of your degree) Several scholarships ranging between $1,000 and $7,500",
-            "Academic performance An application is required for some . The application is available under the Awards and financial aid tab in the applicant portal ."
-          ]
-        ],
-        "rows_count": 1
-      },
-      {
-        "heading": "Computing and Financial Management",
-        "headers": [
-          "Value",
-          "Criteria"
-        ],
-        "rows": [
-          [
-            "Several at $3,000 - $4,000 for one year",
-            "Academic performance An application is not required."
-          ]
-        ],
-        "rows_count": 1
-      },
-      {
-        "heading": "St. Jerome's University",
-        "headers": [
-          "Scholarship",
-          "Eligible programs",
-          "Value",
-          "Criteria"
-        ],
-        "rows": [
-          [
-            "Board of Governor's Scholarship",
-            "Honours Arts Honours Arts and Business",
-            "$5,000",
-            "Academic performance An application is not required."
-          ],
-          [
-            "President's Scholarship of Distinction",
-            "Honours Arts Honours Arts and Business",
-            "$2,000 Entrance Scholarship; $1,500 International Experience Award, and/or $1,500 Research Award",
-            "Open to students admitted to full-time first-year degree studies at St. Jerome’s University, who are beginning post-secondary studies for the first time. Early May admission average of 95%+ View the President's Scholarship section for complete eligibility details. An application is not required."
-          ],
-          [
-            "President's Scholarship",
-            "Honours Arts Honours Arts and Business",
-            "$2,000",
-            "Open to students admitted to full-time first-year degree studies at St. Jerome’s University, who are beginning post-secondary studies for the first time. Early May admission average of 90%+"
-          ],
-          [
-            "Entrance scholarships",
-            "Honours Arts Honours Arts and Business",
-            "$1,000",
-            "For students with averages between 85% and 89.9%. An application is not required."
-          ],
-          [
-            "Founder's Scholarship",
-            "Honours Arts Honours Arts and Business",
-            "$1,000",
-            "Awarded to the highest achieving incoming Faculty of Arts student at St. Jerome’s University from each of our partnering Roman Catholic High Schools. Academic performance An application is not required."
-          ],
-          [
-            "Application-based awards",
-            "All Waterloo programs",
-            "$1,000 - $2,500",
-            "Awarded to one or more students who demonstrate academic achievement and/or financial need and who are co-registered at St. Jerome's University (SJU), living in the SJU residence, or have another connection to the SJU community. Visit the SJU scholarship page to apply."
-          ]
-        ],
-        "rows_count": 6
-      }
-    ],
-    "renewal": {
-      "positive": [],
-      "negative": [
-        "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo President’s Scholarship valued at $2,000 .",
-        "If you meet the conditions outlined below, you’ll be awarded a one-time University of Waterloo Merit Scholarship valued at $1,000 ."
+      "type": "scholarship",
+      "programs": "All Math programs (excluding Computing and Financial Management and Software Engineering)",
+      "value_text": "Up to 30 awards at $10,000 to $40,000 over eight academic terms (normally the length of your degree)",
+      "values": [
+        {
+          "min_amount": 10000.0,
+          "max_amount": 10000.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 40000.0,
+          "max_amount": 40000.0,
+          "payment_basis": "unknown"
+        }
       ],
-      "page_status": "negative_mentions"
+      "eligibility": "Distinguished academic performance Distinguished results from Mathematics or Computer Science competitions Participation in math or computer science beyond standard course requirements. Examples include math or computer science clubs, enriched mathematics studies, jobs, volunteer experience, or hobbies. An application is not required."
+    },
+    {
+      "name": "CIBC National Scholarship",
+      "type": "scholarship",
+      "programs": "Computer Science Co-op, Mathematics/ Business Administration",
+      "value_text": "$25,000 over eight academic terms (normally the length of your degree)",
+      "values": [
+        {
+          "min_amount": 25000.0,
+          "max_amount": 25000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Same criteria as for National and Global Scholarships Must be a Canadian citizen or Permanent Resident of Canada An application is not required."
+    },
+    {
+      "name": "Various entrance scholarships",
+      "type": "scholarship",
+      "programs": "All Math programs (excluding Computing and Financial Management and Software Engineering)",
+      "value_text": "Several at $10,000 over eight academic terms (normally the length of your degree) Several at $1,000 to $5,000 for one year",
+      "values": [
+        {
+          "min_amount": 10000.0,
+          "max_amount": 10000.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 1000.0,
+          "max_amount": 1000.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 5000.0,
+          "max_amount": 5000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Academic performance Admission Information Form Performance in the Euclid Mathematics Contest and/or the Canadian Senior Mathematics Contest An application is not required."
+    },
+    {
+      "name": "Faculty of Science Entrance Scholarships",
+      "type": "scholarship",
+      "programs": "All programs (excluding Aviation, Optometry, Pharmacy)",
+      "value_text": "$500 - $1,000 each for one year",
+      "values": [
+        {
+          "min_amount": 500.0,
+          "max_amount": 1000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Early May admission average as follows. 95%+ = $1,000 90-94.9% = $1,000 85-89.9% = $1,000 80-84.9% = $500 These scholarships are in addition to the President’s Scholarship of Distinction, President’s Scholarship, or Merit Scholarship, as applicable based on admission average. An application is not required."
+    },
+    {
+      "name": "Faculty of Science Contest and Camp Award",
+      "type": "scholarship",
+      "programs": "All programs (excluding Aviation, Optometry, Pharmacy)",
+      "value_text": "$1,000",
+      "values": [
+        {
+          "min_amount": 1000.0,
+          "max_amount": 1000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Available to high school students completing one of the following Waterloo contests: Sir Isaac Newton Contest , Chem 13 News Contest , or the Euclid math contest . Participation in these contests must be co-ordinated through your school. Students who participated in Waterloo's GeoX or ChemX Camps are also eligible. Eligible students may receive one $1,000 award only."
+    },
+    {
+      "name": "Science SHSM Entrance Award",
+      "type": "scholarship",
+      "programs": "All programs (excluding Aviation, Optometry, Pharmacy)",
+      "value_text": "$1,000",
+      "values": [
+        {
+          "min_amount": 1000.0,
+          "max_amount": 1000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Available to students completing any Specialist High Skills Major (SHSM) at an Ontario high school. No application is required."
+    },
+    {
+      "name": "Faculty of Science International Student Scholarships",
+      "type": "scholarship",
+      "programs": "All programs (excluding Medical Sciences, Optometry, Pharmacy)",
+      "value_text": "Up to 15 scholarships valued at $25,000 to $80,000",
+      "values": [
+        {
+          "min_amount": 25000.0,
+          "max_amount": 25000.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 80000.0,
+          "max_amount": 80000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "An application is required . Available to international fee-paying students only."
+    },
+    {
+      "name": "Various",
+      "type": "scholarship",
+      "programs": "All programs (excluding Medical Sciences, Optometry, Pharmacy)",
+      "value_text": "Several at $1,000 - $10,000 for one year",
+      "values": [
+        {
+          "min_amount": 1000.0,
+          "max_amount": 10000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Academic performance An application is not required."
+    },
+    {
+      "name": "Board of Governor's Scholarship",
+      "type": "scholarship",
+      "programs": "Honours Arts Honours Arts and Business",
+      "value_text": "$5,000",
+      "values": [
+        {
+          "min_amount": 5000.0,
+          "max_amount": 5000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Academic performance An application is not required."
+    },
+    {
+      "name": "President's Scholarship of Distinction",
+      "type": "scholarship",
+      "programs": "Honours Arts Honours Arts and Business",
+      "value_text": "$2,000 Entrance Scholarship; $1,500 International Experience Award, and/or $1,500 Research Award",
+      "values": [
+        {
+          "min_amount": 2000.0,
+          "max_amount": 2000.0,
+          "payment_basis": "unknown"
+        },
+        {
+          "min_amount": 1500.0,
+          "max_amount": 1500.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Open to students admitted to full-time first-year degree studies at St. Jerome’s University, who are beginning post-secondary studies for the first time. Early May admission average of 95%+ View the President's Scholarship section for complete eligibility details. An application is not required."
+    },
+    {
+      "name": "President's Scholarship",
+      "type": "scholarship",
+      "programs": "Honours Arts Honours Arts and Business",
+      "value_text": "$2,000",
+      "values": [
+        {
+          "min_amount": 2000.0,
+          "max_amount": 2000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Open to students admitted to full-time first-year degree studies at St. Jerome’s University, who are beginning post-secondary studies for the first time. Early May admission average of 90%+"
+    },
+    {
+      "name": "Entrance scholarships",
+      "type": "scholarship",
+      "programs": "Honours Arts Honours Arts and Business",
+      "value_text": "$1,000",
+      "values": [
+        {
+          "min_amount": 1000.0,
+          "max_amount": 1000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "For students with averages between 85% and 89.9%. An application is not required."
+    },
+    {
+      "name": "Founder's Scholarship",
+      "type": "scholarship",
+      "programs": "Honours Arts Honours Arts and Business",
+      "value_text": "$1,000",
+      "values": [
+        {
+          "min_amount": 1000.0,
+          "max_amount": 1000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Awarded to the highest achieving incoming Faculty of Arts student at St. Jerome’s University from each of our partnering Roman Catholic High Schools. Academic performance An application is not required."
+    },
+    {
+      "name": "Application-based awards",
+      "type": "scholarship",
+      "programs": "All Waterloo programs",
+      "value_text": "$1,000 - $2,500",
+      "values": [
+        {
+          "min_amount": 1000.0,
+          "max_amount": 2500.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": "Awarded to one or more students who demonstrate academic achievement and/or financial need and who are co-registered at St. Jerome's University (SJU), living in the SJU residence, or have another connection to the SJU community. Visit the SJU scholarship page to apply."
     }
-  },
-  "summary": {
-    "named_award_entries": 27,
-    "award_groups": 0,
-    "tiers": 0,
-    "application_windows": 0,
-    "unresolved_sections": 8,
-    "verified_scholarships": 0,
-    "total_scholarships": null
-  }
+  ]
 }

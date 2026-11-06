@@ -1,40 +1,18 @@
 {
-  "schema_version": 3,
-  "generated_at": "2026-11-06T03:14:35.391485+00:00",
+  "schema_version": 4,
   "school": {
-    "slug": "university_of_regina",
-    "name": "University of Regina"
+    "name": "University of Regina",
+    "slug": "university_of_regina"
   },
-  "crawl": {
-    "success": true,
-    "status": "ok",
-    "http_status": 200,
-    "error": null,
-    "attempts": [
-      {
-        "client": "requests",
-        "http_status": 200,
-        "final_url": "https://www.uregina.ca/cost-aid/funding/undergraduate-scholarships/index.html",
-        "error": null
-      }
-    ]
-  },
-  "source": {
-    "page_url": "https://www.uregina.ca/cost-aid/funding/undergraduate-scholarships/index.html",
-    "final_url": "https://www.uregina.ca/cost-aid/funding/undergraduate-scholarships/index.html",
-    "captured_at": "2026-11-06T01:25:14.742231+00:00",
-    "attempted_at": "2026-11-06T01:25:12.372166+00:00",
-    "html_sha256": "d8de3efff4305d72562a5eb462ad6100b165b491043afe675e9f3a15bdf5a798",
-    "output_file": "outputs/university_of_regina.json",
-    "input_kind": "legacy_json_import",
-    "input_json_sha256": "bfc78be3a29743c254c95be8c555c280deccd22a78dbf30f74287be8fee3f0ef"
-  },
+  "source_url": "https://www.uregina.ca/cost-aid/funding/undergraduate-scholarships/index.html",
+  "fetched_at": "2026-11-06T03:39:39.260771+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "data_status": "needs_review",
   "scholarships": [],
-  "scholarship_groups": [],
-  "application_windows": [
+  "application_periods": [
     {
       "group": "Entrance Award Deadlines",
-      "label": null,
       "opens": {
         "raw": "January 15, 2027",
         "date": "2027-01-15"
@@ -43,15 +21,10 @@
         "raw": "March 17, 2027",
         "date": "2027-03-17"
       },
-      "results_text": "June",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/evidence/tables/0/rows/1"
-      }
+      "results": "June"
     },
     {
       "group": "Chancellor's Scholarship Deadlines",
-      "label": null,
       "opens": {
         "raw": "October 1, 2026",
         "date": "2026-10-01"
@@ -60,15 +33,11 @@
         "raw": "December 15, 2026",
         "date": "2026-12-15"
       },
-      "results_text": "May",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/evidence/tables/1/rows/1"
-      }
+      "results": "May"
     },
     {
       "group": "Continuing Award Deadlines",
-      "label": "Fall",
+      "term": "Fall",
       "opens": {
         "raw": "September 1, 2026",
         "date": "2026-09-01"
@@ -77,15 +46,11 @@
         "raw": "October 4, 2026",
         "date": "2026-10-04"
       },
-      "results_text": "December",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/evidence/tables/2/rows/1"
-      }
+      "results": "December"
     },
     {
       "group": "Continuing Award Deadlines",
-      "label": "Winter",
+      "term": "Winter",
       "opens": {
         "raw": "January 5, 2027",
         "date": "2027-01-05"
@@ -94,15 +59,11 @@
         "raw": "February 5, 2027",
         "date": "2027-02-05"
       },
-      "results_text": "April",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/evidence/tables/2/rows/2"
-      }
+      "results": "April"
     },
     {
       "group": "Continuing Award Deadlines",
-      "label": "Spring",
+      "term": "Spring",
       "opens": {
         "raw": "May 3, 2027",
         "date": "2027-05-03"
@@ -111,15 +72,11 @@
         "raw": "June 3, 2027",
         "date": "2027-06-03"
       },
-      "results_text": "July",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/evidence/tables/2/rows/3"
-      }
+      "results": "July"
     },
     {
       "group": "Convocation Award Deadlines",
-      "label": "Fall",
+      "term": "Fall",
       "opens": {
         "raw": "September 1, 2026",
         "date": "2026-09-01"
@@ -127,16 +84,11 @@
       "deadline": {
         "raw": "September 25, 2026",
         "date": "2026-09-25"
-      },
-      "results_text": null,
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/evidence/tables/3/rows/1"
       }
     },
     {
       "group": "Convocation Award Deadlines",
-      "label": "Spring",
+      "term": "Spring",
       "opens": {
         "raw": "March 9, 2026",
         "date": "2026-03-09"
@@ -144,357 +96,10 @@
       "deadline": {
         "raw": "April 9, 2026",
         "date": "2026-04-09"
-      },
-      "results_text": null,
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/evidence/tables/3/rows/2"
       }
     }
   ],
-  "unresolved_sections": [
-    {
-      "name": "Scholarships and Awards",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/unresolved_sections/0/texts"
-      },
-      "texts": [
-        "There are many scholarships, bursaries, and awards for undergraduate students in every program and year of study!",
-        "Embarking on your first U of R adventure this Fall as a Domestic Student? Apply for the Entrance Awards for Domestic Students!",
-        "Embarking on your first U of R adventure this Fall as an International Student? Apply for the Entrance Awards for International Students!",
-        "If you are an undergraduate student who has successfully completed at least one semester at the U of R, then the Continuing Awards are for you!",
-        "Many scholarships and awards require students to submit an application. Access information and application forms here.",
-        "We have handouts, videos, and workshops to help you navigate the scholarship application process!",
-        "Scholarship Deadlines"
-      ]
-    },
-    {
-      "name": "Entrance Awards for Domestic Students",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/unresolved_sections/1/texts"
-      },
-      "texts": [
-        "Embarking on your first U of R adventure this Fall as a Domestic Student? Apply for the Entrance Awards for Domestic Students!"
-      ]
-    },
-    {
-      "name": "Entrance Awards for International Students",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/unresolved_sections/2/texts"
-      },
-      "texts": [
-        "Embarking on your first U of R adventure this Fall as an International Student? Apply for the Entrance Awards for International Students!"
-      ]
-    },
-    {
-      "name": "Continuing Awards",
-      "reason": "section_heading_is_not_an_individual_award",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/unresolved_sections/3/texts"
-      },
-      "texts": [
-        "If you are an undergraduate student who has successfully completed at least one semester at the U of R, then the Continuing Awards are for you!"
-      ]
-    },
-    {
-      "name": "Award Applications/SAMS",
-      "reason": "administrative_or_application_content",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/unresolved_sections/4/texts"
-      },
-      "texts": [
-        "Many scholarships and awards require students to submit an application. Access information and application forms here."
-      ]
-    },
-    {
-      "name": "Scholarship Application Help",
-      "reason": "administrative_or_application_content",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/unresolved_sections/5/texts"
-      },
-      "texts": [
-        "We have handouts, videos, and workshops to help you navigate the scholarship application process!",
-        "Scholarship Deadlines"
-      ]
-    },
-    {
-      "name": "Scholarship Deadlines",
-      "reason": "administrative_or_application_content",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/unresolved_sections/6/texts"
-      },
-      "texts": [
-        "Application Available",
-        "Deadline Date",
-        "Results Available",
-        "January 15, 2027",
-        "March 17, 2027",
-        "June",
-        "Application Available",
-        "Deadline Date",
-        "Results Available",
-        "October 1, 2026",
-        "December 15, 2026",
-        "May",
-        "Semester",
-        "Application Available",
-        "Deadline Date",
-        "Results Available",
-        "Fall",
-        "September 1, 2026",
-        "October 4, 2026",
-        "December",
-        "Winter",
-        "January 5, 2027",
-        "February 5, 2027",
-        "April",
-        "Spring",
-        "May 3, 2027",
-        "June 3, 2027",
-        "July",
-        "Ceremony",
-        "Application Available",
-        "Deadline Date",
-        "Fall",
-        "September 1, 2026",
-        "September 25, 2026",
-        "Spring",
-        "March 9, 2026",
-        "April 9, 2026"
-      ]
-    },
-    {
-      "name": "Entrance Award Deadlines",
-      "reason": "administrative_or_application_content",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/unresolved_sections/7/texts"
-      },
-      "texts": [
-        "Application Available",
-        "Deadline Date",
-        "Results Available",
-        "January 15, 2027",
-        "March 17, 2027",
-        "June"
-      ]
-    },
-    {
-      "name": "Chancellor's Scholarship Deadlines",
-      "reason": "administrative_or_application_content",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/unresolved_sections/8/texts"
-      },
-      "texts": [
-        "Application Available",
-        "Deadline Date",
-        "Results Available",
-        "October 1, 2026",
-        "December 15, 2026",
-        "May"
-      ]
-    },
-    {
-      "name": "Continuing Award Deadlines",
-      "reason": "administrative_or_application_content",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/unresolved_sections/9/texts"
-      },
-      "texts": [
-        "Semester",
-        "Application Available",
-        "Deadline Date",
-        "Results Available",
-        "Fall",
-        "September 1, 2026",
-        "October 4, 2026",
-        "December",
-        "Winter",
-        "January 5, 2027",
-        "February 5, 2027",
-        "April",
-        "Spring",
-        "May 3, 2027",
-        "June 3, 2027",
-        "July"
-      ]
-    },
-    {
-      "name": "Convocation Award Deadlines",
-      "reason": "administrative_or_application_content",
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/unresolved_sections/10/texts"
-      },
-      "texts": [
-        "Ceremony",
-        "Application Available",
-        "Deadline Date",
-        "Fall",
-        "September 1, 2026",
-        "September 25, 2026",
-        "Spring",
-        "March 9, 2026",
-        "April 9, 2026"
-      ]
-    }
-  ],
-  "source_tables": [
-    {
-      "heading": "Entrance Award Deadlines",
-      "classification": "application_schedule",
-      "row_count": 2,
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/evidence/tables/0"
-      }
-    },
-    {
-      "heading": "Chancellor's Scholarship Deadlines",
-      "classification": "application_schedule",
-      "row_count": 2,
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/evidence/tables/1"
-      }
-    },
-    {
-      "heading": "Continuing Award Deadlines",
-      "classification": "application_schedule",
-      "row_count": 4,
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/evidence/tables/2"
-      }
-    },
-    {
-      "heading": "Convocation Award Deadlines",
-      "classification": "application_schedule",
-      "row_count": 3,
-      "evidence_ref": {
-        "file": "outputs/university_of_regina.json",
-        "json_pointer": "/evidence/tables/3"
-      }
-    }
-  ],
-  "cost_breakdowns": [],
-  "evidence": {
-    "tables": [
-      {
-        "heading": "Entrance Award Deadlines",
-        "headers": [],
-        "rows": [
-          [
-            "Application Available",
-            "Deadline Date",
-            "Results Available"
-          ],
-          [
-            "January 15, 2027",
-            "March 17, 2027",
-            "June"
-          ]
-        ],
-        "rows_count": 2
-      },
-      {
-        "heading": "Chancellor's Scholarship Deadlines",
-        "headers": [],
-        "rows": [
-          [
-            "Application Available",
-            "Deadline Date",
-            "Results Available"
-          ],
-          [
-            "October 1, 2026",
-            "December 15, 2026",
-            "May"
-          ]
-        ],
-        "rows_count": 2
-      },
-      {
-        "heading": "Continuing Award Deadlines",
-        "headers": [],
-        "rows": [
-          [
-            "Semester",
-            "Application Available",
-            "Deadline Date",
-            "Results Available"
-          ],
-          [
-            "Fall",
-            "September 1, 2026",
-            "October 4, 2026",
-            "December"
-          ],
-          [
-            "Winter",
-            "January 5, 2027",
-            "February 5, 2027",
-            "April"
-          ],
-          [
-            "Spring",
-            "May 3, 2027",
-            "June 3, 2027",
-            "July"
-          ]
-        ],
-        "rows_count": 4
-      },
-      {
-        "heading": "Convocation Award Deadlines",
-        "headers": [],
-        "rows": [
-          [
-            "Ceremony",
-            "Application Available",
-            "Deadline Date"
-          ],
-          [
-            "Fall",
-            "September 1, 2026",
-            "September 25, 2026"
-          ],
-          [
-            "Spring",
-            "March 9, 2026",
-            "April 9, 2026"
-          ]
-        ],
-        "rows_count": 3
-      }
-    ],
-    "renewal": {
-      "positive": [
-        "Once a student has received the award, they will be automatically renewed for each semester of each year (to a maximum of $2,000 per family member per academic year (May 1 - April 30)) in which they continue to meet the eligibility requirements. If a previous recipient has not met the requirements for two consecutive semesters, they will no longer be automatically assessed each semester, and will be required to re-apply for the award."
-      ],
-      "negative": [],
-      "page_status": "positive_mentions"
-    }
-  },
-  "summary": {
-    "named_award_entries": 0,
-    "award_groups": 0,
-    "tiers": 0,
-    "application_windows": 7,
-    "unresolved_sections": 11,
-    "verified_scholarships": 0,
-    "total_scholarships": null
-  }
+  "notes": [
+    "Overview page: individual award amounts and eligibility require the linked SAMS catalogue."
+  ]
 }
