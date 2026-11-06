@@ -22,7 +22,6 @@ DEFAULT_HEADERS = {
 }
 NEGATIVE_RENEWAL = re.compile(r'\b(?:non[\s-]*renewable|not\s+renewable|not\s+be\s+renewed|cannot\s+be\s+renewed|one[\s-]*time|tenable for (?:1|one) year only|single payment|(?:first year|year 1) only)\b', re.I)
 POSITIVE_RENEWAL = re.compile(r'\b(?:renewable|renewed|renewability|renewal requirements|renewal conditions)\b', re.I)
-DATE_WORD = re.compile(r'\b(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b|\b\d{4}-\d{2}-\d{2}\b', re.I)
 
 
 def now():
@@ -355,24 +354,12 @@ class PageParser:
                 positive.append(value)
         return list(dict.fromkeys(positive)), list(dict.fromkeys(negative))
 
-    def extract_renewal_data(self, soup):
-        positive, negative = self.renewal_evidence(soup)
-        if bool(positive) == bool(negative):
-            return None, None, None
-        evidence = (positive or negative)[0]
-        return bool(positive), evidence, evidence
-
     def _matching_blocks(self, soup, pattern):
         return list(dict.fromkeys(text(t) for t in self.blocks(soup) if re.search(pattern, text(t), re.I)))
 
     def extract_eligibility(self, soup):
         return self._matching_blocks(soup, r'admission average|admitted with|minimum (?:GPA|average)|'
                                      r'high school average|eligible|eligibility|study permit|citizen|resident')
-
-    def extract_deadlines(self, soup):
-        return [text(t) for t in self.blocks(soup)
-                if re.search(r'deadline|apply by|due date|application.*(?:open|close)', text(t), re.I)
-                and DATE_WORD.search(text(t))]
 
     def scholarship_candidates(self, soup, tables):
         """Human review units, never automatically verified/publishable awards."""
@@ -388,17 +375,13 @@ class PageParser:
                 if not row or not row[0]:
                     continue
                 name = row[0] if named else table['heading']
-                fragment = BeautifulSoup('<p></p>', 'html.parser')
-                fragment.p.string = ' | '.join(row)
-                renewable, note, _ = self.extract_renewal_data(fragment)
                 candidates.append({'candidate_id': f"table-{table['table_index']}-row-{row_index}",
                                    'candidate_kind': 'named_table_row' if named else 'tier_table_row',
                                    'name_en': name, 'tier_text': row[0] if tiered else None,
                                    'context_headings': table['context_headings'],
                                    'evidence': ' | '.join(row), 'table_index': table['table_index'],
-                                   'row_index': row_index, 'is_renewable': renewable,
-                                   'duration_note': note, 'column_headers': headers,
-                                   'row_values': row, 'verification_status': 'needs_review', 'publishable': False})
+                                   'row_index': row_index, 'column_headers': headers,
+                                   'row_values': row})
         headings = soup.find_all(re.compile(r'^h[2-6]$')) if soup else []
         block_ids = {id(t) for t in self.blocks(soup)}
         context_stack = []
@@ -426,28 +409,12 @@ class PageParser:
                 p = fragment.new_tag('p')
                 p.string = part
                 fragment.section.append(p)
-            renewable, note, _ = self.extract_renewal_data(fragment)
             is_group = bool(re.search(r'\b(?:scholarships|awards|bursaries)\b', name, re.I))
-            positive, negative = self.renewal_evidence(fragment)
             candidates.append({'candidate_id': f'heading-{len(candidates)}', 'name_en': name,
                                'candidate_kind': 'section_group' if is_group else 'heading_award',
                                'context_headings': context_headings,
-                               'evidence': parts, 'is_renewable': None if is_group else renewable,
-                               'duration_note': None if is_group else note,
-                               'renewal_evidence': {'positive': positive, 'negative': negative},
-                               'eligibility_evidence': self.extract_eligibility(fragment),
-                               'deadline_evidence': self.extract_deadlines(fragment),
-                               'verification_status': 'needs_review', 'publishable': False})
-        for candidate in candidates:
-            evidence = candidate['evidence']
-            values = evidence if isinstance(evidence, list) else [evidence]
-            candidate['amount_claims'] = [
-                {'amount': float(match.replace(',', '')), 'currency': None,
-                 'payment_basis': 'unclassified', 'evidence': value}
-                for value in values for match in MONEY.findall(value)
-            ]
-            candidate['min_value'] = None
-            candidate['max_value'] = None
+                               'evidence': parts,
+                               'eligibility_evidence': self.extract_eligibility(fragment)})
         return candidates
 
     def parse_html(self, soup):

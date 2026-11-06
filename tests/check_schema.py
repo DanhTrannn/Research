@@ -14,8 +14,10 @@ try:
     run(['docker', 'run', '--detach', '--rm', '--network', 'none', '--name', name,
          '-e', 'POSTGRES_HOST_AUTH_METHOD=trust', 'postgres:16.8-alpine'])
     for _ in range(30):
+        # Ignore the temporary bootstrap server; wait for the final PID-1 postgres.
+        process = subprocess.run(['docker', 'exec', name, 'cat', '/proc/1/comm'], capture_output=True, text=True)
         ready = subprocess.run(['docker', 'exec', name, 'pg_isready', '-U', 'postgres'], capture_output=True)
-        if ready.returncode == 0:
+        if process.stdout.strip() == 'postgres' and ready.returncode == 0:
             break
         time.sleep(0.5)
     else:
