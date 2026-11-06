@@ -1,0 +1,935 @@
+{
+  "schema_version": 3,
+  "generated_at": "2026-11-06T03:14:35.357616+00:00",
+  "school": {
+    "slug": "humber_polytechnic",
+    "name": "Humber Polytechnic"
+  },
+  "crawl": {
+    "success": true,
+    "status": "ok",
+    "http_status": 200,
+    "error": null,
+    "attempts": [
+      {
+        "client": "requests",
+        "http_status": 200,
+        "final_url": "https://humber.ca/study-at-humber/pay-fees/scholarships-bursaries",
+        "error": null
+      }
+    ]
+  },
+  "source": {
+    "page_url": "https://humber.ca/study-at-humber/pay-fees/scholarships-bursaries",
+    "final_url": "https://humber.ca/study-at-humber/pay-fees/scholarships-bursaries",
+    "captured_at": "2026-11-06T01:25:10.375231+00:00",
+    "attempted_at": "2026-11-06T01:25:08.118353+00:00",
+    "html_sha256": "76260467ef366e119debf2cba90dc9fef9c4ddfb00319113ba513224487fc95c",
+    "output_file": "outputs/humber_polytechnic.json",
+    "input_kind": "legacy_json_import",
+    "input_json_sha256": "2da3c659ab0333dbe42ff364b45f816d2bc297ee7574b74b6e586977b63d96ad"
+  },
+  "scholarships": [
+    {
+      "id": "award_196f565ccd1f089e80f4",
+      "name": "Students In and From Care (SIFC) Bursary",
+      "support_type": "bursary",
+      "context": {
+        "headings": [
+          "FAQ"
+        ],
+        "applicant_category": "unknown",
+        "study_level": null,
+        "intake_texts": []
+      },
+      "eligibility": {
+        "international_eligible": null,
+        "programs_text": null,
+        "criteria_texts": [
+          "Students who were previously in care are encouraged to apply for OSAP and self-identify in their application to be eligible to receive the same $2000 bursary. If students wish not to apply for OSAP, they may visit www.humber.ca/myhumber and complete the \"Students In/From Care Bursary\" application. Supporting documentation (verification of status) from a Children's Aid Society will be required. More details on Advising & Career Services"
+        ],
+        "campus_text": null,
+        "term_text": null
+      },
+      "benefit": {
+        "display_texts": [],
+        "values": [],
+        "award_count": null,
+        "unlimited_awards": null
+      },
+      "renewal": {
+        "is_renewable": null,
+        "conditions_text": []
+      },
+      "application": {
+        "method": "unknown",
+        "application_required_flag": null,
+        "instructions_text": null,
+        "deadlines": []
+      },
+      "verification": {
+        "status": "needs_review",
+        "publishable": false,
+        "issues": [
+          "requires_human_review",
+          "award_value_not_structured"
+        ]
+      },
+      "evidence": {
+        "texts": [
+          "Students who were previously in care are encouraged to apply for OSAP and self-identify in their application to be eligible to receive the same $2000 bursary. If students wish not to apply for OSAP, they may visit www.humber.ca/myhumber and complete the \"Students In/From Care Bursary\" application. Supporting documentation (verification of status) from a Children's Aid Society will be required. More details on Advising & Career Services"
+        ],
+        "refs": [
+          {
+            "file": "outputs/humber_polytechnic.json",
+            "json_pointer": "/scholarships/0/evidence/texts"
+          }
+        ]
+      }
+    },
+    {
+      "id": "award_b0ae410d0df11754d794",
+      "name": "Global Learning Bursary",
+      "support_type": "bursary",
+      "context": {
+        "headings": [
+          "FAQ"
+        ],
+        "applicant_category": "unknown",
+        "study_level": null,
+        "intake_texts": []
+      },
+      "eligibility": {
+        "international_eligible": null,
+        "programs_text": null,
+        "criteria_texts": [
+          "Humber Polytechnic is pleased to offer a Global Learning Bursary to assist students completing a global learning experience (academic study, field placement, or work term) as approved by Humber. This bursary will provide eligible students with financial support for a specific period of academic experience outside of Canada.",
+          "For more information about eligibility and how to apply, please review the Global Learning Bursary Application Form ."
+        ],
+        "campus_text": null,
+        "term_text": null
+      },
+      "benefit": {
+        "display_texts": [],
+        "values": [],
+        "award_count": null,
+        "unlimited_awards": null
+      },
+      "renewal": {
+        "is_renewable": null,
+        "conditions_text": []
+      },
+      "application": {
+        "method": "unknown",
+        "application_required_flag": null,
+        "instructions_text": null,
+        "deadlines": []
+      },
+      "verification": {
+        "status": "needs_review",
+        "publishable": false,
+        "issues": [
+          "requires_human_review",
+          "award_value_not_structured"
+        ]
+      },
+      "evidence": {
+        "texts": [
+          "Humber Polytechnic is pleased to offer a Global Learning Bursary to assist students completing a global learning experience (academic study, field placement, or work term) as approved by Humber. This bursary will provide eligible students with financial support for a specific period of academic experience outside of Canada.",
+          "For more information about eligibility and how to apply, please review the Global Learning Bursary Application Form ."
+        ],
+        "refs": [
+          {
+            "file": "outputs/humber_polytechnic.json",
+            "json_pointer": "/scholarships/1/evidence/texts"
+          }
+        ]
+      }
+    }
+  ],
+  "scholarship_groups": [
+    {
+      "id": "group_983c83514931a558b462",
+      "name": "Degree Entrance Scholarship Average Requirement",
+      "kind": "tiered_award",
+      "context_headings": [
+        "Scholarships & Bursaries",
+        "Entrance Scholarships",
+        "Degree Entrance Scholarships",
+        "Degree Entrance Scholarship Average Requirement"
+      ],
+      "tiers": [
+        {
+          "id": "tier_4c2fc1892d2f53000a2d",
+          "criteria": [
+            {
+              "system": "academic_average_percent",
+              "min": 95.0,
+              "max": null,
+              "minimum_inclusive": true,
+              "raw": "95%+"
+            }
+          ],
+          "value_text": "$4,000 renewable",
+          "values": [
+            {
+              "kind": "money",
+              "currency": null,
+              "min_amount": 4000.0,
+              "max_amount": 4000.0,
+              "payment_basis": "unknown",
+              "max_payments": null,
+              "evidence_text": "$4,000 renewable"
+            }
+          ],
+          "renewal": {
+            "is_renewable": true,
+            "conditions_text": [
+              "95%+ | $4,000 renewable"
+            ]
+          },
+          "availability_text": null,
+          "evidence_refs": [
+            {
+              "file": "outputs/humber_polytechnic.json",
+              "json_pointer": "/evidence/tables/0/rows/0"
+            }
+          ]
+        },
+        {
+          "id": "tier_a7efb5e6f5db4c15ee13",
+          "criteria": [
+            {
+              "system": "academic_average_percent",
+              "min": 90.0,
+              "max": 94.9,
+              "minimum_inclusive": true,
+              "raw": "90 - 94.9%"
+            }
+          ],
+          "value_text": "$3,500 renewable",
+          "values": [
+            {
+              "kind": "money",
+              "currency": null,
+              "min_amount": 3500.0,
+              "max_amount": 3500.0,
+              "payment_basis": "unknown",
+              "max_payments": null,
+              "evidence_text": "$3,500 renewable"
+            }
+          ],
+          "renewal": {
+            "is_renewable": true,
+            "conditions_text": [
+              "90 - 94.9% | $3,500 renewable"
+            ]
+          },
+          "availability_text": null,
+          "evidence_refs": [
+            {
+              "file": "outputs/humber_polytechnic.json",
+              "json_pointer": "/evidence/tables/0/rows/1"
+            }
+          ]
+        },
+        {
+          "id": "tier_8915265a41f7805c2a97",
+          "criteria": [
+            {
+              "system": "academic_average_percent",
+              "min": 85.0,
+              "max": 89.9,
+              "minimum_inclusive": true,
+              "raw": "85 - 89.9%"
+            }
+          ],
+          "value_text": "$3,000 renewable",
+          "values": [
+            {
+              "kind": "money",
+              "currency": null,
+              "min_amount": 3000.0,
+              "max_amount": 3000.0,
+              "payment_basis": "unknown",
+              "max_payments": null,
+              "evidence_text": "$3,000 renewable"
+            }
+          ],
+          "renewal": {
+            "is_renewable": true,
+            "conditions_text": [
+              "85 - 89.9% | $3,000 renewable"
+            ]
+          },
+          "availability_text": null,
+          "evidence_refs": [
+            {
+              "file": "outputs/humber_polytechnic.json",
+              "json_pointer": "/evidence/tables/0/rows/2"
+            }
+          ]
+        },
+        {
+          "id": "tier_3383f159a09a1e741029",
+          "criteria": [
+            {
+              "system": "academic_average_percent",
+              "min": 80.0,
+              "max": 84.9,
+              "minimum_inclusive": true,
+              "raw": "80 - 84.9%"
+            }
+          ],
+          "value_text": "$2,000 renewable",
+          "values": [
+            {
+              "kind": "money",
+              "currency": null,
+              "min_amount": 2000.0,
+              "max_amount": 2000.0,
+              "payment_basis": "unknown",
+              "max_payments": null,
+              "evidence_text": "$2,000 renewable"
+            }
+          ],
+          "renewal": {
+            "is_renewable": true,
+            "conditions_text": [
+              "80 - 84.9% | $2,000 renewable"
+            ]
+          },
+          "availability_text": null,
+          "evidence_refs": [
+            {
+              "file": "outputs/humber_polytechnic.json",
+              "json_pointer": "/evidence/tables/0/rows/3"
+            }
+          ]
+        },
+        {
+          "id": "tier_2d9187dba83549a95041",
+          "criteria": [
+            {
+              "system": "academic_average_percent",
+              "min": 75.0,
+              "max": 79.9,
+              "minimum_inclusive": true,
+              "raw": "75 - 79.9%"
+            }
+          ],
+          "value_text": "$1,500 one time",
+          "values": [
+            {
+              "kind": "money",
+              "currency": null,
+              "min_amount": 1500.0,
+              "max_amount": 1500.0,
+              "payment_basis": "one_time",
+              "max_payments": null,
+              "evidence_text": "$1,500 one time"
+            }
+          ],
+          "renewal": {
+            "is_renewable": false,
+            "conditions_text": [
+              "75 - 79.9% | $1,500 one time"
+            ]
+          },
+          "availability_text": null,
+          "evidence_refs": [
+            {
+              "file": "outputs/humber_polytechnic.json",
+              "json_pointer": "/evidence/tables/0/rows/4"
+            }
+          ]
+        }
+      ],
+      "verification": {
+        "status": "needs_review",
+        "publishable": false
+      },
+      "evidence_refs": [
+        {
+          "file": "outputs/humber_polytechnic.json",
+          "json_pointer": "/evidence/tables/0"
+        }
+      ]
+    },
+    {
+      "id": "group_178e6b1004729c336be3",
+      "name": "Degree Transfer Scholarships ($1,500 - $2,500)",
+      "kind": "tiered_award",
+      "context_headings": [
+        "Scholarships & Bursaries",
+        "Entrance Scholarships",
+        "Degree Entrance Scholarships",
+        "Degree Transfer Scholarships ($1,500 - $2,500)"
+      ],
+      "tiers": [
+        {
+          "id": "tier_3c6d18d931a9c999a61d",
+          "criteria": [
+            {
+              "system": "academic_average_percent",
+              "min": 80.0,
+              "max": null,
+              "minimum_inclusive": true,
+              "raw": "80%+ Certificate"
+            }
+          ],
+          "value_text": "$1,500",
+          "values": [
+            {
+              "kind": "money",
+              "currency": null,
+              "min_amount": 1500.0,
+              "max_amount": 1500.0,
+              "payment_basis": "unknown",
+              "max_payments": null,
+              "evidence_text": "$1,500"
+            }
+          ],
+          "renewal": {
+            "is_renewable": null,
+            "conditions_text": []
+          },
+          "availability_text": null,
+          "evidence_refs": [
+            {
+              "file": "outputs/humber_polytechnic.json",
+              "json_pointer": "/evidence/tables/1/rows/0"
+            }
+          ]
+        },
+        {
+          "id": "tier_7b6a7b12c483ad6066cc",
+          "criteria": [
+            {
+              "system": "academic_average_percent",
+              "min": 80.0,
+              "max": null,
+              "minimum_inclusive": true,
+              "raw": "One Time 80%+ Diploma"
+            }
+          ],
+          "value_text": "$2,500",
+          "values": [
+            {
+              "kind": "money",
+              "currency": null,
+              "min_amount": 2500.0,
+              "max_amount": 2500.0,
+              "payment_basis": "unknown",
+              "max_payments": null,
+              "evidence_text": "$2,500"
+            }
+          ],
+          "renewal": {
+            "is_renewable": false,
+            "conditions_text": [
+              "One Time 80%+ Diploma | $2,500"
+            ]
+          },
+          "availability_text": null,
+          "evidence_refs": [
+            {
+              "file": "outputs/humber_polytechnic.json",
+              "json_pointer": "/evidence/tables/1/rows/1"
+            }
+          ]
+        }
+      ],
+      "verification": {
+        "status": "needs_review",
+        "publishable": false
+      },
+      "evidence_refs": [
+        {
+          "file": "outputs/humber_polytechnic.json",
+          "json_pointer": "/evidence/tables/1"
+        }
+      ]
+    }
+  ],
+  "application_windows": [
+    {
+      "group": "Tuition Bursaries",
+      "label": "Summer 2026",
+      "opens": {
+        "raw": "Apr 7",
+        "date": null
+      },
+      "deadline": {
+        "raw": "May 8",
+        "date": null
+      },
+      "results_text": null,
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/evidence/tables/3/rows/0"
+      }
+    },
+    {
+      "group": "Tuition Bursaries",
+      "label": "Fall 2026",
+      "opens": {
+        "raw": "July 6",
+        "date": null
+      },
+      "deadline": {
+        "raw": "Aug 14",
+        "date": null
+      },
+      "results_text": null,
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/evidence/tables/3/rows/1"
+      }
+    },
+    {
+      "group": "Tuition Bursaries",
+      "label": "Winter 2027",
+      "opens": {
+        "raw": "Nov 9",
+        "date": null
+      },
+      "deadline": {
+        "raw": "Dec 11",
+        "date": null
+      },
+      "results_text": null,
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/evidence/tables/3/rows/2"
+      }
+    },
+    {
+      "group": "Tuition Bursaries",
+      "label": "Summer 2027",
+      "opens": {
+        "raw": "Apr 5",
+        "date": null
+      },
+      "deadline": {
+        "raw": "May 7",
+        "date": null
+      },
+      "results_text": null,
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/evidence/tables/3/rows/3"
+      }
+    }
+  ],
+  "unresolved_sections": [
+    {
+      "name": "Application-Based Scholarships",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/0/texts"
+      },
+      "texts": [
+        "Humber offers hundreds of different types of scholarships recognizing academic achievement, community involvement, leadership, volunteer services, and in some cases, to help with financial need. For more information about scholarships that may assist you with the costs of your post-secondary education, visit Student Scholarships.",
+        "Application-Based Scholarships"
+      ]
+    },
+    {
+      "name": "Entrance Scholarships",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/1/texts"
+      },
+      "texts": [
+        "To recognize academic achievement, Humber offers Degree Entrance and Degree Transfer Scholarships. These scholarships are automatically awarded based on academic average or credential completion.",
+        "Humber awards degree scholarships automatically to graduating high school students based on academic achievement. See the following chart for details. Some of the scholarships are renewable each year if you maintain an average of 80 per cent or more.",
+        "Average",
+        "Amount",
+        "95%+",
+        "$4,000 renewable",
+        "90 - 94.9%",
+        "$3,500 renewable",
+        "85 - 89.9%",
+        "$3,000 renewable",
+        "80 - 84.9%",
+        "$2,000 renewable",
+        "75 - 79.9%",
+        "$1,500 one time",
+        "International Entrance Scholarships",
+        "Humber automatically awards degree transfer scholarships to students entering any Humber degree program who have completed a one-year Ontario college certificate* or a two- or three-year diploma with a GPA of 80 per cent or more from a publicly-funded college. Students who have achieved a program GPA of 80 per cent or more will be awarded a one-time scholarship of $1,500 for a certificate program or $2,500 for a diploma program in recognition of their academic achievement. Certificates and diplomas do not have to be related to the degree program of choice and are not tied to the eligibility for advanced standing or transfer credit. No application is required.",
+        "Average",
+        "Amount",
+        "80%+ Certificate",
+        "$1,500",
+        "One Time 80%+ Diploma",
+        "$2,500",
+        "*Certificates do not include Ontario Graduate Certificates, Certificates of Achievement or Certificates of Completion."
+      ]
+    },
+    {
+      "name": "Degree Entrance Scholarships",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/2/texts"
+      },
+      "texts": [
+        "Humber awards degree scholarships automatically to graduating high school students based on academic achievement. See the following chart for details. Some of the scholarships are renewable each year if you maintain an average of 80 per cent or more.",
+        "Average",
+        "Amount",
+        "95%+",
+        "$4,000 renewable",
+        "90 - 94.9%",
+        "$3,500 renewable",
+        "85 - 89.9%",
+        "$3,000 renewable",
+        "80 - 84.9%",
+        "$2,000 renewable",
+        "75 - 79.9%",
+        "$1,500 one time",
+        "International Entrance Scholarships",
+        "Humber automatically awards degree transfer scholarships to students entering any Humber degree program who have completed a one-year Ontario college certificate* or a two- or three-year diploma with a GPA of 80 per cent or more from a publicly-funded college. Students who have achieved a program GPA of 80 per cent or more will be awarded a one-time scholarship of $1,500 for a certificate program or $2,500 for a diploma program in recognition of their academic achievement. Certificates and diplomas do not have to be related to the degree program of choice and are not tied to the eligibility for advanced standing or transfer credit. No application is required.",
+        "Average",
+        "Amount",
+        "80%+ Certificate",
+        "$1,500",
+        "One Time 80%+ Diploma",
+        "$2,500",
+        "*Certificates do not include Ontario Graduate Certificates, Certificates of Achievement or Certificates of Completion."
+      ]
+    },
+    {
+      "name": "Degree Entrance Scholarship Average Requirement",
+      "reason": "represented_by_tier_group",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/3/texts"
+      },
+      "texts": [
+        "Average",
+        "Amount",
+        "95%+",
+        "$4,000 renewable",
+        "90 - 94.9%",
+        "$3,500 renewable",
+        "85 - 89.9%",
+        "$3,000 renewable",
+        "80 - 84.9%",
+        "$2,000 renewable",
+        "75 - 79.9%",
+        "$1,500 one time",
+        "International Entrance Scholarships"
+      ]
+    },
+    {
+      "name": "Degree Transfer Scholarships ($1,500 - $2,500)",
+      "reason": "represented_by_tier_group",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/4/texts"
+      },
+      "texts": [
+        "Humber automatically awards degree transfer scholarships to students entering any Humber degree program who have completed a one-year Ontario college certificate* or a two- or three-year diploma with a GPA of 80 per cent or more from a publicly-funded college. Students who have achieved a program GPA of 80 per cent or more will be awarded a one-time scholarship of $1,500 for a certificate program or $2,500 for a diploma program in recognition of their academic achievement. Certificates and diplomas do not have to be related to the degree program of choice and are not tied to the eligibility for advanced standing or transfer credit. No application is required.",
+        "Average",
+        "Amount",
+        "80%+ Certificate",
+        "$1,500",
+        "One Time 80%+ Diploma",
+        "$2,500",
+        "*Certificates do not include Ontario Graduate Certificates, Certificates of Achievement or Certificates of Completion."
+      ]
+    },
+    {
+      "name": "Bursaries",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/5/texts"
+      },
+      "texts": [
+        "Humber is dedicated to providing you with a variety of bursaries to help you successfully pursue your education while managing your finances. Bursaries are available for Diploma, Degree, and Post-Graduate Certificate programs and are awarded primarily based on financial need. Academic excellence, extracurricular activities, and community involvement may also be considered.",
+        "Below, you can find information about the various types of bursaries we offer:"
+      ]
+    },
+    {
+      "name": "Tuition Bursaries",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/6/texts"
+      },
+      "texts": [
+        "Tuition bursaries are non-repayable funds awarded to eligible full-time new and returning domestic students who demonstrate financial need. The value of the bursary awarded is specific to the student's program of study and credential:",
+        "Credential",
+        "Amount",
+        "Diplomas",
+        "$500",
+        "Ontario Graduate Certificates",
+        "$750",
+        "Bachelor and Master's Degrees",
+        "$1,000",
+        "*Note: Ontario College Certificates, Certificates of Achievement and Certificates of Completion are not eligible for tuition bursary application.",
+        "Apply Early! The application deadline dates are:",
+        "Term",
+        "Open",
+        "Close/Deadline",
+        "Summer 2026",
+        "Apr 7",
+        "May 8",
+        "Fall 2026",
+        "July 6",
+        "Aug 14",
+        "Winter 2027",
+        "Nov 9",
+        "Dec 11",
+        "Summer 2027",
+        "Apr 5",
+        "May 7",
+        "To apply for a Tuition Bursary, you must complete the Budget Calculator online:",
+        "Log in to MyHumber",
+        "Select Student Awards and Financial Aid",
+        "Select Apply for Student Aid",
+        "Select Aid Year and Aid Period (e.g. 2026-2027 > Fall)",
+        "Important:",
+        "You can submit one Tuition Bursary application per academic year. Once you have submitted the application, no changes can be made and you cannot reapply in the same academic year.",
+        "You must ensure you submit a well-planned budget based on an accurate estimate of your income, savings and expenses for the semester (e.g. September to December).",
+        "If all available Tuition Bursary funding has been awarded before the deadline date, bursary applications will be closed for the term.",
+        "Questions can be submitted through the Humber Contact Form"
+      ]
+    },
+    {
+      "name": "Financial Need Bursaries",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/7/texts"
+      },
+      "texts": [
+        "Financial Need Bursaries are available if you have a proven financial need. They are awarded on an individual basis upon consideration of expenses, income, family support, part-time employment opportunities, academic standing, and personal circumstances.",
+        "Students who wish to determine if they are eligible for a Financial Aid bursary should see a Financial Aid Advisor."
+      ]
+    },
+    {
+      "name": "Ontario First Generation Bursaries",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/8/texts"
+      },
+      "texts": [
+        "Ontario First Generation Bursaries are for students with a proven financial need and who are the first in their families to attend post secondary education. Application is by invitation only (usually in February of each year). First Generation students are identified by Humber through the Humber Student Success Survey (HSSS) and OCAS."
+      ]
+    },
+    {
+      "name": "Student Access Bursaries",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/9/texts"
+      },
+      "texts": [
+        "Student Access Guarantee Bursaries are available to OSAP students only whose tuition is over $4,500 and have an “unmet need” under the OSAP program based on tuition and book costs as identified by the Ministry of Training, Colleges and Universities. This is an automatic process and a cheque will be issued to those students who meet the criteria, generally distributed at the start of the second semester. Eligible students will be notified by the Financial Aid office."
+      ]
+    },
+    {
+      "name": "External Awards",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/10/texts"
+      },
+      "texts": [
+        "Are you looking for more ways to fund your education and make your journey at Humber more affordable? Numerous awards, bursaries, and scholarships are provided by external organizations, including government agencies, corporations, community groups, and charitable foundations. Check out the following sites to see if you might be a match! Carefully review the eligibility guidelines and closing dates before applying.",
+        "Please note that Humber is not affiliated with these external organizations and is not responsible for any inaccuracies or omissions in the information provided. If you have any questions, please consult with the external party or website directly.",
+        "Government of Canada Scholarships Scholarships Canada Student Awards Disability Awards"
+      ]
+    },
+    {
+      "name": "Indigenous Student Awards",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/11/texts"
+      },
+      "texts": [
+        "Indigenous Student Awards, Bursaries and Scholarships",
+        "Indigenous Student Awards, Bursaries and Scholarships",
+        "Humber provides assistance to Indigenous Students in meeting the costs of their tuition and living expenses while studying full-time or part-time."
+      ]
+    },
+    {
+      "name": "Indigenous Student Awards, Bursaries and Scholarships",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/12/texts"
+      },
+      "texts": [
+        "Indigenous Student Awards, Bursaries and Scholarships"
+      ]
+    },
+    {
+      "name": "Indigenous Student Awards, Bursaries and Scholarships",
+      "reason": "section_heading_is_not_an_individual_award",
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/unresolved_sections/13/texts"
+      },
+      "texts": [
+        "Humber provides assistance to Indigenous Students in meeting the costs of their tuition and living expenses while studying full-time or part-time."
+      ]
+    }
+  ],
+  "source_tables": [
+    {
+      "heading": "Tuition Bursaries",
+      "classification": "unclassified",
+      "row_count": 3,
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/evidence/tables/2"
+      }
+    },
+    {
+      "heading": "Tuition Bursaries",
+      "classification": "application_schedule",
+      "row_count": 4,
+      "evidence_ref": {
+        "file": "outputs/humber_polytechnic.json",
+        "json_pointer": "/evidence/tables/3"
+      }
+    }
+  ],
+  "cost_breakdowns": [],
+  "evidence": {
+    "tables": [
+      {
+        "heading": "Degree Entrance Scholarship Average Requirement",
+        "headers": [
+          "Average",
+          "Amount"
+        ],
+        "rows": [
+          [
+            "95%+",
+            "$4,000 renewable"
+          ],
+          [
+            "90 - 94.9%",
+            "$3,500 renewable"
+          ],
+          [
+            "85 - 89.9%",
+            "$3,000 renewable"
+          ],
+          [
+            "80 - 84.9%",
+            "$2,000 renewable"
+          ],
+          [
+            "75 - 79.9%",
+            "$1,500 one time"
+          ]
+        ],
+        "rows_count": 5
+      },
+      {
+        "heading": "Degree Transfer Scholarships ($1,500 - $2,500)",
+        "headers": [
+          "Average",
+          "Amount"
+        ],
+        "rows": [
+          [
+            "80%+ Certificate",
+            "$1,500"
+          ],
+          [
+            "One Time 80%+ Diploma",
+            "$2,500"
+          ]
+        ],
+        "rows_count": 2
+      },
+      {
+        "heading": "Tuition Bursaries",
+        "headers": [
+          "Credential",
+          "Amount"
+        ],
+        "rows": [
+          [
+            "Diplomas",
+            "$500"
+          ],
+          [
+            "Ontario Graduate Certificates",
+            "$750"
+          ],
+          [
+            "Bachelor and Master's Degrees",
+            "$1,000"
+          ]
+        ],
+        "rows_count": 3
+      },
+      {
+        "heading": "Tuition Bursaries",
+        "headers": [
+          "Term",
+          "Open",
+          "Close/Deadline"
+        ],
+        "rows": [
+          [
+            "Summer 2026",
+            "Apr 7",
+            "May 8"
+          ],
+          [
+            "Fall 2026",
+            "July 6",
+            "Aug 14"
+          ],
+          [
+            "Winter 2027",
+            "Nov 9",
+            "Dec 11"
+          ],
+          [
+            "Summer 2027",
+            "Apr 5",
+            "May 7"
+          ]
+        ],
+        "rows_count": 4
+      }
+    ],
+    "renewal": {
+      "positive": [
+        "Humber awards degree scholarships automatically to graduating high school students based on academic achievement. See the following chart for details. Some of the scholarships are renewable each year if you maintain an average of 80 per cent or more.",
+        "$4,000 renewable",
+        "$3,500 renewable",
+        "$3,000 renewable",
+        "$2,000 renewable"
+      ],
+      "negative": [
+        "$1,500 one time",
+        "Humber automatically awards degree transfer scholarships to students entering any Humber degree program who have completed a one-year Ontario college certificate* or a two- or three-year diploma with a GPA of 80 per cent or more from a publicly-funded college. Students who have achieved a program GPA of 80 per cent or more will be awarded a one-time scholarship of $1,500 for a certificate program or $2,500 for a diploma program in recognition of their academic achievement. Certificates and diplomas do not have to be related to the degree program of choice and are not tied to the eligibility for advanced standing or transfer credit. No application is required.",
+        "One Time 80%+ Diploma"
+      ],
+      "page_status": "mixed"
+    }
+  },
+  "summary": {
+    "named_award_entries": 2,
+    "award_groups": 2,
+    "tiers": 7,
+    "application_windows": 4,
+    "unresolved_sections": 14,
+    "verified_scholarships": 0,
+    "total_scholarships": null
+  }
+}

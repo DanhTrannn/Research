@@ -1,0 +1,300 @@
+{
+  "schema_version": 3,
+  "generated_at": "2026-11-06T03:14:35.369785+00:00",
+  "school": {
+    "slug": "macewan_university",
+    "name": "MacEwan University"
+  },
+  "crawl": {
+    "success": true,
+    "status": "ok",
+    "http_status": 200,
+    "error": null,
+    "attempts": [
+      {
+        "client": "requests",
+        "http_status": 200,
+        "final_url": "https://www.macewan.ca/apply-enrol/fees-finances/scholarships-awards-bursaries/entrance-scholarships/",
+        "error": null
+      }
+    ]
+  },
+  "source": {
+    "page_url": "https://www.macewan.ca/apply-enrol/fees-finances/scholarships-awards-bursaries/entrance-scholarships/",
+    "final_url": "https://www.macewan.ca/apply-enrol/fees-finances/scholarships-awards-bursaries/entrance-scholarships/",
+    "captured_at": "2026-11-06T01:25:10.512121+00:00",
+    "attempted_at": "2026-11-06T01:25:08.122097+00:00",
+    "html_sha256": "850c21eee48267f691b8d32962baa901228dcc89fcd405acb04ec1410f9c397d",
+    "output_file": "outputs/macewan_university.json",
+    "input_kind": "legacy_json_import",
+    "input_json_sha256": "1b413639b5c3c20249920a436d6a2ea83ee130320776c00315f9f083d17b4115"
+  },
+  "scholarships": [],
+  "scholarship_groups": [
+    {
+      "id": "award_c4ba22d15c980a629059",
+      "name": "Canadian/domestic Chancellor’s Scholarship Series",
+      "kind": "award_series",
+      "tiers": [],
+      "details": {
+        "id": "award_c4ba22d15c980a629059",
+        "name": "Canadian/domestic Chancellor’s Scholarship Series",
+        "support_type": "scholarship",
+        "context": {
+          "headings": [],
+          "applicant_category": "domestic",
+          "study_level": null,
+          "intake_texts": []
+        },
+        "eligibility": {
+          "international_eligible": null,
+          "programs_text": null,
+          "criteria_texts": [
+            "Awarded to Canadian/domestic students entering a degree program with an admission average in the following tiers:",
+            "President’s Scholarship",
+            "Canadian Citizen, Permanent Resident, or Protected Person",
+            "With an admission average within one of the scholarship tiers",
+            "Students entering directly from high school with dual credit courses are encouraged to contact awards@macewan.ca to confirm eligibility.",
+            "Entrance scholarships are based on the program you have selected and your admission average.",
+            "In the Faculty of Nursing, all students who meet the requirements for the Chancellor’s Scholarship receive the offer at time of admission. Other students are considered for the President’s and Provost’s Scholarships after the start of the program. These scholarships are offered based on the next highest averages up to a combined total of 60 across all three tiers for students in this faculty.",
+            "If your admission average changes, your scholarship will be adjusted accordingly. You will receive a subsequent email notification before the start of the term. This notification will contain information on changes to your scholarship, if applicable.",
+            "To receive the second installment of funds in the Winter term, you must complete at least 12 credits in the Fall term with a minimum GPA of 2.0 and remain enrolled in 12 credits for the Winter term."
+          ],
+          "campus_text": null,
+          "term_text": null
+        },
+        "benefit": {
+          "display_texts": [],
+          "values": [],
+          "award_count": null,
+          "unlimited_awards": null
+        },
+        "renewal": {
+          "is_renewable": true,
+          "conditions_text": [
+            "The Chancellor’s Scholarship will be automatically renewed, provided that you remain in a MacEwan University degree program and maintain the required GPA and course load in years 2-4. Additional criteria apply."
+          ]
+        },
+        "application": {
+          "method": "unknown",
+          "application_required_flag": null,
+          "instructions_text": null,
+          "deadlines": []
+        },
+        "verification": {
+          "status": "needs_review",
+          "publishable": false,
+          "issues": [
+            "requires_human_review",
+            "award_value_not_structured"
+          ]
+        },
+        "evidence": {
+          "texts": [
+            "Awarded to Canadian/domestic students entering a degree program with an admission average in the following tiers:",
+            "Degree programs",
+            "Chancellor’s Scholarship",
+            "Fall | Winter",
+            "President’s Scholarship",
+            "Fall | Winter",
+            "Provost’s Scholarship",
+            "Fall | Winter",
+            "Dean’s Scholarship",
+            "Fall | Winter",
+            "normal",
+            "sidetro-left",
+            "Criteria",
+            "Students who meet the following criteria will automatically be considered for the award:",
+            "Fall – March 1",
+            "Winter – July 1",
+            "Canadian Citizen, Permanent Resident, or Protected Person",
+            "With an admission average within one of the scholarship tiers",
+            "Entering a degree program directly from high school in the Fall term or the Winter term.",
+            "Students entering directly from high school with dual credit courses are encouraged to contact awards@macewan.ca to confirm eligibility.",
+            "Selection",
+            "Entrance scholarships are based on the program you have selected and your admission average.",
+            "In the Faculty of Nursing, all students who meet the requirements for the Chancellor’s Scholarship receive the offer at time of admission. Other students are considered for the President’s and Provost’s Scholarships after the start of the program. These scholarships are offered based on the next highest averages up to a combined total of 60 across all three tiers for students in this faculty.",
+            "In the Faculty of Fine Arts and Communications, students may also be selected based on their outstanding audition and/or portfolio. The additional criteria listed above still apply.",
+            "Notification",
+            "If you are successful, you will be notified via email, which will be sent to your myMacEwan student Gmail account.",
+            "If your admission average changes, your scholarship will be adjusted accordingly. You will receive a subsequent email notification before the start of the term. This notification will contain information on changes to your scholarship, if applicable.",
+            "Disbursement",
+            "The scholarship is disbursed in two equal amounts across two terms (Fall and Winter).",
+            "To maintain a scholarship offer, you must be enrolled in at least 12 credits in the Fall term and 12 credits in the Winter term by the add/drop deadline in September.",
+            "To receive the second installment of funds in the Winter term, you must complete at least 12 credits in the Fall term with a minimum GPA of 2.0 and remain enrolled in 12 credits for the Winter term.",
+            "The scholarship is disbursed in the Winter term.",
+            "To receive the scholarship, you must be enrolled in at least 12 credits in the Winter term by the add/drop deadline.",
+            "Renewal",
+            "The Chancellor’s Scholarship will be automatically renewed, provided that you remain in a MacEwan University degree program and maintain the required GPA and course load in years 2-4. Additional criteria apply.",
+            "Fall | Winter"
+          ],
+          "refs": [
+            {
+              "file": "outputs/macewan_university.json",
+              "json_pointer": "/scholarship_groups/0/details/evidence/texts"
+            }
+          ]
+        }
+      },
+      "verification": {
+        "status": "needs_review",
+        "publishable": false
+      }
+    },
+    {
+      "id": "award_dd9f9329010924711358",
+      "name": "International Chancellor’s Scholarship Series",
+      "kind": "award_series",
+      "tiers": [],
+      "details": {
+        "id": "award_dd9f9329010924711358",
+        "name": "International Chancellor’s Scholarship Series",
+        "support_type": "scholarship",
+        "context": {
+          "headings": [],
+          "applicant_category": "international",
+          "study_level": null,
+          "intake_texts": [
+            "Starting in Fall 2026, you must apply to be considered for the Chancellor’s Continuing Scholarship Series. Applications open in the Fall term, and you will receive an email when they become available. You submit one application for all scholarship tiers, and your scholarship tier is determined based on your GPA and other eligibility criteria."
+          ]
+        },
+        "eligibility": {
+          "international_eligible": null,
+          "programs_text": null,
+          "criteria_texts": [
+            "Awarded to international students entering a degree program with an admission average or admission grade point average (AGPA) in the following tiers.",
+            "President’s Scholarship",
+            "International student (on a valid study permit)",
+            "With an admission average within one of the scholarship tiers",
+            "Entrance scholarships are based on the program you have selected and your admission average.",
+            "If your admission average changes, your scholarship will be adjusted accordingly. You will receive a subsequent email notification before the start of the term. This notification will contain information on changes to your scholarship, if applicable.",
+            "To receive the second installment of funds in the Winter term, you must complete at least 12 credits in the Fall term with a minimum GPA of 2.0 and remain enrolled in 12 credits for the Winter term.",
+            "As an international student, you may be eligible for continuing scholarships in the Chancellor’s, President’s, Provost’s, Dean’s and Registrar’s* tiers.",
+            "Starting in Fall 2026, you must apply to be considered for the Chancellor’s Continuing Scholarship Series. Applications open in the Fall term, and you will receive an email when they become available. You submit one application for all scholarship tiers, and your scholarship tier is determined based on your GPA and other eligibility criteria.",
+            "President's Continuing Scholarship"
+          ],
+          "campus_text": null,
+          "term_text": null
+        },
+        "benefit": {
+          "display_texts": [],
+          "values": [],
+          "award_count": null,
+          "unlimited_awards": null
+        },
+        "renewal": {
+          "is_renewable": null,
+          "conditions_text": []
+        },
+        "application": {
+          "method": "unknown",
+          "application_required_flag": null,
+          "instructions_text": null,
+          "deadlines": []
+        },
+        "verification": {
+          "status": "needs_review",
+          "publishable": false,
+          "issues": [
+            "requires_human_review",
+            "award_value_not_structured"
+          ]
+        },
+        "evidence": {
+          "texts": [
+            "Awarded to international students entering a degree program with an admission average or admission grade point average (AGPA) in the following tiers.",
+            "Degree programs",
+            "Chancellor’s Scholarship",
+            "Fall | Winter",
+            "President’s Scholarship",
+            "Fall | Winter",
+            "Provost's Scholarship",
+            "Fall | Winter",
+            "Dean's Scholarship",
+            "Fall | Winter",
+            ".",
+            ".",
+            "normal",
+            "sidetro-left",
+            "Criteria",
+            "Students who meet the following criteria will automatically be considered for the award:",
+            "Fall – March 1",
+            "Winter – July 1",
+            "International student (on a valid study permit)",
+            "With an admission average within one of the scholarship tiers",
+            "Admitted to a degree program in the Fall term or the Winter term.",
+            "Selection",
+            "Entrance scholarships are based on the program you have selected and your admission average.",
+            "If there are more qualified students than funds available, scholarships are awarded beginning with the highest averages until funds are exhausted.",
+            "Notification",
+            "If you are successful, you will be notified via email, which will be sent to your myMacEwan student Gmail account.",
+            "If your admission average changes, your scholarship will be adjusted accordingly. You will receive a subsequent email notification before the start of the term. This notification will contain information on changes to your scholarship, if applicable.",
+            "Disbursement",
+            "The scholarship is disbursed in two equal amounts across two terms (Fall and Winter).",
+            "To maintain a scholarship offer, you must be enrolled in at least 12 credits in the Fall term and 12 credits in the Winter term by the Fall term add/drop deadline.",
+            "To receive the second installment of funds in the Winter term, you must complete at least 12 credits in the Fall term with a minimum GPA of 2.0 and remain enrolled in 12 credits for the Winter term.",
+            "The scholarship is disbursed in the Winter term.",
+            "To receive the scholarship, you must be enrolled in at least 12 credits in the Winter term by the add/drop deadline.",
+            "Continuing",
+            "As an international student, you may be eligible for continuing scholarships in the Chancellor’s, President’s, Provost’s, Dean’s and Registrar’s* tiers.",
+            "Starting in Fall 2026, you must apply to be considered for the Chancellor’s Continuing Scholarship Series. Applications open in the Fall term, and you will receive an email when they become available. You submit one application for all scholarship tiers, and your scholarship tier is determined based on your GPA and other eligibility criteria.",
+            "Chancellor's Continuing Scholarship",
+            "President's Continuing Scholarship",
+            "Provost's Continuing Scholarship",
+            "Dean’s Continuing Scholarship",
+            "Registrar’s Continuing Scholarship*",
+            "CHANCELLOR'S CONTINUING SCHOLARSHIP SERIES APPLICATION (INTERNATIONAL)",
+            "*Registrar-level scholarships will only be offered in years where funds are available.",
+            "Disclaimer",
+            "Information about scholarships, awards and bursaries, including award values, criteria and application and selection processes, is subject to change from year to year depending on available funds. Award values are not guaranteed. All decisions for scholarships, awards and bursaries are final and cannot be appealed."
+          ],
+          "refs": [
+            {
+              "file": "outputs/macewan_university.json",
+              "json_pointer": "/scholarship_groups/1/details/evidence/texts"
+            }
+          ]
+        }
+      },
+      "verification": {
+        "status": "needs_review",
+        "publishable": false
+      }
+    }
+  ],
+  "application_windows": [],
+  "unresolved_sections": [
+    {
+      "name": "Chancellor's continuing scholarship Domestic students (renewable)",
+      "reason": "insufficient_award_specific_evidence",
+      "evidence_ref": {
+        "file": "outputs/macewan_university.json",
+        "json_pointer": "/unresolved_sections/0/texts"
+      },
+      "texts": [
+        "Fall | Winter"
+      ]
+    }
+  ],
+  "source_tables": [],
+  "cost_breakdowns": [],
+  "evidence": {
+    "tables": [],
+    "renewal": {
+      "positive": [
+        "The Chancellor’s Scholarship will be automatically renewed, provided that you remain in a MacEwan University degree program and maintain the required GPA and course load in years 2-4. Additional criteria apply."
+      ],
+      "negative": [],
+      "page_status": "positive_mentions"
+    }
+  },
+  "summary": {
+    "named_award_entries": 0,
+    "award_groups": 2,
+    "tiers": 0,
+    "application_windows": 0,
+    "unresolved_sections": 1,
+    "verified_scholarships": 0,
+    "total_scholarships": null
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 3,
+  "generated_at": "2026-11-06T03:14:35.370913+00:00",
+  "school": {
+    "slug": "nipissing_university",
+    "name": "Nipissing University"
+  },
+  "crawl": {
+    "success": false,
+    "status": "blocked",
+    "http_status": 403,
+    "error": "No validated HTML available",
+    "attempts": [
+      {
+        "client": "requests",
+        "http_status": 403,
+        "final_url": "https://www.nipissingu.ca/studentsupports/student-financial-services/student-awards-and-financial-aid/guaranteed-entrance-scholarships",
+        "error": "blocked"
+      },
+      {
+        "client": "curl",
+        "http_status": 403,
+        "final_url": "https://www.nipissingu.ca/studentsupports/student-financial-services/student-awards-and-financial-aid/guaranteed-entrance-scholarships",
+        "error": "blocked"
+      }
+    ]
+  },
+  "source": {
+    "page_url": "https://www.nipissingu.ca/studentsupports/student-financial-services/student-awards-and-financial-aid/guaranteed-entrance-scholarships",
+    "final_url": null,
+    "captured_at": null,
+    "attempted_at": "2026-11-06T01:25:09.013112+00:00",
+    "html_sha256": null,
+    "output_file": "outputs/nipissing_university.json",
+    "input_kind": "legacy_json_import",
+    "input_json_sha256": "4ceef1b2dd4b9441672f19931eac835d3b4bd492c9bdd3bc64c5f7d53abe8fe8"
+  },
+  "scholarships": [],
+  "scholarship_groups": [],
+  "application_windows": [],
+  "unresolved_sections": [],
+  "source_tables": [],
+  "cost_breakdowns": [],
+  "evidence": {
+    "tables": [],
+    "renewal": {
+      "positive": [],
+      "negative": []
+    }
+  },
+  "summary": {
+    "named_award_entries": 0,
+    "award_groups": 0,
+    "tiers": 0,
+    "application_windows": 0,
+    "unresolved_sections": 0,
+    "verified_scholarships": 0,
+    "total_scholarships": null
+  }
+}
