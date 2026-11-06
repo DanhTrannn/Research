@@ -4,7 +4,9 @@ if __name__ == '__main__':
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from pipeline import fetch_html, export_school, run_school, schedule_tables
+import re
+from urllib.parse import urljoin, urlparse
+from pipeline import fetch_html, export_school, run_school, schedule_tables, text, award, values, clean, date_value
 
 
 class Crawler:
@@ -13,12 +15,115 @@ class Crawler:
     url = 'https://www.uregina.ca/cost-aid/funding/undergraduate-scholarships/index.html'
 
     def crawl(self, timeout=12):
-        return fetch_html(self.url, timeout)
+        metadata, overview = fetch_html(self.url, timeout)
+        if overview is None:
+            return metadata, None
+        pages = {'overview': overview}
+        self.related_error = None
+        # Follow exactly the official international entrance link, not the entire site.
+        link = next((a for a in overview.find_all('a', href=True)
+                     if 'Entrance Awards for International Students' in text(a)), None)
+        if link:
+            url = urljoin(self.url, link['href'])
+            if urlparse(url).hostname == urlparse(self.url).hostname:
+                child_meta, child = fetch_html(url, timeout)
+                if child is not None:
+                    pages['international'] = (url, child)
+                else:
+                    self.related_error = f'International award page unavailable: {child_meta["fetch_status"]} ({url})'
+        if 'international' not in pages and not self.related_error:
+            self.related_error = 'International entrance link was not found or was not an official same-host URL.'
+        return metadata, pages
 
-    def extract(self, soup):
-        # This URL is an overview: extract its award application schedules, not FAQ dollar totals.
-        return {'scholarships': [], 'application_periods': schedule_tables(soup, r'Award Deadlines|Scholarship Deadlines'),
-                'notes': ['Overview page: individual award amounts and eligibility require the linked SAMS catalogue.']}
+    def extract(self, pages):
+        overview = pages['overview']
+        scholarships = []
+        # This FAQ contains a real, restricted award; other FAQ dollar totals are ignored.
+        heading = next((h for h in overview.select('.uor-accordionHeading')
+                        if 'How do I apply for the U of R Family Scholarship?' in text(h)), None)
+        if heading:
+            panel = heading.find_parent(class_='uor-accordionItem')
+            paragraphs = [text(p) for p in panel.find_all(['p', 'li']) if not p.find(['p', 'li'])]
+            item = award('University of Regina Family Scholarship', paragraphs,
+                         type='scholarship', source_url=self.url,
+                         employee_family_only=True)
+            value_text = next((p for p in paragraphs if p.startswith('Each scholarship is awarded at')), None)
+            if value_text:
+                item['value_texts'] = [value_text]
+                item['values'] = values(value_text.replace('per semester', 'per term').replace('up to a maximum of', 'up to'))
+            item['application'] = {'deadlines': [dict(date_value(m[2]), term=m[1])
+                for p in paragraphs if (m := re.match(r'^(Fall|Winter|Spring):\s*(.+)$', p))]}
+            scholarships.append(item)
+
+        if 'international' in pages:
+            url, soup = pages['international']
+            distinction = {'name': 'International Student of Distinction Scholarship',
+                           'type': 'scholarship', 'applicant_category': 'international',
+                           'source_url': url, 'tiers': []}
+            for heading in soup.select('.uor-accordionHeading'):
+                name = text(heading)
+                if name == 'International Entrance Scholarship' or re.match(r'^International Student of Distinction Scholarship: Tier \d+$', name):
+                    panel = heading.find_parent(class_='uor-accordionItem')
+                    value_heading = panel.find('h3')
+                    if value_heading is None:
+                        continue
+                    paragraphs = [text(p) for p in panel.find_all(['p', 'li']) if not p.find(['p', 'li'])]
+                    item = award(name, paragraphs, type='scholarship', applicant_category='international', source_url=url)
+                    item['eligibility'] = [text(li) for li in panel.find_all('li')]
+                    # Parse the award heading only: never treat a deposit/tuition example as a benefit.
+                    item.pop('description', None)
+                    item['value_texts'] = [text(value_heading)]
+                    item['values'] = values(text(value_heading), header='Scholarship Total' if 'x' in text(value_heading) else '')
+                    if 'Distinction Scholarship:' in name:
+                        item.pop('source_url', None)
+                        item.pop('applicant_category', None)
+                        item.pop('type', None)
+                        item['benefit_type'] = 'housing_and_meal_plan' if 'Meal Plan' in text(value_heading) else 'housing'
+                        item['approximate_value'] = True
+                        distinction['tiers'].append(item)
+                    else:
+                        scholarships.append(item)
+            if distinction['tiers']:
+                for heading in soup.find_all('h3'):
+                    label = text(heading)
+                    if label not in ('Application Deadlines', 'Housing Deadlines'):
+                        continue
+                    table = heading.find_next('table')
+                    if table is None or table.find_parent(class_='uor-accordionItem') is not heading.find_parent(class_='uor-accordionItem'):
+                        continue
+                    deadlines = []
+                    for row in table.find_all('tr'):
+                        cells = [text(c) for c in row.find_all(['th', 'td'])]
+                        if len(cells) == 2 and re.match(r'^(Fall|Winter|Spring)', cells[0]):
+                            deadlines.append({'term': cells[0], **date_value(cells[1])})
+                    if deadlines:
+                        if label == 'Application Deadlines':
+                            distinction['application'] = {'deadlines': deadlines}
+                        else:
+                            distinction['housing_deadlines'] = deadlines
+                notice = next((text(b) for b in soup.find_all('blockquote')
+                               if 'International Student of Distinction' in text(b) and 'filled' in text(b)), None)
+                if notice:
+                    distinction['availability_notice'] = notice
+                scholarships.append(distinction)
+            # The bursary's value, requirements and renewal rules are in separate panels of one section.
+            bursary_heading = next((h for h in soup.find_all('h2') if text(h) == 'International Undergraduate Student Bursary'), None)
+            if bursary_heading:
+                section = bursary_heading.find_parent('section')
+                value_heading = next((h for h in section.find_all('h3') if text(h).startswith('$')), None)
+                paragraphs = [text(p) for p in section.find_all(['p', 'li']) if not p.find(['p', 'li'])]
+                item = award(text(bursary_heading), paragraphs, type='bursary', applicant_category='international', source_url=url)
+                if value_heading:
+                    item['value_texts'] = [text(value_heading)]
+                    item['values'] = values(text(value_heading), header='Scholarship Total')
+                if any('continue to receive' in p for p in paragraphs):
+                    item['renewable'] = True
+                    item['renewal_conditions'] = [p for p in paragraphs if re.search(r'continue to receive|preceding year|next academic term|not owing', p)]
+                scholarships.append(item)
+        notes = [self.related_error] if getattr(self, 'related_error', None) else []
+        return clean({'scholarships': scholarships,
+                      'application_periods': schedule_tables(overview, r'Award Deadlines|Scholarship Deadlines'),
+                      'notes': notes})
 
     def export(self, metadata, data, output_dir=None):
         return export_school(self, metadata, data, output_dir)

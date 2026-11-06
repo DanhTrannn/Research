@@ -4,12 +4,20 @@ import os
 import re
 import subprocess
 import tempfile
+from contextlib import nullcontext
 from datetime import datetime, timezone
 from pathlib import Path
+from threading import Lock
 import requests
 from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent
+BROWSER_MODE = 'auto'
+BROWSER_HEADLESS = not bool(os.environ.get('DISPLAY'))
+BROWSER_WAIT = 25
+BROWSER_PROFILE = None
+MANUAL_CHALLENGE_WAIT = 0
+_BROWSER_START_LOCK = Lock()
 DEFAULT_HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'Accept': 'text/html,application/xhtml+xml'}
 MONEY = re.compile(r'\$\s*(\d{1,3}(?:,\d{3})+(?:\.\d{1,2})?|\d+(?:\.\d{1,2})?)(?![\d,])')
 NEGATION = re.compile(r'\b(?:non[ -]?renewable|not renewable|cannot be renewed|not be renewed|one[ -]time|(?:first year|year 1) only)\b', re.I)
@@ -164,6 +172,8 @@ def now():
 
 def fetch_html(url, timeout=12):
     """HTTP status is independent of process success. Blocked pages yield no DOM."""
+    if BROWSER_MODE == 'selenium':
+        return fetch_selenium(url, timeout)
     metadata = {'requested_url': url, 'attempted_at': now(), 'attempts': [],
                 'http_status': None, 'fetch_status': 'unavailable'}
     for client in ('requests', 'curl'):
@@ -185,7 +195,7 @@ def fetch_html(url, timeout=12):
                 code, final_url, content_type = trailer.decode('utf-8').split('\t', 2)
                 status = int(code)
             soup, error = validate_html(status, body, content_type)
-            metadata.update(http_status=status, final_url=final_url, fetch_status=error or 'ok')
+            metadata.update(http_status=status, final_url=final_url, fetch_status=error or 'ok', transport=client)
             metadata['attempts'].append({'client': client, 'http_status': status, 'error': error, 'final_url': final_url})
             if soup is not None:
                 metadata.update(fetched_at=now())
@@ -193,7 +203,100 @@ def fetch_html(url, timeout=12):
         except (requests.RequestException, subprocess.TimeoutExpired, OSError, ValueError) as exc:
             metadata['attempts'].append({'client': client, 'error': str(exc)})
             metadata['fetch_status'] = 'network_error'
+    if BROWSER_MODE == 'auto' and metadata['fetch_status'] in ('blocked', 'network_error', 'invalid_content', 'unexpected_content'):
+        browser_metadata, soup = fetch_selenium(url, timeout)
+        browser_metadata['attempts'] = metadata['attempts'] + browser_metadata['attempts']
+        return browser_metadata, soup
     return metadata, None
+
+
+def fetch_selenium(url, timeout=12):
+    """Render JS; optionally retain a dedicated profile for manual verification."""
+    metadata = {'requested_url': url, 'attempted_at': now(), 'attempts': [],
+                'http_status': None, 'fetch_status': 'browser_error', 'transport': 'selenium'}
+    try:
+        from selenium import webdriver
+        from selenium.common.exceptions import TimeoutException, WebDriverException
+        from selenium.webdriver.support.ui import WebDriverWait
+    except ImportError:
+        metadata['error'] = 'Selenium is missing; install requirements.txt with this Python interpreter.'
+        return metadata, None
+    driver = None
+    if BROWSER_PROFILE is not None:
+        Path(BROWSER_PROFILE).mkdir(parents=True, exist_ok=True, mode=0o700)
+    profile_context = (nullcontext(str(Path(BROWSER_PROFILE).resolve())) if BROWSER_PROFILE is not None
+                       else tempfile.TemporaryDirectory(prefix='scholarship-browser-'))
+    with profile_context as profile:
+        try:
+            options = webdriver.ChromeOptions()
+            options.page_load_strategy = 'eager'
+            if BROWSER_HEADLESS:
+                options.add_argument('--headless=new')
+            if getattr(os, 'geteuid', lambda: -1)() == 0 or Path('/.dockerenv').exists():
+                options.add_argument('--no-sandbox')
+            options.add_argument('--disable-dev-shm-usage')
+            options.add_argument('--window-size=1440,1000')
+            options.add_argument(f'--user-data-dir={profile}')
+            options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
+            # Selenium Manager shares a driver cache; serialize its startup in a batch run.
+            with _BROWSER_START_LOCK:
+                driver = webdriver.Chrome(options=options)
+            driver.set_page_load_timeout(timeout)
+            try:
+                driver.get(url)
+            except TimeoutException:
+                pass  # DOM may already be usable; still apply the bounded explicit wait.
+            responses = {}
+            challenge_announced = False
+            def ready(browser):
+                nonlocal challenge_announced
+                # Log status for the main document, not for images, JS, or challenge iframes.
+                frame_id = browser.execute_cdp_cmd('Page.getFrameTree', {})['frameTree']['frame']['id']
+                for entry in browser.get_log('performance'):
+                    event = json.loads(entry['message'])['message']
+                    params = event.get('params', {})
+                    if (event.get('method') == 'Network.responseReceived' and params.get('type') == 'Document'
+                            and params.get('frameId') == frame_id):
+                        response = params['response']
+                        responses[response['url'].split('#', 1)[0]] = int(response['status'])
+                final_url = browser.current_url
+                status = responses.get(final_url.split('#', 1)[0])
+                if status is None:
+                    # Chrome exposes the navigation response too; zero means unknown.
+                    status = browser.execute_script('return performance.getEntriesByType("navigation")[0]?.responseStatus || null')
+                metadata.update(final_url=final_url, http_status=status)
+                if status is None:
+                    metadata['fetch_status'] = 'network_status_unavailable'
+                    return False
+                soup, error = validate_html(status, browser.page_source)
+                metadata['fetch_status'] = error or 'ok'
+                if error == 'blocked' and MANUAL_CHALLENGE_WAIT and not challenge_announced:
+                    print(f'[ACTION] {url}: complete verification in the open Chrome window. '
+                          f'Waiting up to {max(BROWSER_WAIT, MANUAL_CHALLENGE_WAIT):g}s; '
+                          'do not close Chrome.', flush=True)
+                    challenge_announced = True
+                if soup is not None and browser.execute_script('return document.readyState') in ('interactive', 'complete'):
+                    return soup
+                return False
+            try:
+                soup = WebDriverWait(driver, max(BROWSER_WAIT, MANUAL_CHALLENGE_WAIT), poll_frequency=1).until(ready)
+            except TimeoutException:
+                metadata['attempts'].append({'client': 'selenium', 'http_status': metadata['http_status'],
+                                             'error': metadata['fetch_status']})
+                return metadata, None
+            metadata['fetched_at'] = now()
+            metadata['attempts'].append({'client': 'selenium', 'http_status': metadata['http_status'], 'error': None})
+            return metadata, soup
+        except (WebDriverException, OSError) as exc:
+            metadata['fetch_status'] = 'browser_error'
+            metadata['error'] = str(exc).splitlines()[0][:250]
+            return metadata, None
+        finally:
+            if driver is not None:
+                try:
+                    driver.quit()
+                except WebDriverException:
+                    pass
 
 
 def clean(value):
@@ -332,12 +435,14 @@ def export_school(crawler, metadata, extracted, output_dir=None):
                       'source_url': metadata.get('final_url') or crawler.url,
                       'fetched_at': metadata.get('fetched_at') or metadata.get('attempted_at'),
                       'status': metadata['fetch_status'], 'http_status': metadata.get('http_status'),
+                      'transport': metadata.get('transport'),
                       'data_status': 'needs_review' if metadata['fetch_status'] == 'ok' else 'unavailable'})
     document['scholarships'] = clean(extracted.get('scholarships', []))
     if extracted.get('application_periods'):
         document['application_periods'] = clean(extracted['application_periods'])
-    if extracted.get('notes'):
-        document['notes'] = extracted['notes']
+    notes = extracted.get('notes', []) + ([metadata['error']] if metadata.get('error') else [])
+    if notes:
+        document['notes'] = notes
     path = (Path(output_dir) if output_dir is not None else ROOT / 'outputs') / f'{crawler.slug}.json'
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists():

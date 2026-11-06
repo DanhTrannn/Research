@@ -12,7 +12,9 @@ run_all.py                       chạy một hoặc tất cả trường
 ## Chạy
 
 ```bash
-python3 -m pip install -r requirements.txt
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 python3 schools/humber_polytechnic.py
 python3 run_all.py --school lakehead
 python3 run_all.py
@@ -35,7 +37,7 @@ Mở `schools/<slug>.py`. Mỗi file có ba bước rõ ràng:
 - Lakehead chọn bảng đầu vào, nối footnote đúng số với tier và giữ giá trị theo năm/toàn khóa riêng.
 - IBU đọc panel đúng `aria-controls` của từng tab; chỉ lấy các dòng giảm trừ Scholarship, không lấy học phí hoặc deposit làm quyền lợi.
 - Algonquin giữ tên award, tiêu chí, campus, đối tượng quốc tế, học kỳ và cách nộp; không xuất lại toàn bộ DOM.
-- Regina lấy lịch hồ sơ vì URL là trang tổng quan, không dựng một gói tiền chung cho cả trường.
+- Regina lấy lịch hồ sơ và Family Scholarship trên trang tổng quan, đồng thời theo link chính thức tới trang đầu vào quốc tế. Mỗi gói giữ URL nguồn riêng; quyền lợi chỗ ở/ăn uống không bị coi là tiền mặt hoặc giảm học phí.
 
 Thêm trường bằng một file có `class Crawler` và các phương thức tương tự. Runner tự nhận diện file, không có generator hoặc registry riêng.
 
@@ -79,3 +81,32 @@ Currency chỉ được gắn khi có bằng chứng rõ. Các giá trị theo k
 Giữ [báo cáo nghiên cứu](bao_cao_nghien_cuu_scholarship_canada.md) và [schema PostgreSQL](schema/scholarships.sql) để tham khảo. Báo cáo mô tả đợt nghiên cứu trước, không tự viết lại sau mỗi lần crawl. Output schema v4 thay thế schema v3 nên code đọc JSON cần dùng cấu trúc mới.
 
 Phiên bản output/script trước có thể đối chiếu trong lịch sử Git. Không có thư mục tests hoặc công cụ export trung gian được thêm lại.
+
+
+## Selenium cho trang bị chặn hoặc cần JavaScript
+
+Mặc định `--browser auto`: thử requests/curl trước, chuyển sang Selenium Chrome khi gặp challenge hoặc nội dung chưa tải. `--browser selenium` dùng trình duyệt ngay từ đầu; `--browser http` tắt fallback trình duyệt.
+
+```bash
+source .venv/bin/activate
+python run_all.py --school brock --browser selenium --headed
+python run_all.py --school alberta --browser selenium --headed
+python run_all.py --school nipissing --browser selenium --headed --browser-wait 90
+```
+
+Khi có `DISPLAY`, Selenium mặc định mở cửa sổ Chrome. Dùng `--headless` để chạy không giao diện; trên máy không có màn hình thì mặc định headless. `--browser-wait` là thời gian chờ DOM hợp lệ, độc lập với timeout điều hướng. Selenium Manager lấy driver phù hợp khi cần, nên lần chạy đầu có thể lâu hơn.
+
+Với trang cần xác minh thủ công như Nipissing, dùng profile riêng được giữ lại:
+
+```bash
+python run_all.py --school nipissing --browser selenium --headed \
+  --browser-profile .browser-profiles/nipissing --manual-challenge-wait 180
+```
+
+Khi xuất hiện `[ACTION]`, hoàn thành xác minh trong cửa sổ Chrome đang mở. Script tự tiếp tục khi nhận được nội dung học bổng hợp lệ; hết thời gian vẫn bị chặn thì ghi `blocked`, không coi challenge là dữ liệu. Khi bật chế độ này, thời gian chờ DOM là số lớn hơn giữa `--browser-wait` và `--manual-challenge-wait`, tính sau bước điều hướng. Chrome đóng khi kết thúc nhưng profile và cookie được giữ cho lần chạy sau; website vẫn có thể yêu cầu xác minh lại.
+
+`--browser-profile` chỉ dùng cho một trường mỗi lần chạy. Dùng thư mục riêng, không dùng profile Chrome cá nhân và không mở hai tiến trình cùng profile. Thư mục `.browser-profiles/` đã được bỏ qua trong Git. Chế độ xác minh thủ công yêu cầu Chrome có giao diện; nếu chỉ thấy Access denied và không có challenge có thể giải, script vẫn có thể thất bại.
+
+Mặc định mỗi phiên dùng profile tạm riêng; chỉ giữ profile khi truyền `--browser-profile`. Script không đọc profile cá nhân và luôn đóng driver sau khi hoàn tất. Script chờ bằng WebDriverWait, lấy HTTP của tài liệu chính từ Chrome performance log/navigation timing và kiểm tra lại DOM; không gán 200 chỉ vì Chrome khởi động thành công. Không tự giải CAPTCHA. Nếu challenge không qua được trong thời gian chờ, status vẫn là blocked/unavailable.
+
+Output chỉ thêm `transport: selenium` để phân biệt cách lấy nguồn; vẫn một JSON gọn cho mỗi trường. Bản Brock đối chiếu thủ công trước đây đã được thay bằng crawl Selenium HTTP 200 thật. Lần kiểm tra hiện tại: Brock và Alberta thành công; Nipissing vẫn nhận 403 bằng Selenium có giao diện sau 30 giây.

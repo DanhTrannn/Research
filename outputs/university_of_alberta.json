@@ -5,9 +5,131 @@
     "slug": "university_of_alberta"
   },
   "source_url": "https://www.ualberta.ca/en/admissions/tuition-and-scholarships/international-entrance-scholarships/index.html",
-  "fetched_at": "2026-11-06T03:39:33.668966+00:00",
-  "status": "blocked",
-  "http_status": 202,
-  "data_status": "unavailable",
-  "scholarships": []
+  "fetched_at": "2026-11-06T04:19:23.432170+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "transport": "selenium",
+  "data_status": "needs_review",
+  "scholarships": [
+    {
+      "name": "International Admission Scholarship",
+      "value_texts": [
+        "Top students could receive up to CAN $10,000 based on admission average."
+      ],
+      "values": [
+        {
+          "currency": "CAD",
+          "max_amount": 10000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": [
+        "Top students could receive up to CAN $10,000 based on admission average."
+      ],
+      "type": "scholarship",
+      "applicant_category": "international"
+    },
+    {
+      "name": "Regional Excellence Scholarship",
+      "value_texts": [
+        "Top students from certain regions could receive up to CAN $5,000 based on admission average."
+      ],
+      "values": [
+        {
+          "currency": "CAD",
+          "max_amount": 5000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "eligibility": [
+        "Top students from certain regions could receive up to CAN $5,000 based on admission average."
+      ],
+      "type": "scholarship",
+      "applicant_category": "international"
+    },
+    {
+      "name": "President’s International Distinction Scholarship",
+      "value_texts": [
+        "Each year 25 students with a superior admission average and demonstrated leadership qualities entering their first year of an undergraduate degree on a student visa permit receive up to CAN $120,000 (payable over 4 years)."
+      ],
+      "values": [
+        {
+          "currency": "CAD",
+          "max_amount": 120000.0,
+          "payment_basis": "total_degree"
+        }
+      ],
+      "eligibility": [
+        "Each year 25 students with a superior admission average and demonstrated leadership qualities entering their first year of an undergraduate degree on a student visa permit receive up to CAN $120,000 (payable over 4 years)."
+      ],
+      "type": "scholarship",
+      "applicant_category": "international"
+    },
+    {
+      "name": "Chan Pang Kuen Memorial International Distinction Scholarship",
+      "value_texts": [
+        "Students with a superior admission average and demonstrated leadership qualities entering their first year of an undergraduate degree on a student visa permit receive up to CAN $120,000 (payable over 4 years)."
+      ],
+      "values": [
+        {
+          "currency": "CAD",
+          "max_amount": 120000.0,
+          "payment_basis": "total_degree"
+        }
+      ],
+      "eligibility": [
+        "Students with a superior admission average and demonstrated leadership qualities entering their first year of an undergraduate degree on a student visa permit receive up to CAN $120,000 (payable over 4 years)."
+      ],
+      "type": "scholarship",
+      "applicant_category": "international"
+    },
+    {
+      "name": "International Leader Scholarship",
+      "value_texts": [
+        "This scholarship recognizes and rewards well-rounded applicants with superior academics based on their leadership roles and accomplishments in their school, community organizations, extracurricular activities or even in their workplace. Recipients may receive up to CAN $15,000."
+      ],
+      "values": [
+        {
+          "currency": "CAD",
+          "max_amount": 15000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "type": "scholarship",
+      "applicant_category": "international"
+    },
+    {
+      "name": "May Quon Undergraduate Scholarship",
+      "value_texts": [
+        "Students with a superior admission average and self-declared financial need entering their first year of an undergraduate degree on a student visa permit who are Chinese or Hong Kong citizens could receive up to CAN $100,000 (payable over 4 years)."
+      ],
+      "values": [
+        {
+          "currency": "CAD",
+          "max_amount": 100000.0,
+          "payment_basis": "total_degree"
+        }
+      ],
+      "eligibility": [
+        "Students with a superior admission average and self-declared financial need entering their first year of an undergraduate degree on a student visa permit who are Chinese or Hong Kong citizens could receive up to CAN $100,000 (payable over 4 years)."
+      ],
+      "type": "scholarship",
+      "applicant_category": "international"
+    },
+    {
+      "name": "Cora Martinson International Scholarship",
+      "value_texts": [
+        "Students with superior academic achievement entering any year of an undergraduate degree program at Augustana Faculty on a student visa permit could receive up to CAN $56,000 (payable over 4 years). Selection is based on academic standing with preference given to students with indicated financial need."
+      ],
+      "values": [
+        {
+          "currency": "CAD",
+          "max_amount": 56000.0,
+          "payment_basis": "total_degree"
+        }
+      ],
+      "type": "scholarship",
+      "applicant_category": "international"
+    }
+  ]
 }

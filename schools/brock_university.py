@@ -4,7 +4,9 @@ if __name__ == '__main__':
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from pipeline import clean, fetch_html, export_school, run_school, main_content, selected_awards, table_records, values
+import re
+from urllib.parse import urljoin
+from pipeline import text, grade, MONEY, clean, fetch_html, export_school, run_school, main_content, table_records, values
 
 
 class Crawler:
@@ -16,22 +18,50 @@ class Crawler:
         return fetch_html(self.url, timeout)
 
     def extract(self, soup):
+        root = main_content(soup)
         scholarships, entrance_tiers = [], []
-        for table in main_content(soup).find_all('table'):
+        for table in root.find_all('table'):
             for row in table_records(table):
                 band = next((v for k,v in row.items() if k.startswith('admission average')), None)
                 if band:
-                    entrance_tiers.append(clean({'grade_text': band,
-                        'total_value_text': next((v for k,v in row.items() if k.startswith('amount of award')), None),
-                        'year_1_value_text': row.get('year 1'), 'renewal_value_text': row.get('renewals')}))
+                    condition = grade(re.sub(r'\s+and above', '+', band, flags=re.I))
+                    value_columns = {
+                        'total_value': next((v for k,v in row.items() if k.startswith('amount of award')), ''),
+                        'year_1_value': row.get('year 1', ''), 'renewal_value': row.get('renewals', '')}
+                    tier = {'grade_text': band, 'min_average': condition['min'], 'max_average': condition['max']}
+                    for field, raw in value_columns.items():
+                        match = MONEY.search(raw)
+                        if match:
+                            amount = float(match[1].replace(',', ''))
+                            tier[field] = {'max_amount' if field == 'total_value' else 'amount': amount}
+                    entrance_tiers.append(clean(tier))
                     continue
                 name = next((v for k,v in row.items() if k.startswith('awards ')), None)
                 if name:
-                    scholarships.append(clean({'name': name, 'value_text': row.get('value'),
-                                               'values': values(row.get('value', '')),
-                                               'eligibility': row.get('application instructions')}))
+                    raw_value = row.get('value', '')
+                    item = {'name': name, 'applicant_category': 'international', 'value_text': raw_value,
+                            'values': values(raw_value), 'eligibility': row.get('application instructions')}
+                    if re.search(r'variable.*domestic tuition', raw_value, re.I):
+                        item['benefit_type'] = 'domestic_tuition_equivalent'
+                        item['tuition_rate_basis'] = 'domestic'
+                    keyword = 'ambassador' if 'ambassador' in name.lower() else 'future leaders' if 'future leaders' in name.lower() else None
+                    if keyword:
+                        link = next((a for a in root.find_all('a', href=True) if keyword in text(a).lower() and 'application' in text(a).lower()), None)
+                        if link:
+                            item['application'] = {'url': urljoin(self.url, link['href'])}
+                            if 'closed' in text(link).lower():
+                                item['application']['status'] = 'closed'
+                    scholarships.append(clean(item))
         if entrance_tiers:
-            scholarships.insert(0, {'name': 'International Brock Scholars Award', 'tiers': entrance_tiers})
+            notes = [text(p) for p in root.find_all(['p', 'td']) if re.search(r'renewable for up to|U.S.A.|annual approval', text(p), re.I)]
+            heading = next((h for h in root.find_all('h2') if 'International Brock Scholars Award' in text(h)), None)
+            link = heading.find('a', href=True) if heading else None
+            scholarships.insert(0, clean({'name': 'International Brock Scholars Award',
+                'applicant_category': 'international',
+                'application': {'method': 'automatic'} if any('awards are automatic' in text(p).lower() for p in root.find_all('p')) else {},
+                'renewable': True if any('renewable' in note.lower() for note in notes) else None, 'renewal_conditions': notes,
+                'terms_url': urljoin(self.url, link['href']) if link else None,
+                'tiers': entrance_tiers}))
         return {'scholarships': scholarships}
 
     def export(self, metadata, data, output_dir=None):

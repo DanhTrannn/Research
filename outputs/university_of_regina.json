@@ -5,11 +5,232 @@
     "slug": "university_of_regina"
   },
   "source_url": "https://www.uregina.ca/cost-aid/funding/undergraduate-scholarships/index.html",
-  "fetched_at": "2026-11-06T03:39:39.260771+00:00",
+  "fetched_at": "2026-11-06T03:59:07.973582+00:00",
   "status": "ok",
   "http_status": 200,
   "data_status": "needs_review",
-  "scholarships": [],
+  "scholarships": [
+    {
+      "name": "University of Regina Family Scholarship",
+      "description": "The scholarship will be presented to University of Regina students who meet the following criteria:",
+      "eligibility": [
+        "The University of Regina Family Scholarship assists immediate family members (spouse, partner or eligible dependent) of eligible U of R employees when they pursue studies at the undergraduate or post-graduate level.",
+        "Eligible recipients must be a recognized dependent of a CUPE Local 5791 employee, an Administrative Professional and Technical employee, an Academic Staff Member or an Out-of-Scope employee. Applications for the award must be submitted to the Student Awards and Financial Aid office by the following deadlines:",
+        "Entering high school students or post-secondary transfer student will have a minimum admission average of 75%;",
+        "Registered and remains registered in a minimum of 12 credit hours in the semester the award is presented; and",
+        "Is a recognized dependent or spouse of an eligible University of Regina CUPE Local 5791 member, Administrative Professional and Technical member, Academic Staff member, or an Out-of-Scope employee as outlined in the respective collective bargaining agreements.",
+        "Registered and remains registered in a minimum of 12 credit hours in the semester the award is presented;",
+        "Successfully completed a minimum of 23 credit hours;",
+        "Minimum cumulative grade point average (CGPA) of 75%; and",
+        "Once a student has received the award, they will be automatically renewed for each semester of each year (to a maximum of $2,000 per family member per academic year (May 1 - April 30)) in which they continue to meet the eligibility requirements. If a previous recipient has not met the requirements for two consecutive semesters, they will no longer be automatically assessed each semester, and will be required to re-apply for the award."
+      ],
+      "renewable": true,
+      "renewal_conditions": [
+        "Once a student has received the award, they will be automatically renewed for each semester of each year (to a maximum of $2,000 per family member per academic year (May 1 - April 30)) in which they continue to meet the eligibility requirements. If a previous recipient has not met the requirements for two consecutive semesters, they will no longer be automatically assessed each semester, and will be required to re-apply for the award."
+      ],
+      "type": "scholarship",
+      "source_url": "https://www.uregina.ca/cost-aid/funding/undergraduate-scholarships/index.html",
+      "employee_family_only": true,
+      "value_texts": [
+        "Each scholarship is awarded at $1,000 per semester, up to a maximum of $2,000 per year, per family member."
+      ],
+      "values": [
+        {
+          "min_amount": 1000.0,
+          "max_amount": 1000.0,
+          "payment_basis": "per_term"
+        },
+        {
+          "max_amount": 2000.0,
+          "payment_basis": "per_year"
+        }
+      ],
+      "application": {
+        "deadlines": [
+          {
+            "raw": "September 15",
+            "term": "Fall"
+          },
+          {
+            "raw": "January 15",
+            "term": "Winter"
+          },
+          {
+            "raw": "May 15",
+            "term": "Spring"
+          }
+        ]
+      }
+    },
+    {
+      "name": "International Entrance Scholarship",
+      "eligibility": [
+        "All international students applying to an undergraduate degree program will be automatically considered.",
+        "Students must have an admission average of 83% or higher.",
+        "Students will receive $5,000 in tuition credit applied to their first registered term.",
+        "The increased value of this award will take effect for students starting in the Fall 2026 term onward."
+      ],
+      "application": {
+        "method": "automatic"
+      },
+      "type": "scholarship",
+      "applicant_category": "international",
+      "source_url": "https://www.uregina.ca/ur-international/scholarships.html",
+      "value_texts": [
+        "$5,000"
+      ],
+      "values": [
+        {
+          "min_amount": 5000.0,
+          "max_amount": 5000.0,
+          "payment_basis": "unknown"
+        }
+      ]
+    },
+    {
+      "name": "International Student of Distinction Scholarship",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "source_url": "https://www.uregina.ca/ur-international/scholarships.html",
+      "tiers": [
+        {
+          "name": "International Student of Distinction Scholarship: Tier 1",
+          "value_texts": [
+            "$90,000 ($22,500 x 4 years) Approximate Value of Campus Housing and Meal Plan"
+          ],
+          "values": [
+            {
+              "min_amount": 22500.0,
+              "max_amount": 22500.0,
+              "payment_basis": "per_year",
+              "max_payments": 4
+            },
+            {
+              "min_amount": 90000.0,
+              "max_amount": 90000.0,
+              "payment_basis": "total_degree"
+            }
+          ],
+          "eligibility": [
+            "All international students applying to an undergraduate degree program directly from high school will be automatically considered. Applications and required supporting documents must be received by the deadlines below.",
+            "International students selected for Tier 1 will be awarded on-campus housing and a meal plan which is valued at $90,000 over 4 years. This is not a tuition credit scholarship .",
+            "Students must have a minimum early conditional or overall final high school average of 90% (converted to Canadian grading scale).",
+            "This award is renewable for up to 3 years (3.5 years for Engineering students) of a student's degree program as long as students continue to complete 24 credit hours per calendar year and maintain a minimum UGPA of 80%."
+          ],
+          "renewable": true,
+          "renewal_conditions": [
+            "This award is renewable for up to 3 years (3.5 years for Engineering students) of a student's degree program as long as students continue to complete 24 credit hours per calendar year and maintain a minimum UGPA of 80%."
+          ],
+          "application": {
+            "method": "automatic"
+          },
+          "benefit_type": "housing_and_meal_plan",
+          "approximate_value": true
+        },
+        {
+          "name": "International Student of Distinction Scholarship: Tier 2",
+          "value_texts": [
+            "$45,000 ($11,250 x 4 years) Approximate Value of Campus Housing"
+          ],
+          "values": [
+            {
+              "min_amount": 11250.0,
+              "max_amount": 11250.0,
+              "payment_basis": "per_year",
+              "max_payments": 4
+            },
+            {
+              "min_amount": 45000.0,
+              "max_amount": 45000.0,
+              "payment_basis": "total_degree"
+            }
+          ],
+          "eligibility": [
+            "All international students applying to an undergraduate degree program directly from high school will be automatically considered. Applications and required supporting documents must be received by the deadlines below.",
+            "International students selected for Tier 2 will be awarded on-campus housing which is valued at $45,000 over 4 years. This is not a tuition credit scholarship .",
+            "Students must have a minimum early conditional or overall final high school average of 85-89.99% (converted to Canadian grading scale).",
+            "This award is renewable for up to 3 years (3.5 years for Engineering students) of a student’s degree program as long as students continue to complete 24 credit hours per calendar year and maintain a minimum UGPA of 80%."
+          ],
+          "renewable": true,
+          "renewal_conditions": [
+            "This award is renewable for up to 3 years (3.5 years for Engineering students) of a student’s degree program as long as students continue to complete 24 credit hours per calendar year and maintain a minimum UGPA of 80%."
+          ],
+          "application": {
+            "method": "automatic"
+          },
+          "benefit_type": "housing",
+          "approximate_value": true
+        }
+      ],
+      "application": {
+        "deadlines": [
+          {
+            "term": "Fall Term",
+            "raw": "April 30"
+          },
+          {
+            "term": "Winter Term",
+            "raw": "September 30"
+          },
+          {
+            "term": "Spring/Summer Term",
+            "raw": "January 30"
+          }
+        ]
+      },
+      "housing_deadlines": [
+        {
+          "term": "Fall Term",
+          "raw": "June 15"
+        },
+        {
+          "term": "Winter Term",
+          "raw": "November 15"
+        },
+        {
+          "term": "Spring/Summer Term",
+          "raw": "February 15"
+        }
+      ],
+      "availability_notice": "Notice: Available spots for the International Student of Distinction Scholarship have been filled for the Winter 2027 and Spring/Summer 2027 intakes. If you would like to be considered for this award, please apply for the Fall 2027 intake."
+    },
+    {
+      "name": "International Undergraduate Student Bursary",
+      "description": "If a student meets the conditions outlined above, they can continue to receive the $5,000 bursary each year of their studies as long as they:",
+      "value_texts": [
+        "$20,000 ($5,000 x 4 years) Tuition Credit"
+      ],
+      "values": [
+        {
+          "min_amount": 5000.0,
+          "max_amount": 5000.0,
+          "payment_basis": "per_year",
+          "max_payments": 4
+        },
+        {
+          "min_amount": 20000.0,
+          "max_amount": 20000.0,
+          "payment_basis": "total_degree"
+        }
+      ],
+      "eligibility": [
+        "This bursary is available to new international undergraduate students admitted to the Winter 2026 term onwards. Students do not need to apply for this bursary. The UR International office will assess and notify all eligible students each term.",
+        "Students must deposit payment of two years tuition to the University of Regina. The amount required is according to the one year tuition fee stated on the student's acceptance letter. (Example $32,500 CAD x 2 years= $65,000 CAD). The deposit should be made in advance of applying for the study permit.",
+        "Students must complete their first year (3 terms) of full-time study at the University of Regina and register in the following academic term.",
+        "Completed full-time studies in the preceding year."
+      ],
+      "type": "bursary",
+      "applicant_category": "international",
+      "source_url": "https://www.uregina.ca/ur-international/scholarships.html",
+      "renewable": true,
+      "renewal_conditions": [
+        "If a student meets the conditions outlined above, they can continue to receive the $5,000 bursary each year of their studies as long as they:",
+        "Completed full-time studies in the preceding year.",
+        "Are currently registered for the next academic term.",
+        "Are not owing any tuition fees to the University of Regina."
+      ]
+    }
+  ],
   "application_periods": [
     {
       "group": "Entrance Award Deadlines",
@@ -98,8 +319,5 @@
         "date": "2026-04-09"
       }
     }
-  ],
-  "notes": [
-    "Overview page: individual award amounts and eligibility require the linked SAMS catalogue."
   ]
 }
