@@ -74,12 +74,3 @@ Các mục vẫn có trạng thái `needs_review`, không tự công bố. Curre
 13 file hiện tại được chuyển từ dữ liệu crawl trước khi tinh gọn, giữ nguyên thời gian lấy nguồn và trạng thái 10 trường thành công / 3 trường bị chặn. `source.input_kind = legacy_json_import` phân biệt việc chuyển đổi với crawl mới; hash JSON đầu vào cũ được giữ để truy vết. Sau khi chạy lại một trường, file mới ghi `input_kind = live_http`.
 
 Bản sao đầy đủ của repo trước khi dọn nằm **ngoài repo**, cùng thư mục cha, tên `Scholarship-backup-20261106-101222.tar.gz`. Báo cáo nghiên cứu được giữ như ghi nhận của đợt khảo sát trước; không tự viết lại khi crawl.
-
-## Kiểm tra
-
-```bash
-python3 -m unittest discover -s tests -v
-python3 tests/check_schema.py
-```
-
-Kiểm tra SQL dùng PostgreSQL 16 trong Docker tạm, không mở cổng host và tự xóa container sau khi chạy. Không có thao tác triển khai vào database LOA Portal.
