@@ -1,0 +1,232 @@
+{
+  "schema_version": 4,
+  "school": {
+    "name": "Fanshawe College",
+    "slug": "fanshawe_college"
+  },
+  "source_url": "https://www.fanshawec.ca/international/applicants/international-entrance-scholarships/academic-entrance-scholarships",
+  "fetched_at": "2026-11-07T02:54:50.157685+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "transport": "requests",
+  "data_status": "needs_review",
+  "scholarships": [
+    {
+      "name": "Academic Entrance Scholarship",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "eligible_stages": [
+        "entrance"
+      ],
+      "tiers": [
+        {
+          "program_type": "Post-Secondary (PS) Programs",
+          "value_text": "$2,000",
+          "values": [
+            {
+              "min_amount": 2000.0,
+              "max_amount": 2000.0,
+              "payment_basis": "unknown"
+            }
+          ]
+        },
+        {
+          "program_type": "English for Academic Purposes (EAP) Program",
+          "value_text": "$500",
+          "values": [
+            {
+              "min_amount": 500.0,
+              "max_amount": 500.0,
+              "payment_basis": "unknown"
+            }
+          ]
+        },
+        {
+          "program_type": "Combined Admission (EAP + post-secondary)",
+          "value_text": "Up to $2,500 (EAP $500 + PS $2,000)",
+          "values": [
+            {
+              "max_amount": 2500.0,
+              "payment_basis": "unknown"
+            }
+          ]
+        }
+      ],
+      "description": "Academic Entrance Scholarships is designed to support international students by offering financial support for eligible programs.",
+      "eligibility": [
+        "The student must start their program in September 2026, January 2027, May 2027, September 2027 or January 2028.",
+        "Deposit is due within 30 days of receiving the offer.",
+        "If the deposit is not paid within the specified timeframe, the scholarship offer will be withdrawn."
+      ],
+      "intakes": [
+        "September 2026",
+        "January 2027",
+        "May 2027",
+        "September 2027",
+        "January 2028"
+      ],
+      "payment_notes": [
+        "Scholarships are applied to Term 1 tuition fees after the deposit is received.",
+        "The scholarship will be applied directly to the student’s tuition account and will be deducted from semester 1 fees.",
+        "The scholarship amount will be shown on web-advisor once the deposit is paid."
+      ],
+      "notes": [
+        "Not applicable for online programs.",
+        "The Combined Admission amount is up to $2,500 (EAP $500 + PS $2,000); it is a combined total, not an additional award."
+      ],
+      "application": {
+        "method": "automatic",
+        "notes": [
+          "The scholarship is automatically considered at the time of admission, a letter will be issued along with the offer letter with details about the student and the scholarship."
+        ]
+      }
+    },
+    {
+      "name": "Spousal Scholarship - 1 Year Programs",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "eligible_stages": [
+        "entrance"
+      ],
+      "program_duration": "1 year",
+      "value_text": "Maximum: $7,000 CAD Total.",
+      "values": [
+        {
+          "currency": "CAD",
+          "max_amount": 7000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "description": "The Spousal Scholarship Program is designed to support international students by offering financial support for families when both spouses enrol in eligible programs at Fanshawe College starting in September 2026, January 2027, May 2027, September 2027 or January 2028.",
+      "eligible_regions": "This scholarship is available for students from all international destinations.",
+      "eligibility": [
+        "The primary applicant (student) must apply to a 1-year PGWP-aligned post-secondary program (Accelerated Diploma, Certificate or Graduate Certificate at Fanshawe College. Note: The spouse must also be admitted to a full-time program of equal duration. This program may be PGWP or non-PGWP aligned.",
+        "Along with academic and English language proficiency documentation, both applicants must submit a copy of their marriage certificate along with a completed Spousal Scholarship application form.",
+        "Both students must pay the required deposit and fees by the specified date on their most recent invoice to secure their seats.",
+        "Note: Both primary applicant and spouse are enrolled in a 1-year program or two 1-year (1+1) programs."
+      ],
+      "conditions": [
+        "The student receiving the spousal scholarship will not be eligible for any other Fanshawe College or donor-funded scholarship.",
+        "The primary applicant (not receiving the Spousal Program Scholarship) may still qualify for other Fanshawe and or donor-funded awards."
+      ],
+      "intakes": [
+        "September 2026",
+        "January 2027",
+        "May 2027",
+        "September 2027",
+        "January 2028"
+      ],
+      "payment_notes": [
+        "$7,000 will subsequently be applied to the spousal tuition account and viewed through the student’s WebAdvisor Student Portal after both deposits are paid (1-year program)."
+      ],
+      "withdrawal_policy": [
+        "In the event one or both study permit applications are denied, deposit refunds for both students will be issued less $250 per student.",
+        "Students may choose to change programs, however program changes will automatically void any or all scholarship offers."
+      ],
+      "application": {
+        "method": "application_required",
+        "url": "https://www.fanshawec.ca/sites/default/files/2026-03/SPOUSAL%20SCHOLARSHIP%20APPLICATION%20FORM%20-%200326%20-%20Locked.pdf",
+        "documents": [
+          "Marriage certificate or Statutory Declaration of Common-Law Union",
+          "Spousal Scholarship application form"
+        ],
+        "notes": [
+          "The primary applicant and spouse must apply for admission within the application period.",
+          "Both applicants must submit the marriage certificate or a Statutory Declaration of Common-Law Union and a copy of the Spousal scholarship application form with their applications.",
+          "Scholarships will be awarded at the time of admission. A letter with the complete details will be issued.",
+          "Both partners must confirm acceptance and pay the required tuition deposit within 30 days of receiving their offer."
+        ]
+      }
+    },
+    {
+      "name": "Spousal Scholarship 2-year Programs",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "eligible_stages": [
+        "entrance"
+      ],
+      "program_duration": "2 years",
+      "tiers": [
+        {
+          "scenario": "Primary applicant enrolled in 2-year program – Spouse enrols in a 2-year program",
+          "value_text": "Primary applicant enrolled in 2-year program – Spouse enrols in a 2-year program $7,000 CAD applied to the spouse’s tuition account in term 1 and term 2. ($14,000 total)",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 7000.0,
+              "max_amount": 7000.0,
+              "payment_basis": "per_term",
+              "max_payments": 2
+            },
+            {
+              "currency": "CAD",
+              "min_amount": 14000.0,
+              "max_amount": 14000.0,
+              "payment_basis": "total_degree"
+            }
+          ]
+        },
+        {
+          "scenario": "Primary applicant enrolled in 2-year program – Spouse enrols in a 1-year program",
+          "value_text": "Primary applicant enrolled in 2-year program – Spouse enrols in a 1-year program $7,000 CAD applied to the spouse’s tuition account in term 1 only. ($7,000 total)",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 7000.0,
+              "max_amount": 7000.0,
+              "payment_basis": "one_time"
+            }
+          ]
+        }
+      ],
+      "description": "The Spousal Scholarship Program is designed to support international students by offering financial support for families when both spouses enroll in eligible programs at Fanshawe College starting in September 2026, January 2027, May 2027, September 2027 or January 2028.",
+      "eligible_regions": "This scholarship is available for students from all international destinations.",
+      "eligibility": [
+        "Primary applicants from India, must choose and enroll in a 2-year graduate certificate to qualify.",
+        "The spouse must also be admitted to full-time program of equal or lesser duration. This program may be PGWP or non-PGWP aligned.",
+        "Along with academic and English language proficiency documentation, both applicants must submit a copy of their marriage certificate along with a complete Spousal Scholarship application form.",
+        "Both students must pay the required deposit and fees by the specified date on their most recent invoice to secure their seats."
+      ],
+      "conditions": [
+        "Term 2 payment is contingent on both students maintaining good academic standing.",
+        "The scholarship will be automatically applied to eligible student accounts and could be viewed through the student’s WebAdvisor Student Portal after the deposit is paid.",
+        "The student receiving the spousal scholarship will not be eligible for any other Fanshawe College or donor funded scholarship."
+      ],
+      "intakes": [
+        "September 2026",
+        "January 2027",
+        "May 2027",
+        "September 2027",
+        "January 2028"
+      ],
+      "payment_notes": [
+        "The scholarship will be automatically applied to eligible student accounts and could be viewed through the student’s WebAdvisor Student Portal after the deposit is paid."
+      ],
+      "withdrawal_policy": [
+        "In the event one or both study permit applications are denied, deposit refunds for both students will be issued less $250 per student.",
+        "Students may choose to change programs, however program changes will automatically void any or all scholarship offers."
+      ],
+      "notes": [
+        "Scenario 1 and Scenario 2 are alternatives; their values are not cumulative."
+      ],
+      "application": {
+        "method": "application_required",
+        "url": "https://www.fanshawec.ca/sites/default/files/2026-03/SPOUSAL%20SCHOLARSHIP%20APPLICATION%20FORM%20-%200326%20-%20Locked.pdf",
+        "documents": [
+          "Marriage certificate or Statutory Declaration of Common-Law Union",
+          "Spousal Scholarship application form"
+        ],
+        "notes": [
+          "The primary applicant and spouse must apply for admission within the application period.",
+          "Both applicants must submit the marriage certificate or a Statutory Declaration of Common-Law Union and a copy of the Spousal scholarship application form with their applications. Note: We recommend that both applications be submitted at the same time to avoid confusion.",
+          "Scholarships will be awarded at the time of admission. A letter with the complete details will be issued.",
+          "Both the partners must confirm acceptance and pay the required tuition deposit within 30 days of receiving their offer."
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "The page lists eligible start intakes, not application deadlines; no exact application deadline is published.",
+    "Scholarship amounts are applied to tuition accounts; they are not cash payments."
+  ]
+}

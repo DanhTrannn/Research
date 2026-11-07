@@ -40,6 +40,7 @@ Mở `schools/<slug>.py`. Mỗi file có ba bước rõ ràng:
 - Regina lấy lịch hồ sơ và Family Scholarship trên trang tổng quan, đồng thời theo link chính thức tới trang đầu vào quốc tế. Mỗi gói giữ URL nguồn riêng; quyền lợi chỗ ở/ăn uống không bị coi là tiền mặt hoặc giảm học phí.
 - Fleming lấy Entry Scholarship quốc tế đang hiển thị: tối đa $3.200, kỳ Fall 2026/Winter 2027, nhóm chương trình đủ điều kiện, xác nhận học bổng và cách ghi có vào tài khoản sinh viên. Bỏ các học bổng cũ nằm trong HTML comment; không tự suy diễn điểm tối thiểu, hạn nộp hay mã tiền tệ từ ký hiệu `$`.
 - Confederation College đọc ba card học bổng quốc tế: giữ trạng thái mở, loại scholarship, nguồn internal, số tiền entrance, deadline từng card còn chờ ngày chính xác và deadline chung 22/09/2026. Không theo link chung sang trang internal scholarships vì trang đó chứa nhiều award ngoài phạm vi.
+- Fanshawe College đọc ba khối học bổng trong accordion: Academic Entrance Scholarship với ba mức theo loại chương trình (PS $2.000, EAP $500, Combined tối đa $2.500), Spousal Scholarship 1 năm tối đa $7.000 CAD và Spousal Scholarship 2 năm với hai scenario ($7.000 CAD/kỳ trong 2 kỳ = $14.000; hoặc $7.000 một lần). Giữ 5 kỳ đầu vào, không coi đó là hạn nộp; giữ link PDF đơn Spousal và điều kiện hôn nhân/India; không theo link PGWP hay FAQ.
 
 Thêm trường bằng một file có `class Crawler` và các phương thức tương tự. Runner tự nhận diện file, không có generator hoặc registry riêng.
 
