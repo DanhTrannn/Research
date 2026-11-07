@@ -38,6 +38,7 @@ Mở `schools/<slug>.py`. Mỗi file có ba bước rõ ràng:
 - IBU đọc panel đúng `aria-controls` của từng tab; chỉ lấy các dòng giảm trừ Scholarship, không lấy học phí hoặc deposit làm quyền lợi.
 - Algonquin giữ tên award, tiêu chí, campus, đối tượng quốc tế, học kỳ và cách nộp; không xuất lại toàn bộ DOM.
 - Regina lấy lịch hồ sơ và Family Scholarship trên trang tổng quan, đồng thời theo link chính thức tới trang đầu vào quốc tế. Mỗi gói giữ URL nguồn riêng; quyền lợi chỗ ở/ăn uống không bị coi là tiền mặt hoặc giảm học phí.
+- Fleming lấy Entry Scholarship quốc tế đang hiển thị: tối đa $3.200, kỳ Fall 2026/Winter 2027, nhóm chương trình đủ điều kiện, xác nhận học bổng và cách ghi có vào tài khoản sinh viên. Bỏ các học bổng cũ nằm trong HTML comment; không tự suy diễn điểm tối thiểu, hạn nộp hay mã tiền tệ từ ký hiệu `$`.
 
 Thêm trường bằng một file có `class Crawler` và các phương thức tương tự. Runner tự nhận diện file, không có generator hoặc registry riêng.
 

@@ -1,0 +1,52 @@
+{
+  "schema_version": 4,
+  "school": {
+    "name": "Fleming College",
+    "slug": "fleming_college"
+  },
+  "source_url": "https://flemingcollege.ca/scholarships-for-international-students",
+  "fetched_at": "2026-11-07T01:24:35.079621+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "transport": "requests",
+  "data_status": "needs_review",
+  "scholarships": [
+    {
+      "name": "Entry Scholarship",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "eligible_stages": [
+        "entrance"
+      ],
+      "programs": [
+        "certificate",
+        "diploma",
+        "advanced diploma",
+        "graduate certificate"
+      ],
+      "intakes": [
+        "Fall 2026",
+        "Winter 2027"
+      ],
+      "value_text": "up to $3,200",
+      "values": [
+        {
+          "max_amount": 3200.0,
+          "payment_basis": "one_time"
+        }
+      ],
+      "renewable": false,
+      "eligibility": [
+        "Students may receive this award only once.",
+        "Only those students who have been approved and received a scholarship confirmation letter will be eligible to receive the scholarship amount once they have enrolled in their full-time program."
+      ],
+      "availability": "Scholarships are awarded based on availability.",
+      "payment_notes": [
+        "The entrance scholarship will be deposited directly to your Fleming College student account in a few weeks after the 10th day of class."
+      ],
+      "application": {
+        "contact_email": "international@flemingcollege.ca"
+      }
+    }
+  ]
+}
