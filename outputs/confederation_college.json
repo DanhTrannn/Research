@@ -1,0 +1,112 @@
+{
+  "schema_version": 4,
+  "school": {
+    "name": "Confederation College",
+    "slug": "confederation_college"
+  },
+  "source_url": "https://www.confederationcollege.ca/international-education/scholarships/",
+  "fetched_at": "2026-11-07T02:14:11.880821+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "transport": "requests",
+  "data_status": "needs_review",
+  "scholarships": [
+    {
+      "name": "President’s Global Excellence Award",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "funding_source": "internal",
+      "eligible_stages": [
+        "entrance"
+      ],
+      "value_text": "$6,000 entrance award",
+      "values": [
+        {
+          "min_amount": 6000.0,
+          "max_amount": 6000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "description": "The President’s Global Excellence Award recognizes outstanding international students who combine academic excellence with meaningful leadership and positive impact in their schools or communities. If you have demonstrated strong academic achievement while making a difference through leadership, this award could be an opportunity to have your accomplishments recognized as you begin your studies at Confederation College.",
+      "application": {
+        "method": "application_required",
+        "url": "https://www.confederationcollege.ca/financial-aid/internal-scholarships/",
+        "status": "open",
+        "deadlines": [
+          {
+            "raw": "September 2026 - exact date to be confirmed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Innovators in Applied Learning Award",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "funding_source": "internal",
+      "eligible_stages": [
+        "entrance"
+      ],
+      "value_text": "$4,000 entrance award",
+      "values": [
+        {
+          "min_amount": 4000.0,
+          "max_amount": 4000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "description": "The Innovators in Applied Learning Award recognizes students who demonstrate creativity, technical skill and problem-solving through hands-on learning. Whether you have developed an innovative project, participated in a competition, created a startup, completed a capstone, developed an invention or designed a practical solution to a real-world problem, your applied learning could be recognized through this award. This opportunity may be particularly relevant to students entering engineering technology, information technology, health, skilled trades and other applied fields.",
+      "application": {
+        "method": "application_required",
+        "url": "https://www.confederationcollege.ca/financial-aid/internal-scholarships/",
+        "status": "open",
+        "deadlines": [
+          {
+            "raw": "September 2026 - exact date to be confirmed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Community Resilience & Service Award",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "funding_source": "internal",
+      "eligible_stages": [
+        "entrance"
+      ],
+      "value_text": "$3,000 entrance award",
+      "values": [
+        {
+          "min_amount": 3000.0,
+          "max_amount": 3000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "description": "The Community Resilience & Service Award recognizes students who demonstrate commitment, perseverance, personal growth and positive impact on others. This award celebrates students who have made meaningful contributions through community service, volunteerism or caregiving, as well as those who have continued pursuing their educational goals while overcoming significant personal or life challenges.",
+      "application": {
+        "method": "application_required",
+        "url": "https://www.confederationcollege.ca/financial-aid/internal-scholarships/",
+        "status": "open",
+        "deadlines": [
+          {
+            "raw": "September 2026 - exact date to be confirmed"
+          }
+        ]
+      }
+    }
+  ],
+  "application_periods": [
+    {
+      "group": "International Awards for New Students",
+      "term": "September 2026",
+      "deadline": {
+        "raw": "September 22, 2026",
+        "date": "2026-09-22"
+      }
+    }
+  ],
+  "notes": [
+    "Award cards list September 2026 with the exact date to be confirmed; the page-level application deadline is September 22, 2026."
+  ]
+}
