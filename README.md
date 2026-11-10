@@ -84,6 +84,33 @@ Currency chỉ được gắn khi có bằng chứng rõ. Các giá trị theo k
 
 Giữ [báo cáo nghiên cứu](bao_cao_nghien_cuu_scholarship_canada.md) và [schema PostgreSQL](schema/scholarships.sql) để tham khảo. Báo cáo mô tả đợt nghiên cứu trước, không tự viết lại sau mỗi lần crawl. Output schema v4 thay thế schema v3 nên code đọc JSON cần dùng cấu trúc mới.
 
+### Schema database hiện tại
+
+File thiết kế: [schema/scholarships.sql](schema/scholarships.sql). Có hai bảng: `schools` (`id`, `name`, `slug`) và `scholarships`. Một trường có nhiều học bổng.
+
+| Field trong `scholarships` | Nội dung |
+|---|---|
+| `id`, `school_id` | ID học bổng và trường sở hữu. |
+| `name`, `type` | Tên và loại scholarship/bursary/award. |
+| `value_text` | Quyền lợi, đơn vị tiền, kỳ cấp và các mức theo điểm. |
+| `requirements` | Toàn bộ điều kiện: đối tượng, ngành, bậc học, kỳ áp dụng, điểm, chuyển tiếp và gia hạn. |
+| `deadline` | Hạn nộp theo nguồn; để NULL nếu chưa rõ. |
+| `source_url` | Trang chính thức để đọc điều khoản và cách nộp. |
+| `updated_at` | Thời điểm tạo/cập nhật bản ghi gần nhất trong hệ thống. |
+| `updated_by` | ID người hoặc tên script cập nhật; NULL nếu chưa biết. |
+
+Luồng hiển thị: chọn trường → chọn ngành → mở **Học bổng của trường** → đọc `requirements` → mở `source_url` để tìm hiểu cách nộp. Truy vấn theo `school_id`; chọn ngành chưa tự lọc học bổng theo ngành. Không tạo bản sao cùng học bổng cho từng ngành.
+
+Phạm vi danh mục mục tiêu là entrance có nhận international, kể cả transfer entrance khi phù hợp. Output hiện tại chưa được lọc đồng bộ theo phạm vi này; cần kiểm tra trước khi nhập database.
+
+Quy tắc tracking:
+
+- Khi tạo: `updated_at` có mặc định `CURRENT_TIMESTAMP`; bên ghi dữ liệu cung cấp `updated_by` nếu xác định được.
+- Khi sửa nội dung: ứng dụng/ingestion phải cập nhật đồng thời `updated_at` và `updated_by` theo người/script thực hiện. Ví dụ script: `crawler:fleming_college`.
+- `DEFAULT` không tự cập nhật thời gian khi UPDATE. Hai field chỉ ghi lần sửa bản ghi gần nhất, không phải lúc website nguồn thay đổi hoặc toàn bộ lịch sử chỉnh sửa.
+
+DDL là thiết kế tham khảo, chưa triển khai vào portal và chưa có script nhập database. Database không có field `application` hay `fetched_at`; cách nộp đọc qua link nguồn. JSON crawler v4 hiện vẫn giữ `application`/`fetched_at` nếu có: đó là định dạng đầu ra crawler, chưa được chuyển sang schema database. Chi tiết ánh xạ và ví dụ Fleming nằm ở phần 5–6 của báo cáo.
+
 Phiên bản output/script trước có thể đối chiếu trong lịch sử Git. Không có thư mục tests hoặc công cụ export trung gian được thêm lại.
 
 

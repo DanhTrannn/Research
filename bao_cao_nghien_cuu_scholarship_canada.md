@@ -1,6 +1,6 @@
 # BÁO CÁO NGHIÊN CỨU DỮ LIỆU HỌC BỔNG CANADA VÀ THIẾT KẾ SCHEMA CHO LOA PORTAL
 
-> **Ghi chú tổ chức mã nguồn:** báo cáo ghi nhận đợt nghiên cứu trước khi tinh gọn repo. Mã hiện tại dùng `run_all.py`, `pipeline.py`, mỗi trường một file trong `schools/` và một JSON tự chứa bằng chứng trong `outputs/`. Script, log và dữ liệu trung gian cũ đã được lưu trong bản sao ngoài repo `../Scholarship-backup-20261106-101222.tar.gz`.
+> **Cách đọc báo cáo:** phần 2–3 ghi nhận đợt khảo sát ban đầu của 13 trường; số liệu và mô tả output ở đó không phải trạng thái hiện tại. Phần 4–6 đã cập nhật theo thiết kế hiện hành: hai bảng `schools`/`scholarships`, điều kiện trong `requirements`, link `source_url`, tracking bằng `updated_at`/`updated_by`. Mã hiện tại dùng `run_all.py`, `pipeline.py`, mỗi trường một script trong `schools/` và một JSON gọn trong `outputs/`. Dữ liệu mới xem ở các file JSON; phiên bản mã/tài liệu cũ đối chiếu trong Git. Database vẫn là thiết kế tham khảo, chưa có script nhập dữ liệu tự động.
 
 
 ## 1. Mục tiêu và phạm vi nghiên cứu
@@ -40,9 +40,11 @@ Mỗi nguồn là một URL thuộc website trường. Đây là URL mục tiêu
 
 Các trang tổng quan như Regina, Queen’s và Lethbridge còn dẫn sang danh mục/điều khoản chi tiết. Crawler hiện thu thập các URL đã cấu hình, chưa tự duyệt hết mọi liên kết con. Điều khoản ở một trang khác chưa được thu thập thì vẫn là phần thiếu bằng chứng.
 
-### 2.2. Phương pháp nghiên cứu
+### 2.2. Phương pháp nghiên cứu ban đầu
 
-Quy trình thực hiện theo thứ tự:
+Quy trình dưới đây mô tả đợt nghiên cứu ban đầu. Pipeline hiện tại đã tinh gọn, không còn xuất bản chụp HTML/hash, bảng thô hay candidate; xem README để chạy crawler hiện hành.
+
+Quy trình nghiên cứu ban đầu thực hiện theo thứ tự:
 
 1. **Lấy trang:** dùng requests, sau đó curl nếu cần; theo chuyển hướng và lưu HTTP thực tế của từng lần thử.
 2. **Kiểm tra nội dung:** phân biệt HTML học bổng với trang challenge, trang lỗi và phản hồi không phù hợp.
@@ -63,7 +65,7 @@ Phương pháp này kết hợp trích xuất tự động với đọc và di�
 | `null` / `unknown` | Chưa đủ bằng chứng để kết luận; khác với `false`, số 0 hoặc áp dụng toàn trường. |
 | HTTP 202/403 | Phản hồi có thể là WAF/challenge; không được coi là HTML học bổng hợp lệ. |
 
-Fixture cũ không có bằng chứng nguồn được lưu riêng tại kho lịch sử (tài liệu lịch sử trong bản sao lưu). Crawler không dùng các file này làm fallback. Snapshot mới chỉ được phép dùng khi bật `--allow-snapshot`, metadata/hash khớp và bản lưu không quá 7 ngày.
+Crawler hiện tại không dùng fixture hay snapshot làm fallback và không còn tùy chọn `--allow-snapshot`. Các thuật ngữ snapshot/hash/candidate trong kết quả khảo sát dưới đây mô tả phiên bản nghiên cứu cũ; có thể đối chiếu phiên bản mã qua Git.
 
 ## 3. Kết quả nghiên cứu
 
@@ -85,6 +87,8 @@ Fixture cũ không có bằng chứng nguồn được lưu riêng tại kho l�
 Tỷ lệ thu thập thành công là 76,92%. Toàn bộ 3 trường thất bại trong bộ dữ liệu này bị chặn bởi cơ chế bảo vệ truy cập. Tổng hàng bảng gồm cả bảng danh mục, quốc gia, chi phí và một số hàng tiêu đề mã hóa bằng `td`; số liệu này đo khối lượng cấu trúc HTML được giữ lại, không đo số học bổng. Bản dữ liệu tổng hợp được lưu để đối chiếu tại all_scholarships_summary.json (tài liệu lịch sử trong bản sao lưu).
 
 ### 3.2. Tổng quan kết quả khảo sát từng trường
+
+Số liệu trong bảng thuộc đợt ban đầu; các link JSON trỏ tới output hiện hành và có thể khác số liệu lịch sử. Các mục HTML/metadata lịch sử không phải file được xuất bởi crawler hiện tại.
 
 | Trường | Trạng thái / HTTP | Bảng | Hàng dữ liệu | Candidate | File kết quả | Bằng chứng HTML |
 |---|---|---:|---:|---:|---|---|
@@ -291,7 +295,7 @@ Từ 27 bảng và các phần nội dung không có bảng, nghiên cứu xác 
 
 Hai con số **695 hàng bảng** và **695 candidate** trùng nhau trong bộ dữ liệu hiện tại nhưng đo hai đại lượng khác nhau. Hàng bảng bao gồm bảng quốc gia, chi phí và một số tiêu đề bằng `td`; candidate còn bao gồm nhóm heading và các phần có thể chồng lặp. Không sử dụng sự trùng số này để suy ra số học bổng.
 
-### 3.5. Cấu trúc dữ liệu thu được
+### 3.5. Cấu trúc dữ liệu của phiên bản nghiên cứu ban đầu
 
 | Nhóm dữ liệu | Trường JSON | Giá trị sử dụng cho nghiên cứu/schema |
 |---|---|---|
@@ -312,7 +316,7 @@ Các trường `min_amount_cad`, `max_amount_cad`, `is_renewable`, `duration_not
 
 Kết quả khảo sát uOttawa ở mục 3.3.11 phân biệt International English Admission Scholarship và International English Academic Excellence Scholarship. Hai gói có trạng thái gia hạn khác nhau; các nhóm intake cũ cũng xuất hiện trên cùng trang.
 
-**Yêu cầu thiết kế:** một trường liên kết với nhiều `scholarships`. Một bản ghi scholarship đại diện cho một offering theo kỳ/phiên bản, không đại diện cho toàn trường. Tên heading chung hoặc `section_group` không được tự động nhập như một gói độc lập.
+**Yêu cầu thiết kế:** một trường liên kết với nhiều `scholarships`. Một bản ghi scholarship đại diện cho một gói học bổng; các kỳ áp dụng và điều kiện theo kỳ được ghi trong `requirements`, không tạo một học bổng đại diện cho toàn trường. Tên heading chung hoặc `section_group` không được tự động nhập như một gói độc lập.
 
 ### 4.2. Một gói có nhiều bậc điểm và quy tắc gia hạn
 
@@ -326,7 +330,7 @@ Bảng Lakehead được trình bày đầy đủ ở mục 3.3.5. Dưới đây
 
 Các footnote trên trang phân biệt bậc gia hạn và bậc chỉ cấp năm đầu; lời kể sinh viên không thể thay thế điều kiện chính thức. Khoản trợ giảng sau đại học cũng xuất hiện trên trang nhưng là loại hỗ trợ khác.
 
-**Yêu cầu thiết kế:** tách `scholarship_tiers`, giữ điều kiện từng bậc, kỳ tính tiền và evidence. Không gán cùng một cờ gia hạn hoặc một dải tiền cho mọi hàng của bảng.
+**Yêu cầu thiết kế:** giữ điều kiện từng bậc và kỳ tính tiền trong phần mô tả quyền lợi. Không gán cùng một cờ gia hạn hoặc một dải tiền cho mọi hàng của bảng.
 
 ### 4.3. Số tiền xuất hiện trên trang chưa chắc là giá trị học bổng
 
@@ -334,323 +338,195 @@ Kết quả khảo sát IBU cho thấy các bảng tuition và câu ngữ cảnh
 
 Kết quả khảo sát Lethbridge cho thấy mức tiền và mức điểm nằm sát nhau trong DOM. Parser phải giữ dấu cách để không biến `$800` đứng trước `75–79.9%` thành `$80,075`.
 
-**Yêu cầu thiết kế:** chỉ nhập giá trị tài chính sau khi xác định loại quyền lợi, currency và `payment_basis`. Giữ `value_display_text` và bằng chứng gốc; không map trực tiếp `min/max(amounts_found)` vào CSDL học bổng.
+**Yêu cầu thiết kế:** chỉ ghi giá trị sau khi xác định đúng quyền lợi, tiền tệ và kỳ cấp từ nguồn. Trình bày rõ trong `value_text`, giữ link `source_url` để đối chiếu; không lấy min/max mọi con số trên trang làm giá trị học bổng.
 
 ### 4.4. Đối tượng áp dụng và phạm vi ngành là dữ liệu nghiệp vụ
 
 Bảng danh mục Algonquin có các cột `Open to International?`, `Term`, `Application Required?`, mô tả ngành và campus. Nội dung MacEwan phân biệt Domestic và International.
 
-**Yêu cầu thiết kế:** lưu `applicant_category`, `application_method`, `study_level`, điều kiện và phạm vi chương trình. Ô trống ở `Open to International?` là chưa xác định, không tự chuyển thành `false`. Khi chỉ áp dụng cho một số ngành, dùng quan hệ N–N với `programs`.
+**Yêu cầu thiết kế:** ghi đối tượng, bậc học, điều kiện và phạm vi ngành trong `requirements`; người xem mở `source_url` để đọc hướng dẫn nộp. Ô trống ở `Open to International?` là chưa xác định, không tự chuyển thành `false` hoặc coi là đủ điều kiện đưa vào danh mục international entrance.
 
 ### 4.5. Kỳ tuyển sinh, thời hạn và lịch chi trả phải được giữ riêng
 
 Trang Lakehead có nhãn intake; uOttawa có các nhóm kỳ bắt đầu khác nhau; IBU có nội dung grant ghi thời điểm hết hiệu lực. Một số trang đồng thời nêu tiền theo kỳ, tổng toàn khóa và số lần trả tối đa.
 
-**Yêu cầu thiết kế:** định danh offering bằng `intake_key`; lưu `valid_from/valid_until`, deadline và phương thức nộp riêng. Không coi deadline là ngày hết hiệu lực. Không suy ra lịch chi trả bằng phép nhân khi các phát biểu trên nguồn chưa được làm rõ.
+**Yêu cầu thiết kế:** giữ các kỳ áp dụng trong `requirements`, hạn nộp trong `deadline`; người xem mở `source_url` để đọc cách nộp. Không coi deadline là kỳ nhập học. Không suy ra lịch chi trả bằng phép nhân khi các phát biểu trên nguồn chưa được làm rõ.
 
-### 4.6. Cần tách thu thập bằng chứng khỏi duyệt/công bố
+### 4.6. Giữ link nguồn chính thức
 
-Ba nguồn bị chặn không cung cấp được HTML học bổng trong lần chạy này. Với nguồn lấy được, candidate còn có thể trùng giữa heading và bảng, thiếu footnote hoặc chưa xác định currency/kỳ tính tiền.
+Nội dung crawl có thể thiếu điều kiện hoặc bị chặn. Mỗi học bổng giữ URL nguồn để người xem đối chiếu điều khoản mới nhất và tìm hiểu cách nộp. Schema hiển thị không lưu thời điểm crawl. Thông tin chưa rõ để trống, không tự suy diễn thành điều kiện hoặc quyền lợi đã được xác nhận.
 
-**Yêu cầu thiết kế:** lưu URL nguồn, thời điểm lấy dữ liệu và evidence trực tiếp trong `scholarships`, cùng trạng thái duyệt. Chỉ công bố bản ghi đã được duyệt; giá trị chưa xác định giữ `null` hoặc `unknown`.
+## 5. Thiết kế schema tinh gọn
 
-## 5. Thiết kế schema quan hệ đề xuất
+### 5.1. Thông tin người tìm học bổng cần biết
 
-### 5.1. Nguyên tắc và các thực thể
+Thiết kế tập trung vào các câu hỏi: học bổng gì, của trường nào, dành cho ai, được hỗ trợ bao nhiêu, cần đáp ứng điều kiện gì, áp dụng cho ngành/kỳ nào, hạn khi nào và có được gia hạn không. Người dùng bấm URL nguồn để tìm hiểu cách nộp và điều khoản đầy đủ.
 
-Schema ưu tiên truy xuất nguồn và thể hiện đúng nghiệp vụ đã quan sát được. Đây là thiết kế tham chiếu, chưa phải khẳng định tối ưu cho mọi chức năng tương lai của LOA Portal.
+Giữ hai bảng:
 
-| Bảng | Đơn vị bản ghi | Quan hệ chính |
-|---|---|---|
-| `schools` | Một trường | 1–N với `programs`, `scholarships`. |
-| `programs` | Một chương trình thuộc trường | N–N với `scholarships` qua `scholarship_programs`. |
-| `scholarships` | Một gói học bổng theo intake/phiên bản | Thuộc một trường, lưu URL nguồn trực tiếp, có nhiều tier. |
-| `scholarship_tiers` | Một bậc/biến thể giá trị của offering | N–1 với `scholarships`. |
-| `scholarship_programs` | Một liên kết gói học bổng–ngành | Khóa chính kép; hai đầu bắt buộc cùng trường. |
-
-### 5.2. Từ điển dữ liệu
-
-#### A. Trường và chương trình
-
-| Bảng / cột | Kiểu | Ý nghĩa và ràng buộc |
-|---|---|---|
-| `schools.id` | `BIGINT IDENTITY` | PK nội bộ của trường. |
-| `schools.name_en` | `TEXT` | Tên tiếng Anh, bắt buộc. |
-| `schools.slug` | `TEXT` | Định danh trường duy nhất. |
-| `programs.id` | `BIGINT IDENTITY` | PK của chương trình. |
-| `programs.school_id` | `BIGINT` | FK tới trường sở hữu. |
-| `programs.name_en` | `TEXT` | Tên chương trình, bắt buộc. |
-
-Khi tích hợp với LOA Portal, dùng bảng trường/ngành hiện có nếu phù hợp; không tạo bản sao các trường và chương trình đang tồn tại.
-
-Nguồn được lưu trực tiếp trên mỗi bản ghi `scholarships` bằng `source_url` và `source_fetched_at`. Thiết kế này không cần bảng nguồn hoặc khóa ngoại tới bản chụp HTML. `source_fetched_at` có thể NULL nếu chưa rõ thời điểm thu thập; không dùng thời điểm insert thay cho thời điểm lấy nguồn.
-
-HTML, hash và lịch sử HTTP vẫn được giữ trong bộ output crawl để phục vụ đối chiếu. Cơ sở dữ liệu nghiệp vụ không quản lý một danh mục lịch sử bản chụp riêng; nếu nhiều gói dùng chung URL thì mỗi gói lưu URL đó.
-
-#### B. `scholarships` — offering của một gói học bổng
-
-| Nhóm | Các cột và kiểu | Ý nghĩa |
-|---|---|---|
-| Định danh | `id BIGINT`, `school_id BIGINT`, `external_key TEXT`, `intake_key TEXT` | Một offering duy nhất theo `(school_id, external_key, intake_key)`. `external_key` do bước chuẩn hóa quản lý, không dùng thứ tự candidate làm định danh bền vững. |
-| Tên hiển thị | `name_en TEXT`, `name_vi TEXT` | Tên gói và bản dịch; không lấy tên trường làm tên học bổng. |
-| Nguồn | `source_url TEXT`, `source_fetched_at TIMESTAMPTZ`, `evidence_json JSONB`, `raw_tables_json JSONB` | Link công bố, thời điểm lấy nguồn và bằng chứng đã chọn đúng vùng/award. |
-| Gia hạn | `is_renewable BOOLEAN`, `duration_note_en TEXT`, `duration_note_vi TEXT` | Quy tắc chung nếu có; có thể unknown khi phụ thuộc tier. |
-| Đối tượng | `program_scope TEXT`, `applicant_category TEXT`, `study_level TEXT`, `eligibility_criteria TEXT` | Phạm vi ngành, domestic/international, bậc học và yêu cầu. |
-| Hồ sơ | `application_method TEXT`, `deadline_text TEXT`, `deadline_at TIMESTAMPTZ` | Phương thức xét/nộp, nguyên văn deadline và thời điểm chuẩn hóa nếu xác định được. |
-| Hiệu lực | `valid_from DATE`, `valid_until DATE` | Khoảng hiệu lực của offering; không đồng nhất với ngày nộp hồ sơ. |
-| Duyệt/công bố | `verification_status TEXT`, `reviewed_by TEXT`, `reviewed_at TIMESTAMPTZ`, `published BOOLEAN` | Trạng thái duyệt và thông tin người duyệt. |
-| Theo dõi thay đổi | `created_at`, `updated_at TIMESTAMPTZ` | Thời gian tạo/cập nhật; `updated_at` có trigger. |
-
-Các enum nghiệp vụ trong DDL:
-
-- `program_scope`: `unknown`, `school_wide`, `selected_programs`.
-- `applicant_category`: `unknown`, `domestic`, `international`, `both`.
-- `application_method`: `unknown`, `automatic`, `application_required`, `nomination`.
-- `verification_status`: `needs_review`, `verified`, `rejected`.
-
-#### C. `scholarship_tiers` — bậc và giá trị
-
-| Cột | Kiểu | Ý nghĩa |
-|---|---|---|
-| `id`, `scholarship_id` | `BIGINT` | PK và FK tới offering. |
-| `tier_key` | `TEXT` | Khóa bậc duy nhất trong một scholarship. |
-| `eligibility_text` | `TEXT` | Điều kiện bậc điểm/đối tượng; giữ nguyên khi chưa đủ thông tin cấu trúc hóa GPA. |
-| `is_renewable`, `renewal_conditions` | `BOOLEAN`, `TEXT` | Gia hạn và điều kiện riêng của bậc. |
-| `value_kind` | `TEXT` | `money`, `tuition_percentage`, `tuition_waiver`, `unknown`. |
-| `min_value`, `max_value` | `NUMERIC(14,2)` | Giá trị theo đúng loại và kỳ tính; không trộn năm/kỳ/toàn khóa. |
-| `currency` | `CHAR(3)` | Mã tiền tệ khi `value_kind = money`; không suy ra CAD chỉ từ dấu `$`. |
-| `payment_basis` | `TEXT` | `unknown`, `one_time`, `per_term`, `per_year`, `total_degree`. |
-| `max_instalments` | `INTEGER` | Số lần cấp tối đa đã được nguồn xác nhận. |
-| `tuition_rate_basis` | `TEXT` | `domestic`, `international`, `unknown` cho quyền lợi theo tuition. |
-| `value_display_text` | `TEXT` | Cách thể hiện giá trị gốc, bao gồm các ghi chú chưa chuẩn hóa hết. |
-| `evidence_text` | `TEXT` | Bằng chứng cụ thể của bậc/giá trị, bắt buộc không rỗng. |
-
-Ví dụ ánh xạ **đề xuất để duyệt** từ bảng Lakehead: bậc 90%+ có thể lưu `value_kind = money`, `currency = CAD`, `min_value = max_value = 10000`, `payment_basis = per_year`, tối đa 4 lần cấp; nguyên văn tổng $40,000 vẫn nằm trong `value_display_text`. Bậc $6,000 năm đầu có `payment_basis = one_time`, `is_renewable = false`. Đây là minh họa mô hình, chưa phải bản ghi đã insert hoặc đã duyệt công bố.
-
-#### D. `scholarship_programs` — phạm vi ngành
-
-| Cột | Kiểu | Ý nghĩa |
-|---|---|---|
-| `scholarship_id` | `BIGINT` | Một đầu của PK kép, FK tới offering. |
-| `program_id` | `BIGINT` | Một đầu của PK kép, FK tới chương trình. |
-| `school_id` | `BIGINT` | Dùng trong hai FK kép để buộc học bổng và ngành cùng trường. |
-
-`school_id` ở bảng nối là phần dư được giữ có chủ đích để kiểm soát toàn vẹn bằng FK kép. Không lấy việc có FK làm bằng chứng rằng mọi quy tắc nghiệp vụ đã được đảm bảo.
-
-### 5.3. Ràng buộc và quy tắc nhập dữ liệu
-
-| Ràng buộc / quy tắc | Cách thực hiện |
+| Bảng | Vai trò |
 |---|---|
-| Không nhập trùng offering cùng intake | `UNIQUE (school_id, external_key, intake_key)`. |
-| Nguồn công bố không rỗng | `source_url NOT NULL` và CHECK chuỗi có nội dung. |
-| Học bổng và ngành cùng trường | Hai FK kép tại `scholarship_programs`. |
-| Không có số âm hoặc min > max | Các `CHECK` trên `scholarship_tiers`. |
-| Phần trăm hợp lệ và có rate basis | `CHECK` loại quyền lợi, khoảng phần trăm và cơ sở tuition. |
-| Không làm mất unknown | `is_renewable` cho phép NULL; scope/category/method mặc định `unknown`. |
-| Khoảng hiệu lực hợp lệ | `valid_from <= valid_until` khi có đủ hai mốc. |
-| Duyệt trước khi công bố | `published` yêu cầu `verified` và phạm vi đã xác định; trạng thái verified yêu cầu reviewer/thời gian duyệt. |
-| Cập nhật thời gian thật | Trigger cập nhật `updated_at` khi UPDATE. |
+| `schools` | Tên và mã trường. Một trường có nhiều học bổng. |
+| `scholarships` | Thông tin cần đọc để cân nhắc và đăng ký một học bổng. |
 
-Một số việc phải do bước duyệt/ứng dụng thực hiện: xác nhận điều kiện và currency, kiểm tra đủ liên kết ngành khi `selected_programs`, xác định intake, phân loại award/bursary và bảo đảm evidence đúng gói. Các CHECK hiện có không tự chứng minh các điều này.
+Không tách bảng ngành, bảng nối ngành hoặc bảng tier trong phạm vi hiện tại. Các mức quyền lợi theo điểm được trình bày trong `value_text`; mọi điều kiện được ghi chung trong `requirements`. Không lưu thêm workflow duyệt/công bố, người duyệt, khóa offering, bản dịch song song hoặc bản sao bằng chứng HTML trong schema này.
+
+### 5.2. Các field cần giữ
+
+**Bảng `schools`:**
+
+| Field | Ý nghĩa |
+|---|---|
+| `id` | ID nội bộ, tự sinh. |
+| `name` | Tên trường. |
+| `slug` | Mã trường duy nhất, khớp cách đặt tên trong crawler. |
+
+**Bảng `scholarships`:**
+
+| Field | Người xem cần biết gì? |
+|---|---|
+| `id` | ID nội bộ để mở/cập nhật bản ghi. |
+| `school_id` | Học bổng của trường nào? |
+| `name` | Tên học bổng là gì? |
+| `type` | Scholarship, bursary hay award? |
+| `value_text` | Được bao nhiêu hoặc quyền lợi gì? Ghi rõ kỳ cấp và từng mức theo điểm. |
+| `requirements` | Toàn bộ điều kiện của học bổng: đối tượng, quốc tịch, bậc học, ngành/khoa, kỳ áp dụng, điểm, ngoại ngữ, chuyển tiếp, học toàn thời gian, điều kiện nhận một lần hoặc gia hạn. |
+| `deadline` | Hạn đăng ký là khi nào? |
+| `source_url` | Link nguồn chính thức để đọc chi tiết và hướng dẫn nộp. |
+| `updated_at` | Lần cập nhật bản ghi gần nhất trong hệ thống, có múi giờ. |
+| `updated_by` | Định danh người hoặc script cập nhật; NULL nếu chưa biết. |
+
+Các trường nội dung ngoài ID, liên kết trường, tên và URL nguồn có thể để `NULL` nếu nguồn chưa xác nhận. `updated_at` bắt buộc có; `updated_by` có thể NULL khi chưa biết người/script cập nhật. Thiếu dữ liệu không có nghĩa là không giới hạn.
+
+`updated_at` được đặt mặc định khi tạo bản ghi; khi sửa nội dung, ứng dụng hoặc ingestion phải cập nhật đồng thời `updated_at` và `updated_by`. Ví dụ định danh script: `crawler:fleming_college`; nếu người dùng sửa, dùng ID tài khoản từ hệ thống quản trị. `updated_by` hiện là TEXT, chưa gắn bảng người dùng. Hai field chỉ theo dõi lần sửa bản ghi gần nhất, không thay cho thời điểm cập nhật trang nguồn và không lưu toàn bộ lịch sử.
+
+Phạm vi danh mục mục tiêu là học bổng entrance có nhận sinh viên quốc tế, kể cả transfer entrance khi nguồn cho phép. Đây là điều kiện chọn dữ liệu ở bước crawl/chuẩn hóa, không cần hai field phân loại riêng trong database. Output hiện tại vẫn có mục domestic/continuing; cần lọc lại trước khi nhập vào danh mục này. Không được hiểu rằng dữ liệu cũ đã đáp ứng phạm vi mới.
+
+`requirements` là một field `TEXT`, có thể trình bày thành các gạch đầu dòng khi hiển thị. Ví dụ cách tổ chức nội dung (chỉ điền thông tin được nguồn xác nhận):
+
+- Đối tượng, quốc tịch và điều kiện về quá trình học trước đó.
+- Bậc học, chương trình/ngành và kỳ nhập học áp dụng.
+- Điểm học tập, ngoại ngữ và các tiêu chí tuyển chọn.
+- Điều kiện học toàn thời gian, thư xác nhận hoặc đặt cọc nếu có.
+- Điều kiện nhận một lần hoặc tiếp tục nhận/gia hạn, ghi đúng từng mức quyền lợi.
+
+Luồng hiển thị dự kiến: người dùng chọn trường, chọn ngành, đọc học bổng của trường và tự đối chiếu điều kiện; muốn tìm hiểu cách nộp thì mở `source_url`. Hạn nộp giữ riêng trong `deadline` để cân nhắc ngay khi xem danh sách. Chọn ngành chưa tự động lọc học bổng theo ngành vì phạm vi ngành hiện nằm trong text. Chỉ bổ sung liên kết ngành riêng nếu sản phẩm cần lọc chính xác sau này.
+
+### 5.3. Ví dụ cách ghi quyền lợi
+
+Với Lakehead, `value_text` có thể trình bày:
+
+- Điểm từ 90%: 10.000 CAD/năm, tổng tối đa 40.000 CAD trong bốn năm.
+- Điểm 80–89,9%: 7.500 CAD/năm, tổng tối đa 30.000 CAD trong bốn năm.
+- Điểm 75–79,9%: 6.000 CAD cho năm đầu, không gia hạn.
+
+Điều kiện gia hạn theo từng mức ghi trong `requirements`, không gom thành một quy tắc chung sai cho mọi mức.
+
+Với Fleming, `value_text` giữ quyền lợi `up to $3,200`. `requirements` ghi các kỳ `Fall 2026`/`Winter 2027`, các loại văn bằng được xét, điều kiện nhận một lần, có thư xác nhận và học toàn thời gian. Không tự đổi `$` thành CAD nếu nội dung hiện hành chưa xác nhận.
+
+Thiết kế này phục vụ đọc và tra cứu. Vì giá trị được giữ dạng text, chưa hỗ trợ so sánh số tiền tự động hoặc lọc chính xác theo từng tier; chỉ bổ sung cột số khi sản phẩm thực sự cần chức năng đó.
+
+### Ví dụ bản ghi hiển thị: Fleming College
+
+Ví dụ dưới đây trình bày lại nội dung trong `outputs/fleming_college.json`, chưa phải dữ liệu đã nhập database. `id` do database sinh, `school_id` lấy từ trường Fleming trong bảng `schools`.
+
+```json
+{
+  "name": "Entry Scholarship",
+  "type": "scholarship",
+  "value_text": "Tối đa $3.200, hỗ trợ học phí, nhận một lần.",
+  "requirements": "- Sinh viên quốc tế đăng ký chương trình certificate, diploma, advanced diploma hoặc graduate certificate.\n- Áp dụng cho Fall 2026 và Winter 2027.\n- Phải được chấp thuận, có thư xác nhận học bổng và nhập học toàn thời gian.\n- Chỉ được nhận một lần; việc cấp học bổng phụ thuộc số suất còn lại.",
+  "deadline": null,
+  "source_url": "https://flemingcollege.ca/scholarships-for-international-students"
+}
+```
+
+Không có hạn nộp được xác nhận nên `deadline` để NULL. URL nguồn vẫn là nơi người dùng đọc điều khoản đầy đủ. Các field `updated_at`/`updated_by` được bên ghi database cung cấp khi tạo hoặc sửa bản ghi; ví dụ nội dung từ crawler ở trên không tự xác nhận đã có lần ghi database nào.
 
 ### 5.4. DDL PostgreSQL
 
-DDL dưới đây đặc tả đầy đủ năm bảng, quan hệ và ràng buộc được đề xuất. Schema đã được thực thi thành công trên PostgreSQL tạm; chưa triển khai vào LOA Portal. Bản SQL độc lập được lưu kèm để tái lập triển khai.
+Đây là DDL tham khảo đã rút gọn, chưa áp dụng vào database của portal. Không dùng trực tiếp để xóa hoặc thay đổi các bảng đang chạy.
 
 ```sql
--- PostgreSQL 16+. Standalone reference schema; adapt schools/programs to the portal
--- before applying to an existing database. No automatic ingestion of crawler candidates.
+-- Schema tra cứu học bổng theo trường (PostgreSQL).
+-- Phạm vi mục tiêu: entrance có nhận international, kể cả transfer entrance.
+-- Bước chọn dữ liệu phải kiểm tra phạm vi này; SQL không tự lọc từ requirements.
+-- Một trường có nhiều học bổng. Ngành/khoa và ngoại lệ ghi trong requirements.
+-- Chưa phải migration cho database đang chạy; crawler vẫn xuất JSON riêng.
 BEGIN;
 
 CREATE TABLE schools (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    name_en TEXT NOT NULL,
+    name TEXT NOT NULL,
     slug TEXT NOT NULL UNIQUE
 );
-CREATE TABLE programs (
-    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    school_id BIGINT NOT NULL REFERENCES schools(id),
-    name_en TEXT NOT NULL,
-    UNIQUE (id, school_id)
-);
--- One offering for a named award and intake/version; never a whole school page.
+
 CREATE TABLE scholarships (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     school_id BIGINT NOT NULL REFERENCES schools(id),
-    external_key TEXT NOT NULL,
-    intake_key TEXT NOT NULL,
-    name_en TEXT NOT NULL,
-    name_vi TEXT,
+    name TEXT NOT NULL,
+    type TEXT,                       -- scholarship, bursary, award; NULL khi chưa rõ.
+    value_text TEXT,                 -- Quyền lợi, tiền tệ, kỳ cấp và các mức theo điểm.
+    requirements TEXT,               -- Toàn bộ điều kiện: đối tượng, ngành, kỳ, điểm, gia hạn...
+    deadline TEXT,                   -- Giữ đúng ngày/kỳ từ nguồn; không tự thêm năm/giờ.
     source_url TEXT NOT NULL CHECK (length(trim(source_url)) > 0),
-    source_fetched_at TIMESTAMPTZ, -- NULL when the collection time is unknown.
-    is_renewable BOOLEAN, -- NULL means unknown; never defaults to FALSE.
-    duration_note_en TEXT,
-    duration_note_vi TEXT,
-    program_scope TEXT NOT NULL DEFAULT 'unknown'
-        CHECK (program_scope IN ('unknown', 'school_wide', 'selected_programs')),
-    applicant_category TEXT NOT NULL DEFAULT 'unknown'
-        CHECK (applicant_category IN ('unknown', 'domestic', 'international', 'both')),
-    study_level TEXT,
-    eligibility_criteria TEXT,
-    application_method TEXT NOT NULL DEFAULT 'unknown'
-        CHECK (application_method IN ('unknown', 'automatic', 'application_required', 'nomination')),
-    deadline_text TEXT,
-    deadline_at TIMESTAMPTZ,
-    valid_from DATE,
-    valid_until DATE,
-    evidence_json JSONB NOT NULL CHECK (jsonb_typeof(evidence_json) = 'object' AND evidence_json <> '{}'::jsonb),
-    raw_tables_json JSONB,
-    verification_status TEXT NOT NULL DEFAULT 'needs_review'
-        CHECK (verification_status IN ('needs_review', 'verified', 'rejected')),
-    reviewed_by TEXT,
-    reviewed_at TIMESTAMPTZ,
-    published BOOLEAN NOT NULL DEFAULT FALSE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE (school_id, external_key, intake_key),
-    UNIQUE (id, school_id),
-    CHECK (valid_from IS NULL OR valid_until IS NULL OR valid_from <= valid_until),
-    CHECK (verification_status <> 'verified' OR (reviewed_by IS NOT NULL AND reviewed_at IS NOT NULL)),
-    CHECK (NOT published OR (verification_status = 'verified' AND program_scope <> 'unknown'))
+    updated_by TEXT                  -- ID người sửa hoặc tên script; NULL khi chưa biết.
 );
--- Tier values have an explicit basis. Never compare a per-term value with a
--- full-degree value. Percentage/free-tuition benefits need a rate basis as well.
-CREATE TABLE scholarship_tiers (
-    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    scholarship_id BIGINT NOT NULL REFERENCES scholarships(id) ON DELETE CASCADE,
-    tier_key TEXT NOT NULL,
-    eligibility_text TEXT NOT NULL,
-    is_renewable BOOLEAN,
-    renewal_conditions TEXT,
-    value_kind TEXT NOT NULL CHECK (value_kind IN ('money', 'tuition_percentage', 'tuition_waiver', 'unknown')),
-    min_value NUMERIC(14,2),
-    max_value NUMERIC(14,2),
-    currency CHAR(3) CHECK (currency ~ '^[A-Z]{3}$'),
-    payment_basis TEXT NOT NULL DEFAULT 'unknown'
-        CHECK (payment_basis IN ('unknown', 'one_time', 'per_term', 'per_year', 'total_degree')),
-    max_instalments INTEGER CHECK (max_instalments > 0),
-    tuition_rate_basis TEXT CHECK (tuition_rate_basis IN ('domestic', 'international', 'unknown')),
-    value_display_text TEXT NOT NULL,
-    evidence_text TEXT NOT NULL CHECK (length(trim(evidence_text)) > 0),
-    UNIQUE (scholarship_id, tier_key),
-    CHECK (min_value IS NULL OR min_value >= 0),
-    CHECK (max_value IS NULL OR max_value >= 0),
-    CHECK (min_value IS NULL OR max_value IS NULL OR min_value <= max_value),
-    CHECK (value_kind <> 'money' OR currency IS NOT NULL),
-    CHECK (value_kind <> 'tuition_percentage' OR
-        (min_value IS NOT NULL AND max_value IS NOT NULL AND max_value <= 100)),
-    CHECK (value_kind NOT IN ('tuition_percentage', 'tuition_waiver') OR tuition_rate_basis IS NOT NULL),
-    CHECK (value_kind <> 'tuition_waiver' OR (min_value IS NULL AND max_value IS NULL))
-);
--- school_id is carried to enforce both endpoints belonging to the same school.
-CREATE TABLE scholarship_programs (
-    scholarship_id BIGINT NOT NULL,
-    program_id BIGINT NOT NULL,
-    school_id BIGINT NOT NULL,
-    PRIMARY KEY (scholarship_id, program_id),
-    FOREIGN KEY (scholarship_id, school_id) REFERENCES scholarships(id, school_id) ON DELETE CASCADE,
-    FOREIGN KEY (program_id, school_id) REFERENCES programs(id, school_id) ON DELETE CASCADE
-);
-CREATE INDEX idx_scholarships_school_published ON scholarships(school_id) WHERE published;
-CREATE INDEX idx_scholarship_programs_program ON scholarship_programs(program_id);
-CREATE INDEX idx_tiers_scholarship ON scholarship_tiers(scholarship_id);
 
-CREATE FUNCTION touch_scholarship_updated_at() RETURNS TRIGGER LANGUAGE plpgsql AS $$
-BEGIN
-    NEW.updated_at = clock_timestamp();
-    RETURN NEW;
-END;
-$$;
-CREATE TRIGGER scholarships_updated_at BEFORE UPDATE ON scholarships
-    FOR EACH ROW EXECUTE FUNCTION touch_scholarship_updated_at();
+CREATE INDEX idx_scholarships_school ON scholarships(school_id);
 COMMIT;
 
--- Example query (bind :school_id / :program_id in the application):
+-- Danh sách học bổng của trường đang xem; $1 là slug truyền từ ứng dụng.
 -- SELECT s.* FROM scholarships s
--- WHERE s.school_id = :school_id AND s.published
---   AND (s.valid_from IS NULL OR s.valid_from <= CURRENT_DATE)
---   AND (s.valid_until IS NULL OR s.valid_until >= CURRENT_DATE)
---   AND EXISTS (SELECT 1 FROM programs p WHERE p.id = :program_id AND p.school_id = s.school_id)
---   AND (s.program_scope = 'school_wide'
---        OR (s.program_scope = 'selected_programs' AND EXISTS (
---            SELECT 1 FROM scholarship_programs sp
---            WHERE sp.scholarship_id = s.id AND sp.program_id = :program_id)));
--- Also filter applicant eligibility/intake/level; being visible is not proof of eligibility.
+-- JOIN schools sc ON sc.id = s.school_id
+-- WHERE sc.slug = $1
+-- ORDER BY s.name, s.id;
+-- Chọn ngành không tự lọc kết quả: người xem đối chiếu requirements.
+
+-- Khi sửa nội dung, ứng dụng/ingestion phải ghi updated_at = CURRENT_TIMESTAMP
+-- và updated_by = định danh người/script thực sự thực hiện thay đổi.
+-- DEFAULT chỉ đặt thời điểm khi INSERT, không tự chạy lại khi UPDATE.
+-- Đây là lần sửa bản ghi gần nhất, không phải thời điểm cập nhật trang nguồn.
 ```
-
-### 5.5. Truy vấn học bổng trên trang chi tiết ngành
-
-Dùng `EXISTS` để không nhân bản dòng học bổng khi bảng nối có nhiều liên kết. Điều kiện trường được đặt ngoài nhánh OR; đồng thời kiểm tra ngành đang xem thuộc trường đó.
-
-```sql
-SELECT s.*
-FROM scholarships s
-WHERE s.school_id = :school_id
-  AND s.published IS TRUE
-  AND (s.valid_from IS NULL OR s.valid_from <= CURRENT_DATE)
-  AND (s.valid_until IS NULL OR s.valid_until >= CURRENT_DATE)
-  AND EXISTS (
-      SELECT 1 FROM programs p
-      WHERE p.id = :program_id AND p.school_id = s.school_id
-  )
-  AND (
-      s.program_scope = 'school_wide'
-      OR (
-          s.program_scope = 'selected_programs'
-          AND EXISTS (
-              SELECT 1 FROM scholarship_programs sp
-              WHERE sp.scholarship_id = s.id
-                AND sp.program_id = :program_id
-          )
-      )
-  );
-```
-
-Ứng dụng vẫn phải lọc intake, applicant category, bậc học và điều kiện của học sinh. Việc một học bổng được hiển thị không tự động có nghĩa học sinh đủ điều kiện nhận.
 
 ## 6. Ánh xạ kết quả crawl vào schema
 
-### 6.1. Bảng ánh xạ
-
-| Đầu vào từ crawler | Đích lưu trữ | Xử lý bắt buộc |
+| Dữ liệu trong JSON hiện tại | Field database | Cách xử lý |
 |---|---|---|
-| `slug`, `school_name` | `schools` / trường hiện có | Tra cứu trường; không tạo trùng theo tên. |
-| URL nguồn + `crawl_metadata` + bằng chứng HTML | `scholarships.source_url`, `source_fetched_at`, `evidence_json` | Lưu link và thời điểm lấy dữ liệu trực tiếp; HTML/hash tiếp tục nằm trong output crawl để đối chiếu. |
-| Heading/hàng chứa tên award | `scholarships.name_en`, `external_key` | Tách gói thực; gộp candidate trùng; tạo định danh bền vững. |
-| Nhóm intake / câu thời gian | `intake_key`, `valid_from`, `valid_until` | Không dùng thời điểm crawl thay cho intake/hiệu lực. |
-| Bảng điểm và từng hàng | `scholarship_tiers` | Nối đúng header, footnote và điều kiện từng bậc. |
-| `monetary_mentions`, `amount_claims` | Giá trị trong `scholarship_tiers` | Loại học phí/đặt cọc/tổng quỹ; xác định currency và payment basis trước khi ghi số. |
-| Evidence gia hạn | `is_renewable`, ghi chú chung/riêng tier | Xử lý phủ định và không gộp quy tắc nhiều gói. |
-| Evidence eligibility / deadline | Các trường điều kiện/hồ sơ | Giữ câu gốc; chỉ chuẩn hóa ngày khi có đủ ngày/năm/timezone cần thiết. |
-| Evidence ngành | `program_scope`, `scholarship_programs` | Ánh xạ tới ngành có thật và cùng trường; chưa rõ thì giữ unknown. |
-| Bằng chứng DOM/bảng | `evidence_json`, `raw_tables_json`, `evidence_text` | Giữ khả năng truy lại từng quyết định chuẩn hóa. |
+| `school.name`, `school.slug` | `schools.name`, `schools.slug` | Tra cứu trường theo slug. |
+| Tên từng học bổng | `scholarships.name` | Mỗi học bổng thực là một bản ghi; nhóm danh mục chưa có các suất cụ thể không tự coi là một học bổng. |
+| `type` | `type` | Giữ loại scholarship/bursary/award nếu biết. |
+| `value_text`, `value_texts`, `values`, `tiers`, `benefits` | `value_text` | Trình bày quyền lợi có điều kiện, tiền tệ và kỳ cấp rõ ràng; không cộng các khoản khác cơ sở tính. |
+| `eligibility`, `applicant_category`, `eligible_stages`, `study_level`, `programs`, `intakes`, `renewable`, `renewal_conditions` và điều kiện riêng trong tier | `requirements` | Gộp thành nội dung dễ đọc, giữ điều kiện từng mức; không tự thêm thông tin còn thiếu. |
+| Deadline của học bổng | `deadline` | Giữ dạng chữ, không tự điền thời gian còn thiếu. |
+| `scholarship.source_url` hoặc `source_url` của file | `source_url` | Ưu tiên link riêng của gói; nếu không có dùng link nguồn cấp file. |
+| Thao tác ghi/cập nhật từ ứng dụng hoặc ingestion | `updated_at`, `updated_by` | Ghi thời điểm thao tác và người/script thực hiện; không sao chép thời điểm crawl thành thời điểm sửa bản ghi. |
 
-### 6.2. Quy trình ingestion đề xuất
+Quy tắc cập nhật bản ghi (để bên tích hợp thực hiện): khi INSERT, dùng mặc định thời gian và cung cấp định danh người/script; khi UPDATE nội dung, ghi lại cả hai field. Ví dụ câu lệnh có tham số:
 
-1. Đưa JSON và HTML vào vùng dữ liệu thô; kiểm tra `success`, nguồn và hash.
-2. Xác định award, intake, đối tượng và tier; xử lý các candidate chồng lặp.
-3. Chuẩn hóa các trường có đủ bằng chứng; giữ unknown cho phần chưa rõ và loại khỏi diện công bố.
-4. Ghi offering, tier và quan hệ ngành trong transaction, dựa trên các khóa unique/FK.
-5. Người duyệt đối chiếu điều khoản chính thức, ghi reviewer/thời gian và quyết định `verified` hoặc `rejected`.
-6. Chỉ sau bước duyệt và kiểm tra nghiệp vụ mới bật `published`.
+```sql
+UPDATE scholarships
+SET requirements = $2,
+    updated_at = CURRENT_TIMESTAMP,
+    updated_by = $3
+WHERE id = $1;
+```
 
-**Trạng thái thực hiện:** đã có crawler, output và DDL tham chiếu; chưa có ETL tự động nhập candidate vào bảng scholarship đã duyệt. Không ánh xạ trực tiếp một record trường thành một scholarship.
+`$1` là ID học bổng, `$2` là nội dung điều kiện mới, `$3` là ID người hoặc tên script thực hiện. Không dùng `fetched_at` của JSON làm `updated_at`, không ghi tên người duyệt khi người đó không thực hiện cập nhật.
+
+Đây là quy tắc ánh xạ đề xuất, chưa có script nhập database tự động. Crawler vẫn giữ cấu trúc JSON v4 hiện tại; lần tinh gọn này chỉ thay thiết kế database và phần mô tả tương ứng.
 
 ## 7. Giới hạn và hướng hoàn thiện
 
-| Giới hạn quan sát được | Công việc tiếp theo |
-|---|---|
-| 3 nguồn không lấy được HTML trong đợt này | Lấy bản nguồn chính thức qua phương thức truy cập phù hợp, giữ provenance và đối chiếu lại; không dựng dữ liệu thay thế. |
-| Candidate chưa được duyệt và có thể chồng lặp | Hoàn thiện nhận diện award/tier và bước duyệt theo bằng chứng. |
-| Điều kiện nằm trong footnote hoặc trang liên kết | Bổ sung parser theo trường và thu thập terms chi tiết trước khi chuẩn hóa. |
-| Một tier có thể có nhiều thành phần chi trả | Schema hiện có một payment basis/giá trị chính mỗi tier; nếu cần lưu độc lập tiền năm đầu, năm sau và tổng toàn khóa thì mở rộng bảng thành phần giá trị/lịch trả, không nhét các basis khác nhau vào cùng min/max. |
-| Hạn chế quốc tịch, campus, ngoại lệ ngành chưa có bảng riêng | Hiện giữ trong eligibility/evidence; bổ sung quan hệ có cấu trúc khi có yêu cầu lọc tự động và dữ liệu đã kiểm chứng. |
-| Chưa có lịch sử thay đổi đầy đủ ở cấp trường dữ liệu | URL và thời điểm lấy dữ liệu nằm trên `scholarships`; HTML/hash được lưu ngoài CSDL trong output. Muốn audit mọi lần duyệt/cập nhật cần thêm bảng lịch sử. |
-| DDL tham chiếu chưa gắn với schema portal thực tế | Đối chiếu bảng trường/ngành và yêu cầu sản phẩm trước khi tạo migration tích hợp. |
+- Các kết quả nghiên cứu ở phần trước phản ánh đợt thu thập ban đầu; kết quả crawl mới xem trong `outputs/`.
+- Điều kiện nằm trong footnote, trang liên kết hoặc nguồn bị chặn vẫn cần được đối chiếu; không dựng dữ liệu thay thế.
+- Schema tinh gọn ưu tiên thông tin để đọc, chưa phục vụ tự động tính mức học bổng hoặc khẳng định ứng viên đủ điều kiện.
+- Giữ link nguồn và thông tin lần sửa bản ghi gần nhất (`updated_at`, `updated_by`); không lưu thời điểm crawl hay toàn bộ lịch sử thay đổi. Người xem mở nguồn để kiểm tra điều khoản mới nhất.
+- Chưa có ETL nhập JSON vào database và chưa triển khai schema vào LOA Portal.
 
 ## 8. Kết luận nghiên cứu
 
 Nghiên cứu đạt mục tiêu xác định những dạng dữ liệu thực tế cần quản lý cho bài toán học bổng tại LOA Portal. Kết quả của 10 nguồn truy cập được cho thấy ít nhất ba lớp thông tin phải tách biệt: trang/bằng chứng nguồn, gói theo kỳ tuyển sinh và bậc quyền lợi theo điều kiện. Các trường hợp Humber và Lakehead chứng minh sự khác nhau giữa cấp một lần và gia hạn; uOttawa thể hiện nhiều gói có điều kiện và lịch cấp khác nhau; IBU cho thấy rủi ro lẫn chi phí với quyền lợi; Algonquin và Waterloo thể hiện phạm vi ngành và tiêu chí lựa chọn đa dạng; Regina và Lethbridge cung cấp lịch hồ sơ theo nhóm; MacEwan và Queen’s cho thấy dữ liệu có thể được trình bày bằng văn bản thay vì bảng tài chính.
 
-Từ các kết quả đó, mô hình năm bảng được đề xuất nhằm bảo toàn nguồn, tách offering và tier, kiểm soát quan hệ ngành, duy trì trạng thái chưa xác định và chỉ cho phép công bố sau duyệt. DDL và các ràng buộc đã được kiểm tra trong môi trường PostgreSQL tạm. Phần chưa hoàn tất là thu thập ba nguồn bị chặn, duyệt danh tính từng award, hoàn thiện điều khoản và tích hợp với cơ sở dữ liệu thực tế của portal. Vì vậy, kết quả hiện tại là nền tảng nghiên cứu và thiết kế có bằng chứng, chưa phải danh mục học bổng sẵn sàng tư vấn tự động.
-
+Thiết kế hiện tại được rút về hai bảng `schools` và `scholarships`, tập trung vào thông tin người tìm học bổng cần đọc: quyền lợi, đối tượng, điều kiện, kỳ nhập học, hạn nộp và gia hạn. URL nguồn được giữ để đối chiếu và đọc hướng dẫn nộp; `updated_at`/`updated_by` ghi nhận lần sửa bản ghi gần nhất. Đây là schema tham khảo; chưa có bước tự động nhập JSON hoặc triển khai vào database portal.
