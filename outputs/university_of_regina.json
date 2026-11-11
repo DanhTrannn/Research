@@ -5,9 +5,10 @@
     "slug": "university_of_regina"
   },
   "source_url": "https://www.uregina.ca/cost-aid/funding/undergraduate-scholarships/index.html",
-  "fetched_at": "2026-11-06T03:59:07.973582+00:00",
+  "fetched_at": "2026-11-11T04:23:59.237818+00:00",
   "status": "ok",
   "http_status": 200,
+  "transport": "requests",
   "data_status": "needs_review",
   "scholarships": [
     {
@@ -67,8 +68,13 @@
       "eligibility": [
         "All international students applying to an undergraduate degree program will be automatically considered.",
         "Students must have an admission average of 83% or higher.",
-        "Students will receive $5,000 in tuition credit applied to their first registered term.",
-        "The increased value of this award will take effect for students starting in the Fall 2026 term onward."
+        "Students will receive $12,000 in tuition credit, distributed over four years as follows: Year 1: $2,000 Year 2: $2,000 Year 3: $4,000 Year 4: $4,000",
+        "Year 1: $2,000",
+        "Year 2: $2,000",
+        "Year 3: $4,000",
+        "Year 4: $4,000",
+        "The Year 1 award of $2,000 is guaranteed. To remain eligible for the award payments in Years 2, 3 and 4, students must remain enrolled in an undergraduate degree program, complete a minimum of 24 credit hours per 12-month cycle, and maintain good academic and financial standing with the University.",
+        "Students enrolled in the three-year Bachelor of Arts and Science program are eligible for up to $8,000 distributed over three years."
       ],
       "application": {
         "method": "automatic"
@@ -77,12 +83,12 @@
       "applicant_category": "international",
       "source_url": "https://www.uregina.ca/ur-international/scholarships.html",
       "value_texts": [
-        "$5,000"
+        "$12,000"
       ],
       "values": [
         {
-          "min_amount": 5000.0,
-          "max_amount": 5000.0,
+          "min_amount": 12000.0,
+          "max_amount": 12000.0,
           "payment_basis": "unknown"
         }
       ]
@@ -191,8 +197,7 @@
           "term": "Spring/Summer Term",
           "raw": "February 15"
         }
-      ],
-      "availability_notice": "Notice: Available spots for the International Student of Distinction Scholarship have been filled for the Winter 2027 and Spring/Summer 2027 intakes. If you would like to be considered for this award, please apply for the Fall 2027 intake."
+      ]
     },
     {
       "name": "International Undergraduate Student Bursary",

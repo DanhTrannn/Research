@@ -5,9 +5,10 @@
     "slug": "university_of_waterloo"
   },
   "source_url": "https://uwaterloo.ca/future-students/financing/scholarships",
-  "fetched_at": "2026-11-06T03:39:38.143487+00:00",
+  "fetched_at": "2026-11-11T04:24:06.342420+00:00",
   "status": "ok",
   "http_status": 200,
+  "transport": "requests",
   "data_status": "needs_review",
   "scholarships": [
     {
@@ -100,9 +101,12 @@
           "payment_basis": "unknown"
         }
       ],
-      "eligibility": "Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for all environmental issues. An application is required by April 1, 2027.",
+      "eligibility": "Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for all environmental issues. Apply on the Financial aid and awards tab in the applicant portal starting December 1. Be sure to apply by the April 1, 2027 deadline.",
       "application": {
         "deadlines": [
+          {
+            "raw": "December 1"
+          },
           {
             "raw": "April 1, 2027",
             "date": "2027-04-01"
@@ -122,9 +126,12 @@
           "payment_basis": "unknown"
         }
       ],
-      "eligibility": "Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for environmental issues. An application is required by April 1, 2027.",
+      "eligibility": "Academic performance (minimum 85% admission average) Demonstrated interest and/or passion for environmental issues. Apply on the Financial aid and awards tab in the applicant portal starting December 1. Be sure to apply by the April 1, 2027 deadline.",
       "application": {
         "deadlines": [
+          {
+            "raw": "December 1"
+          },
           {
             "raw": "April 1, 2027",
             "date": "2027-04-01"
@@ -182,9 +189,12 @@
           "payment_basis": "unknown"
         }
       ],
-      "eligibility": "Academic performance (minimum 85% admission average) Demonstrated interest in sustainability-related activities in your community. An application is required by April 1, 2027.",
+      "eligibility": "Academic performance (minimum 85% admission average) Demonstrated interest in sustainability-related activities in your community. Apply on the Financial aid and awards tab in the applicant portal starting December 1. Be sure to apply by the April 1, 2027 deadline.",
       "application": {
         "deadlines": [
+          {
+            "raw": "December 1"
+          },
           {
             "raw": "April 1, 2027",
             "date": "2027-04-01"
@@ -208,9 +218,12 @@
           "payment_basis": "unknown"
         }
       ],
-      "eligibility": "Academic performance An application is required by April 1, 2027.",
+      "eligibility": "Academic performance Apply on the Financial aid and awards tab in the applicant portal starting December 1. Be sure to apply by the April 1, 2027 deadline.",
       "application": {
         "deadlines": [
+          {
+            "raw": "December 1"
+          },
           {
             "raw": "April 1, 2027",
             "date": "2027-04-01"

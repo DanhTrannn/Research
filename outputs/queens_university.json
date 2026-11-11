@@ -5,9 +5,10 @@
     "slug": "queens_university"
   },
   "source_url": "https://www.queensu.ca/registrar/financial-aid",
-  "fetched_at": "2026-11-06T03:39:33.583812+00:00",
+  "fetched_at": "2026-11-11T04:23:31.296927+00:00",
   "status": "ok",
   "http_status": 200,
+  "transport": "requests",
   "data_status": "needs_review",
   "scholarships": [
     {

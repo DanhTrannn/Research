@@ -1,0 +1,174 @@
+{
+  "schema_version": 4,
+  "school": {
+    "name": "Seneca Polytechnic",
+    "slug": "seneca_polytechnic"
+  },
+  "source_url": "https://www.senecapolytechnic.ca/international/entrance-scholarship-for-all-international-students.html",
+  "fetched_at": "2026-11-11T04:23:43.484085+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "transport": "requests",
+  "data_status": "needs_review",
+  "scholarships": [
+    {
+      "name": "Entrance Scholarship of up to $5,000 for All International Students",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "eligible_stages": [
+        "entrance"
+      ],
+      "value_text": "up to $5,000",
+      "values": [
+        {
+          "currency": "CAD",
+          "max_amount": 5000.0,
+          "payment_basis": "unknown"
+        }
+      ],
+      "intakes": [
+        "September 2026",
+        "January 2027",
+        "May 2027"
+      ],
+      "tiers": [
+        {
+          "program_duration": "One-year program",
+          "value_text": "$2,000 (a few weeks after Day 10 of classes)",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 2000.0,
+              "max_amount": 2000.0,
+              "payment_basis": "unknown"
+            }
+          ],
+          "disbursement_schedule": "a few weeks after Day 10 of classes"
+        },
+        {
+          "program_duration": "Two-year program",
+          "value_text": "$3,000 ($2,000 in year one, a few weeks after Day 10 of classes, $1,000 in year two)",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 3000.0,
+              "max_amount": 3000.0,
+              "payment_basis": "unknown"
+            },
+            {
+              "currency": "CAD",
+              "min_amount": 2000.0,
+              "max_amount": 2000.0,
+              "payment_basis": "unknown"
+            },
+            {
+              "currency": "CAD",
+              "min_amount": 1000.0,
+              "max_amount": 1000.0,
+              "payment_basis": "unknown"
+            }
+          ],
+          "disbursement_schedule": "$2,000 in year one, a few weeks after Day 10 of classes, $1,000 in year two"
+        },
+        {
+          "program_duration": "Three-year program",
+          "value_text": "$4,000 ($2,000 in year one, a few weeks after Day 10 of classes, $1,000 in years two and three)",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 4000.0,
+              "max_amount": 4000.0,
+              "payment_basis": "unknown"
+            },
+            {
+              "currency": "CAD",
+              "min_amount": 2000.0,
+              "max_amount": 2000.0,
+              "payment_basis": "unknown"
+            },
+            {
+              "currency": "CAD",
+              "min_amount": 1000.0,
+              "max_amount": 1000.0,
+              "payment_basis": "unknown"
+            }
+          ],
+          "disbursement_schedule": "$2,000 in year one, a few weeks after Day 10 of classes, $1,000 in years two and three"
+        },
+        {
+          "program_duration": "Four-year program",
+          "value_text": "$5,000 ($2,000 in year one, a few weeks after Day 10 of classes, $1,000 in years two, three and four)",
+          "values": [
+            {
+              "currency": "CAD",
+              "min_amount": 5000.0,
+              "max_amount": 5000.0,
+              "payment_basis": "unknown"
+            },
+            {
+              "currency": "CAD",
+              "min_amount": 2000.0,
+              "max_amount": 2000.0,
+              "payment_basis": "unknown"
+            },
+            {
+              "currency": "CAD",
+              "min_amount": 1000.0,
+              "max_amount": 1000.0,
+              "payment_basis": "unknown"
+            }
+          ],
+          "disbursement_schedule": "$2,000 in year one, a few weeks after Day 10 of classes, $1,000 in years two, three and four"
+        }
+      ],
+      "eligibility": [
+        "You are eligible if you are an international applicant in or outside Canada who is applying to a full-time postsecondary program at Seneca, paying international tuition fees and has confirmed your program choice.",
+        "interested in a second program or starting one of our bundled programs",
+        "obtaining or in the process of obtaining their Ontario Secondary School Diploma (OSSD)",
+        "studying in an eligible English pathway program",
+        "studying at Seneca and applying for a new program",
+        "The entrance scholarship is valid for all full-time postsecondary programs that start in September 2026, January 2027 or May 2027.",
+        "If you confirm your Seneca program choice for a Bundled Program , or second program, the scholarship will be awarded for each new program."
+      ],
+      "payment_notes": [
+        "Any remaining entrance scholarship that you may be eligible for, based on length of the program, will be deposited after Day 10 of each subsequent year of the program, where relevant.",
+        "The Seneca Entrance Scholarship is non-refundable. If this award results in an overpayment of fees, the excess funds will be automatically applied to the fees for the next semester."
+      ],
+      "notes": [
+        "If you choose to defer your admission to the May 2027 term, you may still be eligible to receive up to $5,000 tuition credit through the International Entrance Scholarship. If you choose to defer your admission to the September 2027 term, you will be eligible to receive the International Entrance Award .",
+        "If you're an applicant in any of Seneca’s degree programs, including three and four-year bachelors’ degrees and masters’ degrees, you may combine the entrance scholarship for international students with other entrance awards including the renewable degree scholarship and the diploma-to-degree scholarship. Note that entrance awards may require a separate application process.",
+        "You can combine the ELI tuition credit and the Seneca entrance scholarship if you start a full-time program in January or May 2027."
+      ],
+      "application": {
+        "method": "automatic",
+        "steps": [
+          "Apply to a full-time professional program at Seneca through our International Web Application",
+          "Pay a $90 CAD application fee, which will be credited to your student account once you're accepted (If you are working with an agent, connect with your agent to obtain an application promo code)",
+          "Upload a valid study permit or Letter of Introduction (LOI) at the time of application, if you are applying within Canada",
+          "Confirm your offer of admission and pay your first semester fees to receive a Letter of Acceptance (LOA) and Provincial Attestation Letter (PAL), if applicable, from Seneca",
+          "Complete any remaining steps to enrol at Seneca"
+        ],
+        "deadlines": [
+          {
+            "date_text": "February 28",
+            "term": "programs starting in the January term",
+            "raw": "February 28 for programs starting in the January term"
+          },
+          {
+            "date_text": "June 30",
+            "term": "programs starting in the May term",
+            "raw": "June 30 for programs starting in the May term"
+          },
+          {
+            "date_text": "October 31",
+            "term": "programs starting in the September term",
+            "raw": "October 31 for programs starting in the September term"
+          }
+        ],
+        "contact_emails": [
+          "ELI@senecapolytechnic.ca"
+        ]
+      }
+    }
+  ]
+}

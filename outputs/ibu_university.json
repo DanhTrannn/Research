@@ -5,9 +5,10 @@
     "slug": "ibu_university"
   },
   "source_url": "https://ibu.ca/admission/undergraduate-admissions/undergraduate-tuition-fees/entrance-scholarships/",
-  "fetched_at": "2026-11-06T03:39:35.742469+00:00",
+  "fetched_at": "2026-11-11T04:23:16.720357+00:00",
   "status": "ok",
   "http_status": 200,
+  "transport": "requests",
   "data_status": "needs_review",
   "scholarships": [
     {

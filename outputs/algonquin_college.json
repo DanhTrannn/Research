@@ -5,9 +5,10 @@
     "slug": "algonquin_college"
   },
   "source_url": "https://www.algonquincollege.com/financial-aid/awards-bursaries-scholarships/",
-  "fetched_at": "2026-11-06T03:39:26.626810+00:00",
+  "fetched_at": "2026-11-11T04:23:23.177904+00:00",
   "status": "ok",
   "http_status": 200,
+  "transport": "requests",
   "data_status": "needs_review",
   "scholarships": [
     {

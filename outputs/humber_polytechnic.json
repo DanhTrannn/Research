@@ -5,9 +5,10 @@
     "slug": "humber_polytechnic"
   },
   "source_url": "https://humber.ca/study-at-humber/pay-fees/scholarships-bursaries",
-  "fetched_at": "2026-11-06T03:40:53.956183+00:00",
+  "fetched_at": "2026-11-11T04:23:17.290999+00:00",
   "status": "ok",
   "http_status": 200,
+  "transport": "requests",
   "data_status": "needs_review",
   "scholarships": [
     {
