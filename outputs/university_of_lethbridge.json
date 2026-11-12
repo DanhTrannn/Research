@@ -5,7 +5,7 @@
     "slug": "university_of_lethbridge"
   },
   "source_url": "https://www.ulethbridge.ca/ross/student-finance/awards",
-  "fetched_at": "2026-11-11T04:23:45.840890+00:00",
+  "fetched_at": "2026-11-12T09:29:45.734480+00:00",
   "status": "ok",
   "http_status": 200,
   "transport": "requests",
@@ -13,7 +13,12 @@
   "scholarships": [
     {
       "name": "Grade 11 Merit",
-      "type": "award_group",
+      "type": "scholarship_group",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "eligibility": "Grade 11 Merit - Calculated using Grade 11 Average: 80% and higher - $800 75-79.9% - $500",
       "application": {
         "opens": {
@@ -54,7 +59,12 @@
     },
     {
       "name": "Board of Governors’ Admission",
-      "type": "award_group",
+      "type": "scholarship_group",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "eligibility": "Board of Governors’ Admission Applied for admission to uLethbridge Obtain final admission average of 80% or higher",
       "application": {
         "opens": {
@@ -68,7 +78,12 @@
     },
     {
       "name": "High School Awards",
-      "type": "award_group",
+      "type": "scholarship_group",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "eligibility": "High School Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
       "application": {
         "opens": {
@@ -82,7 +97,12 @@
     },
     {
       "name": "Transfer Awards",
-      "type": "award_group",
+      "type": "scholarship_group",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "transfer_entrance"
+      ],
       "eligibility": "Transfer Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
       "application": {
         "opens": {
@@ -93,20 +113,9 @@
         }
       },
       "results": "August"
-    },
-    {
-      "name": "Undergraduate Awards",
-      "type": "award_group",
-      "eligibility": "Undergraduate Awards Requirements vary by award, may include: Academic achievement Financial need Leadership ability Volunteer Experience Artistic ability Reference letters",
-      "application": {
-        "opens": {
-          "raw": "Mid-January"
-        },
-        "deadline": {
-          "raw": "May 1"
-        }
-      },
-      "results": "August"
     }
+  ],
+  "notes": [
+    "International eligibility is confirmed by https://www.ulethbridge.ca/ross/student-finance/international-students-0; only entrance and transfer-entrance award groups are exported."
   ]
 }

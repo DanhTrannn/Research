@@ -6,7 +6,8 @@ if __name__ == '__main__':
 
 import re
 from urllib.parse import urljoin
-from pipeline import text, grade, MONEY, clean, fetch_html, export_school, run_school, main_content, table_records, values
+from pipeline import (text, grade, MONEY, clean, fetch_html, export_school, run_school,
+                      main_content, table_records, values, scope_filter)
 
 
 class Crawler:
@@ -39,8 +40,12 @@ class Crawler:
                 name = next((v for k,v in row.items() if k.startswith('awards ')), None)
                 if name:
                     raw_value = row.get('value', '')
-                    item = {'name': name, 'applicant_category': 'international', 'value_text': raw_value,
-                            'values': values(raw_value), 'eligibility': row.get('application instructions')}
+                    transfer = 'transfer' in name.lower()
+                    item = {'name': name, 'type': 'award' if 'ambassador' in name.lower() else 'scholarship',
+                            'applicant_category': 'international', 'international_eligible': True,
+                            'eligible_stages': ['transfer_entrance'] if transfer else ['entrance'],
+                            'value_text': raw_value, 'values': values(raw_value),
+                            'eligibility': row.get('application instructions')}
                     if re.search(r'variable.*domestic tuition', raw_value, re.I):
                         item['benefit_type'] = 'domestic_tuition_equivalent'
                         item['tuition_rate_basis'] = 'domestic'
@@ -57,12 +62,15 @@ class Crawler:
             heading = next((h for h in root.find_all('h2') if 'International Brock Scholars Award' in text(h)), None)
             link = heading.find('a', href=True) if heading else None
             scholarships.insert(0, clean({'name': 'International Brock Scholars Award',
-                'applicant_category': 'international',
+                'type': 'scholarship', 'applicant_category': 'international', 'international_eligible': True,
+                'eligible_stages': ['entrance'],
                 'application': {'method': 'automatic'} if any('awards are automatic' in text(p).lower() for p in root.find_all('p')) else {},
                 'renewable': True if any('renewable' in note.lower() for note in notes) else None, 'renewal_conditions': notes,
                 'terms_url': urljoin(self.url, link['href']) if link else None,
                 'tiers': entrance_tiers}))
-        return {'scholarships': scholarships}
+        return {'scholarships': scope_filter(scholarships),
+                'notes': ['All exported awards are for incoming international students; '
+                          'the International Transfer Award is tagged as transfer entrance.']}
 
     def export(self, metadata, data, output_dir=None):
         return export_school(self, metadata, data, output_dir)

@@ -5,7 +5,7 @@
     "slug": "university_of_ottawa"
   },
   "source_url": "https://www.uottawa.ca/study/fees-financial-support/international-english-scholarship",
-  "fetched_at": "2026-11-11T04:23:46.927759+00:00",
+  "fetched_at": "2026-11-12T09:29:54.110254+00:00",
   "status": "ok",
   "http_status": 200,
   "transport": "requests",
@@ -49,6 +49,10 @@
       },
       "type": "scholarship",
       "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "study_level": "undergraduate",
       "notes": [
         "The published per-term amount, degree total and maximum instalments must be checked against the full terms; do not multiply them automatically."
@@ -86,6 +90,10 @@
       "number_of_awards": 100,
       "type": "scholarship",
       "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "study_level": "undergraduate"
     }
   ]

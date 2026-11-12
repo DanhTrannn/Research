@@ -5,7 +5,8 @@ if __name__ == '__main__':
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import re
-from pipeline import fetch_html, export_school, run_school, main_content, table_records, tier, date_value, clean
+from pipeline import (fetch_html, export_school, run_school, main_content, table_records, tier,
+                      date_value, clean, scope_filter)
 
 
 class Crawler:
@@ -24,7 +25,16 @@ class Crawler:
                 if not description:
                     continue
                 name = re.split(r'Calculated using|Applied for admission|Requirements vary', description)[0].strip(' -')
-                item = {'name': name, 'type': 'award_group', 'eligibility': description,
+                if name.startswith(('Grade 11 Merit', 'Board of Governors', 'High School Awards')):
+                    stages = ['entrance']
+                elif name.startswith('Transfer Awards'):
+                    stages = ['transfer_entrance']
+                else:
+                    # Undergraduate Awards are continuing-student awards.
+                    continue
+                item = {'name': name, 'type': 'scholarship_group',
+                        'applicant_category': 'international', 'international_eligible': True,
+                        'eligible_stages': stages, 'eligibility': description,
                         'application': {'opens': date_value(row.get('application opens', '')),
                                         'deadline': date_value(row.get('application closes', ''))},
                         'results': row.get('notified of award')}
@@ -34,7 +44,10 @@ class Crawler:
                         band = match[1] + ('+' if match[2] else '')
                         item['tiers'].append(tier(band, match[3]))
                 scholarships.append(clean(item))
-        return {'scholarships': scholarships}
+        return {'scholarships': scope_filter(scholarships),
+                'notes': ['International eligibility is confirmed by '
+                          'https://www.ulethbridge.ca/ross/student-finance/international-students-0; '
+                          'only entrance and transfer-entrance award groups are exported.']}
 
     def export(self, metadata, data, output_dir=None):
         return export_school(self, metadata, data, output_dir)

@@ -5,7 +5,7 @@
     "slug": "lakehead_university"
   },
   "source_url": "https://www.lakeheadu.ca/international/future/scholarships-awards",
-  "fetched_at": "2026-11-11T04:23:23.202737+00:00",
+  "fetched_at": "2026-11-12T09:29:48.304026+00:00",
   "status": "ok",
   "http_status": 200,
   "transport": "requests",
@@ -15,6 +15,10 @@
       "name": "International Undergraduate Entrance Scholarships 2027-2028",
       "type": "scholarship",
       "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "application": {
         "method": "automatic"
       },

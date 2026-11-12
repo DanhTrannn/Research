@@ -4,29 +4,79 @@ if __name__ == '__main__':
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from pipeline import fetch_html, export_school, run_school, main_content, selected_awards, table_records, values, application_info, clean
+import re
+from pipeline import (award, clean, export_school, fetch_html, main_content, run_school,
+                      scope_filter, sections, table_records, values)
 
 
 class Crawler:
     name = 'University of Waterloo'
     slug = 'university_of_waterloo'
-    url = 'https://uwaterloo.ca/future-students/financing/scholarships'
+    url = 'https://uwaterloo.ca/future-students/financing/international-scholarships'
 
     def crawl(self, timeout=12):
         return fetch_html(self.url, timeout)
 
     def extract(self, soup):
-        scholarships = selected_awards(soup, r"^(President.s Scholarship(?: of Distinction)?|Merit Scholarship) \(admission average", type='scholarship')
-        # Named scholarship rows only; exclude programme bundles without a distinct award name.
+        scholarships = []
+
+        # Main $10,000 International Student Entrance Scholarship.
+        section = next(sections(soup, r'International Student Entrance Scholarship$'), None)
+        if section is not None:
+            name, paragraphs = section
+            cut = next((index for index, paragraph in enumerate(paragraphs)
+                        if re.search(r'^Questions about the scholarship', paragraph, re.I)),
+                       len(paragraphs))
+            item = award(name, paragraphs[:cut], type='scholarship',
+                         applicant_category='international', international_eligible=True,
+                         eligible_stages=['entrance'], application={'method': 'automatic'},
+                         source_url=self.url)
+            item['value_text'] = '$10,000 ($5,000 per term)'
+            item['values'] = [
+                clean({'min_amount': 10000, 'max_amount': 10000, 'payment_basis': 'per_year'}),
+                clean({'min_amount': 5000, 'max_amount': 5000, 'payment_basis': 'per_term',
+                       'max_payments': 2}),
+            ]
+            item['renewable'] = False
+            scholarships.append(item)
+
+        # Additional international scholarships table.
         for table in main_content(soup).find_all('table'):
-            for row in table_records(table):
-                if not row.get('scholarship'):
+            records = table_records(table)
+            if not records or 'scholarship' not in records[0] or 'value' not in records[0]:
+                continue
+            for row in records:
+                name = row.get('scholarship', '')
+                if not name or 'Black students' in name:
                     continue
-                scholarships.append(clean({'name': row['scholarship'], 'type': 'scholarship',
-                    'programs': row.get('eligible programs'), 'value_text': row.get('value'),
-                    'values': values(row.get('value', '')), 'eligibility': row.get('criteria'),
-                    'application': application_info([row.get('criteria', '')])}))
-        return {'scholarships': scholarships}
+                value_text = row.get('value', '')
+                item_values = values(value_text)
+                if len(item_values) == 2 and re.search(r'\bto\b', value_text, re.I):
+                    item_values = [clean({'min_amount': item_values[0].get('min_amount'),
+                                          'max_amount': item_values[1].get('max_amount'),
+                                          'payment_basis': 'unknown'})]
+                application = row.get('application required?', row.get('application required', ''))
+                item = clean({
+                    'name': name,
+                    'type': 'scholarship',
+                    'applicant_category': 'international',
+                    'international_eligible': True,
+                    'eligible_stages': ['entrance'],
+                    'programs': row.get('programs or eligibility'),
+                    'value_text': value_text,
+                    'values': item_values,
+                    'application': {'method': 'automatic' if re.search(r'\bno\b', application, re.I)
+                                    else 'application_required'},
+                    'source_url': self.url,
+                })
+                if 'India' in name:
+                    item['eligible_countries'] = ['India']
+                scholarships.append(item)
+
+        return {'scholarships': scope_filter(scholarships),
+                'notes': ['Only the dedicated international scholarship page is used; '
+                          'general faculty entrance scholarships not listed there are excluded. '
+                          'The Black-student scholarship is excluded because it is not international-specific.']}
 
     def export(self, metadata, data, output_dir=None):
         return export_school(self, metadata, data, output_dir)

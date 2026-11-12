@@ -5,64 +5,12 @@
     "slug": "university_of_regina"
   },
   "source_url": "https://www.uregina.ca/cost-aid/funding/undergraduate-scholarships/index.html",
-  "fetched_at": "2026-11-11T04:23:59.237818+00:00",
+  "fetched_at": "2026-11-12T09:29:42.032488+00:00",
   "status": "ok",
   "http_status": 200,
   "transport": "requests",
   "data_status": "needs_review",
   "scholarships": [
-    {
-      "name": "University of Regina Family Scholarship",
-      "description": "The scholarship will be presented to University of Regina students who meet the following criteria:",
-      "eligibility": [
-        "The University of Regina Family Scholarship assists immediate family members (spouse, partner or eligible dependent) of eligible U of R employees when they pursue studies at the undergraduate or post-graduate level.",
-        "Eligible recipients must be a recognized dependent of a CUPE Local 5791 employee, an Administrative Professional and Technical employee, an Academic Staff Member or an Out-of-Scope employee. Applications for the award must be submitted to the Student Awards and Financial Aid office by the following deadlines:",
-        "Entering high school students or post-secondary transfer student will have a minimum admission average of 75%;",
-        "Registered and remains registered in a minimum of 12 credit hours in the semester the award is presented; and",
-        "Is a recognized dependent or spouse of an eligible University of Regina CUPE Local 5791 member, Administrative Professional and Technical member, Academic Staff member, or an Out-of-Scope employee as outlined in the respective collective bargaining agreements.",
-        "Registered and remains registered in a minimum of 12 credit hours in the semester the award is presented;",
-        "Successfully completed a minimum of 23 credit hours;",
-        "Minimum cumulative grade point average (CGPA) of 75%; and",
-        "Once a student has received the award, they will be automatically renewed for each semester of each year (to a maximum of $2,000 per family member per academic year (May 1 - April 30)) in which they continue to meet the eligibility requirements. If a previous recipient has not met the requirements for two consecutive semesters, they will no longer be automatically assessed each semester, and will be required to re-apply for the award."
-      ],
-      "renewable": true,
-      "renewal_conditions": [
-        "Once a student has received the award, they will be automatically renewed for each semester of each year (to a maximum of $2,000 per family member per academic year (May 1 - April 30)) in which they continue to meet the eligibility requirements. If a previous recipient has not met the requirements for two consecutive semesters, they will no longer be automatically assessed each semester, and will be required to re-apply for the award."
-      ],
-      "type": "scholarship",
-      "source_url": "https://www.uregina.ca/cost-aid/funding/undergraduate-scholarships/index.html",
-      "employee_family_only": true,
-      "value_texts": [
-        "Each scholarship is awarded at $1,000 per semester, up to a maximum of $2,000 per year, per family member."
-      ],
-      "values": [
-        {
-          "min_amount": 1000.0,
-          "max_amount": 1000.0,
-          "payment_basis": "per_term"
-        },
-        {
-          "max_amount": 2000.0,
-          "payment_basis": "per_year"
-        }
-      ],
-      "application": {
-        "deadlines": [
-          {
-            "raw": "September 15",
-            "term": "Fall"
-          },
-          {
-            "raw": "January 15",
-            "term": "Winter"
-          },
-          {
-            "raw": "May 15",
-            "term": "Spring"
-          }
-        ]
-      }
-    },
     {
       "name": "International Entrance Scholarship",
       "eligibility": [
@@ -81,6 +29,10 @@
       },
       "type": "scholarship",
       "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "source_url": "https://www.uregina.ca/ur-international/scholarships.html",
       "value_texts": [
         "$12,000"
@@ -97,6 +49,10 @@
       "name": "International Student of Distinction Scholarship",
       "type": "scholarship",
       "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "source_url": "https://www.uregina.ca/ur-international/scholarships.html",
       "tiers": [
         {
@@ -130,6 +86,10 @@
           "application": {
             "method": "automatic"
           },
+          "international_eligible": true,
+          "eligible_stages": [
+            "entrance"
+          ],
           "benefit_type": "housing_and_meal_plan",
           "approximate_value": true
         },
@@ -164,6 +124,10 @@
           "application": {
             "method": "automatic"
           },
+          "international_eligible": true,
+          "eligible_stages": [
+            "entrance"
+          ],
           "benefit_type": "housing",
           "approximate_value": true
         }
@@ -198,42 +162,6 @@
           "raw": "February 15"
         }
       ]
-    },
-    {
-      "name": "International Undergraduate Student Bursary",
-      "description": "If a student meets the conditions outlined above, they can continue to receive the $5,000 bursary each year of their studies as long as they:",
-      "value_texts": [
-        "$20,000 ($5,000 x 4 years) Tuition Credit"
-      ],
-      "values": [
-        {
-          "min_amount": 5000.0,
-          "max_amount": 5000.0,
-          "payment_basis": "per_year",
-          "max_payments": 4
-        },
-        {
-          "min_amount": 20000.0,
-          "max_amount": 20000.0,
-          "payment_basis": "total_degree"
-        }
-      ],
-      "eligibility": [
-        "This bursary is available to new international undergraduate students admitted to the Winter 2026 term onwards. Students do not need to apply for this bursary. The UR International office will assess and notify all eligible students each term.",
-        "Students must deposit payment of two years tuition to the University of Regina. The amount required is according to the one year tuition fee stated on the student's acceptance letter. (Example $32,500 CAD x 2 years= $65,000 CAD). The deposit should be made in advance of applying for the study permit.",
-        "Students must complete their first year (3 terms) of full-time study at the University of Regina and register in the following academic term.",
-        "Completed full-time studies in the preceding year."
-      ],
-      "type": "bursary",
-      "applicant_category": "international",
-      "source_url": "https://www.uregina.ca/ur-international/scholarships.html",
-      "renewable": true,
-      "renewal_conditions": [
-        "If a student meets the conditions outlined above, they can continue to receive the $5,000 bursary each year of their studies as long as they:",
-        "Completed full-time studies in the preceding year.",
-        "Are currently registered for the next academic term.",
-        "Are not owing any tuition fees to the University of Regina."
-      ]
     }
   ],
   "application_periods": [
@@ -248,81 +176,9 @@
         "date": "2027-03-17"
       },
       "results": "June"
-    },
-    {
-      "group": "Chancellor's Scholarship Deadlines",
-      "opens": {
-        "raw": "October 1, 2026",
-        "date": "2026-10-01"
-      },
-      "deadline": {
-        "raw": "December 15, 2026",
-        "date": "2026-12-15"
-      },
-      "results": "May"
-    },
-    {
-      "group": "Continuing Award Deadlines",
-      "term": "Fall",
-      "opens": {
-        "raw": "September 1, 2026",
-        "date": "2026-09-01"
-      },
-      "deadline": {
-        "raw": "October 4, 2026",
-        "date": "2026-10-04"
-      },
-      "results": "December"
-    },
-    {
-      "group": "Continuing Award Deadlines",
-      "term": "Winter",
-      "opens": {
-        "raw": "January 5, 2027",
-        "date": "2027-01-05"
-      },
-      "deadline": {
-        "raw": "February 5, 2027",
-        "date": "2027-02-05"
-      },
-      "results": "April"
-    },
-    {
-      "group": "Continuing Award Deadlines",
-      "term": "Spring",
-      "opens": {
-        "raw": "May 3, 2027",
-        "date": "2027-05-03"
-      },
-      "deadline": {
-        "raw": "June 3, 2027",
-        "date": "2027-06-03"
-      },
-      "results": "July"
-    },
-    {
-      "group": "Convocation Award Deadlines",
-      "term": "Fall",
-      "opens": {
-        "raw": "September 1, 2026",
-        "date": "2026-09-01"
-      },
-      "deadline": {
-        "raw": "September 25, 2026",
-        "date": "2026-09-25"
-      }
-    },
-    {
-      "group": "Convocation Award Deadlines",
-      "term": "Spring",
-      "opens": {
-        "raw": "March 9, 2026",
-        "date": "2026-03-09"
-      },
-      "deadline": {
-        "raw": "April 9, 2026",
-        "date": "2026-04-09"
-      }
     }
+  ],
+  "notes": [
+    "Only international entrance scholarships are exported; the Family Scholarship and International Undergraduate Student Bursary are excluded."
   ]
 }

@@ -17,7 +17,9 @@ class Crawler:
 
     def extract(self, soup):
         scholarships = selected_awards(soup, r'^International English (Admission|Academic Excellence) Scholarship$',
-                                      type='scholarship', applicant_category='international', study_level='undergraduate')
+                                      type='scholarship', applicant_category='international',
+                                      international_eligible=True, eligible_stages=['entrance'],
+                                      study_level='undergraduate')
         # Preserve the published schedule statements without multiplying instalments.
         for item in scholarships:
             if 'Admission' in item['name']:

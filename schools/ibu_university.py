@@ -6,7 +6,8 @@ if __name__ == '__main__':
 
 import re
 from datetime import datetime, timezone
-from pipeline import fetch_html, export_school, run_school, selected_awards, values, explicit_currency, text, clean, distinct
+from pipeline import (fetch_html, export_school, run_school, values, explicit_currency, text,
+                      clean, distinct, scope_filter)
 
 
 class Crawler:
@@ -18,8 +19,10 @@ class Crawler:
         return fetch_html(self.url, timeout)
 
     def extract(self, soup):
-        scholarships = selected_awards(soup, r'^(Entrance Scholarships for Academic Achievement|General Entrance Scholarships)$', applicant_category='domestic', type='scholarship_group')
-        # Read the associated tab panel, not the adjacent tab label or all page dollars.
+        scholarships = []
+        # The international tab is labelled "Bursary", but the published benefit
+        # lines are International Scholarship and Regional Scholarship, granted
+        # automatically at admission. Treat them as entrance scholarships.
         for tab in soup.select('[role="tab"][aria-controls]'):
             panel = soup.find(id=tab['aria-controls'])
             if panel is None or not re.search(r'bursary', text(tab), re.I):
@@ -34,13 +37,25 @@ class Crawler:
                                          'values': values(cells[1], explicit_currency(text(panel)))})
             validity = next((p for p in paragraphs if 'valid until' in p.lower()), None)
             expired = re.search(r'end of (20\d\d)', validity or '')
-            scholarships.append(clean({'name': text(tab), 'type': 'bursary', 'applicant_category': 'international',
+            scholarships.append(clean({
+                'name': text(tab),
+                'type': 'scholarship',
+                'source_type': 'bursary',
+                'applicant_category': 'international',
+                'international_eligible': True,
+                'eligible_stages': ['entrance'],
                 'programs': next((p for p in paragraphs if p.startswith('Applicable Programs:')), None),
                 'eligible_countries': distinct(text(c) for c in panel.select('table.country-table td') if text(c)),
-                'benefits': benefits, 'validity_text': validity,
+                'benefits': benefits,
+                'validity_text': validity,
                 'expired': int(expired[1]) < datetime.now(timezone.utc).year if expired else None,
-                'conditions': [text(li) for li in panel.find_all('li')]}))
-        return {'scholarships': scholarships}
+                'conditions': [text(li) for li in panel.find_all('li')],
+                'notes': ['The source labels this a bursary, but the published benefit lines are '
+                          'International Scholarship and Regional Scholarship; it is granted at admission.'],
+            }))
+        return {'scholarships': scope_filter(scholarships),
+                'notes': ['Domestic entrance scholarship groups are excluded; '
+                          'only international entrance awards are exported.']}
 
     def export(self, metadata, data, output_dir=None):
         return export_school(self, metadata, data, output_dir)

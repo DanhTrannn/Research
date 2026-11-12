@@ -4,23 +4,260 @@
     "name": "Queen's University",
     "slug": "queens_university"
   },
-  "source_url": "https://www.queensu.ca/registrar/financial-aid",
-  "fetched_at": "2026-11-11T04:23:31.296927+00:00",
+  "source_url": "https://www.queensu.ca/registrar/financial-aid/specific-students/international",
+  "fetched_at": "2026-11-12T09:29:38.731292+00:00",
   "status": "ok",
   "http_status": 200,
   "transport": "requests",
   "data_status": "needs_review",
   "scholarships": [
     {
-      "name": "Queen’s General Bursary",
-      "type": "bursary",
-      "payment_notes": [
-        "Queen’s General Bursary, including named awards granted under the General Bursary program, will be applied to your Queen’s SOLUS Student Account in late December in one disbursement. This payment will include your need-based aid for all terms of study, if you are enrolled, for the current academic year.",
-        "Should you be eligible for a refund for all, or a portion of your General Bursary, your refund will automatically transfer to your bank account in early February, Financial Aid and Awards has verified that your course load has not changed after open enrolment. Please do not submit a refund request."
+      "name": "Arts and Science International Admission Award",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "programs": "Faculty of Arts & Science",
+      "eligibility": "Academic Achievement to international students entering the first year of any first-entry undergraduate degree program in the Faculty of Arts and Science. Students who are paying domestic tuition and fees are not eligible for this award.",
+      "duration": "4 years",
+      "renewable": true,
+      "application": {
+        "method": "automatic"
+      },
+      "source_url": "https://www.queensu.ca/registrar/financial-aid/specific-students/international",
+      "value_text": "$5,000 renewable award $10,000 renewable award $15,000 renewable award $20,000 renewable award $25,000 renewable award",
+      "values": [
+        {
+          "min_amount": 5000.0,
+          "max_amount": 5000.0,
+          "payment_basis": "per_year"
+        },
+        {
+          "min_amount": 10000.0,
+          "max_amount": 10000.0,
+          "payment_basis": "per_year"
+        },
+        {
+          "min_amount": 15000.0,
+          "max_amount": 15000.0,
+          "payment_basis": "per_year"
+        },
+        {
+          "min_amount": 20000.0,
+          "max_amount": 20000.0,
+          "payment_basis": "per_year"
+        },
+        {
+          "min_amount": 25000.0,
+          "max_amount": 25000.0,
+          "payment_basis": "per_year"
+        }
       ]
+    },
+    {
+      "name": "Commerce International Admission Award",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "programs": "Bachelor of Commerce",
+      "eligibility": "Academic Achievement to international students entering the first year of a Bachelor of Commerce degree program in the Smith School of Business. Students who are paying domestic tuition and fees are not eligible for this award.",
+      "duration": "4 years",
+      "renewable": true,
+      "application": {
+        "method": "automatic"
+      },
+      "source_url": "https://www.queensu.ca/registrar/financial-aid/specific-students/international",
+      "value_text": "$15,000 renewable award $20,000 renewable award $25,000 renewable award",
+      "values": [
+        {
+          "min_amount": 15000.0,
+          "max_amount": 15000.0,
+          "payment_basis": "per_year"
+        },
+        {
+          "min_amount": 20000.0,
+          "max_amount": 20000.0,
+          "payment_basis": "per_year"
+        },
+        {
+          "min_amount": 25000.0,
+          "max_amount": 25000.0,
+          "payment_basis": "per_year"
+        }
+      ]
+    },
+    {
+      "name": "Engineering International Admission Award",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "programs": "Stephen J.R. Smith School of Engineering & Applied Science",
+      "eligibility": "Academic Achievement to international students entering the first year of any first-entry undergraduate degree program in the Stephen J.R. Smith School of Engineering & Applied Science. Students who are paying domestic tuition and fees are not eligible for this award.",
+      "duration": "4 years",
+      "renewable": true,
+      "application": {
+        "method": "automatic"
+      },
+      "source_url": "https://www.queensu.ca/registrar/financial-aid/specific-students/international",
+      "value_text": "$10,000 renewable award $15,000 renewable award $20,000 renewable award $25,000 renewable award",
+      "values": [
+        {
+          "min_amount": 10000.0,
+          "max_amount": 10000.0,
+          "payment_basis": "per_year"
+        },
+        {
+          "min_amount": 15000.0,
+          "max_amount": 15000.0,
+          "payment_basis": "per_year"
+        },
+        {
+          "min_amount": 20000.0,
+          "max_amount": 20000.0,
+          "payment_basis": "per_year"
+        },
+        {
+          "min_amount": 25000.0,
+          "max_amount": 25000.0,
+          "payment_basis": "per_year"
+        }
+      ]
+    },
+    {
+      "name": "Health Sciences International Admission Award",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "programs": "Bachelor of Health Sciences",
+      "eligibility": "Academic Achievement to international students entering first year of the Bachelor of Health Sciences degree program in the Faculty of Health Sciences. Students who are paying domestic tuition and fees are not eligible for this award. Students in the Bachelor of Nursing program are not eligible for this award.",
+      "duration": "4 years",
+      "renewable": true,
+      "application": {
+        "method": "automatic"
+      },
+      "source_url": "https://www.queensu.ca/registrar/financial-aid/specific-students/international",
+      "value_text": "$10,000 renewable award $15,000 renewable award",
+      "values": [
+        {
+          "min_amount": 10000.0,
+          "max_amount": 10000.0,
+          "payment_basis": "per_year"
+        },
+        {
+          "min_amount": 15000.0,
+          "max_amount": 15000.0,
+          "payment_basis": "per_year"
+        }
+      ]
+    },
+    {
+      "name": "Principal's Scholarship",
+      "type": "scholarship",
+      "applicant_category": "all",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "programs": "All",
+      "eligibility": "Principal's Scholarship Details",
+      "duration": "1 year",
+      "application": {
+        "method": "automatic"
+      },
+      "source_url": "https://www.queensu.ca/registrar/financial-aid/specific-students/international",
+      "value_text": "$7,000",
+      "values": [
+        {
+          "min_amount": 7000.0,
+          "max_amount": 7000.0,
+          "payment_basis": "one_time"
+        }
+      ],
+      "description": "Principal's Scholarships are awarded, on the basis of academic excellence, to students who are in the top 3% of the competitive admission average for each first-entry undergraduate degree program."
+    },
+    {
+      "name": "Mehran Bibi Sheikh Memorial Entrance Scholarship",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "programs": "All",
+      "eligibility": "Academic excellence Awarded to 1 male and 1 female student Preference will be given to international students who have Pakistani citizenship If there is not an eligible male and female student then the scholarship will be awarded to two students of the same gender. If there are no eligible Pakistani students then the scholarship will be awarded to eligible male and female international students",
+      "duration": "1 year",
+      "number_of_awards": 2,
+      "application": {
+        "method": "automatic"
+      },
+      "source_url": "https://www.queensu.ca/registrar/financial-aid/specific-students/international",
+      "value_text": "$1,500",
+      "values": [
+        {
+          "min_amount": 1500.0,
+          "max_amount": 1500.0,
+          "payment_basis": "one_time"
+        }
+      ]
+    },
+    {
+      "name": "Killam American Scholarship",
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "programs": "All",
+      "eligibility": "Academic excellence and citizens or permanent residents of the United States entering first year of any first-entry undergraduate degree program",
+      "duration": "1 year",
+      "number_of_awards": 1,
+      "application": {
+        "method": "automatic"
+      },
+      "source_url": "https://www.queensu.ca/registrar/financial-aid/specific-students/international",
+      "value_text": "$9,000",
+      "values": [
+        {
+          "min_amount": 9000.0,
+          "max_amount": 9000.0,
+          "payment_basis": "one_time"
+        }
+      ]
+    },
+    {
+      "name": "Principal's Global Scholars Undergraduate Award",
+      "eligibility": [
+        "The award is renewable for up to three subsequent years, as defined in the student’s award offer notification, provided the student maintains a 2.0 GPA in a full-time course load"
+      ],
+      "renewable": true,
+      "renewal_conditions": [
+        "The award is renewable for up to three subsequent years, as defined in the student’s award offer notification, provided the student maintains a 2.0 GPA in a full-time course load"
+      ],
+      "application": {
+        "method": "automatic"
+      },
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "source_url": "https://www.queensu.ca/registrar/financial-aid/specific-students/international"
     }
   ],
   "notes": [
-    "Financial aid overview: payment dates are not scholarship application deadlines. No award amount was established on this page."
+    "Only first-entry international admission scholarships are exported; visiting-student awards, loans and other financial-aid options are excluded."
   ]
 }

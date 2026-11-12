@@ -8,9 +8,9 @@ import re
 import requests
 from pipeline import (DEFAULT_HEADERS, MONEY, award, clean, date_value, distinct,
                       export_school, fetch_html, grade, main_content, run_school,
-                      sections, text)
+                      scope_filter, sections, text)
 
-SERIES_PATTERN = r'^(Canadian/domestic|International).*Chancellor.s Scholarship Series'
+SERIES_PATTERN = r'^International.*Chancellor.s Scholarship Series'
 DETAIL_URL = 'https://www.macewan.ca/data/psft/sab/{}.json'
 
 
@@ -36,8 +36,7 @@ def detail_url(sabid):
 
 def series_headings(root):
     return [heading for heading in root.find_all('h2')
-            if re.search(r'^(?:Canadian/domestic|International).*Chancellor.s Scholarship Series',
-                         text(heading), re.I)]
+            if re.search(SERIES_PATTERN, text(heading), re.I)]
 
 
 def degree_row(heading):
@@ -213,7 +212,9 @@ class Crawler:
         ]
         if errors:
             notes.append('Some award detail records could not be read; amounts may be incomplete.')
-        return clean({'scholarships': scholarships, 'notes': notes})
+        notes.append('Only the International Chancellor\'s Scholarship Series is exported; '
+                     'the domestic series is out of scope.')
+        return clean({'scholarships': scope_filter(scholarships), 'notes': notes})
 
     def export(self, metadata, data, output_dir=None):
         return export_school(self, metadata, data, output_dir)

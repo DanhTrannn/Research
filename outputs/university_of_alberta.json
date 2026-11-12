@@ -5,7 +5,7 @@
     "slug": "university_of_alberta"
   },
   "source_url": "https://www.ualberta.ca/en/admissions/tuition-and-scholarships/international-entrance-scholarships/index.html",
-  "fetched_at": "2026-11-11T04:24:20.752439+00:00",
+  "fetched_at": "2026-11-12T09:29:52.748885+00:00",
   "status": "ok",
   "http_status": 200,
   "transport": "selenium",
@@ -27,7 +27,11 @@
         "Top students could receive up to CAN $10,000 based on admission average."
       ],
       "type": "scholarship",
-      "applicant_category": "international"
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ]
     },
     {
       "name": "Regional Excellence Scholarship",
@@ -45,7 +49,11 @@
         "Top students from certain regions could receive up to CAN $5,000 based on admission average."
       ],
       "type": "scholarship",
-      "applicant_category": "international"
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ]
     },
     {
       "name": "President’s International Distinction Scholarship",
@@ -63,7 +71,11 @@
         "Each year 25 students with a superior admission average and demonstrated leadership qualities entering their first year of an undergraduate degree on a student visa permit receive up to CAN $120,000 (payable over 4 years)."
       ],
       "type": "scholarship",
-      "applicant_category": "international"
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ]
     },
     {
       "name": "Chan Pang Kuen Memorial International Distinction Scholarship",
@@ -81,7 +93,11 @@
         "Students with a superior admission average and demonstrated leadership qualities entering their first year of an undergraduate degree on a student visa permit receive up to CAN $120,000 (payable over 4 years)."
       ],
       "type": "scholarship",
-      "applicant_category": "international"
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ]
     },
     {
       "name": "International Leader Scholarship",
@@ -96,7 +112,11 @@
         }
       ],
       "type": "scholarship",
-      "applicant_category": "international"
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ]
     },
     {
       "name": "May Quon Undergraduate Scholarship",
@@ -114,7 +134,11 @@
         "Students with a superior admission average and self-declared financial need entering their first year of an undergraduate degree on a student visa permit who are Chinese or Hong Kong citizens could receive up to CAN $100,000 (payable over 4 years)."
       ],
       "type": "scholarship",
-      "applicant_category": "international"
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ]
     },
     {
       "name": "Cora Martinson International Scholarship",
@@ -129,7 +153,11 @@
         }
       ],
       "type": "scholarship",
-      "applicant_category": "international"
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ]
     }
   ]
 }

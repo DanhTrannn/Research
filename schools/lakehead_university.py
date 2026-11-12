@@ -43,6 +43,7 @@ class Crawler:
         heading = table.find_previous(re.compile(r'^h[1-6]$'))
         name = re.split('Automatically', text(heading))[0].strip() if heading else 'International Undergraduate Entrance Scholarships'
         return {'scholarships': [{'name': name, 'type': 'scholarship', 'applicant_category': 'international',
+                                 'international_eligible': True, 'eligible_stages': ['entrance'],
                                  'application': application_info([text(heading)]) if heading else {}, 'tiers': tiers}]}
 
     def export(self, metadata, data, output_dir=None):

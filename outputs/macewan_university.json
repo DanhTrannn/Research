@@ -5,144 +5,12 @@
     "slug": "macewan_university"
   },
   "source_url": "https://www.macewan.ca/apply-enrol/fees-finances/scholarships-awards-bursaries/entrance-scholarships/",
-  "fetched_at": "2026-11-11T04:23:24.283385+00:00",
+  "fetched_at": "2026-11-12T09:29:31.701409+00:00",
   "status": "ok",
   "http_status": 200,
   "transport": "requests",
   "data_status": "needs_review",
   "scholarships": [
-    {
-      "name": "Canadian/domestic Chancellor’s Scholarship Series",
-      "type": "scholarship_series",
-      "applicant_category": "domestic",
-      "eligible_stages": [
-        "entrance"
-      ],
-      "description": "Awarded to Canadian/domestic students entering a degree program with an admission average in the following tiers:",
-      "eligibility": [
-        "Canadian Citizen, Permanent Resident, or Protected Person",
-        "With an admission average within one of the scholarship tiers",
-        "Students entering directly from high school with dual credit courses are encouraged to contact awards@macewan.ca to confirm eligibility.",
-        "Entrance scholarships are based on the program you have selected and your admission average.",
-        "In the Faculty of Nursing, all students who meet the requirements for the Chancellor’s Scholarship receive the offer at time of admission. Other students are considered for the President’s and Provost’s Scholarships after the start of the program. These scholarships are offered based on the next highest averages up to a combined total of 60 across all three tiers for students in this faculty.",
-        "If your admission average changes, your scholarship will be adjusted accordingly. You will receive a subsequent email notification before the start of the term. This notification will contain information on changes to your scholarship, if applicable.",
-        "To receive the second installment of funds in the Winter term, you must complete at least 12 credits in the Fall term with a minimum GPA of 2.0 and remain enrolled in 12 credits for the Winter term."
-      ],
-      "tiers": [
-        {
-          "name": "Chancellor’s Scholarship",
-          "grade_text": "95-100%",
-          "min_average": 95.0,
-          "max_average": 100.0,
-          "values": [
-            {
-              "term": "Fall",
-              "min_amount": 5000.0,
-              "max_amount": 5000.0,
-              "payment_basis": "one_time"
-            },
-            {
-              "term": "Winter",
-              "min_amount": 2500.0,
-              "max_amount": 2500.0,
-              "payment_basis": "one_time"
-            }
-          ],
-          "value_text": "Fall: $5,000; Winter: $2,500",
-          "renewable": true,
-          "renewal_conditions": [
-            "The Chancellor’s Scholarship will be automatically renewed, provided that you remain in a MacEwan University degree program and maintain the required GPA and course load in years 2-4. Additional criteria apply."
-          ]
-        },
-        {
-          "name": "President’s Scholarship",
-          "grade_text": "90-94.99%",
-          "min_average": 90.0,
-          "max_average": 94.99,
-          "values": [
-            {
-              "term": "Fall",
-              "min_amount": 3000.0,
-              "max_amount": 3000.0,
-              "payment_basis": "one_time"
-            },
-            {
-              "term": "Winter",
-              "min_amount": 1500.0,
-              "max_amount": 1500.0,
-              "payment_basis": "one_time"
-            }
-          ],
-          "value_text": "Fall: $3,000; Winter: $1,500"
-        },
-        {
-          "name": "Provost’s Scholarship",
-          "grade_text": "85-89.99%",
-          "min_average": 85.0,
-          "max_average": 89.99,
-          "values": [
-            {
-              "term": "Fall",
-              "min_amount": 2000.0,
-              "max_amount": 2000.0,
-              "payment_basis": "one_time"
-            },
-            {
-              "term": "Winter",
-              "min_amount": 1000.0,
-              "max_amount": 1000.0,
-              "payment_basis": "one_time"
-            }
-          ],
-          "value_text": "Fall: $2,000; Winter: $1,000"
-        },
-        {
-          "name": "Dean’s Scholarship",
-          "grade_text": "80-84.99%",
-          "min_average": 80.0,
-          "max_average": 84.99,
-          "values": [
-            {
-              "term": "Fall",
-              "min_amount": 1000.0,
-              "max_amount": 1000.0,
-              "payment_basis": "one_time"
-            },
-            {
-              "term": "Winter",
-              "min_amount": 500.0,
-              "max_amount": 500.0,
-              "payment_basis": "one_time"
-            }
-          ],
-          "value_text": "Fall: $1,000; Winter: $500"
-        }
-      ],
-      "intakes": [
-        "Fall",
-        "Winter"
-      ],
-      "payment_notes": [
-        "The scholarship is disbursed in two equal amounts across two terms (Fall and Winter).",
-        "The scholarship is disbursed in the Winter term."
-      ],
-      "application": {
-        "method": "automatic",
-        "deadlines": [
-          {
-            "term": "Fall",
-            "raw": "March 1"
-          },
-          {
-            "term": "Winter",
-            "raw": "July 1"
-          }
-        ],
-        "notes": [
-          "Automatically considered when you apply for admission by the scholarship deadline and are offered admission."
-        ]
-      }
-    },
     {
       "name": "International Chancellor’s Scholarship Series",
       "type": "scholarship_series",
@@ -274,6 +142,7 @@
     "The entrance page lists grade tiers and deadlines; dollar amounts are read from MacEwan's linked award detail data.",
     "Fall and Winter entrance awards are separate intake amounts; do not add them.",
     "Award values are subject to change and are not guaranteed.",
-    "Continuing scholarships are outside this entrance-scholarship output."
+    "Continuing scholarships are outside this entrance-scholarship output.",
+    "Only the International Chancellor's Scholarship Series is exported; the domestic series is out of scope."
   ]
 }

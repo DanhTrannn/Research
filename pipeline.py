@@ -299,6 +299,31 @@ def fetch_selenium(url, timeout=12):
                     pass
 
 
+SCOPE_STAGES = {'entrance', 'transfer_entrance'}
+
+
+def scope_ok(item):
+    """True when an award is an international entrance scholarship/admission award.
+
+    The four accepted categories are entrance scholarships, international
+    student scholarships, admission awards and academic-excellence awards.
+    Need-based bursaries, domestic-only and continuing awards are out of scope.
+    """
+    if item.get('type') == 'bursary':
+        return False
+    if item.get('applicant_category') == 'international':
+        pass
+    elif item.get('applicant_category') == 'all' and item.get('international_eligible') is True:
+        pass
+    else:
+        return False
+    return any(stage in SCOPE_STAGES for stage in (item.get('eligible_stages') or []))
+
+
+def scope_filter(items):
+    return [item for item in items if scope_ok(item)]
+
+
 def clean(value):
     """Drop empty optional fields, preserving meaningful False and zero values."""
     if isinstance(value, dict):

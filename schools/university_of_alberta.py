@@ -18,7 +18,8 @@ class Crawler:
     def extract(self, soup):
         return {'scholarships': selected_awards(soup,
             r'^(International Admission Scholarship|Regional Excellence Scholarship|President.s International Distinction Scholarship|Chan Pang Kuen Memorial International Distinction Scholarship|International Leader Scholarship|May Quon Undergraduate Scholarship|Cora Martinson International Scholarship)$',
-            type='scholarship', applicant_category='international')}
+            type='scholarship', applicant_category='international',
+            international_eligible=True, eligible_stages=['entrance'])}
 
     def export(self, metadata, data, output_dir=None):
         return export_school(self, metadata, data, output_dir)

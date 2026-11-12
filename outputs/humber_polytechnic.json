@@ -4,21 +4,86 @@
     "name": "Humber Polytechnic",
     "slug": "humber_polytechnic"
   },
-  "source_url": "https://humber.ca/study-at-humber/pay-fees/scholarships-bursaries",
-  "fetched_at": "2026-11-11T04:23:17.290999+00:00",
+  "source_url": "https://humber.ca/international/admissions-financial-aid/scholarships-bursaries",
+  "fetched_at": "2026-11-12T09:29:28.853600+00:00",
   "status": "ok",
   "http_status": 200,
   "transport": "requests",
   "data_status": "needs_review",
   "scholarships": [
     {
-      "name": "Degree Entrance Scholarship Average Requirement",
+      "name": "International Onshore Scholarship",
+      "description": "To be eligible for the $1,000 International Onshore Scholarship, you must:",
+      "eligibility": [
+        "International applicants already living in Canada could be eligible for a one-time $1,000 entrance scholarship.",
+        "Apply for an eligible full-time program starting Winter (January), Summer 2027 (May) and Fall 2027 (September).",
+        "Be enrolled as a full-time international student past the withdrawal deadline (the 10th day of classes) for the awarded term.",
+        "Scholarship funds will be disbursed into eligible student accounts as a credit after the 10th day of classes.",
+        "The number of eligible applicants may exceed the funding for this one-time scholarship. If eligible applications exceed the funds available, scholarships will be awarded on a first-come, first-served basis to applicants who have accepted their offer of admission and completed required tuition payments."
+      ],
+      "renewable": false,
+      "renewal_conditions": [
+        "International applicants already living in Canada could be eligible for a one-time $1,000 entrance scholarship.",
+        "The number of eligible applicants may exceed the funding for this one-time scholarship. If eligible applications exceed the funds available, scholarships will be awarded on a first-come, first-served basis to applicants who have accepted their offer of admission and completed required tuition payments."
+      ],
+      "application": {
+        "method": "automatic"
+      },
       "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "value_text": "$1,000 one-time entrance scholarship",
+      "values": [
+        {
+          "min_amount": 1000,
+          "max_amount": 1000,
+          "payment_basis": "one_time"
+        }
+      ]
+    },
+    {
+      "name": "Diploma & Advanced Diploma Direct Early Admission Awards",
+      "description": "This award provides a $1,500 tuition reduction for applicants who apply by February 1 and confirm their offer by March 30.",
+      "eligibility": [
+        "Have minimum 75% academic average."
+      ],
+      "application": {
+        "method": "automatic"
+      },
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "value_text": "$1,500 tuition reduction",
+      "values": [
+        {
+          "min_amount": 1500,
+          "max_amount": 1500,
+          "payment_basis": "one_time"
+        }
+      ]
+    },
+    {
+      "name": "Bachelor's Degree Entrance Scholarships",
+      "application": {
+        "method": "automatic"
+      },
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "tiers": [
         {
           "grade_text": "95%+",
           "min_average": 95.0,
-          "value_text": "$4,000 renewable",
+          "value_text": "$4,000",
           "values": [
             {
               "min_amount": 4000.0,
@@ -28,14 +93,14 @@
           ],
           "renewable": true,
           "renewal_conditions": [
-            "Humber awards degree scholarships automatically to graduating high school students based on academic achievement. See the following chart for details. Some of the scholarships are renewable each year if you maintain an average of 80 per cent or more."
+            "Renewable scholarships will be reissued if the student achieves 80% or above in each year of the Bachelor's degree."
           ]
         },
         {
           "grade_text": "90 - 94.9%",
           "min_average": 90.0,
           "max_average": 94.9,
-          "value_text": "$3,500 renewable",
+          "value_text": "$3,500",
           "values": [
             {
               "min_amount": 3500.0,
@@ -45,14 +110,14 @@
           ],
           "renewable": true,
           "renewal_conditions": [
-            "Humber awards degree scholarships automatically to graduating high school students based on academic achievement. See the following chart for details. Some of the scholarships are renewable each year if you maintain an average of 80 per cent or more."
+            "Renewable scholarships will be reissued if the student achieves 80% or above in each year of the Bachelor's degree."
           ]
         },
         {
           "grade_text": "85 - 89.9%",
           "min_average": 85.0,
           "max_average": 89.9,
-          "value_text": "$3,000 renewable",
+          "value_text": "$3,000",
           "values": [
             {
               "min_amount": 3000.0,
@@ -62,14 +127,14 @@
           ],
           "renewable": true,
           "renewal_conditions": [
-            "Humber awards degree scholarships automatically to graduating high school students based on academic achievement. See the following chart for details. Some of the scholarships are renewable each year if you maintain an average of 80 per cent or more."
+            "Renewable scholarships will be reissued if the student achieves 80% or above in each year of the Bachelor's degree."
           ]
         },
         {
           "grade_text": "80 - 84.9%",
           "min_average": 80.0,
           "max_average": 84.9,
-          "value_text": "$2,000 renewable",
+          "value_text": "$2,000",
           "values": [
             {
               "min_amount": 2000.0,
@@ -79,32 +144,13 @@
           ],
           "renewable": true,
           "renewal_conditions": [
-            "Humber awards degree scholarships automatically to graduating high school students based on academic achievement. See the following chart for details. Some of the scholarships are renewable each year if you maintain an average of 80 per cent or more."
+            "Renewable scholarships will be reissued if the student achieves 80% or above in each year of the Bachelor's degree."
           ]
         },
         {
           "grade_text": "75 - 79.9%",
           "min_average": 75.0,
           "max_average": 79.9,
-          "value_text": "$1,500 one time",
-          "values": [
-            {
-              "min_amount": 1500.0,
-              "max_amount": 1500.0,
-              "payment_basis": "one_time"
-            }
-          ],
-          "renewable": false
-        }
-      ]
-    },
-    {
-      "name": "Degree Transfer Scholarships ($1,500 - $2,500)",
-      "type": "scholarship",
-      "tiers": [
-        {
-          "grade_text": "80%+ Certificate",
-          "min_average": 80.0,
           "value_text": "$1,500",
           "values": [
             {
@@ -112,79 +158,123 @@
               "max_amount": 1500.0,
               "payment_basis": "unknown"
             }
-          ]
-        },
-        {
-          "grade_text": "One Time 80%+ Diploma",
-          "min_average": 80.0,
-          "value_text": "$2,500",
-          "values": [
-            {
-              "min_amount": 2500.0,
-              "max_amount": 2500.0,
-              "payment_basis": "unknown"
-            }
           ],
           "renewable": false
+        }
+      ],
+      "value_text": "Grade-based tiers from $1,500 to $4,000"
+    },
+    {
+      "name": "Bachelor's Degree Scholarships for EAP Graduates",
+      "eligibility": [
+        "Graduates of Humber's English for Academic Purposes (EAP) program with a GPA of 80% or higher in Level 8, who are applying for a Bachelor’s Degree, will be eligible to receive a one-time non-renewable scholarship of $1,500."
+      ],
+      "renewable": false,
+      "renewal_conditions": [
+        "Graduates of Humber's English for Academic Purposes (EAP) program with a GPA of 80% or higher in Level 8, who are applying for a Bachelor’s Degree, will be eligible to receive a one-time non-renewable scholarship of $1,500."
+      ],
+      "application": {
+        "method": "automatic"
+      },
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "value_text": "$1,500 one-time scholarship",
+      "values": [
+        {
+          "min_amount": 1500,
+          "max_amount": 1500,
+          "payment_basis": "one_time"
         }
       ]
     },
     {
-      "name": "Students In and From Care (SIFC) Bursary",
+      "name": "Degree Transfer Scholarships",
       "eligibility": [
-        "Students who were previously in care are encouraged to apply for OSAP and self-identify in their application to be eligible to receive the same $2000 bursary. If students wish not to apply for OSAP, they may visit www.humber.ca/myhumber and complete the \"Students In/From Care Bursary\" application. Supporting documentation (verification of status) from a Children's Aid Society will be required. More details on Advising & Career Services"
+        "Humber automatically awards degree transfer scholarships to students entering any Humber degree program who have completed a one-year Ontario college certificate* or a two- or three-year diploma with a GPA of 80 per cent or more from a publicly-funded college. Students who have achieved a program GPA of 80 per cent or more will be awarded a one-time scholarship of $1,500 for a certificate program or $2,500 for a diploma program in recognition of their academic achievement. Certificates and diplomas do not have to be related to the degree program of choice and are not tied to the eligibility for advanced standing or transfer credit. No application is required."
       ],
-      "type": "bursary"
+      "renewable": false,
+      "renewal_conditions": [
+        "Humber automatically awards degree transfer scholarships to students entering any Humber degree program who have completed a one-year Ontario college certificate* or a two- or three-year diploma with a GPA of 80 per cent or more from a publicly-funded college. Students who have achieved a program GPA of 80 per cent or more will be awarded a one-time scholarship of $1,500 for a certificate program or $2,500 for a diploma program in recognition of their academic achievement. Certificates and diplomas do not have to be related to the degree program of choice and are not tied to the eligibility for advanced standing or transfer credit. No application is required."
+      ],
+      "application": {
+        "method": "automatic"
+      },
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "transfer_entrance"
+      ],
+      "value_text": "$1,500 for a certificate program; $2,500 for a diploma program",
+      "values": [
+        {
+          "min_amount": 1500,
+          "max_amount": 1500,
+          "payment_basis": "one_time"
+        },
+        {
+          "min_amount": 2500,
+          "max_amount": 2500,
+          "payment_basis": "one_time"
+        }
+      ]
     },
     {
-      "name": "Global Learning Bursary",
-      "eligibility": [
-        "Humber Polytechnic is pleased to offer a Global Learning Bursary to assist students completing a global learning experience (academic study, field placement, or work term) as approved by Humber. This bursary will provide eligible students with financial support for a specific period of academic experience outside of Canada.",
-        "For more information about eligibility and how to apply, please review the Global Learning Bursary Application Form ."
+      "name": "Senior Dean's Bachelor of Commerce Award",
+      "description": "In Winter, Fall 2027, and Winter 2028, Humber will award all new semester one international students $10,000 entering any of the Bachelor of Commerce (BComm) programs.",
+      "application": {
+        "method": "automatic"
+      },
+      "type": "award",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
       ],
-      "type": "bursary"
+      "value_text": "$10,000 total ($2,500 per semester for four semesters)",
+      "values": [
+        {
+          "min_amount": 10000,
+          "max_amount": 10000,
+          "payment_basis": "total_degree"
+        },
+        {
+          "min_amount": 2500,
+          "max_amount": 2500,
+          "payment_basis": "per_term",
+          "max_payments": 4
+        }
+      ]
+    },
+    {
+      "name": "LanguageCert University and College Pathways Scholarship",
+      "eligibility": [
+        "International students enrolled in a preparatory or pathway English program at Humber Polytechnic, where LanguageCert tests are recognized as proof of English proficiency, and who have conditional acceptance into a Canadian degree or diploma program are eligible to apply for a $1,000 scholarship."
+      ],
+      "application": {
+        "method": "application_required"
+      },
+      "type": "scholarship",
+      "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
+      "value_text": "$1,000 scholarship",
+      "values": [
+        {
+          "min_amount": 1000,
+          "max_amount": 1000,
+          "payment_basis": "one_time"
+        }
+      ]
     }
   ],
-  "application_periods": [
-    {
-      "group": "Tuition Bursaries",
-      "term": "Summer 2026",
-      "opens": {
-        "raw": "Apr 7"
-      },
-      "deadline": {
-        "raw": "May 8"
-      }
-    },
-    {
-      "group": "Tuition Bursaries",
-      "term": "Fall 2026",
-      "opens": {
-        "raw": "July 6"
-      },
-      "deadline": {
-        "raw": "Aug 14"
-      }
-    },
-    {
-      "group": "Tuition Bursaries",
-      "term": "Winter 2027",
-      "opens": {
-        "raw": "Nov 9"
-      },
-      "deadline": {
-        "raw": "Dec 11"
-      }
-    },
-    {
-      "group": "Tuition Bursaries",
-      "term": "Summer 2027",
-      "opens": {
-        "raw": "Apr 5"
-      },
-      "deadline": {
-        "raw": "May 7"
-      }
-    }
+  "notes": [
+    "Only international entrance scholarships and admission awards are exported; the President's International Entrance Award is excluded because it is a bursary, and EAP/current-student awards and external awards are excluded."
   ]
 }

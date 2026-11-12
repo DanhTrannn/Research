@@ -5,41 +5,21 @@
     "slug": "ibu_university"
   },
   "source_url": "https://ibu.ca/admission/undergraduate-admissions/undergraduate-tuition-fees/entrance-scholarships/",
-  "fetched_at": "2026-11-11T04:23:16.720357+00:00",
+  "fetched_at": "2026-11-12T09:29:30.631172+00:00",
   "status": "ok",
   "http_status": 200,
   "transport": "requests",
   "data_status": "needs_review",
   "scholarships": [
     {
-      "name": "Entrance Scholarships for Academic Achievement",
-      "eligibility": [
-        "you are a Canadian citizen or hold permanent resident status.",
-        "you are currently a full-time secondary school student (with continuous full-time secondary school attendance for the past 4 years) or",
-        "you completed your full-time secondary school studies no more than one academic year prior to your semester of admission (with continuous full-time secondary school attendance for 4 years)",
-        "you will be registered full-time* in your IBU degree program.",
-        "* Full-time status at IBU required for entrance scholarships is defined as a minimum 80% course load (12 credit hours). Entrance scholarships will be cancelled if you drop courses and reduce your course load to below 12 credit hours at any time for that semester. ** The determination of the credits to be used in the calculation of your Grade 12 average lies solely at the discretion of IBU; as well, changes to final secondary school grades received after August 1 will not result in recalculation of the average. *** If you earn a grade point average of at least 4.0 for your second semester you will also receive this scholarship in your third semester, and you will continue to receive the scholarship as long as you continue to take a full-time (80%) course load and earn a minimum 4.0 grade point semester average, up to a maximum of 8 semesters. If you register full-time and earn a 4.0 grade point average in each semester, you will receive the maximum 8 entrance scholarship awards."
-      ],
-      "applicant_category": "domestic",
-      "type": "scholarship_group"
-    },
-    {
-      "name": "General Entrance Scholarships",
-      "description": "you did not receive a merit-based entrance scholarship.",
-      "eligibility": [
-        "you are a Canadian citizen or hold permanent resident status.",
-        "you will be registered full-time* in your IBU degree program.",
-        "* Full-time status at IBU required for entrance scholarships is defined as a minimum 80% course load (12 credit hours). Entrance scholarships will be cancelled if you drop courses and reduce your course load to below 12 credit hours at any time during the semester.",
-        "Currently, IBU students are not eligible to receive funding through the Ontario Student Assistance Program (OSAP). However, there are several other options that can be explored.",
-        "Crown Wards: If you are or were a crown ward and spent at least one full year in foster care, you may be eligible for a full waiver of your tuition and ancillary fees. Contact the Enrolment Services office for details."
-      ],
-      "applicant_category": "domestic",
-      "type": "scholarship_group"
-    },
-    {
       "name": "Americas Bursary",
-      "type": "bursary",
+      "type": "scholarship",
+      "source_type": "bursary",
       "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "programs": "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
       "eligible_countries": [
         "Anguilla",
@@ -124,12 +104,20 @@
         "The student must pay all fees (that are not covered by the award) by their respective due dates.",
         "The student must maintain good academic standing.",
         "The student must maintain a full-time enrolment status."
+      ],
+      "notes": [
+        "The source labels this a bursary, but the published benefit lines are International Scholarship and Regional Scholarship; it is granted at admission."
       ]
     },
     {
       "name": "European Bursary",
-      "type": "bursary",
+      "type": "scholarship",
+      "source_type": "bursary",
       "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "programs": "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
       "eligible_countries": [
         "Albania",
@@ -208,12 +196,20 @@
         "The student must pay all fees (that are not covered by the award) by their respective due dates.",
         "The student must maintain good academic standing.",
         "The student must maintain a full-time enrolment status."
+      ],
+      "notes": [
+        "The source labels this a bursary, but the published benefit lines are International Scholarship and Regional Scholarship; it is granted at admission."
       ]
     },
     {
       "name": "South East Asia Regional Bursary",
-      "type": "bursary",
+      "type": "scholarship",
+      "source_type": "bursary",
       "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "programs": "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
       "eligible_countries": [
         "Brunei",
@@ -239,12 +235,20 @@
         "The student must pay all fees (that are not covered by the award) by their respective due dates.",
         "The student must maintain good academic standing.",
         "The student must maintain a full-time enrolment status."
+      ],
+      "notes": [
+        "The source labels this a bursary, but the published benefit lines are International Scholarship and Regional Scholarship; it is granted at admission."
       ]
     },
     {
       "name": "Special Regional Bursary",
-      "type": "bursary",
+      "type": "scholarship",
+      "source_type": "bursary",
       "applicant_category": "international",
+      "international_eligible": true,
+      "eligible_stages": [
+        "entrance"
+      ],
       "programs": "Applicable Programs: Bachelor of Commerce Eligibility: This grant is open to international applicants who are citizens of one of the following countries:",
       "eligible_countries": [
         "Mauritius",
@@ -287,7 +291,13 @@
         "The student must pay all fees (that are not covered by the award) by their respective due dates.",
         "The student must maintain good academic standing.",
         "The student must maintain a full-time enrolment status."
+      ],
+      "notes": [
+        "The source labels this a bursary, but the published benefit lines are International Scholarship and Regional Scholarship; it is granted at admission."
       ]
     }
+  ],
+  "notes": [
+    "Domestic entrance scholarship groups are excluded; only international entrance awards are exported."
   ]
 }

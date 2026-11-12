@@ -4,7 +4,15 @@ if __name__ == '__main__':
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from pipeline import fetch_html, export_school, run_school, main_content, table_records, clean
+import re
+from pipeline import fetch_html, export_school, run_school, main_content, table_records, clean, scope_filter
+
+ENTRANCE = re.compile(
+    r'\b(?:entering (?:level 0?1|first year)|level 0?1\b|'
+    r'new (?:student|first-year)|incoming|entrance|grade 12|high school|'
+    r'first year (?:full-time )?(?:international )?students?)\b',
+    re.I,
+)
 
 
 class Crawler:
@@ -21,13 +29,32 @@ class Crawler:
             for row in table_records(table):
                 if not row.get('award name'):
                     continue
-                scholarships.append(clean({'name': row['award name'], 'type': row.get('fund type'),
-                    'eligibility': row.get('description'), 'campus': row.get('campus'),
-                    'international_eligible': {'yes': True, 'no': False}.get(row.get('open to international', '').lower()),
+                fund_type = row.get('fund type', '')
+                eligibility = row.get('description', '')
+                if 'scholarship' not in fund_type.lower():
+                    continue
+                if row.get('open to international', '').lower() != 'yes':
+                    continue
+                if not ENTRANCE.search(eligibility):
+                    continue
+                international_only = bool(re.search(r'\binternational (?:student|students)\b', eligibility, re.I))
+                scholarships.append(clean({
+                    'name': row['award name'],
+                    'type': 'scholarship',
+                    'applicant_category': 'international' if international_only else 'all',
+                    'international_eligible': True,
+                    'eligible_stages': ['entrance'],
+                    'eligibility': eligibility,
+                    'campus': row.get('campus'),
                     'terms': row.get('term'),
-                    'application': {'required_flag': {'yes': True, 'no': False}.get(row.get('application required', '').lower()),
-                                    'instructions': row.get('application form')}}))
-        return {'scholarships': scholarships}
+                    'application': {
+                        'required_flag': {'yes': True, 'no': False}.get(row.get('application required', '').lower()),
+                        'instructions': row.get('application form'),
+                    },
+                }))
+        return {'scholarships': scope_filter(scholarships),
+                'notes': ['Only international-eligible entrance scholarships are exported; '
+                          'domestic-only, bursary, award and continuing rows are excluded.']}
 
     def export(self, metadata, data, output_dir=None):
         return export_school(self, metadata, data, output_dir)
